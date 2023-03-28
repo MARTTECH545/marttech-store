@@ -1,21 +1,24 @@
 {
     "Version": "36",
     "Names": {
-        "BYN": [
-            "BYN",
-            "Weissrussischer Rubel"
-        ],
-        "BYR": [
-            "BYR",
-            "Weissrussischer Rubel (2000–2016)"
-        ],
-        "EUR": [
-            "EUR",
-            "Euro"
-        ],
-        "STN": [
-            "STN",
-            "São-toméischer Dobra (2018)"
-        ]
+        "ace": "Aceh-Sprache",
+        "ach": "Acholi-Sprache",
+        "ar_001": "Modernes Hocharabisch",
+        "ars": "Nadschd-Arabisch",
+        "bas": "Basaa-Sprache",
+        "be": "Weissrussisch",
+        "bik": "Bikol-Sprache",
+        "bin": "Bini-Sprache",
+        "chb": "Chibcha-Sprache",
+        "de_CH": "Schweizer Hochdeutsch",
+        "din": "Dinka-Sprache",
+        "fan": "Pangwe-Sprache",
+        "gba": "Gbaya-Sprache",
+        "kmb": "Kimbundu-Sprache",
+        "mus": "Muskogee-Sprache",
+        "nl_BE": "Flämisch",
+        "prg": "Altpreussisch",
+        "zh_Hans": "Chinesisch (vereinfacht)",
+        "zh_Hant": "Chinesisch (traditionell)"
     }
 }

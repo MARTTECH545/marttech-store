@@ -1,662 +1,403 @@
 {
     "Version": "36",
     "Names": {
-        "AED": [
-            "AED",
-            "Arabiar Emirerri Batuetako dirhama"
-        ],
-        "AFN": [
-            "AFN",
-            "afgani afganiarra"
-        ],
-        "ALL": [
-            "ALL",
-            "lek albaniarra"
-        ],
-        "AMD": [
-            "AMD",
-            "dram armeniarra"
-        ],
-        "ANG": [
-            "ANG",
-            "Holandarren Antilletako florina"
-        ],
-        "AOA": [
-            "AOA",
-            "kwanza angolarra"
-        ],
-        "ARS": [
-            "ARS",
-            "peso argentinarra"
-        ],
-        "AUD": [
-            "A$",
-            "dolar australiarra"
-        ],
-        "AWG": [
-            "AWG",
-            "florin arubarra"
-        ],
-        "AZN": [
-            "AZN",
-            "manat azerbaijandarra"
-        ],
-        "BAM": [
-            "BAM",
-            "marko bihurgarri bosniarra"
-        ],
-        "BBD": [
-            "BBD",
-            "dolar barbadostarra"
-        ],
-        "BDT": [
-            "BDT",
-            "taka bangladeshtarra"
-        ],
-        "BGN": [
-            "BGN",
-            "lev bulgariarra"
-        ],
-        "BHD": [
-            "BHD",
-            "dinar bahraindarra"
-        ],
-        "BIF": [
-            "BIF",
-            "franko burundiarra"
-        ],
-        "BMD": [
-            "BMD",
-            "dolar bermudarra"
-        ],
-        "BND": [
-            "BND",
-            "dolar bruneitarra"
-        ],
-        "BOB": [
-            "BOB",
-            "boliviano boliviarra"
-        ],
-        "BRL": [
-            "R$",
-            "erreal brasildarra"
-        ],
-        "BSD": [
-            "BSD",
-            "dolar bahamarra"
-        ],
-        "BTN": [
-            "BTN",
-            "ngultrum bhutandarra"
-        ],
-        "BWP": [
-            "BWP",
-            "pula botswanarra"
-        ],
-        "BYN": [
-            "BYN",
-            "errublo bielorrusiarra"
-        ],
-        "BYR": [
-            "BYR",
-            "Bielorrusiako errubloa (2000–2016)"
-        ],
-        "BZD": [
-            "BZD",
-            "dolar belizetarra"
-        ],
-        "CAD": [
-            "CA$",
-            "dolar kanadarra"
-        ],
-        "CDF": [
-            "CDF",
-            "franko kongoarra"
-        ],
-        "CHF": [
-            "CHF",
-            "franko suitzarra"
-        ],
-        "CLP": [
-            "CLP",
-            "peso txiletarra"
-        ],
-        "CNH": [
-            "CNH",
-            "yuan txinatarra (itsasoz haraindikoa)"
-        ],
-        "CNY": [
-            "CN¥",
-            "yuan txinatarra"
-        ],
-        "COP": [
-            "COP",
-            "peso kolonbiarra"
-        ],
-        "CRC": [
-            "CRC",
-            "Costa Ricako colona"
-        ],
-        "CUC": [
-            "CUC",
-            "peso bihurgarri kubatarra"
-        ],
-        "CUP": [
-            "CUP",
-            "peso kubatarra"
-        ],
-        "CVE": [
-            "CVE",
-            "ezkutu caboverdetarra"
-        ],
-        "CZK": [
-            "CZK",
-            "koroa txekiarra"
-        ],
-        "DJF": [
-            "DJF",
-            "franko djibutiarra"
-        ],
-        "DKK": [
-            "DKK",
-            "koroa danimarkarra"
-        ],
-        "DOP": [
-            "DOP",
-            "peso dominikarra"
-        ],
-        "DZD": [
-            "DZD",
-            "dinar aljeriarra"
-        ],
-        "EGP": [
-            "EGP",
-            "libera egiptoarra"
-        ],
-        "ERN": [
-            "ERN",
-            "nakfa eritrearra"
-        ],
-        "ESP": [
-            "₧",
-            "ESP",
-            {}
-        ],
-        "ETB": [
-            "ETB",
-            "birr etiopiarra"
-        ],
-        "EUR": [
-            "€",
-            "euroa"
-        ],
-        "FJD": [
-            "FJD",
-            "dolar fijiarra"
-        ],
-        "FKP": [
-            "FKP",
-            "libera falklandarra"
-        ],
-        "GBP": [
-            "£",
-            "libera esterlina"
-        ],
-        "GEL": [
-            "GEL",
-            "lari georgiarra"
-        ],
-        "GHS": [
-            "GHS",
-            "cedi ghanatarra"
-        ],
-        "GIP": [
-            "GIP",
-            "libera gibraltartarra"
-        ],
-        "GMD": [
-            "GMD",
-            "dalasi ganbiarra"
-        ],
-        "GNF": [
-            "GNF",
-            "franko ginearra"
-        ],
-        "GTQ": [
-            "GTQ",
-            "ketzal guatemalarra"
-        ],
-        "GYD": [
-            "GYD",
-            "dolar guyanarra"
-        ],
-        "HKD": [
-            "HK$",
-            "dolar hongkongtarra"
-        ],
-        "HNL": [
-            "HNL",
-            "lempira hodurastarra"
-        ],
-        "HRK": [
-            "HRK",
-            "kuna kroaziarra"
-        ],
-        "HTG": [
-            "HTG",
-            "gourde haitiarra"
-        ],
-        "HUF": [
-            "HUF",
-            "florin hungariarra"
-        ],
-        "IDR": [
-            "IDR",
-            "errupia indonesiarra"
-        ],
-        "ILS": [
-            "₪",
-            "shekel israeldar berria"
-        ],
-        "INR": [
-            "₹",
-            "errupia indiarra"
-        ],
-        "IQD": [
-            "IQD",
-            "dinar irakiarra"
-        ],
-        "IRR": [
-            "IRR",
-            "rial irandarra"
-        ],
-        "ISK": [
-            "ISK",
-            "koroa islandiarra"
-        ],
-        "JMD": [
-            "JMD",
-            "Jamaikako dolarra"
-        ],
-        "JOD": [
-            "JOD",
-            "dinar jordaniarra"
-        ],
-        "JPY": [
-            "JP¥",
-            "yen japoniarra"
-        ],
-        "KES": [
-            "KES",
-            "txelin kenyarra"
-        ],
-        "KGS": [
-            "KGS",
-            "som kirgizistandarra"
-        ],
-        "KHR": [
-            "KHR",
-            "riel kanbodiarra"
-        ],
-        "KMF": [
-            "KMF",
-            "franko komoretarra"
-        ],
-        "KPW": [
-            "KPW",
-            "won iparkorearra"
-        ],
-        "KRW": [
-            "₩",
-            "won hegokorearra"
-        ],
-        "KWD": [
-            "KWD",
-            "dinar kuwaitarra"
-        ],
-        "KYD": [
-            "KYD",
-            "dolar kaimandarra"
-        ],
-        "KZT": [
-            "KZT",
-            "tenge kazakhstandarra"
-        ],
-        "LAK": [
-            "LAK",
-            "kip laostarra"
-        ],
-        "LBP": [
-            "LBP",
-            "libera libanoarra"
-        ],
-        "LKR": [
-            "LKR",
-            "errupia srilankarra"
-        ],
-        "LRD": [
-            "LRD",
-            "dolar liberiarra"
-        ],
-        "LSL": [
-            "LSL",
-            "Lesothoko lotia"
-        ],
-        "LTL": [
-            "LTL",
-            "Lituaniako litasa"
-        ],
-        "LVL": [
-            "LVL",
-            "Letoniako latsa"
-        ],
-        "LYD": [
-            "LYD",
-            "dinar libiarra"
-        ],
-        "MAD": [
-            "MAD",
-            "dirham marokoarra"
-        ],
-        "MDL": [
-            "MDL",
-            "leu moldaviarra"
-        ],
-        "MGA": [
-            "MGA",
-            "ariary madagaskartarra"
-        ],
-        "MKD": [
-            "MKD",
-            "dinar mazedoniarra"
-        ],
-        "MMK": [
-            "MMK",
-            "kyat myanmartarra"
-        ],
-        "MNT": [
-            "MNT",
-            "tugrik mongoliarra"
-        ],
-        "MOP": [
-            "MOP",
-            "pataca macauarra"
-        ],
-        "MRO": [
-            "MRO",
-            "Mauritaniako ouguiya (1973–2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "uguiya mauritaniarra"
-        ],
-        "MUR": [
-            "MUR",
-            "errupia mauriziarra"
-        ],
-        "MVR": [
-            "MVR",
-            "errupia maldivarra"
-        ],
-        "MWK": [
-            "MWK",
-            "kwacha malawiarra"
-        ],
-        "MXN": [
-            "MX$",
-            "peso mexikarra"
-        ],
-        "MYR": [
-            "MYR",
-            "ringgit malaysiarra"
-        ],
-        "MZN": [
-            "MZN",
-            "metical mozambiketarra"
-        ],
-        "NAD": [
-            "NAD",
-            "dolar namibiarra"
-        ],
-        "NGN": [
-            "NGN",
-            "naira nigeriarra"
-        ],
-        "NIO": [
-            "NIO",
-            "córdoba nikaraguarra"
-        ],
-        "NOK": [
-            "NOK",
-            "koroa norvegiarra"
-        ],
-        "NPR": [
-            "NPR",
-            "errupia nepaldarra"
-        ],
-        "NZD": [
-            "NZ$",
-            "dolar zeelandaberritarra"
-        ],
-        "OMR": [
-            "OMR",
-            "rial omandarra"
-        ],
-        "PAB": [
-            "PAB",
-            "balboa panamarra"
-        ],
-        "PEN": [
-            "PEN",
-            "sol perutarra"
-        ],
-        "PGK": [
-            "PGK",
-            "kina gineaberriarra"
-        ],
-        "PHP": [
-            "PHP",
-            "peso filipinarra"
-        ],
-        "PKR": [
-            "PKR",
-            "errupia pakistandarra"
-        ],
-        "PLN": [
-            "PLN",
-            "zloty poloniarra"
-        ],
-        "PYG": [
-            "PYG",
-            "guarani paraguaitarra"
-        ],
-        "QAR": [
-            "QAR",
-            "riyal qatartarra"
-        ],
-        "RON": [
-            "RON",
-            "leu errumaniarra"
-        ],
-        "RSD": [
-            "RSD",
-            "dinar serbiarra"
-        ],
-        "RUB": [
-            "RUB",
-            "errublo errusiarra"
-        ],
-        "RWF": [
-            "RWF",
-            "franko ruandarra"
-        ],
-        "SAR": [
-            "SAR",
-            "riyal saudiarabiarra"
-        ],
-        "SBD": [
-            "SBD",
-            "dolar salomondarra"
-        ],
-        "SCR": [
-            "SCR",
-            "errupia seychelletarra"
-        ],
-        "SDG": [
-            "SDG",
-            "libera sudandarra"
-        ],
-        "SEK": [
-            "SEK",
-            "koroa suediarra"
-        ],
-        "SGD": [
-            "SGD",
-            "dolar singapurtarra"
-        ],
-        "SHP": [
-            "SHP",
-            "Santa Helenako libera"
-        ],
-        "SLL": [
-            "SLL",
-            "leone sierraleonarra"
-        ],
-        "SOS": [
-            "SOS",
-            "txelin somaliarra"
-        ],
-        "SRD": [
-            "SRD",
-            "dolar surinamdarra"
-        ],
-        "SSP": [
-            "SSP",
-            "libera hegosudandarra"
-        ],
-        "STD": [
-            "STD",
-            "Sao Tomeko eta Principeko dobra (1977–2017)"
-        ],
-        "STN": [
-            "STN",
-            "dobra saotometarra"
-        ],
-        "SYP": [
-            "SYP",
-            "libera siriarra"
-        ],
-        "SZL": [
-            "SZL",
-            "lilangeni swazilandiarra"
-        ],
-        "THB": [
-            "฿",
-            "baht thailandiarra"
-        ],
-        "TJS": [
-            "TJS",
-            "somoni tajikistandarra"
-        ],
-        "TMT": [
-            "TMT",
-            "manat turkmenistandarra"
-        ],
-        "TND": [
-            "TND",
-            "dinar tunisiarra"
-        ],
-        "TOP": [
-            "TOP",
-            "Tongako Paʻanga"
-        ],
-        "TRY": [
-            "TRY",
-            "lira turkiarra"
-        ],
-        "TTD": [
-            "TTD",
-            "Trinidad eta Tobagoko dolarra"
-        ],
-        "TWD": [
-            "NT$",
-            "dolar taiwandar berria"
-        ],
-        "TZS": [
-            "TZS",
-            "txelin tanzaniarra"
-        ],
-        "UAH": [
-            "UAH",
-            "Ukrainako hryvnia"
-        ],
-        "UGX": [
-            "UGX",
-            "txelin ugandarra"
-        ],
-        "USD": [
-            "US$",
-            "dolar estatubatuarra"
-        ],
-        "UYU": [
-            "UYU",
-            "peso uruguaitarra"
-        ],
-        "UZS": [
-            "UZS",
-            "sum uzbekistandarra"
-        ],
-        "VEF": [
-            "VEF",
-            "Venezuelako bolivarra (2008–2018)"
-        ],
-        "VES": [
-            "VES",
-            "bolivar venezuelarra"
-        ],
-        "VND": [
-            "₫",
-            "dong vietnamdarra"
-        ],
-        "VUV": [
-            "VUV",
-            "vatu vanuatuarra"
-        ],
-        "WST": [
-            "WST",
-            "tala samoarra"
-        ],
-        "XAF": [
-            "FCFA",
-            "Afrika erdialdeko CFA frankoa"
-        ],
-        "XCD": [
-            "EC$",
-            "Karibe ekialdeko dolarra"
-        ],
-        "XOF": [
-            "CFA",
-            "Afrika mendebaldeko CFA frankoa"
-        ],
-        "XPF": [
-            "CFPF",
-            "CFP frankoa"
-        ],
-        "YER": [
-            "YER",
-            "rial yemendarra"
-        ],
-        "ZAR": [
-            "ZAR",
-            "rand hegoafrikarra"
-        ],
-        "ZMK": [
-            "ZMK",
-            "Zambiako kwacha (1968–2012)"
-        ],
-        "ZMW": [
-            "ZMW",
-            "kwacha zambiarra"
-        ]
+        "aa": "afarera",
+        "ab": "abkhaziera",
+        "ace": "acehnera",
+        "ach": "acholiera",
+        "ada": "adangmera",
+        "ady": "adigera",
+        "af": "afrikaans",
+        "agq": "aghemera",
+        "ain": "ainuera",
+        "ak": "akanera",
+        "ale": "aleutera",
+        "alt": "hegoaldeko altaiera",
+        "am": "amharera",
+        "an": "aragoiera",
+        "anp": "angikera",
+        "ar": "arabiera",
+        "ar_001": "arabiera moderno estandarra",
+        "arn": "maputxe",
+        "arp": "arapaho",
+        "as": "assamera",
+        "asa": "asu",
+        "ast": "asturiera",
+        "av": "avarera",
+        "awa": "awadhiera",
+        "ay": "aimara",
+        "az": "azerbaijanera",
+        "ba": "baxkirera",
+        "ban": "baliera",
+        "bas": "basaa",
+        "be": "bielorrusiera",
+        "bem": "bembera",
+        "bez": "benera",
+        "bg": "bulgariera",
+        "bho": "bhojpurera",
+        "bi": "bislama",
+        "bin": "edoera",
+        "bla": "siksikera",
+        "bm": "bambarera",
+        "bn": "bengalera",
+        "bo": "tibetera",
+        "br": "bretoiera",
+        "brx": "bodoera",
+        "bs": "bosniera",
+        "bug": "buginera",
+        "byn": "bilena",
+        "ca": "katalan",
+        "ccp": "chakmera",
+        "ce": "txetxenera",
+        "ceb": "cebuera",
+        "cgg": "chigera",
+        "ch": "chamorrera",
+        "chk": "chuukera",
+        "chm": "mariera",
+        "cho": "choctaw",
+        "chr": "txerokiera",
+        "chy": "cheyennera",
+        "ckb": "erdialdeko kurduera",
+        "co": "korsikera",
+        "crs": "Seychelleetako kreolera",
+        "cs": "txekiera",
+        "cu": "elizako eslaviera",
+        "cv": "txuvaxera",
+        "cy": "gales",
+        "da": "daniera",
+        "dak": "dakotera",
+        "dar": "dargvera",
+        "dav": "taitera",
+        "de": "aleman",
+        "de_AT": "Austriako aleman",
+        "de_CH": "Suitzako aleman garai",
+        "dgr": "dogribera",
+        "dje": "zarma",
+        "dsb": "behe-sorabiera",
+        "dua": "dualera",
+        "dv": "divehiera",
+        "dyo": "fonyi jolera",
+        "dz": "dzongkha",
+        "dzg": "dazaga",
+        "ebu": "embua",
+        "ee": "eweera",
+        "efi": "efikera",
+        "eka": "akajuka",
+        "el": "greziera",
+        "en": "ingeles",
+        "en_AU": "Australiako ingeles",
+        "en_CA": "Kanadako ingeles",
+        "en_GB": "Britania Handiko ingeles",
+        "en_US": "AEBko ingeles",
+        "eo": "esperanto",
+        "es": "espainiera",
+        "es_419": "Latinoamerikako espainiera",
+        "es_ES": "espainiera (Europa)",
+        "es_MX": "Mexikoko espainiera",
+        "et": "estoniera",
+        "eu": "euskara",
+        "ewo": "ewondera",
+        "fa": "persiera",
+        "ff": "fula",
+        "fi": "finlandiera",
+        "fil": "filipinera",
+        "fj": "fijiera",
+        "fo": "faroera",
+        "fon": "fona",
+        "fr": "frantses",
+        "fr_CA": "Kanadako frantses",
+        "fr_CH": "Suitzako frantses",
+        "fur": "friuliera",
+        "fy": "frisiera",
+        "ga": "irlandera",
+        "gaa": "ga",
+        "gag": "gagauzera",
+        "gd": "Eskoziako gaeliko",
+        "gez": "ge’ez",
+        "gil": "gilbertera",
+        "gl": "galiziera",
+        "gn": "guaraniera",
+        "gor": "gorontaloa",
+        "gsw": "Suitzako aleman",
+        "gu": "gujaratera",
+        "guz": "gusiiera",
+        "gv": "manxera",
+        "gwi": "gwichʼin",
+        "ha": "hausa",
+        "haw": "hawaiiera",
+        "he": "hebreera",
+        "hi": "hindi",
+        "hil": "hiligainon",
+        "hmn": "hmong",
+        "hr": "kroaziera",
+        "hsb": "goi-sorabiera",
+        "ht": "Haitiko kreolera",
+        "hu": "hungariera",
+        "hup": "hupera",
+        "hy": "armeniera",
+        "hz": "hereroera",
+        "ia": "interlingua",
+        "iba": "ibanera",
+        "ibb": "ibibioera",
+        "id": "indonesiera",
+        "ie": "interlingue",
+        "ig": "igboera",
+        "ii": "Sichuango yiera",
+        "ilo": "ilokanera",
+        "inh": "ingushera",
+        "io": "ido",
+        "is": "islandiera",
+        "it": "italiera",
+        "iu": "inuktitut",
+        "ja": "japoniera",
+        "jbo": "lojbanera",
+        "jgo": "ngomba",
+        "jmc": "machame",
+        "jv": "javera",
+        "ka": "georgiera",
+        "kab": "kabilera",
+        "kac": "jingpoera",
+        "kaj": "kaiji",
+        "kam": "kambera",
+        "kbd": "kabardiera",
+        "kcg": "kataba",
+        "kde": "makondeera",
+        "kea": "Cabo Verdeko kreolera",
+        "kfo": "koroa",
+        "kg": "kikongoa",
+        "kha": "kashia",
+        "khq": "koyra chiini",
+        "ki": "kikuyuera",
+        "kj": "kuanyama",
+        "kk": "kazakhera",
+        "kkj": "kako",
+        "kl": "groenlandiera",
+        "kln": "kalenjinera",
+        "km": "khemerera",
+        "kmb": "kimbundua",
+        "kn": "kannada",
+        "ko": "koreera",
+        "koi": "komi-permyakera",
+        "kok": "konkanera",
+        "kpe": "kpellea",
+        "kr": "kanuriera",
+        "krc": "karachayera-balkarera",
+        "krl": "kareliera",
+        "kru": "kurukhera",
+        "ks": "kaxmirera",
+        "ksb": "shambalera",
+        "ksf": "bafiera",
+        "ksh": "koloniera",
+        "ku": "kurduera",
+        "kum": "kumykera",
+        "kv": "komiera",
+        "kw": "kornubiera",
+        "ky": "kirgizera",
+        "la": "latin",
+        "lad": "ladino",
+        "lag": "langiera",
+        "lb": "luxenburgera",
+        "lez": "lezgiera",
+        "lg": "gandera",
+        "li": "limburgera",
+        "lkt": "lakotera",
+        "ln": "lingala",
+        "lo": "laosera",
+        "loz": "loziera",
+        "lrc": "iparraldeko lurera",
+        "lt": "lituaniera",
+        "lu": "Katangako lubera",
+        "lua": "txilubera",
+        "lun": "lundera",
+        "luo": "luoera",
+        "lus": "mizoa",
+        "luy": "luhyera",
+        "lv": "letoniera",
+        "mad": "madurera",
+        "mag": "magahiera",
+        "mai": "maithilera",
+        "mak": "makasarera",
+        "mas": "masaiera",
+        "mdf": "mokxera",
+        "men": "mendeera",
+        "mer": "meruera",
+        "mfe": "Mauritaniako kreolera",
+        "mg": "malgaxe",
+        "mgh": "makhuwa-meettoera",
+        "mgo": "metaʼera",
+        "mh": "marshallera",
+        "mi": "maoriera",
+        "mic": "mikmakera",
+        "min": "minangkabauera",
+        "mk": "mazedoniera",
+        "ml": "malabarera",
+        "mn": "mongoliera",
+        "mni": "manipurera",
+        "moh": "mohawkera",
+        "mos": "moreera",
+        "mr": "marathera",
+        "ms": "malaysiera",
+        "mt": "maltera",
+        "mua": "mudangera",
+        "mus": "creera",
+        "mwl": "mirandera",
+        "my": "birmaniera",
+        "myv": "erziera",
+        "mzn": "mazandarandera",
+        "na": "nauruera",
+        "nap": "napoliera",
+        "naq": "namera",
+        "nb": "bokmål (norvegiera)",
+        "nd": "iparraldeko ndebeleera",
+        "nds": "behe-aleman",
+        "nds_NL": "behe-saxoiera",
+        "ne": "nepalera",
+        "new": "newarera",
+        "ng": "ndongera",
+        "nia": "niasera",
+        "niu": "niueera",
+        "nl": "nederlandera",
+        "nl_BE": "flandriera",
+        "nmg": "kwasiera",
+        "nn": "nynorsk (norvegiera)",
+        "nnh": "ngiemboonera",
+        "no": "norvegiera",
+        "nog": "nogaiera",
+        "nqo": "n’koera",
+        "nr": "hegoaldeko ndebelera",
+        "nso": "pediera",
+        "nus": "nuerera",
+        "nv": "navajoera",
+        "ny": "chewera",
+        "nyn": "ankolera",
+        "oc": "okzitaniera",
+        "om": "oromoera",
+        "or": "oriya",
+        "os": "osetiera",
+        "pa": "punjabera",
+        "pag": "pangasinanera",
+        "pam": "pampangera",
+        "pap": "papiamento",
+        "pau": "palauera",
+        "pcm": "Nigeriako pidgina",
+        "pl": "poloniera",
+        "prg": "prusiera",
+        "ps": "paxtuera",
+        "pt": "portuges",
+        "pt_BR": "Brasilgo portuges",
+        "pt_PT": "Europako portuges",
+        "qu": "kitxua",
+        "quc": "quicheera",
+        "rap": "rapa nui",
+        "rar": "rarotongera",
+        "rm": "erretorromaniera",
+        "rn": "rundiera",
+        "ro": "errumaniera",
+        "ro_MD": "moldaviera",
+        "rof": "rombo",
+        "root": "erroa",
+        "ru": "errusiera",
+        "rup": "aromaniera",
+        "rw": "kinyaruanda",
+        "rwk": "rwera",
+        "sa": "sanskrito",
+        "sad": "sandaweera",
+        "sah": "sakhera",
+        "saq": "samburuera",
+        "sat": "santalera",
+        "sba": "ngambayera",
+        "sbp": "sanguera",
+        "sc": "sardiniera",
+        "scn": "siziliera",
+        "sco": "eskoziera",
+        "sd": "sindhi",
+        "se": "iparraldeko samiera",
+        "seh": "senera",
+        "ses": "koyraboro senni",
+        "sg": "sango",
+        "sh": "serbokroaziera",
+        "shi": "tachelhit",
+        "shn": "shanera",
+        "si": "sinhala",
+        "sk": "eslovakiera",
+        "sl": "esloveniera",
+        "sm": "samoera",
+        "sma": "hegoaldeko samiera",
+        "smj": "Luleko samiera",
+        "smn": "Inariko samiera",
+        "sms": "skolten samiera",
+        "sn": "shonera",
+        "snk": "soninkera",
+        "so": "somaliera",
+        "sq": "albaniera",
+        "sr": "serbiera",
+        "srn": "srananera",
+        "ss": "swatiera",
+        "ssy": "sahoa",
+        "st": "hegoaldeko sothoera",
+        "su": "sundanera",
+        "suk": "sukumera",
+        "sv": "suediera",
+        "sw": "swahilia",
+        "sw_CD": "Kongoko swahilia",
+        "swb": "komoreera",
+        "syr": "asiriera",
+        "ta": "tamilera",
+        "te": "telugu",
+        "tem": "temnea",
+        "teo": "tesoera",
+        "tet": "tetum",
+        "tg": "tajikera",
+        "th": "thailandiera",
+        "ti": "tigrinyera",
+        "tig": "tigrea",
+        "tk": "turkmenera",
+        "tl": "tagalog",
+        "tlh": "klingonera",
+        "tn": "tswanera",
+        "to": "tongera",
+        "tpi": "tok pisin",
+        "tr": "turkiera",
+        "trv": "tarokoa",
+        "ts": "tsongera",
+        "tt": "tatarera",
+        "tum": "tumbukera",
+        "tvl": "tuvaluera",
+        "tw": "twia",
+        "twq": "tasawaq",
+        "ty": "tahitiera",
+        "tyv": "tuvera",
+        "tzm": "Erdialdeko Atlaseko amazigera",
+        "udm": "udmurtera",
+        "ug": "uigurrera",
+        "uk": "ukrainera",
+        "umb": "umbundu",
+        "ur": "urdu",
+        "uz": "uzbekera",
+        "vai": "vaiera",
+        "ve": "vendera",
+        "vi": "vietnamera",
+        "vo": "volapük",
+        "vun": "vunjo",
+        "wa": "waloiera",
+        "wae": "walserera",
+        "wal": "welayta",
+        "war": "samerera",
+        "wo": "wolofera",
+        "xal": "kalmykera",
+        "xh": "xhosera",
+        "xog": "sogera",
+        "yav": "yangbenera",
+        "ybb": "yemba",
+        "yi": "yiddish",
+        "yo": "jorubera",
+        "yue": "kantonera",
+        "zgh": "amazigera estandarra",
+        "zh": "txinera",
+        "zh_Hans": "txinera soildua",
+        "zh_Hant": "txinera tradizionala",
+        "zu": "zuluera",
+        "zun": "zuñia",
+        "zza": "zazera"
     }
 }
