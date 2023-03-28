@@ -1,116 +1,94 @@
-# Money
+# Monolog - Logging for PHP [![Build Status](https://img.shields.io/travis/Seldaek/monolog.svg)](https://travis-ci.org/Seldaek/monolog)
 
-[![Latest Version](https://img.shields.io/github/release/moneyphp/money.svg?style=flat-square)](https://github.com/moneyphp/money/releases)
-[![Build Status](https://img.shields.io/travis/moneyphp/money/master.svg?style=flat-square)](https://travis-ci.org/moneyphp/money)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/moneyphp/money.svg?style=flat-square)](https://scrutinizer-ci.com/g/moneyphp/money)
-[![Quality Score](https://img.shields.io/scrutinizer/g/moneyphp/money.svg?style=flat-square)](https://scrutinizer-ci.com/g/moneyphp/money)
-[![Total Downloads](https://img.shields.io/packagist/dt/moneyphp/money.svg?style=flat-square)](https://packagist.org/packages/moneyphp/money)
+[![Total Downloads](https://img.shields.io/packagist/dt/monolog/monolog.svg)](https://packagist.org/packages/monolog/monolog)
+[![Latest Stable Version](https://img.shields.io/packagist/v/monolog/monolog.svg)](https://packagist.org/packages/monolog/monolog)
 
-[![Email](https://img.shields.io/badge/email-team@moneyphp.org-blue.svg?style=flat-square)](mailto:team@moneyphp.org)
 
-![Money PHP](/resources/logo.png?raw=true)
+Monolog sends your logs to files, sockets, inboxes, databases and various
+web services. See the complete list of handlers below. Special handlers
+allow you to build advanced logging strategies.
 
-PHP library to make working with money safer, easier, and fun!
+This library implements the [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
+interface that you can type-hint against in your own libraries to keep
+a maximum of interoperability. You can also use it in your applications to
+make sure you can always use another compatible logger at a later time.
+As of 1.11.0 Monolog public APIs will also accept PSR-3 log levels.
+Internally Monolog still uses its own level scheme since it predates PSR-3.
 
-> "If I had a dime for every time I've seen someone use FLOAT to store currency, I'd have $999.997634" -- [Bill Karwin](https://twitter.com/billkarwin/status/347561901460447232)
+## Installation
 
-In short: You shouldn't represent monetary values by a float. Wherever
-you need to represent money, use this Money value object. Since version
-3.0 this library uses [strings internally](https://github.com/moneyphp/money/pull/136)
-in order to support unlimited integers.
+Install the latest version with
+
+```bash
+$ composer require monolog/monolog
+```
+
+## Basic Usage
 
 ```php
 <?php
 
-use Money\Money;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
-$fiveEur = Money::EUR(500);
-$tenEur = $fiveEur->add($fiveEur);
+// create a log channel
+$log = new Logger('name');
+$log->pushHandler(new StreamHandler('path/to/your.log', Logger::WARNING));
 
-list($part1, $part2, $part3) = $tenEur->allocate(array(1, 1, 1));
-assert($part1->equals(Money::EUR(334)));
-assert($part2->equals(Money::EUR(333)));
-assert($part3->equals(Money::EUR(333)));
+// add records to the log
+$log->addWarning('Foo');
+$log->addError('Bar');
 ```
-
-The documentation is available at http://moneyphp.org
-
-
-## Requirements
-
-PHP 5.6+. Other than that, this library has no external requirements. MoneyPHP will not provide any support to
-PHP versions that are [not supported by the language itself](http://php.net/supported-versions.php). There might be
-additional dependencies for specific feature, e.g. the Swap exchange implementation, check the documentation for more information.
-
-
-## Install
-
-Via Composer
-
-```bash
-$ composer require moneyphp/money
-```
-
-
-## Features
-
-- JSON Serialization
-- Big integer support utilizing different, transparent calculation logic upon availability (bcmath, gmp, plain php)
-- Money formatting (including intl formatter)
-- Currency repositories (ISO currencies included)
-- Money exchange (including [Swap](http://swap.voutzinos.org) implementation)
-
 
 ## Documentation
 
-Please see the [official documentation](http://moneyphp.org).
+- [Usage Instructions](doc/01-usage.md)
+- [Handlers, Formatters and Processors](doc/02-handlers-formatters-processors.md)
+- [Utility classes](doc/03-utilities.md)
+- [Extending Monolog](doc/04-extending.md)
 
+## Third Party Packages
 
-## Testing
+Third party handlers, formatters and processors are
+[listed in the wiki](https://github.com/Seldaek/monolog/wiki/Third-Party-Packages). You
+can also add your own there if you publish one.
 
-We try to follow BDD and TDD, as such we use both [phpspec](http://www.phpspec.net) and [phpunit](https://phpunit.de) to test this library.
+## About
 
-```bash
-$ composer test
-```
+### Requirements
 
-### Running the tests in Docker
+- Monolog works with PHP 5.3 or above, and is also tested to work with HHVM.
 
-Money requires a set of dependencies, so you might want to run it in Docker.
+### Submitting bugs and feature requests
 
-First, build the image locally:
+Bugs and feature request are tracked on [GitHub](https://github.com/Seldaek/monolog/issues)
 
-```bash
-$ docker build -t moneyphp .
-```
+### Framework Integrations
 
-Then run the tests:
+- Frameworks and libraries using [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
+  can be used very easily with Monolog since it implements the interface.
+- [Symfony2](http://symfony.com) comes out of the box with Monolog.
+- [Silex](http://silex.sensiolabs.org/) comes out of the box with Monolog.
+- [Laravel 4 & 5](http://laravel.com/) come out of the box with Monolog.
+- [Lumen](http://lumen.laravel.com/) comes out of the box with Monolog.
+- [PPI](http://www.ppi.io/) comes out of the box with Monolog.
+- [CakePHP](http://cakephp.org/) is usable with Monolog via the [cakephp-monolog](https://github.com/jadb/cakephp-monolog) plugin.
+- [Slim](http://www.slimframework.com/) is usable with Monolog via the [Slim-Monolog](https://github.com/Flynsarmy/Slim-Monolog) log writer.
+- [XOOPS 2.6](http://xoops.org/) comes out of the box with Monolog.
+- [Aura.Web_Project](https://github.com/auraphp/Aura.Web_Project) comes out of the box with Monolog.
+- [Nette Framework](http://nette.org/en/) can be used with Monolog via [Kdyby/Monolog](https://github.com/Kdyby/Monolog) extension.
+- [Proton Micro Framework](https://github.com/alexbilbie/Proton) comes out of the box with Monolog.
 
-```bash
-$ docker run --rm -it -v $PWD:/app -w /app moneyphp vendor/bin/phpunit --exclude-group segmentation
-```
+### Author
 
+Jordi Boggiano - <j.boggiano@seld.be> - <http://twitter.com/seldaek><br />
+See also the list of [contributors](https://github.com/Seldaek/monolog/contributors) which participated in this project.
 
-## Contributing
+### License
 
-We would love to see you helping us to make this library better and better.
-Please keep in mind we do not use suffixes and prefixes in class names,
-so not `CurrenciesInterface`, but `Currencies`. Other than that, Style CI will help you
-using the same code style as we are using. Please provide tests when creating a PR and clear descriptions of bugs when filing issues.
+Monolog is licensed under the MIT License - see the `LICENSE` file for details
 
+### Acknowledgements
 
-## Security
-
-If you discover any security related issues, please contact us at [team@moneyphp.org](mailto:team@moneyphp.org).
-
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
-
-## Acknowledgements
-
-This library is heavily inspired by [Martin Fowler's Money pattern](http://martinfowler.com/eaaCatalog/money.html).
-A special remark goes to [Mathias Verraes](https://github.com/mathiasverraes), without his contributions,
-in code and via his [blog](http://verraes.net/#blog), this library would not be where it stands now.
+This library is heavily inspired by Python's [Logbook](https://logbook.readthedocs.io/en/stable/)
+library, although most concepts have been adjusted to fit to the PHP world.
