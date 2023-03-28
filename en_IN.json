@@ -1,7 +1,7 @@
 {
     "Version": "36",
     "Names": {
-        "Beng": "Bengali",
-        "Orya": "Oriya"
-    }
+        "Asia\/Rangoon": "Myanmar Time (Rangoon)"
+    },
+    "Meta": []
 }
