@@ -1,6 +1,7 @@
 {
+    "Version": "36",
     "Names": {
-        "gv": "Gaelg",
-        "gv_IM": "Gaelg (Ellan Vannin)"
+        "GB": "Rywvaneth Unys",
+        "IM": "Ellan Vannin"
     }
 }

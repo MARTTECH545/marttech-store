@@ -1,7 +1,8 @@
 {
+    "Version": "36",
     "Names": {
-        "ar_EH": "árabe (Sahara Occidental)",
-        "wo": "wolof",
-        "wo_SN": "wolof (Senegal)"
+        "BA": "Bosnia y Herzegovina",
+        "EH": "Sahara Occidental",
+        "UM": "Islas menores alejadas de EE. UU."
     }
 }

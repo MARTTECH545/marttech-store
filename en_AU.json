@@ -1,7 +1,10 @@
 {
+    "Version": "36",
     "Names": {
-        "bn": "Bengali",
-        "bn_BD": "Bengali (Bangladesh)",
-        "bn_IN": "Bengali (India)"
+        "BL": "St. Barthélemy",
+        "KN": "St. Kitts & Nevis",
+        "LC": "St. Lucia",
+        "MF": "St. Martin",
+        "VC": "St. Vincent & Grenadines"
     }
 }

@@ -1,10 +1,9 @@
 {
+    "Version": "36",
     "Names": {
-        "gu": "gurayatí",
-        "gu_IN": "gurayatí (India)",
-        "rn": "kiroundi",
-        "rn_BI": "kiroundi (Burundi)",
-        "wo": "wolof",
-        "wo_SN": "wolof (Senegal)"
+        "BA": "Bosnia y Herzegovina",
+        "CI": "Côte d’Ivoire",
+        "GG": "Guernsey",
+        "UM": "Islas menores alejadas de EE. UU."
     }
 }
