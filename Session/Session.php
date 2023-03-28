@@ -1,165 +1,282 @@
 <?php
 
-namespace Illuminate\Contracts\Session;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-interface Session
+namespace Symfony\Component\HttpFoundation\Session;
+
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBagInterface;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
+use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
+
+/**
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Drak <drak@zikula.org>
+ */
+class Session implements SessionInterface, \IteratorAggregate, \Countable
 {
-    /**
-     * Get the name of the session.
-     *
-     * @return string
-     */
-    public function getName();
+    protected $storage;
+
+    private $flashName;
+    private $attributeName;
+    private $data = [];
+    private $usageIndex = 0;
 
     /**
-     * Get the current session ID.
-     *
-     * @return string
+     * @param SessionStorageInterface $storage    A SessionStorageInterface instance
+     * @param AttributeBagInterface   $attributes An AttributeBagInterface instance, (defaults null for default AttributeBag)
+     * @param FlashBagInterface       $flashes    A FlashBagInterface instance (defaults null for default FlashBag)
      */
-    public function getId();
+    public function __construct(SessionStorageInterface $storage = null, AttributeBagInterface $attributes = null, FlashBagInterface $flashes = null)
+    {
+        $this->storage = $storage ?: new NativeSessionStorage();
+
+        $attributes = $attributes ?: new AttributeBag();
+        $this->attributeName = $attributes->getName();
+        $this->registerBag($attributes);
+
+        $flashes = $flashes ?: new FlashBag();
+        $this->flashName = $flashes->getName();
+        $this->registerBag($flashes);
+    }
 
     /**
-     * Set the session ID.
-     *
-     * @param  string  $id
-     * @return void
+     * {@inheritdoc}
      */
-    public function setId($id);
+    public function start()
+    {
+        return $this->storage->start();
+    }
 
     /**
-     * Start the session, reading the data from a handler.
+     * {@inheritdoc}
+     */
+    public function has($name)
+    {
+        return $this->getAttributeBag()->has($name);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function get($name, $default = null)
+    {
+        return $this->getAttributeBag()->get($name, $default);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function set($name, $value)
+    {
+        $this->getAttributeBag()->set($name, $value);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function all()
+    {
+        return $this->getAttributeBag()->all();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function replace(array $attributes)
+    {
+        $this->getAttributeBag()->replace($attributes);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove($name)
+    {
+        return $this->getAttributeBag()->remove($name);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        $this->getAttributeBag()->clear();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isStarted()
+    {
+        return $this->storage->isStarted();
+    }
+
+    /**
+     * Returns an iterator for attributes.
      *
+     * @return \ArrayIterator An \ArrayIterator instance
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->getAttributeBag()->all());
+    }
+
+    /**
+     * Returns the number of attributes.
+     *
+     * @return int The number of attributes
+     */
+    public function count()
+    {
+        return \count($this->getAttributeBag()->all());
+    }
+
+    /**
+     * @return int
+     *
+     * @internal
+     */
+    public function getUsageIndex()
+    {
+        return $this->usageIndex;
+    }
+
+    /**
      * @return bool
+     *
+     * @internal
      */
-    public function start();
+    public function isEmpty()
+    {
+        if ($this->isStarted()) {
+            ++$this->usageIndex;
+        }
+        foreach ($this->data as &$data) {
+            if (!empty($data)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     /**
-     * Save the session data to storage.
-     *
-     * @return void
+     * {@inheritdoc}
      */
-    public function save();
+    public function invalidate($lifetime = null)
+    {
+        $this->storage->clear();
+
+        return $this->migrate(true, $lifetime);
+    }
 
     /**
-     * Get all of the session data.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function all();
+    public function migrate($destroy = false, $lifetime = null)
+    {
+        return $this->storage->regenerate($destroy, $lifetime);
+    }
 
     /**
-     * Checks if a key exists.
-     *
-     * @param  string|array  $key
-     * @return bool
+     * {@inheritdoc}
      */
-    public function exists($key);
+    public function save()
+    {
+        $this->storage->save();
+    }
 
     /**
-     * Checks if an a key is present and not null.
-     *
-     * @param  string|array  $key
-     * @return bool
+     * {@inheritdoc}
      */
-    public function has($key);
+    public function getId()
+    {
+        return $this->storage->getId();
+    }
 
     /**
-     * Get an item from the session.
-     *
-     * @param  string  $key
-     * @param  mixed  $default
-     * @return mixed
+     * {@inheritdoc}
      */
-    public function get($key, $default = null);
+    public function setId($id)
+    {
+        if ($this->storage->getId() !== $id) {
+            $this->storage->setId($id);
+        }
+    }
 
     /**
-     * Put a key / value pair or array of key / value pairs in the session.
-     *
-     * @param  string|array  $key
-     * @param  mixed       $value
-     * @return void
+     * {@inheritdoc}
      */
-    public function put($key, $value = null);
+    public function getName()
+    {
+        return $this->storage->getName();
+    }
 
     /**
-     * Get the CSRF token value.
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public function token();
+    public function setName($name)
+    {
+        $this->storage->setName($name);
+    }
 
     /**
-     * Remove an item from the session, returning its value.
-     *
-     * @param  string  $key
-     * @return mixed
+     * {@inheritdoc}
      */
-    public function remove($key);
+    public function getMetadataBag()
+    {
+        ++$this->usageIndex;
+
+        return $this->storage->getMetadataBag();
+    }
 
     /**
-     * Remove one or many items from the session.
-     *
-     * @param  string|array  $keys
-     * @return void
+     * {@inheritdoc}
      */
-    public function forget($keys);
+    public function registerBag(SessionBagInterface $bag)
+    {
+        $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->usageIndex));
+    }
 
     /**
-     * Remove all of the items from the session.
-     *
-     * @return void
+     * {@inheritdoc}
      */
-    public function flush();
+    public function getBag($name)
+    {
+        $bag = $this->storage->getBag($name);
+
+        return method_exists($bag, 'getBag') ? $bag->getBag() : $bag;
+    }
 
     /**
-     * Generate a new session ID for the session.
+     * Gets the flashbag interface.
      *
-     * @param  bool  $destroy
-     * @return bool
+     * @return FlashBagInterface
      */
-    public function migrate($destroy = false);
+    public function getFlashBag()
+    {
+        return $this->getBag($this->flashName);
+    }
 
     /**
-     * Determine if the session has been started.
+     * Gets the attributebag interface.
      *
-     * @return bool
-     */
-    public function isStarted();
-
-    /**
-     * Get the previous URL from the session.
+     * Note that this method was added to help with IDE autocompletion.
      *
-     * @return string|null
+     * @return AttributeBagInterface
      */
-    public function previousUrl();
-
-    /**
-     * Set the "previous" URL in the session.
-     *
-     * @param  string  $url
-     * @return void
-     */
-    public function setPreviousUrl($url);
-
-    /**
-     * Get the session handler instance.
-     *
-     * @return \SessionHandlerInterface
-     */
-    public function getHandler();
-
-    /**
-     * Determine if the session handler needs a request.
-     *
-     * @return bool
-     */
-    public function handlerNeedsRequest();
-
-    /**
-     * Set the request on the handler instance.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return void
-     */
-    public function setRequestOnHandler($request);
+    private function getAttributeBag()
+    {
+        return $this->getBag($this->attributeName);
+    }
 }
