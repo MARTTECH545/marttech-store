@@ -1,6 +1,7 @@
 {
+    "Version": "36",
     "Names": {
-        "xh": "isiXhosa",
-        "xh_ZA": "isiXhosa (eMzantsi Afrika)"
+        "MK": "uMntla Macedonia",
+        "ZA": "eMzantsi Afrika"
     }
 }
