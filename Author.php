@@ -7,16 +7,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-class Calculator
+
+/**
+ * An author.
+ */
+class Author
 {
-    /**
-     * @assert (0, 0) == 0
-     * @assert (0, 1) == 1
-     * @assert (1, 0) == 1
-     * @assert (1, 1) == 2
-     */
-    public function add($a, $b)
+    // the order of properties is important for testing the cycle!
+    public $books = [];
+
+    private $name = '';
+
+    public function __construct($name)
     {
-        return $a + $b;
+        $this->name = $name;
     }
 }

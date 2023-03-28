@@ -7,16 +7,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-class Calculator
+namespace PHPUnit\Framework;
+
+/**
+ * Interface for classes that can return a description of itself.
+ */
+interface SelfDescribing
 {
     /**
-     * @assert (0, 0) == 0
-     * @assert (0, 1) == 1
-     * @assert (1, 0) == 1
-     * @assert (1, 1) == 2
+     * Returns a string representation of the object.
      */
-    public function add($a, $b)
-    {
-        return $a + $b;
-    }
+    public function toString(): string;
 }
