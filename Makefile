@@ -1,56 +1,95 @@
-vendor/composer/installed.json: composer.json
+PSYSH_SRC = bin src box.json.dist composer.json build/stub
+PSYSH_SRC_FILES = $(shell find src -type f -name "*.php")
+VERSION = $(shell git describe --tag --always --dirty=-dev)
+
+COMPOSER_OPTS = --no-interaction --no-progress --verbose
+COMPOSER_REQUIRE_OPTS = $(COMPOSER_OPTS) --no-update
+COMPOSER_UPDATE_OPTS = $(COMPOSER_OPTS) --prefer-stable --no-dev --classmap-authoritative --prefer-dist
+
+
+# Commands
+
+.PHONY: help clean build dist
+.DEFAULT_GOAL := help
+
+help:
+	@echo "\033[33mUsage:\033[0m\n  make TARGET\n\n\033[33mTargets:\033[0m"
+	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[32m%-7s\033[0m %s\n", $$1, $$2}'
+
+clean: ## Clean all created artifacts
+	rm -rf build/*
+	rm -rf dist/*
+	rm -rf vendor-bin/*/vendor/
+
+build: ## Compile PHARs
+build: build/psysh/psysh build/psysh-compat/psysh build/psysh-php54/psysh build/psysh-php54-compat/psysh
+
+dist: ## Build tarballs for distribution
+dist: dist/psysh-$(VERSION).tar.gz dist/psysh-$(VERSION)-compat.tar.gz dist/psysh-$(VERSION)-php54.tar.gz dist/psysh-$(VERSION)-php54-compat.tar.gz
+
+
+# All the composer stuffs
+
+composer.lock: composer.json
 	composer install
+	touch $@
 
-.PHONY: deps
-deps: vendor/composer/installed.json
+vendor/autoload.php: composer.lock
+	composer install
+	touch $@
 
-.PHONY: test
-test: deps
-	php vendor/bin/phpunit
+vendor/bin/box: vendor/autoload.php
+	composer bin box install
+	touch $@
 
-.PHONY: apidocs
-apidocs: docs/api/index.html
 
-phpDocumentor.phar: 
-	wget https://github.com/phpDocumentor/phpDocumentor2/releases/download/v3.0.0-alpha.3/phpDocumentor.phar
-	wget https://github.com/phpDocumentor/phpDocumentor2/releases/download/v3.0.0-alpha.3/phpDocumentor.phar.pubkey
+# Lots of PHARs
 
-library_files=$(shell find library -name '*.php')
-docs/api/index.html: vendor/composer/installed.json $(library_files) phpDocumentor.phar
-	php phpDocumentor.phar run -d library -t docs/api
+build/stub: bin/build-stub bin/psysh LICENSE
+	bin/build-stub
 
-.PHONY: test-all
-test-all: test-73 test-72 test-71 test-70 test-56
+build/psysh: $(PSYSH_SRC) $(PSYSH_SRC_FILES)
+	rm -rf $@ || true
+	mkdir $@
+	cp -R $(PSYSH_SRC) $@/
+	composer config --working-dir $@ platform.php 7.0
+	composer require --working-dir $@ $(COMPOSER_REQUIRE_OPTS) php:'>=7.0.0'
+	composer update --working-dir $@ $(COMPOSER_UPDATE_OPTS)
 
-.PHONY: test-all-7
-test-all-7: test-73 test-72 test-71 test-70
+build/psysh-compat: $(PSYSH_SRC) $(PSYSH_SRC_FILES)
+	rm -rf $@ || true
+	mkdir $@
+	cp -R $(PSYSH_SRC) $@/
+	composer config --working-dir $@ platform.php 7.0
+	composer require --working-dir $@ $(COMPOSER_REQUIRE_OPTS) php:'>=7.0.0'
+	composer require --working-dir $@ $(COMPOSER_REQUIRE_OPTS) symfony/polyfill-iconv symfony/polyfill-mbstring hoa/console
+	composer update --working-dir $@ $(COMPOSER_UPDATE_OPTS)
 
-.PHONY: test-73
-test-73: deps
-	docker run -it --rm -v "$$PWD":/opt/mockery -w /opt/mockery php:7.3-cli php vendor/bin/phpunit
+build/psysh-php54: $(PSYSH_SRC) $(PSYSH_SRC_FILES)
+	rm -rf $@ || true
+	mkdir $@
+	cp -R $(PSYSH_SRC) $@/
+	composer config --working-dir $@ platform.php 5.4
+	composer update --working-dir $@ $(COMPOSER_UPDATE_OPTS)
 
-.PHONY: test-72
-test-72: deps
-	docker run -it --rm -v "$$PWD":/opt/mockery -w /opt/mockery php:7.2-cli php vendor/bin/phpunit
+build/psysh-php54-compat: $(PSYSH_SRC) $(PSYSH_SRC_FILES)
+	rm -rf $@ || true
+	mkdir $@
+	cp -R $(PSYSH_SRC) $@/
+	composer config --working-dir $@ platform.php 5.4
+	composer require --working-dir $@ $(COMPOSER_REQUIRE_OPTS) symfony/polyfill-iconv symfony/polyfill-mbstring hoa/console:^2.15
+	composer update --working-dir $@ $(COMPOSER_UPDATE_OPTS)
 
-.PHONY: test-71
-test-71: deps
-	docker run -it --rm -v "$$PWD":/opt/mockery -w /opt/mockery php:7.1-cli php vendor/bin/phpunit
+build/%/psysh: vendor/bin/box build/%
+	vendor/bin/box compile --working-dir $(dir $@)
 
-.PHONY: test-70
-test-70: deps
-	docker run -it --rm -v "$$PWD":/opt/mockery -w /opt/mockery php:7.0-cli php vendor/bin/phpunit
 
-.PHONY: test-56
-test-56: build56
-	docker run -it --rm \
-		-v "$$PWD/library":/opt/mockery/library \
-		-v "$$PWD/tests":/opt/mockery/tests \
-		-v "$$PWD/phpunit.xml.dist":/opt/mockery/phpunit.xml \
-		-w /opt/mockery \
-		mockery_php56 \
-		php vendor/bin/phpunit
+# Dist packages
 
-.PHONY: build56
-build56:
-	docker build -t mockery_php56 -f "$$PWD/docker/php56/Dockerfile" .
+dist/psysh-$(VERSION).tar.gz: build/psysh/psysh
+	@mkdir -p $(@D)
+	tar -C $(dir $<) -czf $@ $(notdir $<)
+
+dist/psysh-$(VERSION)-%.tar.gz: build/psysh-%/psysh
+	@mkdir -p $(@D)
+	tar -C $(dir $<) -czf $@ $(notdir $<)
