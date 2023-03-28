@@ -9,11 +9,11 @@
  */
 
 /**
- * An image, embedded in a multipart message.
+ * An embedded file, in a multipart message.
  *
  * @author Chris Corbyn
  */
-class Swift_Image extends Swift_EmbeddedFile
+class Swift_EmbeddedFile extends Swift_Mime_EmbeddedFile
 {
     /**
      * Create a new EmbeddedFile.
@@ -26,15 +26,25 @@ class Swift_Image extends Swift_EmbeddedFile
      */
     public function __construct($data = null, $filename = null, $contentType = null)
     {
-        parent::__construct($data, $filename, $contentType);
+        call_user_func_array(
+            [$this, 'Swift_Mime_EmbeddedFile::__construct'],
+            Swift_DependencyContainer::getInstance()
+                ->createDependenciesFor('mime.embeddedfile')
+            );
+
+        $this->setBody($data);
+        $this->setFilename($filename);
+        if ($contentType) {
+            $this->setContentType($contentType);
+        }
     }
 
     /**
-     * Create a new Image from a filesystem path.
+     * Create a new EmbeddedFile from a filesystem path.
      *
      * @param string $path
      *
-     * @return self
+     * @return Swift_Mime_EmbeddedFile
      */
     public static function fromPath($path)
     {
