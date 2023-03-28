@@ -1,135 +1,239 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace PayPal\Api;
 
-use Carbon\Carbon;
+use PayPal\Common\PayPalModel;
+use PayPal\Converter\FormatConverter;
+use PayPal\Validation\NumericValidator;
+use PayPal\Validation\UrlValidator;
 
-class InvoiceItem
+/**
+ * Class InvoiceItem
+ *
+ * Information about a single line item.
+ *
+ * @package PayPal\Api
+ *
+ * @property string name
+ * @property string description
+ * @property \PayPal\Api\number quantity
+ * @property \PayPal\Api\Currency unit_price
+ * @property \PayPal\Api\Tax tax
+ * @property string date
+ * @property \PayPal\Api\Cost discount
+ * @property string unit_of_measure
+ */
+class InvoiceItem extends PayPalModel
 {
     /**
-     * The Stripe model instance.
+     * Name of the item. 200 characters max.
      *
-     * @var \Illuminate\Database\Eloquent\Model
+     * @param string $name
+     * 
+     * @return $this
      */
-    protected $owner;
-
-    /**
-     * The Stripe invoice item instance.
-     *
-     * @var \Stripe\InvoiceItem
-     */
-    protected $item;
-
-    /**
-     * Create a new invoice item instance.
-     *
-     * @param  \Illuminate\Database\Eloquent\Model  $owner
-     * @param  \Stripe\InvoiceLineItem  $item
-     * @return void
-     */
-    public function __construct($owner, $item)
+    public function setName($name)
     {
-        $this->owner = $owner;
-        $this->item = $item;
+        $this->name = $name;
+        return $this;
     }
 
     /**
-     * Get the total for the line item.
+     * Name of the item. 200 characters max.
      *
      * @return string
      */
-    public function total()
+    public function getName()
     {
-        return $this->formatAmount($this->amount);
+        return $this->name;
     }
 
     /**
-     * Get a human readable date for the start date.
+     * Description of the item. 1000 characters max.
+     *
+     * @param string $description
+     * 
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Description of the item. 1000 characters max.
      *
      * @return string
      */
-    public function startDate()
+    public function getDescription()
     {
-        if ($this->isSubscription()) {
-            return $this->startDateAsCarbon()->toFormattedDateString();
-        }
+        return $this->description;
     }
 
     /**
-     * Get a human readable date for the end date.
+     * Quantity of the item. Range of -10000 to 10000.
+     *
+     * @param string|double $quantity
+     * 
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        NumericValidator::validate($quantity, "Quantity");
+        $quantity = FormatConverter::formatToPrice($quantity);
+        $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * Quantity of the item. Range of -10000 to 10000.
      *
      * @return string
      */
-    public function endDate()
+    public function getQuantity()
     {
-        if ($this->isSubscription()) {
-            return $this->endDateAsCarbon()->toFormattedDateString();
-        }
+        return $this->quantity;
     }
 
     /**
-     * Get a Carbon instance for the start date.
+     * Unit price of the item. Range of -1,000,000 to 1,000,000.
      *
-     * @return \Carbon\Carbon
+     * @param \PayPal\Api\Currency $unit_price
+     * 
+     * @return $this
      */
-    public function startDateAsCarbon()
+    public function setUnitPrice($unit_price)
     {
-        if ($this->isSubscription()) {
-            return Carbon::createFromTimestampUTC($this->item->period->start);
-        }
+        $this->unit_price = $unit_price;
+        return $this;
     }
 
     /**
-     * Get a Carbon instance for the end date.
+     * Unit price of the item. Range of -1,000,000 to 1,000,000.
      *
-     * @return \Carbon\Carbon
+     * @return \PayPal\Api\Currency
      */
-    public function endDateAsCarbon()
+    public function getUnitPrice()
     {
-        if ($this->isSubscription()) {
-            return Carbon::createFromTimestampUTC($this->item->period->end);
-        }
+        return $this->unit_price;
     }
 
     /**
-     * Determine if the invoice item is for a subscription.
+     * Tax associated with the item.
      *
-     * @return bool
+     * @param \PayPal\Api\Tax $tax
+     * 
+     * @return $this
      */
-    public function isSubscription()
+    public function setTax($tax)
     {
-        return $this->item->type === 'subscription';
+        $this->tax = $tax;
+        return $this;
     }
 
     /**
-     * Format the given amount into a displayable currency.
+     * Tax associated with the item.
      *
-     * @param  int  $amount
+     * @return \PayPal\Api\Tax
+     */
+    public function getTax()
+    {
+        return $this->tax;
+    }
+
+    /**
+     * The date when the item or service was provided. The date format is *yyyy*-*MM*-*dd* *z* as defined in [Internet Date/Time Format](http://tools.ietf.org/html/rfc3339#section-5.6).
+     *
+     * @param string $date
+     * 
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * The date when the item or service was provided. The date format is *yyyy*-*MM*-*dd* *z* as defined in [Internet Date/Time Format](http://tools.ietf.org/html/rfc3339#section-5.6).
+     *
      * @return string
      */
-    protected function formatAmount($amount)
+    public function getDate()
     {
-        return Cashier::formatAmount($amount, $this->item->currency);
+        return $this->date;
     }
 
     /**
-     * Get the underlying Stripe invoice item.
+     * The item discount, as a percent or an amount value.
      *
-     * @return \Stripe\StripeObject
+     * @param \PayPal\Api\Cost $discount
+     * 
+     * @return $this
      */
-    public function asStripeInvoiceItem()
+    public function setDiscount($discount)
     {
-        return $this->item;
+        $this->discount = $discount;
+        return $this;
     }
 
     /**
-     * Dynamically access the Stripe line item instance.
+     * The item discount, as a percent or an amount value.
      *
-     * @param  string  $key
-     * @return mixed
+     * @return \PayPal\Api\Cost
      */
-    public function __get($key)
+    public function getDiscount()
     {
-        return $this->item->{$key};
+        return $this->discount;
     }
+
+    /**
+     * The image URL. Maximum length is 4000 characters.
+     * @deprecated Not publicly available
+     * @param string $image_url
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setImageUrl($image_url)
+    {
+        UrlValidator::validate($image_url, "ImageUrl");
+        $this->image_url = $image_url;
+        return $this;
+    }
+
+    /**
+     * The image URL. Maximum length is 4000 characters.
+     * @deprecated Not publicly available
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->image_url;
+    }
+
+    /**
+     * The unit of measure of the item being invoiced.
+     * Valid Values: ["QUANTITY", "HOURS", "AMOUNT"]
+     *
+     * @param string $unit_of_measure
+     * 
+     * @return $this
+     */
+    public function setUnitOfMeasure($unit_of_measure)
+    {
+        $this->unit_of_measure = $unit_of_measure;
+        return $this;
+    }
+
+    /**
+     * The unit of measure of the item being invoiced.
+     *
+     * @return string
+     */
+    public function getUnitOfMeasure()
+    {
+        return $this->unit_of_measure;
+    }
+
 }
