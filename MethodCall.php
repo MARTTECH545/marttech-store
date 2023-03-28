@@ -1,43 +1,40 @@
-<?php
-/**
- * Mockery
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://github.com/padraic/mockery/blob/master/LICENSE
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to padraic@php.net so we can send you a copy immediately.
- *
- * @category   Mockery
- * @package    Mockery
- * @copyright  Copyright (c) 2010 Pádraic Brady (http://blog.astrumfutura.com)
- * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
- */
+<?php declare(strict_types=1);
 
-namespace Mockery;
+namespace PhpParser\Node\Expr;
 
-class MethodCall
+use PhpParser\Node\Arg;
+use PhpParser\Node\Expr;
+use PhpParser\Node\Identifier;
+
+class MethodCall extends Expr
 {
-    private $method;
-    private $args;
+    /** @var Expr Variable holding object */
+    public $var;
+    /** @var Identifier|Expr Method name */
+    public $name;
+    /** @var Arg[] Arguments */
+    public $args;
 
-    public function __construct($method, $args)
-    {
-        $this->method = $method;
+    /**
+     * Constructs a function call node.
+     *
+     * @param Expr                   $var        Variable holding object
+     * @param string|Identifier|Expr $name       Method name
+     * @param Arg[]                  $args       Arguments
+     * @param array                  $attributes Additional attributes
+     */
+    public function __construct(Expr $var, $name, array $args = [], array $attributes = []) {
+        $this->attributes = $attributes;
+        $this->var = $var;
+        $this->name = \is_string($name) ? new Identifier($name) : $name;
         $this->args = $args;
     }
 
-    public function getMethod()
-    {
-        return $this->method;
+    public function getSubNodeNames() : array {
+        return ['var', 'name', 'args'];
     }
-
-    public function getArgs()
-    {
-        return $this->args;
+    
+    public function getType() : string {
+        return 'Expr_MethodCall';
     }
 }

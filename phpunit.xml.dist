@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./tests/Bootstrap.php"
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.2/phpunit.xsd"
+         backupGlobals="false"
          colors="true"
-         verbose="true"
+         bootstrap="vendor/autoload.php"
+         failOnRisky="true"
+         failOnWarning="true"
 >
+    <php>
+        <ini name="error_reporting" value="-1" />
+    </php>
+
     <testsuites>
-        <testsuite name="Mockery Test Suite">
-            <directory suffix="Test.php">./tests</directory>
-            <directory phpVersion="7.0.0" phpVersionOperator=">=">./tests/PHP70</directory>
-            <directory phpVersion="7.2.0" phpVersionOperator=">=">./tests/PHP72</directory>
-
-            <exclude>./tests/PHP56</exclude>
-            <exclude>./tests/Mockery/MockingVariadicArgumentsTest.php</exclude>
-        </testsuite>
-
-        <testsuite name="Mockery Test Suite PHP56">
-            <directory suffix="Test.php">./tests</directory>
-            <directory suffix="Test.php">./tests/PHP56</directory>
-
-            <exclude>./tests/PHP70</exclude>
-            <exclude>./tests/PHP72</exclude>
-            <exclude>./tests/Mockery/MockingVariadicArgumentsTest.php</exclude>
+        <testsuite name="Symfony Console Component Test Suite">
+            <directory>./Tests/</directory>
         </testsuite>
     </testsuites>
 
     <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./library/</directory>
+        <whitelist>
+            <directory>./</directory>
             <exclude>
-                <directory>./library/Mockery/Adapter/Phpunit/Legacy</directory>
-                <file>./library/Mockery/Adapter/Phpunit/TestListener.php</file>
-                <file>./library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditionsForV8.php</file>
-                <file>./library/Mockery/Adapter/Phpunit/MockeryTestCaseSetUpForV8.php</file>
+                <directory>./Resources</directory>
+                <directory>./Tests</directory>
+                <directory>./vendor</directory>
             </exclude>
         </whitelist>
     </filter>
 
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener">
+            <arguments>
+                <array>
+                    <element key="time-sensitive"><string>Symfony\Component\Console</string></element>
+                </array>
+            </arguments>
+        </listener>
+    </listeners>
 </phpunit>

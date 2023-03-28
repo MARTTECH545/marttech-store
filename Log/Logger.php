@@ -1,275 +1,104 @@
 <?php
 
-namespace Illuminate\Log;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use Closure;
-use RuntimeException;
-use Psr\Log\LoggerInterface;
-use Illuminate\Log\Events\MessageLogged;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Contracts\Support\Arrayable;
+namespace Symfony\Component\HttpKernel\Log;
 
-class Logger implements LoggerInterface
+use Psr\Log\AbstractLogger;
+use Psr\Log\InvalidArgumentException;
+use Psr\Log\LogLevel;
+
+/**
+ * Minimalist PSR-3 logger designed to write in stderr or any other stream.
+ *
+ * @author Kévin Dunglas <dunglas@gmail.com>
+ */
+class Logger extends AbstractLogger
 {
-    /**
-     * The underlying logger implementation.
-     *
-     * @var \Psr\Log\LoggerInterface
-     */
-    protected $logger;
+    private static $levels = [
+        LogLevel::DEBUG => 0,
+        LogLevel::INFO => 1,
+        LogLevel::NOTICE => 2,
+        LogLevel::WARNING => 3,
+        LogLevel::ERROR => 4,
+        LogLevel::CRITICAL => 5,
+        LogLevel::ALERT => 6,
+        LogLevel::EMERGENCY => 7,
+    ];
 
-    /**
-     * The event dispatcher instance.
-     *
-     * @var \Illuminate\Contracts\Events\Dispatcher|null
-     */
-    protected $dispatcher;
+    private $minLevelIndex;
+    private $formatter;
+    private $handle;
 
-    /**
-     * Create a new log writer instance.
-     *
-     * @param  \Psr\Log\LoggerInterface  $logger
-     * @param  \Illuminate\Contracts\Events\Dispatcher|null  $dispatcher
-     * @return void
-     */
-    public function __construct(LoggerInterface $logger, Dispatcher $dispatcher = null)
+    public function __construct(string $minLevel = null, $output = 'php://stderr', callable $formatter = null)
     {
-        $this->logger = $logger;
-        $this->dispatcher = $dispatcher;
+        if (null === $minLevel) {
+            $minLevel = 'php://stdout' === $output || 'php://stderr' === $output ? LogLevel::CRITICAL : LogLevel::WARNING;
+
+            if (isset($_ENV['SHELL_VERBOSITY']) || isset($_SERVER['SHELL_VERBOSITY'])) {
+                switch ((int) (isset($_ENV['SHELL_VERBOSITY']) ? $_ENV['SHELL_VERBOSITY'] : $_SERVER['SHELL_VERBOSITY'])) {
+                    case -1: $minLevel = LogLevel::ERROR; break;
+                    case 1: $minLevel = LogLevel::NOTICE; break;
+                    case 2: $minLevel = LogLevel::INFO; break;
+                    case 3: $minLevel = LogLevel::DEBUG; break;
+                }
+            }
+        }
+
+        if (!isset(self::$levels[$minLevel])) {
+            throw new InvalidArgumentException(sprintf('The log level "%s" does not exist.', $minLevel));
+        }
+
+        $this->minLevelIndex = self::$levels[$minLevel];
+        $this->formatter = $formatter ?: [$this, 'format'];
+        if (false === $this->handle = \is_resource($output) ? $output : @fopen($output, 'a')) {
+            throw new InvalidArgumentException(sprintf('Unable to open "%s".', $output));
+        }
     }
 
     /**
-     * Log an emergency message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function emergency($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log an alert message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function alert($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log a critical message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function critical($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log an error message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function error($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log a warning message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function warning($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log a notice to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function notice($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log an informational message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function info($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log a debug message to the logs.
-     *
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function debug($message, array $context = [])
-    {
-        $this->writeLog(__FUNCTION__, $message, $context);
-    }
-
-    /**
-     * Log a message to the logs.
-     *
-     * @param  string  $level
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
+     * {@inheritdoc}
      */
     public function log($level, $message, array $context = [])
     {
-        $this->writeLog($level, $message, $context);
-    }
-
-    /**
-     * Dynamically pass log calls into the writer.
-     *
-     * @param  string  $level
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    public function write($level, $message, array $context = [])
-    {
-        $this->writeLog($level, $message, $context);
-    }
-
-    /**
-     * Write a message to the log.
-     *
-     * @param  string  $level
-     * @param  string  $message
-     * @param  array  $context
-     * @return void
-     */
-    protected function writeLog($level, $message, $context)
-    {
-        $this->fireLogEvent($level, $message = $this->formatMessage($message), $context);
-
-        $this->logger->{$level}($message, $context);
-    }
-
-    /**
-     * Register a new callback handler for when a log event is triggered.
-     *
-     * @param  \Closure  $callback
-     * @return void
-     *
-     * @throws \RuntimeException
-     */
-    public function listen(Closure $callback)
-    {
-        if (! isset($this->dispatcher)) {
-            throw new RuntimeException('Events dispatcher has not been set.');
+        if (!isset(self::$levels[$level])) {
+            throw new InvalidArgumentException(sprintf('The log level "%s" does not exist.', $level));
         }
 
-        $this->dispatcher->listen(MessageLogged::class, $callback);
-    }
-
-    /**
-     * Fires a log event.
-     *
-     * @param  string  $level
-     * @param  string  $message
-     * @param  array   $context
-     * @return void
-     */
-    protected function fireLogEvent($level, $message, array $context = [])
-    {
-        // If the event dispatcher is set, we will pass along the parameters to the
-        // log listeners. These are useful for building profilers or other tools
-        // that aggregate all of the log messages for a given "request" cycle.
-        if (isset($this->dispatcher)) {
-            $this->dispatcher->dispatch(new MessageLogged($level, $message, $context));
-        }
-    }
-
-    /**
-     * Format the parameters for the logger.
-     *
-     * @param  mixed  $message
-     * @return mixed
-     */
-    protected function formatMessage($message)
-    {
-        if (is_array($message)) {
-            return var_export($message, true);
-        } elseif ($message instanceof Jsonable) {
-            return $message->toJson();
-        } elseif ($message instanceof Arrayable) {
-            return var_export($message->toArray(), true);
+        if (self::$levels[$level] < $this->minLevelIndex) {
+            return;
         }
 
-        return $message;
+        $formatter = $this->formatter;
+        fwrite($this->handle, $formatter($level, $message, $context));
     }
 
-    /**
-     * Get the underlying logger implementation.
-     *
-     * @return \Psr\Log\LoggerInterface
-     */
-    public function getLogger()
+    private function format(string $level, string $message, array $context): string
     {
-        return $this->logger;
-    }
+        if (false !== strpos($message, '{')) {
+            $replacements = [];
+            foreach ($context as $key => $val) {
+                if (null === $val || is_scalar($val) || (\is_object($val) && method_exists($val, '__toString'))) {
+                    $replacements["{{$key}}"] = $val;
+                } elseif ($val instanceof \DateTimeInterface) {
+                    $replacements["{{$key}}"] = $val->format(\DateTime::RFC3339);
+                } elseif (\is_object($val)) {
+                    $replacements["{{$key}}"] = '[object '.\get_class($val).']';
+                } else {
+                    $replacements["{{$key}}"] = '['.\gettype($val).']';
+                }
+            }
 
-    /**
-     * Get the event dispatcher instance.
-     *
-     * @return \Illuminate\Contracts\Events\Dispatcher
-     */
-    public function getEventDispatcher()
-    {
-        return $this->dispatcher;
-    }
+            $message = strtr($message, $replacements);
+        }
 
-    /**
-     * Set the event dispatcher instance.
-     *
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $dispatcher
-     * @return void
-     */
-    public function setEventDispatcher(Dispatcher $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
-    }
-
-    /**
-     * Dynamically proxy method calls to the underlying logger.
-     *
-     * @param  string  $method
-     * @param  array  $parameters
-     * @return mixed
-     */
-    public function __call($method, $parameters)
-    {
-        return $this->logger->{$method}(...$parameters);
+        return sprintf('%s [%s] %s', date(\DateTime::RFC3339), $level, $message).\PHP_EOL;
     }
 }

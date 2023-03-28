@@ -1,126 +1,109 @@
 <?php
 
-namespace Faker\Provider;
+namespace Stripe;
 
-class Person extends Base
+/**
+ * Class Person
+ *
+ * @package Stripe
+ *
+ * @property string $id
+ * @property string $object
+ * @property string $account
+ * @property mixed $address
+ * @property mixed $address_kana
+ * @property mixed $address_kanji
+ * @property int $created
+ * @property bool $deleted
+ * @property mixed $dob
+ * @property string $email
+ * @property string $first_name
+ * @property string $first_name_kana
+ * @property string $first_name_kanji
+ * @property string $gender
+ * @property bool $id_number_provided
+ * @property string $last_name
+ * @property string $last_name_kana
+ * @property string $last_name_kanji
+ * @property string $maiden_name
+ * @property StripeObject $metadata
+ * @property string $phone
+ * @property mixed $relationship
+ * @property mixed $requirements
+ * @property bool $ssn_last_4_provided
+ * @property mixed $verification
+ */
+class Person extends ApiResource
 {
-    const GENDER_MALE = 'male';
+    const OBJECT_NAME = 'person';
+
+    use ApiOperations\Delete;
+    use ApiOperations\Update;
+
+    /**
+     * Possible string representations of a person's gender.
+     * @link https://stripe.com/docs/api/persons/object#person_object-gender
+     */
+    const GENDER_MALE   = 'male';
     const GENDER_FEMALE = 'female';
 
-    protected static $titleFormat = array(
-      '{{titleMale}}',
-      '{{titleFemale}}',
-    );
-
-    protected static $firstNameFormat = array(
-      '{{firstNameMale}}',
-      '{{firstNameFemale}}',
-    );
-
-    protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{lastName}}',
-    );
-
-    protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-    );
-
-    protected static $firstNameMale = array(
-        'John',
-    );
-
-    protected static $firstNameFemale = array(
-        'Jane',
-    );
-
-    protected static $lastName = array('Doe');
-
-    protected static $titleMale = array('Mr.', 'Dr.', 'Prof.');
-
-    protected static $titleFemale = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.');
+    /**
+     * Possible string representations of a person's verification status.
+     * @link https://stripe.com/docs/api/persons/object#person_object-verification-status
+     */
+    const VERIFICATION_STATUS_PENDING    = 'pending';
+    const VERIFICATION_STATUS_UNVERIFIED = 'unverified';
+    const VERIFICATION_STATUS_VERIFIED   = 'verified';
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any
-     * @return string
-     * @example 'John Doe'
+     * @return string The API URL for this Stripe account reversal.
      */
-    public function name($gender = null)
+    public function instanceUrl()
     {
-        if ($gender === static::GENDER_MALE) {
-            $format = static::randomElement(static::$maleNameFormats);
-        } elseif ($gender === static::GENDER_FEMALE) {
-            $format = static::randomElement(static::$femaleNameFormats);
-        } else {
-            $format = static::randomElement(array_merge(static::$maleNameFormats, static::$femaleNameFormats));
+        $id = $this['id'];
+        $account = $this['account'];
+        if (!$id) {
+            throw new Exception\UnexpectedValueException(
+                "Could not determine which URL to request: " .
+                "class instance has invalid ID: $id",
+                null
+            );
         }
+        $id = Util\Util::utf8($id);
+        $account = Util\Util::utf8($account);
 
-        return $this->generator->parse($format);
+        $base = Account::classUrl();
+        $accountExtn = urlencode($account);
+        $extn = urlencode($id);
+        return "$base/$accountExtn/persons/$extn";
     }
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any
-     * @return string
-     * @example 'John'
+     * @param array|string $_id
+     * @param array|string|null $_opts
+     *
+     * @throws \Stripe\Exception\BadMethodCallException
      */
-    public function firstName($gender = null)
+    public static function retrieve($_id, $_opts = null)
     {
-        if ($gender === static::GENDER_MALE) {
-            return static::firstNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
-            return static::firstNameFemale();
-        }
-
-        return $this->generator->parse(static::randomElement(static::$firstNameFormat));
-    }
-
-    public static function firstNameMale()
-    {
-        return static::randomElement(static::$firstNameMale);
-    }
-
-    public static function firstNameFemale()
-    {
-        return static::randomElement(static::$firstNameFemale);
+        $msg = "Persons cannot be retrieved without an account ID. Retrieve " .
+               "a person using `Account::retrievePerson('account_id', " .
+               "'person_id')`.";
+        throw new Exception\BadMethodCallException($msg, null);
     }
 
     /**
-     * @example 'Doe'
-     * @return string
+     * @param string $_id
+     * @param array|null $_params
+     * @param array|string|null $_options
+     *
+     * @throws \Stripe\Exception\BadMethodCallException
      */
-    public function lastName()
+    public static function update($_id, $_params = null, $_options = null)
     {
-        return static::randomElement(static::$lastName);
-    }
-
-    /**
-     * @example 'Mrs.'
-     * @param string|null $gender 'male', 'female' or null for any
-     * @return string
-     */
-    public function title($gender = null)
-    {
-        if ($gender === static::GENDER_MALE) {
-            return static::titleMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
-            return static::titleFemale();
-        }
-
-        return $this->generator->parse(static::randomElement(static::$titleFormat));
-    }
-
-    /**
-     * @example 'Mr.'
-     */
-    public static function titleMale()
-    {
-        return static::randomElement(static::$titleMale);
-    }
-
-    /**
-     * @example 'Mrs.'
-     */
-    public static function titleFemale()
-    {
-        return static::randomElement(static::$titleFemale);
+        $msg = "Persons cannot be updated without an account ID. Update " .
+               "a person using `Account::updatePerson('account_id', " .
+               "'person_id', \$updateParams)`.";
+        throw new Exception\BadMethodCallException($msg, null);
     }
 }

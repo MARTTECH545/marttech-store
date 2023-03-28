@@ -1,88 +1,69 @@
 <?php
 
-namespace Money;
+namespace PayPal\Api;
+
+use PayPal\Common\PayPalModel;
+use PayPal\Converter\FormatConverter;
+use PayPal\Validation\NumericValidator;
 
 /**
- * Currency Value Object.
+ * Class Currency
  *
- * Holds Currency specific data.
+ * Base object for all financial value related fields (balance, payment due, etc.)
  *
- * @author Mathias Verraes
+ * @package PayPal\Api
+ *
+ * @property string currency
+ * @property string value
  */
-final class Currency implements \JsonSerializable
+class Currency extends PayPalModel
 {
     /**
-     * Currency code.
+     * 3 letter currency code as defined by ISO 4217.
      *
-     * @var string
+     * @param string $currency
+     * 
+     * @return $this
      */
-    private $code;
-
-    /**
-     * @param string $code
-     */
-    public function __construct($code)
+    public function setCurrency($currency)
     {
-        if (!is_string($code)) {
-            throw new \InvalidArgumentException('Currency code should be string');
-        }
-
-        if ($code === '') {
-            throw new \InvalidArgumentException('Currency code should not be empty string');
-        }
-
-        $this->code = $code;
+        $this->currency = $currency;
+        return $this;
     }
 
     /**
-     * Returns the currency code.
+     * 3 letter currency code as defined by ISO 4217.
      *
      * @return string
      */
-    public function getCode()
+    public function getCurrency()
     {
-        return $this->code;
+        return $this->currency;
     }
 
     /**
-     * Checks whether this currency is the same as an other.
+     * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
      *
-     * @param Currency $other
-     *
-     * @return bool
+     * @param string|double $value
+     * 
+     * @return $this
      */
-    public function equals(Currency $other)
+    public function setValue($value)
     {
-        return $this->code === $other->code;
+        NumericValidator::validate($value, "Value");
+        $value = FormatConverter::formatToPrice($value, $this->getCurrency());
+        $this->value = $value;
+        return $this;
     }
 
     /**
-     * Checks whether this currency is available in the passed context.
-     *
-     * @param Currencies $currencies
-     *
-     * @return bool
-     */
-    public function isAvailableWithin(Currencies $currencies)
-    {
-        return $currencies->contains($this);
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->code;
-    }
-
-    /**
-     * {@inheritdoc}
+     * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
      *
      * @return string
      */
-    public function jsonSerialize()
+    public function getValue()
     {
-        return $this->code;
+        return $this->value;
     }
+
 }
