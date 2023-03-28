@@ -1,211 +1,82 @@
-Dompdf
-======
+# EmailValidator
+[![Build Status](https://travis-ci.org/egulias/EmailValidator.svg?branch=master)](https://travis-ci.org/egulias/EmailValidator) [![Coverage Status](https://coveralls.io/repos/egulias/EmailValidator/badge.svg?branch=master)](https://coveralls.io/r/egulias/EmailValidator?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/egulias/EmailValidator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/egulias/EmailValidator/?branch=master) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/22ba6692-9c02-42e5-a65d-1c5696bfffc6/small.png)](https://insight.sensiolabs.com/projects/22ba6692-9c02-42e5-a65d-1c5696bfffc6)
+=============================
+## Suported RFCs ##
+This library aims to support:
 
-[![Build Status](https://travis-ci.org/dompdf/dompdf.png?branch=master)](https://travis-ci.org/dompdf/dompdf)
-[![Latest Stable Version](https://poser.pugx.org/dompdf/dompdf/v/stable.png)](https://packagist.org/packages/dompdf/dompdf)
-[![Total Downloads](https://poser.pugx.org/dompdf/dompdf/downloads.png)](https://packagist.org/packages/dompdf/dompdf)
-[![Latest Unstable Version](https://poser.pugx.org/dompdf/dompdf/v/unstable.png)](https://packagist.org/packages/dompdf/dompdf)
-[![License](https://poser.pugx.org/dompdf/dompdf/license.png)](https://packagist.org/packages/dompdf/dompdf)
- 
-**Dompdf is an HTML to PDF converter**
+RFC 5321, 5322, 6530, 6531, 6532.
 
-At its heart, dompdf is (mostly) a [CSS 2.1](http://www.w3.org/TR/CSS2/) compliant
-HTML layout and rendering engine written in PHP. It is a style-driven renderer:
-it will download and read external stylesheets, inline style tags, and the style
-attributes of individual HTML elements. It also supports most presentational
-HTML attributes.
+## Requirements ##
 
-*This document applies to the latest stable code which may not reflect the current 
-release. For released code please
-[navigate to the appropriate tag](https://github.com/dompdf/dompdf/tags).*
+ * [Composer](https://getcomposer.org) is required for installation
+ * [Spoofchecking](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/SpoofCheckValidation.php) and [DNSCheckValidation](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/DNSCheckValidation.php) validation requires that your PHP system has the [PHP Internationalization Libraries](https://php.net/manual/en/book.intl.php) (also known as PHP Intl)
 
-----
+## Installation ##
 
-**Check out the [demo](https://dompdf.net/examples.php) and ask any
-question on [StackOverflow](http://stackoverflow.com/questions/tagged/dompdf) or
-on the [Google Groups](http://groups.google.com/group/dompdf).**
+Run the command below to install via Composer
 
-Follow us on [![Twitter](http://twitter-badges.s3.amazonaws.com/twitter-a.png)](http://www.twitter.com/dompdf) or 
-[![Follow us on Google+](https://ssl.gstatic.com/images/icons/gplus-16.png)](https://plus.google.com/108710008521858993320?prsrc=3).
-
----
-
-
-
-## Features
-
- * Handles most CSS 2.1 and a few CSS3 properties, including @import, @media &
-   @page rules
- * Supports most presentational HTML 4.0 attributes
- * Supports external stylesheets, either local or through http/ftp (via
-   fopen-wrappers)
- * Supports complex tables, including row & column spans, separate & collapsed
-   border models, individual cell styling
- * Image support (gif, png (8, 24 and 32 bit with alpha channel), bmp & jpeg)
- * No dependencies on external PDF libraries, thanks to the R&OS PDF class
- * Inline PHP support
- * Basic SVG support
- 
-## Requirements
-
- * PHP version 5.4.0 or higher
- * DOM extension
- * GD extension
- * MBString extension
- * php-font-lib
- * php-svg-lib
-
-### Recommendations
-
- * OPcache (OPcache, XCache, APC, etc.): improves performance
- * IMagick or GMagick extension: improves image processing performance
-
-Visit the wiki for more information:
-https://github.com/dompdf/dompdf/wiki/Requirements
-
-## About Fonts & Character Encoding
-
-PDF documents internally support the following fonts: Helvetica, Times-Roman,
-Courier, Zapf-Dingbats, & Symbol. These fonts only support Windows ANSI
-encoding. In order for a PDF to display characters that are not available in
-Windows ANSI, you must supply an external font. Dompdf will embed any referenced
-font in the PDF so long as it has been pre-loaded or is accessible to dompdf and
-reference in CSS @font-face rules. See the
-[font overview](https://github.com/dompdf/dompdf/wiki/About-Fonts-and-Character-Encoding)
-for more information on how to use fonts.
-
-The [DejaVu TrueType fonts](http://dejavu-fonts.org) have been pre-installed
-to give dompdf decent Unicode character coverage by default. To use the DejaVu
-fonts reference the font in your stylesheet, e.g. `body { font-family: DejaVu
-Sans; }` (for DejaVu Sans). The following DejaVu 2.34 fonts are available:
-DejaVu Sans, DejaVu Serif, and DejaVu Sans Mono.
-
-## Easy Installation
-
-### Install with composer
-
-To install with [Composer](https://getcomposer.org/), simply require the
-latest version of this package.
-
-```bash
-composer require dompdf/dompdf
+```shell
+composer require egulias/email-validator
 ```
 
-Make sure that the autoload file from Composer is loaded.
+## Getting Started ##
+`EmailValidator`requires you to decide which (or combination of them) validation/s strategy/ies you'd like to follow for each [validation](#available-validations).
+
+A basic example with the RFC validation
+```php
+<?php
+
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\RFCValidation;
+
+$validator = new EmailValidator();
+$validator->isValid("example@example.com", new RFCValidation()); //true
+```
+
+
+### Available validations ###
+
+1. [RFCValidation](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/RFCValidation.php)
+2. [NoRFCWarningsValidation](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/NoRFCWarningsValidation.php)
+3. [DNSCheckValidation](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/DNSCheckValidation.php)
+4. [SpoofCheckValidation](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/SpoofCheckValidation.php)
+5. [MultipleValidationWithAnd](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/MultipleValidationWithAnd.php)
+6. [Your own validation](#how-to-extend)
+
+`MultipleValidationWithAnd`
+
+It is a validation that operates over other validations performing a logical and (&&) over the result of each validation.
 
 ```php
-// somewhere early in your project's loading, require the Composer autoloader
-// see: http://getcomposer.org/doc/00-intro.md
-require 'vendor/autoload.php';
+<?php
 
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\DNSCheckValidation;
+use Egulias\EmailValidator\Validation\MultipleValidationWithAnd;
+use Egulias\EmailValidator\Validation\RFCValidation;
+
+$validator = new EmailValidator();
+$multipleValidations = new MultipleValidationWithAnd([
+    new RFCValidation(),
+    new DNSCheckValidation()
+]);
+$validator->isValid("example@example.com", $multipleValidations); //true
 ```
 
-### Download and install
+### How to extend ###
 
-Download an archive of dompdf and extract it into the directory where dompdf
-will reside
- * You can download stable copies of dompdf from
-   https://github.com/dompdf/dompdf/releases
- * Or download a nightly (the latest, unreleased code) from
-   http://eclecticgeek.com/dompdf
-
-Use the packaged release autoloader to load dompdf, libraries,
-and helper functions in your PHP:
-
-```php
-// include autoloader
-require_once 'dompdf/autoload.inc.php';
-```
-
-### Install with git
-
-From the command line, switch to the directory where dompdf will reside and run
-the following commands:
-
-```sh
-git clone https://github.com/dompdf/dompdf.git
-cd dompdf
-
-git clone https://github.com/PhenX/php-font-lib.git lib/php-font-lib
-cd lib/php-font-lib
-git checkout 0.5.1
-cd ..
-
-git clone https://github.com/PhenX/php-svg-lib.git php-svg-lib
-cd php-svg-lib
-git checkout v0.3
-```
-
-Require dompdf, libraries, and helper functions in your PHP:
-
-```php
-require_once 'dompdf/lib/html5lib/Parser.php';
-require_once 'dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
-require_once 'dompdf/lib/php-svg-lib/src/autoload.php';
-require_once 'dompdf/src/Autoloader.php';
-Dompdf\Autoloader::register();
-```
-
-## Quick Start
-
-Just pass your HTML in to dompdf and stream the output:
-
-```php
-// reference the Dompdf namespace
-use Dompdf\Dompdf;
-
-// instantiate and use the dompdf class
-$dompdf = new Dompdf();
-$dompdf->loadHtml('hello world');
-
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'landscape');
-
-// Render the HTML as PDF
-$dompdf->render();
-
-// Output the generated PDF to Browser
-$dompdf->stream();
-```
-
-### Setting Options
-
-Set options during dompdf instantiation:
-
-```php
-use Dompdf\Dompdf;
-use Dompdf\Options;
-
-$options = new Options();
-$options->set('defaultFont', 'Courier');
-$dompdf = new Dompdf($options);
-```
-
-or at run time
-
-```php
-use Dompdf\Dompdf;
-
-$dompdf = new Dompdf();
-$dompdf->set_option('defaultFont', 'Courier');
-```
-
-See [Dompdf\Options](src/Options.php) for a list of available options.
+It's easy! You just need to implement [EmailValidation](https://github.com/egulias/EmailValidator/blob/master/EmailValidator/Validation/EmailValidation.php) and you can use your own validation.
 
 
-## Limitations (Known Issues)
+## Other Contributors ##
+(You can find current contributors [here](https://github.com/egulias/EmailValidator/graphs/contributors))
 
- * Dompdf is not particularly tolerant to poorly-formed HTML input. To avoid
-   any unexpected rendering issues you should either enable the built-in HTML5
-   parser at runtime (`$dompdf->set_option('isHtml5ParserEnabled', true);`) 
-   or run your HTML through a HTML validator/cleaner (such as
-   [Tidy](http://tidy.sourceforge.net) or the
-   [W3C Markup Validation Service](http://validator.w3.org)).
- * Large files or large tables can take a while to render.
- * CSS float is in development and may not produce the desired result
+As this is a port from another library and work, here are other people related to the previous one:
 
----
+* Ricard Clau [@ricardclau](https://github.com/ricardclau):      	Performance against PHP built-in filter_var
+* Josepf Bielawski [@stloyd](https://github.com/stloyd):      		For its first re-work of Dominic's lib
+* Dominic Sayers [@dominicsayers](https://github.com/dominicsayers):  	The original isemail function
 
-[![Donate button](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](http://goo.gl/DSvWf)
+## License ##
+Released under the MIT License attached with this code.
 
-*If you find this project useful, please consider making a donation. Any funds donated will be used to help further development on this project.)*
