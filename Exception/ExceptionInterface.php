@@ -1,26 +1,21 @@
 <?php
 
-namespace Stripe\Exception;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-// TODO: remove this check once we drop support for PHP 5
-if (interface_exists(\Throwable::class)) {
-    /**
-     * The base interface for all Stripe exceptions.
-     *
-     * @package Stripe\Exception
-     */
-    interface ExceptionInterface extends \Throwable
-    {
-    }
-} else {
-    /**
-     * The base interface for all Stripe exceptions.
-     *
-     * @package Stripe\Exception
-     */
-    // phpcs:disable PSR1.Classes.ClassDeclaration.MultipleClasses
-    interface ExceptionInterface
-    {
-    }
-    // phpcs:enable
+namespace Symfony\Component\Console\Exception;
+
+/**
+ * ExceptionInterface.
+ *
+ * @author Jérôme Tamarelle <jerome@tamarelle.net>
+ */
+interface ExceptionInterface extends \Throwable
+{
 }

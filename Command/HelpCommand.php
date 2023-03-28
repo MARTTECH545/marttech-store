@@ -1,25 +1,26 @@
 <?php
 
 /*
- * This file is part of Psy Shell.
+ * This file is part of the Symfony package.
  *
- * (c) 2012-2018 Justin Hileman
+ * (c) Fabien Potencier <fabien@symfony.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Psy\Command;
+namespace Symfony\Component\Console\Command;
 
-use Symfony\Component\Console\Helper\TableHelper;
+use Symfony\Component\Console\Helper\DescriptorHelper;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Help command.
+ * HelpCommand displays the help for a given command.
  *
- * Lists available commands, and gives command-specific help when asked nicely.
+ * @author Fabien Potencier <fabien@symfony.com>
  */
 class HelpCommand extends Command
 {
@@ -30,22 +31,32 @@ class HelpCommand extends Command
      */
     protected function configure()
     {
+        $this->ignoreValidationErrors();
+
         $this
             ->setName('help')
-            ->setAliases(['?'])
             ->setDefinition([
-                new InputArgument('command_name', InputArgument::OPTIONAL, 'The command name.', null),
+                new InputArgument('command_name', InputArgument::OPTIONAL, 'The command name', 'help'),
+                new InputOption('format', null, InputOption::VALUE_REQUIRED, 'The output format (txt, xml, json, or md)', 'txt'),
+                new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw command help'),
             ])
-            ->setDescription('Show a list of commands. Type `help [foo]` for information about [foo].')
-            ->setHelp('My. How meta.');
+            ->setDescription('Displays help for a command')
+            ->setHelp(<<<'EOF'
+The <info>%command.name%</info> command displays help for a given command:
+
+  <info>php %command.full_name% list</info>
+
+You can also output the help in other formats by using the <comment>--format</comment> option:
+
+  <info>php %command.full_name% --format=xml list</info>
+
+To display the list of available commands, please use the <info>list</info> command.
+EOF
+            )
+        ;
     }
 
-    /**
-     * Helper for setting a subcommand to retrieve help for.
-     *
-     * @param Command $command
-     */
-    public function setCommand($command)
+    public function setCommand(Command $command)
     {
         $this->command = $command;
     }
@@ -55,44 +66,16 @@ class HelpCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if ($this->command !== null) {
-            // help for an individual command
-            $output->page($this->command->asText());
-            $this->command = null;
-        } elseif ($name = $input->getArgument('command_name')) {
-            // help for an individual command
-            $output->page($this->getApplication()->get($name)->asText());
-        } else {
-            // list available commands
-            $commands = $this->getApplication()->all();
-
-            $table = $this->getTable($output);
-
-            foreach ($commands as $name => $command) {
-                if ($name !== $command->getName()) {
-                    continue;
-                }
-
-                if ($command->getAliases()) {
-                    $aliases = \sprintf('<comment>Aliases:</comment> %s', \implode(', ', $command->getAliases()));
-                } else {
-                    $aliases = '';
-                }
-
-                $table->addRow([
-                    \sprintf('<info>%s</info>', $name),
-                    $command->getDescription(),
-                    $aliases,
-                ]);
-            }
-
-            $output->startPaging();
-            if ($table instanceof TableHelper) {
-                $table->render($output);
-            } else {
-                $table->render();
-            }
-            $output->stopPaging();
+        if (null === $this->command) {
+            $this->command = $this->getApplication()->find($input->getArgument('command_name'));
         }
+
+        $helper = new DescriptorHelper();
+        $helper->describe($output, $this->command, [
+            'format' => $input->getOption('format'),
+            'raw_text' => $input->getOption('raw'),
+        ]);
+
+        $this->command = null;
     }
 }

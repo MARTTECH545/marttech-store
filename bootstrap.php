@@ -1,17 +1,21 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-if (!\defined('TEST_FILES_PATH')) {
-    \define('TEST_FILES_PATH', __DIR__ . \DIRECTORY_SEPARATOR . '_files' . \DIRECTORY_SEPARATOR);
+
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+// Disable garbage collector to prevent segfaults
+gc_disable();
+
+set_include_path(get_include_path().PATH_SEPARATOR.dirname(__DIR__).'/lib');
+
+Mockery::getConfiguration()->allowMockingNonExistentMethods(true);
+
+if (is_file(__DIR__.'/acceptance.conf.php')) {
+    require_once __DIR__.'/acceptance.conf.php';
 }
-
-\ini_set('precision', 14);
-\ini_set('serialize_precision', 14);
-
-require_once __DIR__ . '/../vendor/autoload.php';
+if (is_file(__DIR__.'/smoke.conf.php')) {
+    require_once __DIR__.'/smoke.conf.php';
+}
+require_once __DIR__.'/StreamCollector.php';
+require_once __DIR__.'/IdenticalBinaryConstraint.php';
+require_once __DIR__.'/SwiftMailerTestCase.php';
+require_once __DIR__.'/SwiftMailerSmokeTestCase.php';

@@ -1,43 +1,19 @@
 <?php
 
 /*
- * This file is part of Psy Shell.
+ * This file is part of the Symfony package.
  *
- * (c) 2012-2018 Justin Hileman
+ * (c) Fabien Potencier <fabien@symfony.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Psy\Exception;
+namespace Symfony\Component\Console\Exception;
 
 /**
- * A RuntimeException for Psy.
+ * @author Jérôme Tamarelle <jerome@tamarelle.net>
  */
-class RuntimeException extends \RuntimeException implements Exception
+class RuntimeException extends \RuntimeException implements ExceptionInterface
 {
-    private $rawMessage;
-
-    /**
-     * Make this bad boy.
-     *
-     * @param string     $message  (default: "")
-     * @param int        $code     (default: 0)
-     * @param \Exception $previous (default: null)
-     */
-    public function __construct($message = '', $code = 0, \Exception $previous = null)
-    {
-        $this->rawMessage = $message;
-        parent::__construct($message, $code, $previous);
-    }
-
-    /**
-     * Return a raw (unformatted) version of the error message.
-     *
-     * @return string
-     */
-    public function getRawMessage()
-    {
-        return $this->rawMessage;
-    }
 }
