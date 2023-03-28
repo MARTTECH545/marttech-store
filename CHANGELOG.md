@@ -1,127 +1,340 @@
 # Change Log
 
-## 1.2.5 (XXXX-XX-XX)
 
-## 1.2.4 (2019-09-30)
+All notable changes to this project will be documented in this file.
 
-* Fix a bug introduced with previous release, for empty method definition lists (#1009)
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 1.2.3 (2019-08-07)
 
-* Allow mocking classes that have allows and expects methods (#868)
-* Allow passing thru __call method in all mock types (experimental) (#969)
-* Add support for `!` to blacklist methods (#959)
-* Added `withSomeOfArgs` to partial match a list of args (#967)
-* Fix chained demeter calls with type hint (#956)
+## [Unreleased]
 
-## 1.2.2 (2019-02-13)
 
-* Fix a BC breaking change for PHP 5.6/PHPUnit 5.7.27 (#947) 
+## [3.2.1] - 2019-02-07
 
-## 1.2.1 (2019-02-07)
+### Changed
 
-* Support for PHPUnit 8 (#942)
-* Allow mocking static methods called on instance (#938)
+- `Money::allocate` now maintains keys of ratios array
+- All parsers now emit a deprecation warning when passing currency as string
 
-## 1.2.0 (2018-10-02)
+### Fixed
 
-* Starts counting default expectations towards count (#910)
-* Adds workaround for some HHVM return types (#909)
-* Adds PhpStorm metadata support for autocomplete etc (#904)
-* Further attempts to support multiple PHPUnit versions (#903)
-* Allows setting constructor expectations on instance mocks (#900)
-* Adds workaround for HHVM memoization decorator (#893)
-* Adds experimental support for callable spys (#712)
+- Docs fix : plus sign in numeric strings is allowed
+- Added ext-json as required extension
+- Throw exception in case of empty currency
+- BCMath calculator now uses scale parameters for addition and subtracting
+- Fixed allocation remainder bug
+- Added PHP 7.3 in test suite
+- Fixed dockerignore to ignore Dockerfile
+- Fixed Bitcoin parsing bug when using trailing zeros
 
-## 1.1.0 (2018-05-08)
 
-* Allows use of string method names in allows and expects (#794)
-* Finalises allows and expects syntax in API (#799)
-* Search for handlers in a case instensitive way (#801)
-* Deprecate allowMockingMethodsUnnecessarily (#808)
-* Fix risky tests (#769)
-* Fix namespace in TestListener (#812)
-* Fixed conflicting mock names (#813)
-* Clean elses (#819)
-* Updated protected method mocking exception message (#826)
-* Map of constants to mock (#829)
-* Simplify foreach with `in_array` function (#830)
-* Typehinted return value on Expectation#verify. (#832)
-* Fix shouldNotHaveReceived with HigherOrderMessage (#842)
-* Deprecates shouldDeferMissing (#839)
-* Adds support for return type hints in Demeter chains (#848)
-* Adds shouldNotReceive to composite expectation (#847)
-* Fix internal error when using --static-backup (#845)
-* Adds `andAnyOtherArgs` as an optional argument matcher (#860)
-* Fixes namespace qualifying with namespaced named mocks (#872)
-* Added possibility to add Constructor-Expections on hard dependencies, read: Mockery::mock('overload:...') (#781)
+## [3.2.0] - 2018-12-05
 
-## 1.0.0 (2017-09-06)
+### Added
 
-* Destructors (`__destruct`) are stubbed out where it makes sense
-* Allow passing a closure argument to `withArgs()` to validate multiple arguments at once. 
-* `Mockery\Adapter\Phpunit\TestListener` has been rewritten because it
-  incorrectly marked some tests as risky. It will no longer verify mock
-  expectations but instead check that tests do that themselves. PHPUnit 6 is
-  required if you want to use this fail safe.
-* Removes SPL Class Loader
-* Removed object recorder feature
-* Bumped minimum PHP version to 5.6
-* `andThrow` will now throw anything `\Throwable`
-* Adds `allows` and `expects` syntax
-* Adds optional global helpers for `mock`, `namedMock` and `spy`
-* Adds ability to create objects using traits
-* `Mockery\Matcher\MustBe` was deprecated
-* Marked `Mockery\MockInterface` as internal
-* Subset matcher matches recursively
-* BC BREAK - Spies return `null` by default from ignored (non-mocked) methods with nullable return type
-* Removed extracting getter methods of object instances
-* BC BREAK - Remove implicit regex matching when trying to match string arguments, introduce `\Mockery::pattern()` when regex matching is needed
-* Fix Mockery not getting closed in cases of failing test cases
-* Fix Mockery not setting properties on overloaded instance mocks
-* BC BREAK - Fix Mockery not trying default expectations if there is any concrete expectation
-* BC BREAK - Mockery's PHPUnit integration will mark a test as risky if it
-  thinks one it's exceptions has been swallowed in PHPUnit > 5.7.6. Use `$e->dismiss()` to dismiss.
- 
-## 0.9.4 (XXXX-XX-XX)
+- [Exchanger](https://github.com/florianv/exchanger) exchange
+- Generated static factory to help IDEs understand code like `Money::EUR(500)`
+- Aggregation functions (min, max, avg, sum)
 
-* `shouldIgnoreMissing` will respect global `allowMockingNonExistentMethods`
-  config
-* Some support for variadic parameters
-* Hamcrest is now a required dependency
-* Instance mocks now respect `shouldIgnoreMissing` call on control instance
-* This will be the *last version to support PHP 5.3*
-* Added `Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration` trait
-* Added `makePartial` to `Mockery\MockInterface` as it was missing
+### Changed
 
-## 0.9.3 (2014-12-22)
+- `Money::add` and `Money::subtract` now accept variadic arguments
 
-* Added a basic spy implementation
-* Added `Mockery\Adapter\Phpunit\MockeryTestCase` for more reliable PHPUnit
-  integration
+### Fixed
 
-## 0.9.2 (2014-09-03)
+- Division causing unnecessary fractional parts
+- Numeric comparison for negative numbers
 
-* Some workarounds for the serialisation problems created by changes to PHP in 5.5.13, 5.4.29,
-  5.6.
-* Demeter chains attempt to reuse doubles as they see fit, so for foo->bar and
-  foo->baz, we'll attempt to use the same foo
 
-## 0.9.1 (2014-05-02)
+## [3.1.3] - 2018-02-16
 
-* Allow specifying consecutive exceptions to be thrown with `andThrowExceptions`
-* Allow specifying methods which can be mocked when using
-  `Mockery\Configuration::allowMockingNonExistentMethods(false)` with
-  `Mockery\MockInterface::shouldAllowMockingMethod($methodName)`
-* Added andReturnSelf method: `$mock->shouldReceive("foo")->andReturnSelf()`
-* `shouldIgnoreMissing` now takes an optional value that will be return instead
-  of null, e.g. `$mock->shouldIgnoreMissing($mock)`
+### Fixed
 
-## 0.9.0 (2014-02-05)
+- Allocation when the amount is smaller than the number of ratios
 
-* Allow mocking classes with final __wakeup() method
-* Quick definitions are now always `byDefault`
-* Allow mocking of protected methods with `shouldAllowMockingProtectedMethods`
-* Support official Hamcrest package
-* Generator completely rewritten
-* Easily create named mocks with namedMock
+
+## [3.1.2] - 2018-02-16
+
+### Added
+
+- `Number::fromNumber` to be used when the actual type is not known
+
+### Changed
+
+- Refactored `Number` usage to make the code cleaner and use less casting
+
+### Fixed
+
+- Float cast to string issue on certain locales
+
+
+## [3.1.1] - 2018-01-19
+
+### Fixed
+
+- Float cast to string issue on certain locales
+- Deal with numbers represented with E-XX
+
+
+## [3.1.0] - 2018-01-10
+
+### Added
+
+- CurrencyList to instantiate in-memory currencies
+- modulus method to Money
+- ratioOf method to Money
+- Comparator for easier testing Money object with PHPUnit
+- IntlLocalizedDecimalParser and IntlLocalizedDecimalFormatter
+
+### Changed
+
+- `MoneyParser::parse` method now expects a Currency object
+- Dropped PHP 5.5
+
+### Deprecated
+
+- Passing currency code as string to `MoneyParser::parse`
+
+### Fixed
+
+- Do not allocate remainder to a ratio of zero
+- Conversion result is always 0 when subunit difference is large enough
+- Unexpected result when converting small Bitcoin amounts
+- Fixed StyleCI being too aggressive
+
+
+## [3.0.9] - 2017-11-05
+
+### Fixed
+
+- Bitcoin currency symbol
+
+
+## [3.0.8] - 2017-10-03
+
+### Fixed
+
+- Rounding issue in Number class.
+- Reduce composer package file size by leaving out docs and logo.
+- Missing Travis tests for PHP 7.2.
+
+
+## [3.0.7] - 2017-08-07
+
+### Changed
+
+- Currencies
+
+
+## [3.0.6] - 2017-07-25
+
+### Added
+
+- IndirectExchange: a way to get an exchange rate through a minimal set of intermediate conversions.
+
+### Fixed
+
+- Tests for HHVM
+- Incorrect documentation on Bitcoin parser
+
+
+## [3.0.5] - 2017-04-26
+
+### Added
+
+- numericCodeFor method to ISOCurrencies
+
+
+## [3.0.4] - 2017-04-21
+
+### Added
+
+- Negative method
+
+### Changed
+
+- Updated ISO Currencies
+- Removed old Belarusian ruble from ISOCurrencies (BYR)
+
+### Fixed
+
+- ISOCurrencies will no longer have a blank currency
+- Double symbol when formatting negative Bitcoin amounts
+
+
+## [3.0.3] - 2017-03-22
+
+### Fixed
+
+- Parsing empty strings and number starting or ending with a decimal point for DecimalMoneyParser
+- Parsing zero for DecimalMoneyParser
+- Multiplying and dividing with a locale that use commas as separator
+
+## [3.0.2] - 2017-03-11
+
+### Fixed
+
+- BCMath / GMP: comparing values smaller than one
+- GMP: multiplying with zero
+- ISOCurrencies: minor refactoring, remove duplication of code
+
+
+## [3.0.1] - 2017-02-14
+
+### Added
+
+- Reversed Currencies Exchange to try resolving reverse of a currency pair
+- Documentation on allowed integer(ish) values when constructing Money
+
+### Fixed
+
+- Passing integer validation when chunk started with a dash
+- Passing integer validation when the fractional part started with a dash
+- Formatting problem for Bitcoin currency with small amounts in PHP < 7.0
+- Money constructed from a string with fractional zeroes equals to a Money constructed without the fractional part (eg. `'5.00'` and `'5'`)
+
+
+## [3.0.0] - 2016-10-26
+
+### Added
+
+- DecimalMoneyFormatter: returns locale-independent raw decimal string
+
+### Changed
+
+- **[BC break]** Replaced StringToUnitsParser with DecimalMoneyParser
+- **[BC break]** Moved `Money\Exception\Exception` to `Money\Exception`
+- **[BC break]** UnkownCurrencyException is now DomainException instead of RuntimeException
+- **[Doctrine break]** In `Currency` the private variable `name` was renamed to `code`, which could break your Doctrine mapping if you are using embeddables or any other Reflection related implementation.
+
+
+## [3.0.0-beta.3] - 2016-10-04
+
+### Added
+
+- FixedExchange: returns fixed exchange rates based on a list (array)
+
+### Changed
+
+- **[BC break]** Convert method now moved to its own class: Converter
+- **[BC break]** Exchange had one method getCurrencyPair which is now renamed to quote
+- Minor documentation issues
+
+### Fixed
+
+- Integer detection when the number overflows the integer type and contains zeros
+- Rounding numbers containg trailing zeros
+- Converting Money to currency with different number of subunits
+
+
+## [3.0.0-beta.2] - 2016-08-03
+
+### Added
+
+- PHP Spec tests
+- absolute method to Money and Calculator
+- subunitFor method to Currencies
+- Currencies now extends IteratorAggregate
+- Library exceptions now implement a common interface
+- Formatter and Parser implementation are now rounding half up
+
+### Changed
+
+- **[BC break]** Dropped PHP 5.4 support
+- **[BC break]** Intl and Bitcoin formatters and parsers now require Currencies
+- ISOCurrencies now uses moneyphp/iso-currencies as currency data source
+
+### Fixed
+
+- Documentation to be inline with upcoming version 3
+- Rounding issues in calculators with negative numbers
+- Formatting and parser issues for amounts and numbers with a trailing zero
+- Improved many exception messages
+- Registration of own Calculator implementations
+
+
+## [3.0.0-beta] - 2016-03-01
+
+### Added
+
+- Bitcoin parser and formatter
+- Also checking tests folder for StyleCI
+
+### Fixed
+
+- Currencies are now included in the repo
+- Currency list generation moved to dev dependency: reduces repo size
+- BC Math calculator adding and subtracting failed when bcscale was set
+- Parsing zero for StringToUnitsParser
+
+
+## 3.0.0-alpha - 2016-02-04
+
+### Added
+
+- Currency repositories (ISO currencies included)
+- Money exchange (including [Swap](https://github.com/florianv/swap) implementation)
+- Money formatting (including intl formatter)
+- Money parsing (including intl parser)
+- Big integer support utilizing different, transparent calculation logic upon availability (bcmath, gmp, plain php)
+- Money and Currency implements JsonSerializable
+- Rounding up and down
+- Allocation to N targets
+
+### Changed
+
+- **[BC break]** Money::getAmount() returns a string instead of an int value
+- **[BC break]** Moved stringToUnits to StringToUnitsParser parser
+- Library requires at least PHP 5.4
+- Library uses PSR-4
+
+### Fixed
+
+- Integer overflow
+
+### Removed
+
+- **[BC break]** UnkownCurrency exception
+- **[BC break]** Currency list is now provided by [umpirsky/currency-list](https://github.com/umpirsky/currency-list/)
+- **[BC break]** RoundingMode class
+- **[BC break]** Announced deprecations are removed (Currency::getName, CurrencyPair::getRatio, Money::getUnits)
+
+
+## Pre 3.0
+
+- 2015-03-23 Minimum php version is now 5.4
+- 2015-03-23 JsonSerializable
+- (... missing changelog because who remembers to document stuff anyway?)
+- 2014-03-22 Removed \Money\InvalidArgumentException in favour of plain old InvalidArgumentException
+- 2014-03-22 Introduce RoundingMode object, used to specify desired rounding
+- 2014-03-22 Introduced RoundingMode backwards compatible API changes to Money::multiply and Money::divide
+- 2014-03-22 Allow RoundingMode to be specified when converting currencies
+- 2014-03-22 CurrencyPair has an equals() method
+- 2013-10-13 Base currency and counter currency in CurrencyPair named correctly.
+- 2013-01-08 Removed the Doctrine2\MoneyType helper, to be replaced by something better in the future. It's available
+             at https://gist.github.com/4485025 in case you need it.
+- 2013-01-08 Use vendor/autoload.php instead of lib/bootstrap.php (or use PSR-0 autolaoding)
+- 2012-12-10 Renamed Money::getUnits() to Money::getAmount()
+
+
+[Unreleased]: https://github.com/moneyphp/money/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/moneyphp/money/compare/v3.1.3...v3.2.0
+[3.1.3]: https://github.com/moneyphp/money/compare/v3.1.2...v3.1.3
+[3.1.2]: https://github.com/moneyphp/money/compare/v3.1.1...v3.1.2
+[3.1.1]: https://github.com/moneyphp/money/compare/v3.1.0...v3.1.1
+[3.1.0]: https://github.com/moneyphp/money/compare/v3.0.9...v3.1.0
+[3.0.9]: https://github.com/moneyphp/money/compare/v3.0.8...v3.0.9
+[3.0.8]: https://github.com/moneyphp/money/compare/v3.0.7...v3.0.8
+[3.0.7]: https://github.com/moneyphp/money/compare/v3.0.6...v3.0.7
+[3.0.6]: https://github.com/moneyphp/money/compare/v3.0.5...v3.0.6
+[3.0.5]: https://github.com/moneyphp/money/compare/v3.0.4...v3.0.5
+[3.0.4]: https://github.com/moneyphp/money/compare/v3.0.3...v3.0.4
+[3.0.3]: https://github.com/moneyphp/money/compare/v3.0.2...v3.0.3
+[3.0.2]: https://github.com/moneyphp/money/compare/v3.0.1...v3.0.2
+[3.0.1]: https://github.com/moneyphp/money/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/moneyphp/money/compare/v3.0.0-beta.4...v3.0.0
+[3.0.0-beta4]: https://github.com/moneyphp/money/compare/v3.0.0-beta.3...v3.0.0-beta.4
+[3.0.0-beta3]: https://github.com/moneyphp/money/compare/v3.0.0-beta.2...v3.0.0-beta.3
+[3.0.0-beta2]: https://github.com/moneyphp/money/compare/v3.0.0-beta...v3.0.0-beta.2
+[3.0.0-beta]: https://github.com/moneyphp/money/compare/v3.0.0-alpha...v3.0.0-beta
