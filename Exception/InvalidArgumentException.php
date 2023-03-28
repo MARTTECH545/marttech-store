@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Intl\Exception;
+namespace Symfony\Component\Mime\Exception;
 
 /**
- * InvalidArgumentException for the Intl component.
+ * @author Fabien Potencier <fabien@symfony.com>
  *
- * @author Bernhard Schussek <bschussek@gmail.com>
+ * @experimental in 4.3
  */
 class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Intl\Exception;
+namespace Symfony\Component\Mime\Exception;
 
 /**
- * Base ExceptionInterface for the Intl component.
+ * @author Fabien Potencier <fabien@symfony.com>
  *
- * @author Bernhard Schussek <bschussek@gmail.com>
+ * @experimental in 4.3
  */
 interface ExceptionInterface extends \Throwable
 {

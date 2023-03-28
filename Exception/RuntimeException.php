@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Intl\Exception;
+namespace Symfony\Component\Mime\Exception;
 
 /**
- * RuntimeException for the Intl component.
+ * @author Fabien Potencier <fabien@symfony.com>
  *
- * @author Bernhard Schussek <bschussek@gmail.com>
+ * @experimental in 4.3
  */
 class RuntimeException extends \RuntimeException implements ExceptionInterface
 {
