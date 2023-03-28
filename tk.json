@@ -1,641 +1,385 @@
 {
     "Version": "36",
     "Names": {
-        "AED": [
-            "AED",
-            "BAE dirhemi"
-        ],
-        "AFN": [
-            "AFN",
-            "Owgan afganisi"
-        ],
-        "ALL": [
-            "ALL",
-            "Alban leki"
-        ],
-        "AMD": [
-            "AMD",
-            "Ermeni dramy"
-        ],
-        "ANG": [
-            "ANG",
-            "Niderland antil guldeni"
-        ],
-        "AOA": [
-            "AOA",
-            "Angola kwanzasy"
-        ],
-        "ARS": [
-            "ARS",
-            "Argentin pesosy"
-        ],
-        "AUD": [
-            "A$",
-            "Awstraliýa dollary"
-        ],
-        "AWG": [
-            "AWG",
-            "Aruba florini"
-        ],
-        "AZN": [
-            "AZN",
-            "Azerbaýjan manady"
-        ],
-        "BAM": [
-            "BAM",
-            "Konwertirlenýän Bosniýa we Gersegowina markasy"
-        ],
-        "BBD": [
-            "BBD",
-            "Barbados dollary"
-        ],
-        "BDT": [
-            "BDT",
-            "Bangladeş takasy"
-        ],
-        "BGN": [
-            "BGN",
-            "Bolgar lewi"
-        ],
-        "BHD": [
-            "BHD",
-            "Bahreýn dinary"
-        ],
-        "BIF": [
-            "BIF",
-            "Burundi franky"
-        ],
-        "BMD": [
-            "BMD",
-            "Bermuda dollary"
-        ],
-        "BND": [
-            "BND",
-            "Bruneý dollary"
-        ],
-        "BOB": [
-            "BOB",
-            "Boliwiýa boliwianosy"
-        ],
-        "BRL": [
-            "R$",
-            "Brazil realy"
-        ],
-        "BSD": [
-            "BSD",
-            "Bagama dollary"
-        ],
-        "BTN": [
-            "BTN",
-            "Butan ngultrumy"
-        ],
-        "BWP": [
-            "BWP",
-            "Botswana pulasy"
-        ],
-        "BYN": [
-            "BYN",
-            "Belarus rubly"
-        ],
-        "BYR": [
-            "BYR",
-            "Belorus rubly (2000–2016)"
-        ],
-        "BZD": [
-            "BZD",
-            "Beliz dollary"
-        ],
-        "CAD": [
-            "CA$",
-            "Kanada dollary"
-        ],
-        "CDF": [
-            "CDF",
-            "Kongo franky"
-        ],
-        "CHF": [
-            "CHF",
-            "Şweýsar franky"
-        ],
-        "CLP": [
-            "CLP",
-            "Çili pesosy"
-        ],
-        "CNH": [
-            "CNH",
-            "Hytaý ýuany (ofşor)"
-        ],
-        "CNY": [
-            "CN¥",
-            "Hytaý ýuany"
-        ],
-        "COP": [
-            "COP",
-            "Kolumbiýa pesosy"
-        ],
-        "CRC": [
-            "CRC",
-            "Kosta-Rika kolony"
-        ],
-        "CUC": [
-            "CUC",
-            "Konwertirlenýän kuba pesosy"
-        ],
-        "CUP": [
-            "CUP",
-            "Kuba pesosy"
-        ],
-        "CVE": [
-            "CVE",
-            "Kabo-Werde eskudosy"
-        ],
-        "CZK": [
-            "CZK",
-            "Çeh kronasy"
-        ],
-        "DJF": [
-            "DJF",
-            "Jibuti franky"
-        ],
-        "DKK": [
-            "DKK",
-            "Daniýa kronasy"
-        ],
-        "DOP": [
-            "DOP",
-            "Dominikan pesosy"
-        ],
-        "DZD": [
-            "DZD",
-            "Alžir dinary"
-        ],
-        "EGP": [
-            "EGP",
-            "Müsür funty"
-        ],
-        "ERN": [
-            "ERN",
-            "Eritreýa nakfasy"
-        ],
-        "ETB": [
-            "ETB",
-            "Efiopiýa byry"
-        ],
-        "EUR": [
-            "EUR",
-            "Ýewro"
-        ],
-        "FJD": [
-            "FJD",
-            "Fiji dollary"
-        ],
-        "FKP": [
-            "FKP",
-            "Folklend adalarynyň funty"
-        ],
-        "GBP": [
-            "GBP",
-            "Britan funt sterlingi"
-        ],
-        "GEL": [
-            "GEL",
-            "Gruzin larisi"
-        ],
-        "GHS": [
-            "GHS",
-            "Gano sedisi"
-        ],
-        "GIP": [
-            "GIP",
-            "Gibraltar funty"
-        ],
-        "GMD": [
-            "GMD",
-            "Gambiýa dalasisi"
-        ],
-        "GNF": [
-            "GNF",
-            "Gwineý franky"
-        ],
-        "GTQ": [
-            "GTQ",
-            "Gwatemala ketsaly"
-        ],
-        "GYD": [
-            "GYD",
-            "Gaýana dollary"
-        ],
-        "HKD": [
-            "HK$",
-            "Gonkong dollary"
-        ],
-        "HNL": [
-            "HNL",
-            "Gonduras lempirasy"
-        ],
-        "HRK": [
-            "HRK",
-            "Horwat kunasy"
-        ],
-        "HTG": [
-            "HTG",
-            "Gaiti gurdy"
-        ],
-        "HUF": [
-            "HUF",
-            "Wenger forinti"
-        ],
-        "IDR": [
-            "IDR",
-            "Indoneziýa rupiýasy"
-        ],
-        "ILS": [
-            "₪",
-            "Täze Ysraýyl şekeli"
-        ],
-        "INR": [
-            "₹",
-            "Hindi rupiýasy"
-        ],
-        "IQD": [
-            "IQD",
-            "Yrak dinary"
-        ],
-        "IRR": [
-            "IRR",
-            "Eýran rialy"
-        ],
-        "ISK": [
-            "ISK",
-            "Islandiýa kronasy"
-        ],
-        "JMD": [
-            "JMD",
-            "Ýamaýka dollary"
-        ],
-        "JOD": [
-            "JOD",
-            "Iordan dinary"
-        ],
-        "JPY": [
-            "JP¥",
-            "Ýapon ýeni"
-        ],
-        "KES": [
-            "KES",
-            "Keniýa şillingi"
-        ],
-        "KGS": [
-            "KGS",
-            "Gyrgyz somy"
-        ],
-        "KHR": [
-            "KHR",
-            "Kamboja riýeli"
-        ],
-        "KMF": [
-            "KMF",
-            "Komor adalarynyň franky"
-        ],
-        "KPW": [
-            "KPW",
-            "Demirgazyk Koreý wony"
-        ],
-        "KRW": [
-            "₩",
-            "Günorta Koreý wony"
-        ],
-        "KWD": [
-            "KWD",
-            "Kuweýt dinary"
-        ],
-        "KYD": [
-            "KYD",
-            "Kaýman adalarynyň dollary"
-        ],
-        "KZT": [
-            "KZT",
-            "Gazak teňňesi"
-        ],
-        "LAK": [
-            "LAK",
-            "Laos kipi"
-        ],
-        "LBP": [
-            "LBP",
-            "Liwan funty"
-        ],
-        "LKR": [
-            "LKR",
-            "Şri-Lanka rupiýasy"
-        ],
-        "LRD": [
-            "LRD",
-            "Liberiýa dollary"
-        ],
-        "LYD": [
-            "LYD",
-            "Liwiýa dinary"
-        ],
-        "MAD": [
-            "MAD",
-            "Marokko dirhamy"
-        ],
-        "MDL": [
-            "MDL",
-            "Moldaw leýi"
-        ],
-        "MGA": [
-            "MGA",
-            "Malagasiý ariarisi"
-        ],
-        "MKD": [
-            "MKD",
-            "Makedon dinary"
-        ],
-        "MMK": [
-            "MMK",
-            "Mýanma kýaty"
-        ],
-        "MNT": [
-            "MNT",
-            "Mongol tugrigi"
-        ],
-        "MOP": [
-            "MOP",
-            "Makao patakasy"
-        ],
-        "MRO": [
-            "MRO",
-            "Mawritan ugiýasy (1973–2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "Mawritan ugiýasy"
-        ],
-        "MUR": [
-            "MUR",
-            "Mawrikiý rupiýasy"
-        ],
-        "MVR": [
-            "MVR",
-            "Maldiw rufiýasy"
-        ],
-        "MWK": [
-            "MWK",
-            "Malawi kwaçasy"
-        ],
-        "MXN": [
-            "MX$",
-            "Meksikan pesosy"
-        ],
-        "MYR": [
-            "MYR",
-            "Malaýziýa ringgiti"
-        ],
-        "MZN": [
-            "MZN",
-            "Mozambik metikaly"
-        ],
-        "NAD": [
-            "NAD",
-            "Namibiýa dollary"
-        ],
-        "NGN": [
-            "NGN",
-            "Nigeriýa naýrasy"
-        ],
-        "NIO": [
-            "NIO",
-            "Nikaragua kordobasy"
-        ],
-        "NOK": [
-            "NOK",
-            "Norwegiýa kronasy"
-        ],
-        "NPR": [
-            "NPR",
-            "Nepal rupiýasy"
-        ],
-        "NZD": [
-            "NZ$",
-            "Täze Zelandiýa dollary"
-        ],
-        "OMR": [
-            "OMR",
-            "Oman rialy"
-        ],
-        "PAB": [
-            "PAB",
-            "Panama balboasy"
-        ],
-        "PEN": [
-            "PEN",
-            "Peru soly"
-        ],
-        "PGK": [
-            "PGK",
-            "Papua - Täze Gwineýa kinasy"
-        ],
-        "PHP": [
-            "PHP",
-            "Filippin pesosy"
-        ],
-        "PKR": [
-            "PKR",
-            "Päkistan rupiýasy"
-        ],
-        "PLN": [
-            "PLN",
-            "Polýak zlotysy"
-        ],
-        "PYG": [
-            "PYG",
-            "Paragwaý guaranisi"
-        ],
-        "QAR": [
-            "QAR",
-            "Katar rialy"
-        ],
-        "RON": [
-            "RON",
-            "Rumyn leýi"
-        ],
-        "RSD": [
-            "RSD",
-            "Serb dinary"
-        ],
-        "RUB": [
-            "RUB",
-            "Rus rubly"
-        ],
-        "RWF": [
-            "RWF",
-            "Ruanda franky"
-        ],
-        "SAR": [
-            "SAR",
-            "Saud rialy"
-        ],
-        "SBD": [
-            "SBD",
-            "Solomon adalarynyň dollary"
-        ],
-        "SCR": [
-            "SCR",
-            "Seýşel rupiýasy"
-        ],
-        "SDG": [
-            "SDG",
-            "Sudan funty"
-        ],
-        "SEK": [
-            "SEK",
-            "Şwed kronasy"
-        ],
-        "SGD": [
-            "SGD",
-            "Singapur dollary"
-        ],
-        "SHP": [
-            "SHP",
-            "Keramatly Ýelena adasynyň funty"
-        ],
-        "SLL": [
-            "SLL",
-            "Sýerra-Leone leony"
-        ],
-        "SOS": [
-            "SOS",
-            "Somali şillingi"
-        ],
-        "SRD": [
-            "SRD",
-            "Surinam dollary"
-        ],
-        "SSP": [
-            "SSP",
-            "Günorta Sudan funty"
-        ],
-        "STD": [
-            "STD",
-            "San-Tome we Prinsipi dobrasy (1977–2017)"
-        ],
-        "STN": [
-            "STN",
-            "San-Tome we Prinsipi dobrasy"
-        ],
-        "SYP": [
-            "SYP",
-            "Siriýa funty"
-        ],
-        "SZL": [
-            "SZL",
-            "Swazi lilangeni"
-        ],
-        "THB": [
-            "THB",
-            "Taýland baty"
-        ],
-        "TJS": [
-            "TJS",
-            "Täjik somonisi"
-        ],
-        "TMT": [
-            "TMT",
-            "Türkmen manady"
-        ],
-        "TND": [
-            "TND",
-            "Tunis dinary"
-        ],
-        "TOP": [
-            "TOP",
-            "Tonga paangasy"
-        ],
-        "TRY": [
-            "TRY",
-            "Türk lirasy"
-        ],
-        "TTD": [
-            "TTD",
-            "Trininad we Tobago dollary"
-        ],
-        "TWD": [
-            "NT$",
-            "Täze Taýwan dollary"
-        ],
-        "TZS": [
-            "TZS",
-            "Tanzaniýa şillingi"
-        ],
-        "UAH": [
-            "UAH",
-            "Ukrain griwnasy"
-        ],
-        "UGX": [
-            "UGX",
-            "Uganda şillingi"
-        ],
-        "USD": [
-            "US$",
-            "ABŞ dollary"
-        ],
-        "UYU": [
-            "UYU",
-            "Urugwaý pesosy"
-        ],
-        "UZS": [
-            "UZS",
-            "Özbek somy"
-        ],
-        "VEF": [
-            "VEF",
-            "Wenesuela boliwary (2008–2018)"
-        ],
-        "VES": [
-            "VES",
-            "Wenesuela boliwary"
-        ],
-        "VND": [
-            "₫",
-            "Wýetnam dongy"
-        ],
-        "VUV": [
-            "VUV",
-            "Wanuatu watusy"
-        ],
-        "WST": [
-            "WST",
-            "Samoa talasy"
-        ],
-        "XAF": [
-            "FCFA",
-            "KFA BEAC franky"
-        ],
-        "XCD": [
-            "EC$",
-            "Gündogar karib dollary"
-        ],
-        "XOF": [
-            "CFA",
-            "KFA BCEAO franky"
-        ],
-        "XPF": [
-            "CFPF",
-            "Fransuz ýuwaş umman franky"
-        ],
-        "YER": [
-            "YER",
-            "Ýemen rialy"
-        ],
-        "ZAR": [
-            "ZAR",
-            "Günorta Afrika rendi"
-        ],
-        "ZMW": [
-            "ZMW",
-            "Zambiýa kwaçasy"
-        ]
+        "aa": "afar dili",
+        "ab": "abhaz dili",
+        "ace": "açeh dili",
+        "ada": "adangme dili",
+        "ady": "adygeý dili",
+        "af": "afrikaans dili",
+        "agq": "ahem dili",
+        "ain": "aýn dili",
+        "ak": "akan dili",
+        "ale": "aleut dili",
+        "alt": "günorta Altaý dili",
+        "am": "amhar dili",
+        "an": "aragon dili",
+        "anp": "angika dili",
+        "ar": "arap dili",
+        "ar_001": "häzirki zaman standart arap dili",
+        "arn": "mapuçe dili",
+        "arp": "arapaho dili",
+        "as": "assam dili",
+        "asa": "asu dili",
+        "ast": "asturiý dili",
+        "av": "awar dili",
+        "awa": "awadhi dili",
+        "ay": "aýmara dili",
+        "az": "azerbaýjan dili",
+        "ba": "başgyrt dili",
+        "ban": "baliý dili",
+        "bas": "basaa dili",
+        "be": "belarus dili",
+        "bem": "bemba dili",
+        "bez": "bena dili",
+        "bg": "bolgar dili",
+        "bho": "bhojpuri dili",
+        "bi": "bislama dili",
+        "bin": "bini dili",
+        "bla": "siksika dili",
+        "bm": "bamana",
+        "bn": "bengal dili",
+        "bo": "tibet dili",
+        "br": "breton dili",
+        "brx": "bodo dili",
+        "bs": "boşnak dili",
+        "bug": "bugiý dili",
+        "byn": "blin dili",
+        "ca": "katalan dili",
+        "ccp": "çakma dili",
+        "ce": "çeçen dili",
+        "ceb": "sebuan dili",
+        "cgg": "kiga",
+        "ch": "çamorro",
+        "chk": "çuuk dili",
+        "chm": "mariý dili",
+        "cho": "çokto",
+        "chr": "çeroki",
+        "chy": "şaýenn dili",
+        "ckb": "merkezi kürt dili",
+        "co": "korsikan dili",
+        "crs": "seselwa kreole-fransuz dili",
+        "cs": "çeh dili",
+        "cu": "buthana slaw dili",
+        "cv": "çuwaş dili",
+        "cy": "walliý dili",
+        "da": "daniýa dili",
+        "dak": "dakota dili",
+        "dar": "dargi dili",
+        "dav": "taita dili",
+        "de": "nemes dili",
+        "de_CH": "ýokarky nemes dili (Şweýsariýa)",
+        "dgr": "dogrib dili",
+        "dje": "zarma dili",
+        "dsb": "aşaky lužits dili",
+        "dua": "duala dili",
+        "dv": "diwehi dili",
+        "dyo": "ýola-fonýi dili",
+        "dz": "dzong-ke dili",
+        "dzg": "daza dili",
+        "ebu": "embu dili",
+        "ee": "ewe dili",
+        "efi": "efik dili",
+        "eka": "ekajuk dili",
+        "el": "grek dili",
+        "en": "iňlis dili",
+        "en_GB": "iňlis dili (Beýik Britaniýa)",
+        "en_US": "iňlis dili (Amerika)",
+        "eo": "esperanto dili",
+        "es": "ispan dili",
+        "es_ES": "ispan dili (Ýewropa)",
+        "et": "eston dili",
+        "eu": "bask dili",
+        "ewo": "ewondo dili",
+        "fa": "pars dili",
+        "ff": "fula dili",
+        "fi": "fin dili",
+        "fil": "filippin dili",
+        "fj": "fiji dili",
+        "fo": "farer dili",
+        "fon": "fon dili",
+        "fr": "fransuz dili",
+        "fur": "friul dili",
+        "fy": "günbatar friz dili",
+        "ga": "irland dili",
+        "gaa": "ga dili",
+        "gd": "şotland kelt dili",
+        "gez": "geez dili",
+        "gil": "gilbert dili",
+        "gl": "galisiý dili",
+        "gn": "guarani dili",
+        "gor": "gorontalo dili",
+        "gsw": "nemes dili (Şweýsariýa)",
+        "gu": "gujarati dili",
+        "guz": "gusii dili",
+        "gv": "men dili",
+        "gwi": "gwiçin dili",
+        "ha": "hausa dili",
+        "haw": "gawaý dili",
+        "he": "ýewreý dili",
+        "hi": "hindi dili",
+        "hil": "hiligaýnon dili",
+        "hmn": "hmong dili",
+        "hr": "horwat dili",
+        "hsb": "ýokarky lužits dili",
+        "ht": "gaiti kreol dili",
+        "hu": "wenger dili",
+        "hup": "hupa",
+        "hy": "ermeni dili",
+        "hz": "gerero dili",
+        "ia": "interlingwa dili",
+        "iba": "iban dili",
+        "ibb": "ibibio dili",
+        "id": "indonez dili",
+        "ig": "igbo dili",
+        "ii": "syçuan-i dili",
+        "ilo": "iloko dili",
+        "inh": "inguş dili",
+        "io": "ido dili",
+        "is": "island dili",
+        "it": "italýan dili",
+        "iu": "inuktitut dili",
+        "ja": "ýapon dili",
+        "jbo": "lojban dili",
+        "jgo": "ngomba dili",
+        "jmc": "maçame dili",
+        "jv": "ýawa dili",
+        "ka": "gruzin dili",
+        "kab": "kabil dili",
+        "kac": "kaçin dili",
+        "kaj": "ju dili",
+        "kam": "kamba dili",
+        "kbd": "kabardin dili",
+        "kcg": "tiap dili",
+        "kde": "makonde dili",
+        "kea": "kabuwerdianu dili",
+        "kfo": "koro dili",
+        "kha": "khasi dili",
+        "khq": "koýra-Çini dili",
+        "ki": "kikuýu dili",
+        "kj": "kwanýama dili",
+        "kk": "gazak dili",
+        "kkj": "kako dili",
+        "kl": "grenland dili",
+        "kln": "kalenjin dili",
+        "km": "khmer dili",
+        "kmb": "kimbundu dili",
+        "kn": "kannada dili",
+        "ko": "koreý dili",
+        "kok": "konkani dili",
+        "kpe": "kpelle dili",
+        "kr": "kanuri",
+        "krc": "karaçaý-balkar dili",
+        "krl": "karel dili",
+        "kru": "kuruh dili",
+        "ks": "kaşmiri dili",
+        "ksb": "şambala dili",
+        "ksf": "bafia dili",
+        "ksh": "keln dili",
+        "ku": "kürt dili",
+        "kum": "kumyk dili",
+        "kv": "komi dili",
+        "kw": "korn dili",
+        "ky": "gyrgyz dili",
+        "la": "latyn dili",
+        "lad": "ladino dili",
+        "lag": "langi dili",
+        "lb": "lýuksemburg dili",
+        "lez": "lezgin dili",
+        "lg": "ganda dili",
+        "li": "limburg dili",
+        "lkt": "lakota dili",
+        "ln": "lingala dili",
+        "lo": "laos dili",
+        "loz": "lozi dili",
+        "lrc": "demirgazyk luri dili",
+        "lt": "litwa dili",
+        "lu": "luba-katanga dili",
+        "lua": "luba-Lulua dili",
+        "lun": "lunda dili",
+        "luo": "luo dili",
+        "lus": "mizo dili",
+        "luy": "luýýa dili",
+        "lv": "latyş dili",
+        "mad": "madur dili",
+        "mag": "magahi dili",
+        "mai": "maýthili dili",
+        "mak": "makasar dili",
+        "mas": "masai dili",
+        "mdf": "mokşa dili",
+        "men": "mende dili",
+        "mer": "meru dili",
+        "mfe": "morisýen dili",
+        "mg": "malagasiý dili",
+        "mgh": "makuwa-mito dili",
+        "mgo": "meta dili",
+        "mh": "marşall dili",
+        "mi": "maori dili",
+        "mic": "mikmak dili",
+        "min": "minangkabau dili",
+        "mk": "makedon dili",
+        "ml": "malaýalam dili",
+        "mn": "mongol dili",
+        "mni": "manipuri dili",
+        "moh": "mogauk dili",
+        "mos": "mossi dili",
+        "mr": "marathi dili",
+        "ms": "malaý dili",
+        "mt": "malta dili",
+        "mua": "mundang dili",
+        "mus": "krik dili",
+        "mwl": "mirand dili",
+        "my": "birma dili",
+        "myv": "erzýan dili",
+        "mzn": "mazanderan dili",
+        "na": "nauru dili",
+        "nap": "neapolitan dili",
+        "naq": "nama dili",
+        "nb": "norwegiýa bukmol dili",
+        "nd": "demirgazyk ndebele dili",
+        "nds": "aşaky nemes dili",
+        "ne": "nepal dili",
+        "new": "newari dili",
+        "ng": "ndonga dili",
+        "nia": "nias dili",
+        "niu": "niue dili",
+        "nl": "niderland dili",
+        "nl_BE": "flamand dili",
+        "nmg": "kwasio dili",
+        "nn": "norwegiýa nýunorsk dili",
+        "nnh": "ngembun dili",
+        "nog": "nogaý dili",
+        "nqo": "nko dili",
+        "nr": "günorta ndebele dili",
+        "nso": "demirgazyk soto dili",
+        "nus": "nuer dili",
+        "nv": "nawaho dili",
+        "ny": "nýanja dili",
+        "nyn": "nýankole dili",
+        "oc": "oksitan dili",
+        "om": "oromo dili",
+        "or": "oriýa dili",
+        "os": "osetin dili",
+        "pa": "penjab dili",
+        "pag": "pangansinan dili",
+        "pam": "kapampangan dili",
+        "pap": "papýamento dili",
+        "pau": "palau dili",
+        "pcm": "nigeriý-pijin dili",
+        "pl": "polýak dili",
+        "prg": "prussiýa dili",
+        "ps": "peştun dili",
+        "pt": "portugal dili",
+        "pt_PT": "portugal dili (Ýewropa)",
+        "qu": "keçua dili",
+        "quc": "kiçe dili",
+        "rap": "rapanuý dili",
+        "rar": "kuk dili",
+        "rm": "retoroman dili",
+        "rn": "rundi dili",
+        "ro": "rumyn dili",
+        "ro_MD": "moldaw dili",
+        "rof": "rombo dili",
+        "root": "kök",
+        "ru": "rus dili",
+        "rup": "arumyn dili",
+        "rw": "kinýaruanda dili",
+        "rwk": "rwa dili",
+        "sa": "sanskrit dili",
+        "sad": "sandawe dili",
+        "sah": "ýakut dili",
+        "saq": "samburu dili",
+        "sat": "santali dili",
+        "sba": "ngambaý dili",
+        "sbp": "sangu dili",
+        "sc": "sardin dili",
+        "scn": "sisiliýa dili",
+        "sco": "şotland dili",
+        "sd": "sindhi dili",
+        "se": "demirgazyk saam dili",
+        "seh": "sena dili",
+        "ses": "koýraboro-senni dili",
+        "sg": "sango dili",
+        "shi": "tahelhit dili",
+        "shn": "şan dili",
+        "si": "singal dili",
+        "sk": "slowak dili",
+        "sl": "slowen dili",
+        "sm": "samoa dili",
+        "sma": "günorta saam dili",
+        "smj": "lule-saam dili",
+        "smn": "inari-saam dili",
+        "sms": "skolt-saam dili",
+        "sn": "şona dili",
+        "snk": "soninke dili",
+        "so": "somali dili",
+        "sq": "alban dili",
+        "sr": "serb dili",
+        "srn": "sranan-tongo dili",
+        "ss": "swati dili",
+        "ssy": "saho dili",
+        "st": "günorta soto dili",
+        "su": "sundan dili",
+        "suk": "sukuma dili",
+        "sv": "şwed dili",
+        "sw": "suahili dili",
+        "sw_CD": "kongo suahili dili",
+        "swb": "komor dili",
+        "syr": "siriýa dili",
+        "ta": "tamil dili",
+        "te": "telugu dili",
+        "tem": "temne dili",
+        "teo": "teso dili",
+        "tet": "tetum dili",
+        "tg": "täjik dili",
+        "th": "taý dili",
+        "ti": "tigrinýa dili",
+        "tig": "tigre dili",
+        "tk": "türkmen dili",
+        "tlh": "klingon dili",
+        "tn": "tswana dili",
+        "to": "tongan dili",
+        "tpi": "tok-pisin dili",
+        "tr": "türk dili",
+        "trv": "taroko dili",
+        "ts": "tsonga dili",
+        "tt": "tatar dili",
+        "tum": "tumbuka dili",
+        "tvl": "tuwalu dili",
+        "twq": "tasawak dili",
+        "ty": "taiti dili",
+        "tyv": "tuwa dili",
+        "tzm": "orta-atlas tamazight dili",
+        "udm": "udmurt dili",
+        "ug": "uýgur dili",
+        "uk": "ukrain dili",
+        "umb": "umbundu dili",
+        "ur": "urdu",
+        "uz": "özbek dili",
+        "vai": "wai dili",
+        "ve": "wenda dili",
+        "vi": "wýetnam dili",
+        "vo": "wolapýuk dili",
+        "vun": "wunýo dili",
+        "wa": "wallon dili",
+        "wae": "walzer dili",
+        "wal": "wolaýta dili",
+        "war": "waraý dili",
+        "wo": "wolof dili",
+        "xal": "galmyk dili",
+        "xh": "kosa dili",
+        "xog": "soga dili",
+        "yav": "ýangben dili",
+        "ybb": "ýemba dili",
+        "yi": "idiş dili",
+        "yo": "ýoruba dili",
+        "yue": "kanton dili",
+        "zgh": "standart Marokko tamazight dili",
+        "zh": "hytaý dili",
+        "zh_Hans": "ýönekeýleşdirilen hytaý dili",
+        "zh_Hant": "adaty hytaý dili",
+        "zu": "zulu dili",
+        "zun": "zuni dili",
+        "zza": "zazaki dili"
     }
 }
