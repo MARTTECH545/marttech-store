@@ -1,66 +1,79 @@
 {
-    "name": "monolog/monolog",
-    "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
-    "keywords": ["log", "logging", "psr-3"],
-    "homepage": "http://github.com/Seldaek/monolog",
+    "name": "nesbot/carbon",
     "type": "library",
+    "description": "An API extension for DateTime that supports 281 different languages.",
+    "keywords": [
+        "date",
+        "time",
+        "DateTime"
+    ],
+    "homepage": "http://carbon.nesbot.com",
+    "support": {
+        "issues": "https://github.com/briannesbitt/Carbon/issues",
+        "source": "https://github.com/briannesbitt/Carbon"
+    },
     "license": "MIT",
     "authors": [
         {
-            "name": "Jordi Boggiano",
-            "email": "j.boggiano@seld.be",
-            "homepage": "http://seld.be"
+            "name": "Brian Nesbitt",
+            "email": "brian@nesbot.com",
+            "homepage": "http://nesbot.com"
+        },
+        {
+            "name": "kylekatarnls",
+            "homepage": "http://github.com/kylekatarnls"
         }
     ],
+    "minimum-stability": "dev",
+    "bin": ["bin/carbon"],
     "require": {
-        "php": ">=5.3.0",
-        "psr/log": "~1.0"
+        "php": "^7.1.8 || ^8.0",
+        "ext-json": "*",
+        "symfony/translation": "^3.4 || ^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.5",
-        "graylog2/gelf-php": "~1.0",
-        "sentry/sentry": "^0.13",
-        "ruflin/elastica": ">=0.90 <3.0",
-        "doctrine/couchdb": "~1.0@dev",
-        "aws/aws-sdk-php": "^2.4.9 || ^3.0",
-        "php-amqplib/php-amqplib": "~2.4",
-        "swiftmailer/swiftmailer": "^5.3|^6.0",
-        "php-console/php-console": "^3.1.3",
-        "phpunit/phpunit-mock-objects": "2.3.0",
-        "jakub-onderka/php-parallel-lint": "0.9"
-    },
-    "_": "phpunit/phpunit-mock-objects required in 2.3.0 due to https://github.com/sebastianbergmann/phpunit-mock-objects/issues/223 - needs hhvm 3.8+ on travis",
-    "suggest": {
-        "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-        "sentry/sentry": "Allow sending log messages to a Sentry server",
-        "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-        "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-        "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
-        "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-        "ext-mongo": "Allow sending log messages to a MongoDB server",
-        "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
-        "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
-        "rollbar/rollbar": "Allow sending log messages to Rollbar",
-        "php-console/php-console": "Allow sending log messages to Google Chrome"
+        "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
+        "kylekatarnls/multi-tester": "^1.1",
+        "phpmd/phpmd": "dev-php-7.1-compatibility",
+        "phpstan/phpstan": "^0.11",
+        "phpunit/phpunit": "^7.5 || ^8.0",
+        "squizlabs/php_codesniffer": "^3.4"
     },
     "autoload": {
-        "psr-4": {"Monolog\\": "src/Monolog"}
+        "psr-4": {
+            "Carbon\\": "src/Carbon/"
+        }
     },
     "autoload-dev": {
-        "psr-4": {"Monolog\\": "tests/Monolog"}
-    },
-    "provide": {
-        "psr/log-implementation": "1.0.0"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0.x-dev"
+        "psr-4": {
+            "Tests\\": "tests/"
         }
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
     },
     "scripts": {
         "test": [
-            "parallel-lint . --exclude vendor --exclude src/Monolog/Handler/FormattableHandlerInterface.php  --exclude src/Monolog/Handler/FormattableHandlerTrait.php --exclude src/Monolog/Handler/ProcessableHandlerInterface.php --exclude src/Monolog/Handler/ProcessableHandlerTrait.php",
-            "phpunit"
-        ]
+            "@phpunit",
+            "@style-check"
+        ],
+        "style-check": [
+            "@phpcs",
+            "@phpstan",
+            "@phpmd"
+        ],
+        "phpunit": "phpunit --verbose",
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run",
+        "phpstan": "phpstan analyse --configuration phpstan.neon --level 3 src tests",
+        "phpmd": "phpmd src text /phpmd.xml",
+        "phpdoc": "php phpdoc.php"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Carbon\\Laravel\\ServiceProvider"
+            ]
+        }
     }
 }
