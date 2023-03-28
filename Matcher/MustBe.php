@@ -18,8 +18,35 @@
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
 
-namespace Mockery;
+namespace Mockery\Matcher;
 
-class Exception extends \UnexpectedValueException
+/**
+ * @deprecated 2.0 Due to ambiguity, use Hamcrest or PHPUnit equivalents
+ */
+class MustBe extends MatcherAbstract
 {
+    /**
+     * Check if the actual value matches the expected.
+     *
+     * @param mixed $actual
+     * @return bool
+     */
+    public function match(&$actual)
+    {
+        if (!is_object($actual)) {
+            return $this->_expected === $actual;
+        }
+
+        return $this->_expected == $actual;
+    }
+
+    /**
+     * Return a string representation of this Matcher
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return '<MustBe>';
+    }
 }

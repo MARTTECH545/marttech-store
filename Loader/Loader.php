@@ -18,8 +18,11 @@
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
 
-namespace Mockery;
+namespace Mockery\Loader;
 
-class Exception extends \UnexpectedValueException
+use Mockery\Generator\MockDefinition;
+
+interface Loader
 {
+    public function load(MockDefinition $definition);
 }

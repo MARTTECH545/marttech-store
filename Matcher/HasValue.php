@@ -18,8 +18,29 @@
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
 
-namespace Mockery;
+namespace Mockery\Matcher;
 
-class Exception extends \UnexpectedValueException
+class HasValue extends MatcherAbstract
 {
+    /**
+     * Check if the actual value matches the expected.
+     *
+     * @param mixed $actual
+     * @return bool
+     */
+    public function match(&$actual)
+    {
+        return in_array($this->_expected, $actual);
+    }
+
+    /**
+     * Return a string representation of this Matcher
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $return = '<HasValue[' . (string) $this->_expected . ']>';
+        return $return;
+    }
 }

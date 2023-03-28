@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Mockery
  *
@@ -20,6 +21,26 @@
 
 namespace Mockery;
 
-class Exception extends \UnexpectedValueException
+interface ExpectationInterface
 {
+    /**
+     * @return int
+     */
+    public function getOrderNumber();
+
+    /**
+     * @return LegacyMockInterface|MockInterface
+     */
+    public function getMock();
+
+    /**
+     * @param array ...$args
+     * @return self
+     */
+    public function andReturn(...$args);
+
+    /**
+     * @return self
+     */
+    public function andReturns();
 }

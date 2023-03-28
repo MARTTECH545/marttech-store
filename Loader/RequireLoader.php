@@ -18,8 +18,29 @@
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
 
-namespace Mockery;
+namespace Mockery\Loader;
 
-class Exception extends \UnexpectedValueException
+use Mockery\Generator\MockDefinition;
+use Mockery\Loader\Loader;
+
+class RequireLoader implements Loader
 {
+    protected $path;
+
+    public function __construct($path = null)
+    {
+        $this->path = realpath($path) ?: sys_get_temp_dir();
+    }
+
+    public function load(MockDefinition $definition)
+    {
+        if (class_exists($definition->getClassName(), false)) {
+            return;
+        }
+
+        $tmpfname = $this->path.DIRECTORY_SEPARATOR."Mockery_".uniqid().".php";
+        file_put_contents($tmpfname, $definition->getCode());
+
+        require $tmpfname;
+    }
 }

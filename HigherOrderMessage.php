@@ -20,6 +20,30 @@
 
 namespace Mockery;
 
-class Exception extends \UnexpectedValueException
+/**
+ * @method \Mockery\Expectation withArgs(\Closure|array $args)
+ */
+class HigherOrderMessage
 {
+    private $mock;
+    private $method;
+
+    public function __construct(MockInterface $mock, $method)
+    {
+        $this->mock = $mock;
+        $this->method = $method;
+    }
+
+    /**
+     * @return \Mockery\Expectation
+     */
+    public function __call($method, $args)
+    {
+        if ($this->method === 'shouldNotHaveReceived') {
+            return $this->mock->{$this->method}($method, $args);
+        }
+
+        $expectation = $this->mock->{$this->method}($method);
+        return $expectation->withArgs($args);
+    }
 }

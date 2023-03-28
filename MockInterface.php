@@ -20,6 +20,19 @@
 
 namespace Mockery;
 
-class Exception extends \UnexpectedValueException
+use Mockery\LegacyMockInterface;
+
+interface MockInterface extends LegacyMockInterface
 {
+    /**
+     * @param mixed $something  String method name or map of method => return
+     * @return self|\Mockery\ExpectationInterface|\Mockery\Expectation|\Mockery\HigherOrderMessage
+     */
+    public function allows($something = []);
+
+    /**
+     * @param mixed $something  String method name (optional)
+     * @return \Mockery\ExpectationInterface|\Mockery\Expectation|\Mockery\ExpectsHigherOrderMessage
+     */
+    public function expects($something = null);
 }

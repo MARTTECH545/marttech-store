@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Mockery
  *
@@ -14,12 +15,28 @@
  *
  * @category   Mockery
  * @package    Mockery
- * @copyright  Copyright (c) 2010 Pádraic Brady (http://blog.astrumfutura.com)
+ * @copyright  Copyright (c) 2017 Dave Marshall https://github.com/davedevelopment
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
 
 namespace Mockery;
 
-class Exception extends \UnexpectedValueException
+use Mockery\Matcher\Closure;
+
+/**
+ * @internal
+ */
+class ClosureWrapper
 {
+    private $closure;
+
+    public function __construct(\Closure $closure)
+    {
+        $this->closure = $closure;
+    }
+
+    public function __invoke()
+    {
+        return call_user_func_array($this->closure, func_get_args());
+    }
 }

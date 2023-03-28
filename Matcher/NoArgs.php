@@ -14,12 +14,27 @@
  *
  * @category   Mockery
  * @package    Mockery
- * @copyright  Copyright (c) 2010 Pádraic Brady (http://blog.astrumfutura.com)
+ * @copyright  Copyright (c) 2017 Dave Marshall
  * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
  */
 
-namespace Mockery;
+namespace Mockery\Matcher;
 
-class Exception extends \UnexpectedValueException
+class NoArgs extends MatcherAbstract implements ArgumentListMatcher
 {
+    /**
+     * @inheritdoc
+     */
+    public function match(&$actual)
+    {
+        return count($actual) == 0;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function __toString()
+    {
+        return '<No Arguments>';
+    }
 }

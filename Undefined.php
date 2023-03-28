@@ -20,6 +20,27 @@
 
 namespace Mockery;
 
-class Exception extends \UnexpectedValueException
+class Undefined
 {
+    /**
+     * Call capturing to merely return this same object.
+     *
+     * @param string $method
+     * @param array $args
+     * @return self
+     */
+    public function __call($method, array $args)
+    {
+        return $this;
+    }
+
+    /**
+     * Return a string, avoiding E_RECOVERABLE_ERROR
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return __CLASS__ . ":" . spl_object_hash($this);
+    }
 }

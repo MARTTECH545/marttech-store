@@ -20,6 +20,19 @@
 
 namespace Mockery;
 
-class Exception extends \UnexpectedValueException
+class ExpectsHigherOrderMessage extends HigherOrderMessage
 {
+    public function __construct(MockInterface $mock)
+    {
+        parent::__construct($mock, "shouldReceive");
+    }
+    /**
+     * @return \Mockery\Expectation
+     */
+    public function __call($method, $args)
+    {
+        $expectation = parent::__call($method, $args);
+
+        return $expectation->once();
+    }
 }

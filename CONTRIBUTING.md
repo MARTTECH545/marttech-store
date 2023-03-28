@@ -1,65 +1,88 @@
-# How to contribute
+# Contributing
 
-- [Getting help](#getting-help)
-- [Submitting bug reports](#submitting-bug-reports)
-- [Contributing code](#contributing-code)
 
-## Getting help
+We'd love you to help out with mockery and no contribution is too small.
 
-Community discussion, questions, and informal bug reporting is done on the
-[dompdf Google group](http://groups.google.com/group/dompdf). You may also 
-seek help on
-[StackOverflow](http://stackoverflow.com/questions/tagged/dompdf).
 
-## Submitting bug reports
+## Reporting Bugs
 
-The preferred way to report bugs is to use the
-[GitHub issue tracker](http://github.com/dompdf/dompdf/issues). Before 
-reporting a bug, read these pointers.
+Issues can be reported on the [issue
+tracker](https://github.com/padraic/mockery/issues). Please try and report any
+bugs with a minimal reproducible example, it will make things easier for other
+contributors and your problems will hopefully be resolved quickly.
 
-**Please search inside the bug tracker to see if the bug you found is not already reported.**
 
-**Note:** The issue tracker is for *bugs* and *feature requests*, not requests for help.
-Questions should be asked on the
-[dompdf Google group](http://groups.google.com/group/dompdf) instead.
+## Requesting Features
 
-### Reporting bugs effectively
+We're always interested to hear about your ideas and you can request features by
+creating a ticket in the [issue
+tracker](https://github.com/padraic/mockery/issues). We can't always guarantee
+someone will jump on it straight away, but putting it out there to see if anyone
+else is interested is a good idea.
 
-- dompdf is maintained by volunteers. They don't owe you anything, so be
-  polite. Reports with an indignant or belligerent tone tend to be moved to the
-  bottom of the pile.
+Likewise, if a feature you would like is already listed in
+the issue tracker, add a :+1: so that other contributors know it's a feature
+that would help others.
 
-- Include information about **the PHP version on which the problem occurred**. Even
-  if you tested several PHP version on different servers, and the problem occurred
-  in all of them, mention this fact in the bug report.
-  Also include the operating system it's installed on. PHP configuration can also help,
-  and server error logs (like Apache logs)
 
-- Mention which release of dompdf you're using (the zip, the master branch, etc).
-  Preferably, try also with the current development snapshot, to ensure the
-  problem has not already been fixed.
+## Contributing code and documentation
 
-- Mention very precisely what went wrong. "X is broken" is not a good bug
-  report. What did you expect to happen? What happened instead? Describe the
-  exact steps a maintainer has to take to make the problem occur. We can not
-  fix something that we can not observe.
+We loosely follow the
+[PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
+and
+[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) coding standards,
+but we'll probably merge any code that looks close enough.
 
-- If the problem can not be reproduced in any of the demos included in the
-  dompdf distribution, please provide an HTML document that demonstrates
-  the problem. There are a few options to show us your code:
-   - [JS Fiddle](http://jsfiddle.net/)
-   - [dompdf debug helper](http://eclecticgeek.com/dompdf/debug.php) (provided by @bsweeney)
-   - Include the HTML/CSS inside the bug report, with
-   [code highlighting](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-code).
+* Fork the [repository](https://github.com/padraic/mockery) on GitHub
+* Add the code for your feature or bug
+* Add some tests for your feature or bug
+* Optionally, but preferably, write some documentation 
+* Optionally, update the CHANGELOG.md file with your feature or
+  [BC](http://en.wikipedia.org/wiki/Backward_compatibility) break
+* Send a [Pull
+  Request](https://help.github.com/articles/creating-a-pull-request) to the
+  correct target branch (see below)
 
-## Contributing code
+If you have a big change or would like to discuss something, create an issue in
+the [issue tracker](https://github.com/padraic/mockery/issues) or jump in to
+\#mockery on freenode
 
-- Make sure you have a [GitHub Account](https://github.com/signup/free)
-- Fork [dompdf](https://github.com/dompdf/dompdf/)
-  ([how to fork a repo](https://help.github.com/articles/fork-a-repo))
-- *Make your changes on the `develop` branch* or the most appropriate feature branch. Please only patch 
-  the master branch if you are attempting to address an urgent bug in the released code.
-- Add a simple test file in `www/test/`, with a comprehensive name.
-- Add a unit test in the ``test/Dompdf/Tests/`` directory.
-- Submit a pull request
-([how to create a pull request](https://help.github.com/articles/fork-a-repo))
+
+Any code you contribute must be licensed under the [BSD 3-Clause
+License](http://opensource.org/licenses/BSD-3-Clause).
+
+
+## Target Branch
+
+Mockery may have several active branches at any one time and roughly follows a
+[Git Branching Model](https://igor.io/2013/10/21/git-branching-model.html).
+Generally, if you're developing a new feature, you want to be targeting the
+master branch, if it's a bug fix, you want to be targeting a release branch,
+e.g. 0.8.
+
+
+## Testing Mockery
+
+To run the unit tests for Mockery, clone the git repository, download Composer using
+the instructions at [http://getcomposer.org/download/](http://getcomposer.org/download/),
+then install the dependencies with `php /path/to/composer.phar install`.
+
+This will install the required PHPUnit and Hamcrest dev dependencies and create the
+autoload files required by the unit tests. You may run the `vendor/bin/phpunit` command
+to run the unit tests. If everything goes to plan, there will be no failed tests!
+
+
+## Debugging Mockery
+
+Mockery and its code generation can be difficult to debug. A good start is to
+use the `RequireLoader`, which will dump the code generated by mockery to a file
+before requiring it, rather than using eval. This will help with stack traces,
+and you will be able to open the mock class in your editor.
+
+``` php
+
+// tests/bootstrap.php
+
+Mockery::setLoader(new Mockery\Loader\RequireLoader(sys_get_temp_dir()));
+
+```
