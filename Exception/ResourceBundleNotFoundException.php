@@ -12,10 +12,8 @@
 namespace Symfony\Component\Intl\Exception;
 
 /**
- * Base ExceptionInterface for the Intl component.
- *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-interface ExceptionInterface extends \Throwable
+class ResourceBundleNotFoundException extends RuntimeException
 {
 }

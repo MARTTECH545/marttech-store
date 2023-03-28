@@ -12,10 +12,10 @@
 namespace Symfony\Component\Intl\Exception;
 
 /**
- * Base ExceptionInterface for the Intl component.
+ * Thrown when an invalid entry of a resource bundle was requested.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-interface ExceptionInterface extends \Throwable
+class MissingResourceException extends RuntimeException
 {
 }

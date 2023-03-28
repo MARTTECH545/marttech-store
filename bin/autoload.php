@@ -9,13 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Intl\Exception;
+$autoload = __DIR__.'/../../vendor/autoload.php';
 
-/**
- * Base ExceptionInterface for the Intl component.
- *
- * @author Bernhard Schussek <bschussek@gmail.com>
- */
-interface ExceptionInterface extends \Throwable
-{
+if (!file_exists($autoload)) {
+    bailout('You should run "composer install" in the component before running this script.');
 }
+
+require_once $autoload;

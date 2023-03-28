@@ -9,10 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Console\Exception;
+namespace Symfony\Component\Intl\Exception;
 
 /**
- * @author Jérôme Tamarelle <jerome@tamarelle.net>
+ * InvalidArgumentException for the Intl component.
+ *
+ * @author Bernhard Schussek <bschussek@gmail.com>
  */
 class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {
