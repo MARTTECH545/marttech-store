@@ -1,41 +1,28 @@
 {
-    "name": "nikic/php-parser",
+    "name": "paypal/rest-api-sdk-php",
+    "description": "PayPal's PHP SDK for REST APIs",
+    "keywords": ["paypal", "payments", "rest", "sdk"],
     "type": "library",
-    "description": "A PHP parser written in PHP",
-    "keywords": [
-        "php",
-        "parser"
-    ],
-    "license": "BSD-3-Clause",
+    "license": "Apache-2.0",
+    "homepage": "http://paypal.github.io/PayPal-PHP-SDK/",
     "authors": [
         {
-            "name": "Nikita Popov"
+            "name": "PayPal",
+            "homepage": "https://github.com/paypal/rest-api-sdk-php/contributors"
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "ext-tokenizer": "*"
+        "php": ">=5.3.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "psr/log": "^1.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0",
-        "ircmaxell/php-yacc": "0.0.5"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "4.3-dev"
-        }
+        "phpunit/phpunit": "^4.8.35"
     },
     "autoload": {
-        "psr-4": {
-            "PhpParser\\": "lib/PhpParser"
+        "psr-0": {
+            "PayPal": "lib/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "PhpParser\\": "test/PhpParser/"
-        }
-    },
-    "bin": [
-        "bin/php-parse"
-    ]
+    }
 }
