@@ -1,54 +1,55 @@
 {
-    "name": "psy/psysh",
-    "description": "An interactive shell for modern PHP.",
+    "name": "phpunit/php-code-coverage",
+    "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
     "type": "library",
-    "keywords": ["console", "interactive", "shell", "repl"],
-    "homepage": "http://psysh.org",
-    "license": "MIT",
+    "keywords": [
+        "coverage",
+        "testing",
+        "xunit"
+    ],
+    "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+    "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Justin Hileman",
-            "email": "justin@justinhileman.info",
-            "homepage": "http://justinhileman.com"
+            "name": "Sebastian Bergmann",
+            "email": "sebastian@phpunit.de",
+            "role": "lead"
         }
     ],
+    "support": {
+        "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "prefer-stable": true,
     "require": {
-        "php": ">=5.4.0",
-        "ext-json": "*",
-        "ext-tokenizer": "*",
-        "symfony/console": "~2.3.10|^2.4.2|~3.0|~4.0",
-        "symfony/var-dumper": "~2.7|~3.0|~4.0",
-        "nikic/php-parser": "~1.3|~2.0|~3.0|~4.0",
-        "dnoegel/php-xdg-base-dir": "0.1",
-        "jakub-onderka/php-console-highlighter": "0.3.*|0.4.*"
+        "php": "^7.1",
+        "ext-dom": "*",
+        "ext-xmlwriter": "*",
+        "phpunit/php-file-iterator": "^2.0",
+        "phpunit/php-token-stream": "^3.0",
+        "phpunit/php-text-template": "^1.2.1",
+        "sebastian/code-unit-reverse-lookup": "^1.0.1",
+        "sebastian/environment": "^3.1 || ^4.0",
+        "sebastian/version": "^2.0.1",
+        "theseer/tokenizer": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8.35|~5.0|~6.0|~7.0",
-        "hoa/console": "~2.15|~3.16",
-        "bamarni/composer-bin-plugin": "^1.2"
+        "phpunit/phpunit": "^7.0"
     },
     "suggest": {
-        "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
-        "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
-        "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
-        "ext-pdo-sqlite": "The doc command requires SQLite to work.",
-        "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
+        "ext-xdebug": "^2.6.0"
     },
     "autoload": {
-        "files": ["src/functions.php"],
-        "psr-4": {
-            "Psy\\": "src/"
-        }
+        "classmap": [
+            "src/"
+        ]
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Psy\\Test\\": "test/"
-        }
-    },
-    "bin": ["bin/psysh"],
     "extra": {
         "branch-alias": {
-            "dev-develop": "0.9.x-dev"
+            "dev-master": "6.1-dev"
         }
     }
 }

@@ -1,34 +1,40 @@
-# PsySH
+[![Latest Stable Version](https://poser.pugx.org/phpunit/php-code-coverage/v/stable.png)](https://packagist.org/packages/phpunit/php-code-coverage)
+[![Build Status](https://travis-ci.org/sebastianbergmann/php-code-coverage.svg?branch=master)](https://travis-ci.org/sebastianbergmann/php-code-coverage)
 
-PsySH is a runtime developer console, interactive debugger and [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) for PHP. Learn more at [psysh.org](http://psysh.org/) and [in the manual](https://github.com/bobthecow/psysh/wiki/Home).
+# SebastianBergmann\CodeCoverage
 
+**SebastianBergmann\CodeCoverage** is a library that provides collection, processing, and rendering functionality for PHP code coverage information.
 
-[![Package version](https://img.shields.io/packagist/v/psy/psysh.svg?style=flat-square)](https://packagist.org/packages/psy/psysh)
-[![Monthly downloads](http://img.shields.io/packagist/dm/psy/psysh.svg?style=flat-square)](https://packagist.org/packages/psy/psysh)
-[![Made out of awesome](https://img.shields.io/badge/made_out_of_awesome-✓-brightgreen.svg?style=flat-square)](http://psysh.org)
+## Installation
 
-[![Build status](https://img.shields.io/travis/bobthecow/psysh/master.svg?style=flat-square)](http://travis-ci.org/bobthecow/psysh)
-[![StyleCI](https://styleci.io/repos/4549925/shield)](https://styleci.io/repos/4549925)
+You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
 
+    composer require phpunit/php-code-coverage
 
-<a id="downloading-the-manual"></a>
+If you only need this library during development, for instance to run your project's test suite, then you should add it as a development-time dependency:
 
-## [PsySH manual](https://github.com/bobthecow/psysh/wiki/Home)
+    composer require --dev phpunit/php-code-coverage
 
-### [💾 Installation](https://github.com/bobthecow/psysh/wiki/Installation)
- * [📕 PHP manual installation](https://github.com/bobthecow/psysh/wiki/PHP-manual)
- * <a class="internal present" href="https://github.com/bobthecow/psysh/wiki/Windows"><img src="https://user-images.githubusercontent.com/53660/40878809-407e8368-664b-11e8-8455-f11602c41dfe.png" width="18"> Windows</a>
+## Using the SebastianBergmann\CodeCoverage API
 
-### [🖥 Usage](https://github.com/bobthecow/psysh/wiki/Usage)
- * [✨ Magic variables](https://github.com/bobthecow/psysh/wiki/Magic-variables)
- * [⏳ Managing history](https://github.com/bobthecow/psysh/wiki/History)
- * [💲 System shell integration](https://github.com/bobthecow/psysh/wiki/Shell-integration)
- * [🎥 Tutorials & guides](https://github.com/bobthecow/psysh/wiki/Tutorials)
+```php
+<?php
+use SebastianBergmann\CodeCoverage\CodeCoverage;
 
-### [📢 Commands](https://github.com/bobthecow/psysh/wiki/Commands)
+$coverage = new CodeCoverage;
 
-### [🛠 Configuration](https://github.com/bobthecow/psysh/wiki/Configuration)
- * [🎛 Config options](https://github.com/bobthecow/psysh/wiki/Config-options)
- * [📄 Sample config file](https://github.com/bobthecow/psysh/wiki/Sample-config)
+$coverage->filter()->addDirectoryToWhitelist('/path/to/src');
 
-### [🔌 Integrations](https://github.com/bobthecow/psysh/wiki/Integrations)
+$coverage->start('<name of test>');
+
+// ...
+
+$coverage->stop();
+
+$writer = new \SebastianBergmann\CodeCoverage\Report\Clover;
+$writer->process($coverage, '/tmp/clover.xml');
+
+$writer = new \SebastianBergmann\CodeCoverage\Report\Html\Facade;
+$writer->process($coverage, '/tmp/code-coverage-report');
+```
+
