@@ -1,43 +1,59 @@
 {
-    "name": "swiftmailer/swiftmailer",
+    "name": "symfony/console",
     "type": "library",
-    "description": "Swiftmailer, free feature-rich PHP mailer",
-    "keywords": ["mail","mailer","email"],
-    "homepage": "https://swiftmailer.symfony.com",
+    "description": "Symfony Console Component",
+    "keywords": [],
+    "homepage": "https://symfony.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "Chris Corbyn"
-        },
-        {
             "name": "Fabien Potencier",
             "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "egulias/email-validator": "~2.0",
-        "symfony/polyfill-iconv": "^1.0",
-        "symfony/polyfill-mbstring": "^1.0",
-        "symfony/polyfill-intl-idn": "^1.10"
+        "php": "^7.1.3",
+        "symfony/polyfill-mbstring": "~1.0",
+        "symfony/polyfill-php73": "^1.8",
+        "symfony/service-contracts": "^1.1"
     },
     "require-dev": {
-        "mockery/mockery": "~0.9.1",
-        "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+        "symfony/config": "~3.4|~4.0",
+        "symfony/event-dispatcher": "^4.3",
+        "symfony/dependency-injection": "~3.4|~4.0",
+        "symfony/lock": "~3.4|~4.0",
+        "symfony/process": "~3.4|~4.0",
+        "symfony/var-dumper": "^4.3",
+        "psr/log": "~1.0"
+    },
+    "provide": {
+        "psr/log-implementation": "1.0"
     },
     "suggest": {
-        "ext-intl": "Needed to support internationalized email addresses",
-        "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
+        "symfony/event-dispatcher": "",
+        "symfony/lock": "",
+        "symfony/process": "",
+        "psr/log": "For using the console logger"
+    },
+    "conflict": {
+        "symfony/dependency-injection": "<3.4",
+        "symfony/event-dispatcher": "<4.3",
+        "symfony/process": "<3.3"
     },
     "autoload": {
-        "files": ["lib/swift_required.php"]
+        "psr-4": { "Symfony\\Component\\Console\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
-    "autoload-dev": {
-        "psr-0": { "Swift_": "tests/unit" }
-    },
+    "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-            "dev-master": "6.2-dev"
+            "dev-master": "4.3-dev"
         }
     }
 }

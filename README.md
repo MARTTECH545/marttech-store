@@ -1,19 +1,20 @@
-Swift Mailer
-------------
+Console Component
+=================
 
-Swift Mailer is a component based mailing solution for PHP 7.
-It is released under the MIT license.
+The Console component eases the creation of beautiful and testable command line
+interfaces.
 
-Swift Mailer is highly object-oriented by design and lends itself
-to use in complex web application with a great deal of flexibility.
+Resources
+---------
 
-For full details on usage, read the [documentation](https://swiftmailer.symfony.com/docs/introduction.html).
+  * [Documentation](https://symfony.com/doc/current/components/console/index.html)
+  * [Contributing](https://symfony.com/doc/current/contributing/index.html)
+  * [Report issues](https://github.com/symfony/symfony/issues) and
+    [send Pull Requests](https://github.com/symfony/symfony/pulls)
+    in the [main Symfony repository](https://github.com/symfony/symfony)
 
-Sponsors
---------
+Credits
+-------
 
-<div>
-    <a href="https://blackfire.io/docs/introduction?utm_source=swiftmailer&utm_medium=github_readme&utm_campaign=logo">
-        <img src="https://static.blackfire.io/assets/intemporals/logo/png/blackfire-io_secondary_horizontal_transparent.png?1" width="255px" alt="Blackfire.io">
-    </a>
-</div>
+`Resources/bin/hiddeninput.exe` is a third party binary provided within this
+component. Find sources and license at https://github.com/Seldaek/hidden-input.
