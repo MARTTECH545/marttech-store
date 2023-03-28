@@ -1,53 +1,32 @@
-This is the PHP port of Hamcrest Matchers
-=========================================
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-cashier.svg"></p>
 
-[![Build Status](https://travis-ci.org/hamcrest/hamcrest-php.png?branch=master)](https://travis-ci.org/hamcrest/hamcrest-php)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hamcrest/hamcrest-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hamcrest/hamcrest-php/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/hamcrest/hamcrest-php/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hamcrest/hamcrest-php/?branch=master)
+<p align="center">
+<a href="https://travis-ci.org/laravel/cashier"><img src="https://travis-ci.org/laravel/cashier.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/cashier"><img src="https://poser.pugx.org/laravel/cashier/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/cashier"><img src="https://poser.pugx.org/laravel/cashier/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/cashier"><img src="https://poser.pugx.org/laravel/cashier/license.svg" alt="License"></a>
+</p>
 
-Hamcrest is a matching library originally written for Java, but
-subsequently ported to many other languages.  hamcrest-php is the
-official PHP port of Hamcrest and essentially follows a literal
-translation of the original Java API for Hamcrest, with a few
-Exceptions, mostly down to PHP language barriers:
+## Introduction
 
-  1. `instanceOf($theClass)` is actually `anInstanceOf($theClass)`
+Laravel Cashier provides an expressive, fluent interface to [Stripe's](https://stripe.com) subscription billing services. It handles almost all of the boilerplate subscription billing code you are dreading writing. In addition to basic subscription management, Cashier can handle coupons, swapping subscription, subscription "quantities", cancellation grace periods, and even generate invoice PDFs.
 
-  2. `both(containsString('a'))->and(containsString('b'))`
-     is actually `both(containsString('a'))->andAlso(containsString('b'))`
+## Official Documentation
 
-  3. `either(containsString('a'))->or(containsString('b'))`
-     is actually `either(containsString('a'))->orElse(containsString('b'))`
+Documentation for Cashier can be found on the [Laravel website](https://laravel.com/docs/billing).
 
-  4. Unless it would be non-semantic for a matcher to do so, hamcrest-php
-     allows dynamic typing for it's input, in "the PHP way". Exception are
-     where semantics surrounding the type itself would suggest otherwise,
-     such as stringContains() and greaterThan().
+## Contributing
 
-  5. Several official matchers have not been ported because they don't
-     make sense or don't apply in PHP:
+Thank you for considering contributing to Cashier! You can read the contribution guide [here](.github/CONTRIBUTING.md).
 
-       - `typeCompatibleWith($theClass)`
-       - `eventFrom($source)`
-       - `hasProperty($name)` **
-       - `samePropertyValuesAs($obj)` **
+## Code of Conduct
 
-  6. When most of the collections matchers are finally ported, PHP-specific
-     aliases will probably be created due to a difference in naming
-     conventions between Java's Arrays, Collections, Sets and Maps compared
-     with PHP's Arrays.
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
----
-** [Unless we consider POPO's (Plain Old PHP Objects) akin to JavaBeans]
-     - The POPO thing is a joke.  Java devs coin the term POJO's (Plain Old
-       Java Objects).
+## Security Vulnerabilities
 
+Please review [our security policy](https://github.com/laravel/cashier/security/policy) on how to report security vulnerabilities.
 
-Usage
------
+## License
 
-Hamcrest matchers are easy to use as:
-
-```php
-Hamcrest_MatcherAssert::assertThat('a', Hamcrest_Matchers::equalToIgnoringCase('A'));
-```
+Laravel Cashier is open-sourced software licensed under the [MIT license](LICENSE.md).
