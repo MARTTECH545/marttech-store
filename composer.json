@@ -1,42 +1,38 @@
 {
-    "name": "fzaninotto/faker",
-    "type": "library",
-    "description": "Faker is a PHP library that generates fake data for you.",
-    "keywords": [
-        "faker",
-        "fixtures",
-        "data"
-    ],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "François Zaninotto"
-        }
-    ],
-    "require": {
-        "php": "^5.3.3 || ^7.0"
-    },
-    "require-dev": {
-        "ext-intl": "*",
-        "phpunit/phpunit": "^4.8.35 || ^5.7",
-        "squizlabs/php_codesniffer": "^2.9.2"
-    },
-    "autoload": {
-        "psr-4": {
-            "Faker\\": "src/Faker/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Faker\\Test\\": "test/Faker/"
-        }
-    },
+	"name": "hamcrest/hamcrest-php",
+	"type": "library",
+	"description": "This is the PHP port of Hamcrest Matchers",
+	"keywords": ["test"],
+	"license": "BSD",
+	"authors": [
+	],
+
+	"autoload": {
+		"classmap": ["hamcrest"]
+	},
+	"autoload-dev": {
+		"classmap": ["tests", "generator"]
+	},
+
+	"require": {
+		"php": "^5.3|^7.0"
+	},
+
+	"require-dev": {
+		"satooshi/php-coveralls": "^1.0",
+		"phpunit/php-file-iterator": "1.3.3",
+		"phpunit/phpunit": "~4.0"
+	},
+
+	"replace": {
+		"kodova/hamcrest-php": "*",
+		"davedevelopment/hamcrest-php": "*",
+		"cordoval/hamcrest-php": "*"
+	},
+
     "extra": {
         "branch-alias": {
-            "dev-master": "1.9"
+            "dev-master": "2.0-dev"
         }
-    },
-    "config": {
-        "sort-packages": true
     }
 }
