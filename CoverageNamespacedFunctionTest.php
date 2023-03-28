@@ -9,10 +9,13 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class CoverageNamespacedFunctionTest extends TestCase
 {
-    public function testIncomplete(): void
+    /**
+     * @covers foo\func()
+     */
+    public function testFunc(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        foo\func();
     }
 }

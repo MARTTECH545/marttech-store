@@ -9,10 +9,10 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class DummyBarTest extends TestCase
 {
-    public function testIncomplete(): void
+    public function testBarEqualsBar(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        $this->assertEquals('Bar', 'Bar');
     }
 }

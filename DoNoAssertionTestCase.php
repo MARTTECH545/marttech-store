@@ -9,10 +9,9 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class DoNoAssertionTestCase extends TestCase
 {
-    public function testIncomplete(): void
+    public function testNothing(): void
     {
-        $this->markTestIncomplete('Test incomplete');
     }
 }

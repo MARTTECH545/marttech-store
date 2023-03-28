@@ -7,12 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
-
-class IncompleteTest extends TestCase
+class Foo
 {
-    public function testIncomplete(): void
+    public function doSomething(Bar $bar)
     {
-        $this->markTestIncomplete('Test incomplete');
+        return $bar->doSomethingElse();
     }
 }

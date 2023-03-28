@@ -9,10 +9,14 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class FatalTest extends TestCase
 {
-    public function testIncomplete(): void
+    public function testFatalError(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        if (\extension_loaded('xdebug')) {
+            \xdebug_disable();
+        }
+
+        eval('class FatalTest {}');
     }
 }

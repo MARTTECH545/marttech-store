@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -9,10 +9,14 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+/**
+ * @coversNothing
+ */
+class CoverageClassNothingTest extends TestCase
 {
-    public function testIncomplete(): void
+    public function testSomething(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        $o = new CoveredClass;
+        $o->publicMethod();
     }
 }

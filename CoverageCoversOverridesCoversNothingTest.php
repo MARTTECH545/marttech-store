@@ -9,10 +9,17 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+/**
+ * @coversNothing
+ */
+class CoverageCoversOverridesCoversNothingTest extends TestCase
 {
-    public function testIncomplete(): void
+    /**
+     * @covers CoveredClass::publicMethod
+     */
+    public function testSomething(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        $o = new CoveredClass;
+        $o->publicMethod();
     }
 }

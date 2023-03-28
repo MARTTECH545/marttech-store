@@ -9,10 +9,10 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class IniTest extends TestCase
 {
-    public function testIncomplete(): void
+    public function testIni(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        $this->assertEquals('application/x-test', \ini_get('default_mimetype'));
     }
 }

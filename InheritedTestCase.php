@@ -7,12 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
-
-class IncompleteTest extends TestCase
+class InheritedTestCase extends OneTestCase
 {
-    public function testIncomplete(): void
+    public function test2(): void
     {
-        $this->markTestIncomplete('Test incomplete');
     }
 }

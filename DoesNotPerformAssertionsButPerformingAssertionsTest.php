@@ -9,10 +9,14 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class DoesNotPerformAssertionsButPerformingAssertionsTest extends TestCase
 {
-    public function testIncomplete(): void
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testFalseAndTrueAreStillFine(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        $this->assertFalse(false);
+        $this->assertTrue(true);
     }
 }

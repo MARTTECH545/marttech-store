@@ -7,12 +7,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Runner\BaseTestRunner;
 
-class IncompleteTest extends TestCase
+class MockRunner extends BaseTestRunner
 {
-    public function testIncomplete(): void
+    protected function runFailed($message): void
     {
-        $this->markTestIncomplete('Test incomplete');
     }
 }

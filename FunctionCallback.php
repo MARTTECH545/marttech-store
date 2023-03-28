@@ -7,12 +7,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
-
-class IncompleteTest extends TestCase
+class FunctionCallbackWrapper
 {
-    public function testIncomplete(): void
+    public static function functionCallback()
     {
-        $this->markTestIncomplete('Test incomplete');
+        $args = \func_get_args();
+
+        if ($args == ['foo', 'bar']) {
+            return 'pass';
+        }
     }
 }

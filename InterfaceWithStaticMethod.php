@@ -7,12 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
-
-class IncompleteTest extends TestCase
+interface InterfaceWithStaticMethod
 {
-    public function testIncomplete(): void
-    {
-        $this->markTestIncomplete('Test incomplete');
-    }
+    public static function staticMethod();
 }

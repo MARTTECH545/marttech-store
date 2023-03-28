@@ -9,10 +9,15 @@
  */
 use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+class IsolationTest extends TestCase
 {
-    public function testIncomplete(): void
+    public function testIsInIsolationReturnsFalse(): void
     {
-        $this->markTestIncomplete('Test incomplete');
+        $this->assertFalse($this->isInIsolation());
+    }
+
+    public function testIsInIsolationReturnsTrue(): void
+    {
+        $this->assertTrue($this->isInIsolation());
     }
 }

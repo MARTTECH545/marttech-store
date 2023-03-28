@@ -7,12 +7,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
-
-class IncompleteTest extends TestCase
+class MethodCallbackByReference
 {
-    public function testIncomplete(): void
+    public function bar(&$a, &$b, $c)
     {
-        $this->markTestIncomplete('Test incomplete');
+        Legacy::bar($a, $b, $c);
+    }
+
+    public function callback(&$a, &$b, $c)
+    {
+        $b = 1;
     }
 }

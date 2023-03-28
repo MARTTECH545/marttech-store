@@ -7,12 +7,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
 
-class IncompleteTest extends TestCase
+/**
+ * @codeCoverageIgnore
+ */
+class IgnoreCodeCoverageClass
 {
-    public function testIncomplete(): void
+    public function returnTrue()
     {
-        $this->markTestIncomplete('Test incomplete');
+        return true;
+    }
+
+    public function returnFalse()
+    {
+        return false;
     }
 }
