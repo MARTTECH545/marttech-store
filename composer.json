@@ -1,79 +1,41 @@
 {
-    "name": "nesbot/carbon",
+    "name": "nikic/php-parser",
     "type": "library",
-    "description": "An API extension for DateTime that supports 281 different languages.",
+    "description": "A PHP parser written in PHP",
     "keywords": [
-        "date",
-        "time",
-        "DateTime"
+        "php",
+        "parser"
     ],
-    "homepage": "http://carbon.nesbot.com",
-    "support": {
-        "issues": "https://github.com/briannesbitt/Carbon/issues",
-        "source": "https://github.com/briannesbitt/Carbon"
-    },
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Brian Nesbitt",
-            "email": "brian@nesbot.com",
-            "homepage": "http://nesbot.com"
-        },
-        {
-            "name": "kylekatarnls",
-            "homepage": "http://github.com/kylekatarnls"
+            "name": "Nikita Popov"
         }
     ],
-    "minimum-stability": "dev",
-    "bin": ["bin/carbon"],
     "require": {
-        "php": "^7.1.8 || ^8.0",
-        "ext-json": "*",
-        "symfony/translation": "^3.4 || ^4.0"
+        "php": ">=7.0",
+        "ext-tokenizer": "*"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-        "kylekatarnls/multi-tester": "^1.1",
-        "phpmd/phpmd": "dev-php-7.1-compatibility",
-        "phpstan/phpstan": "^0.11",
-        "phpunit/phpunit": "^7.5 || ^8.0",
-        "squizlabs/php_codesniffer": "^3.4"
+        "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0",
+        "ircmaxell/php-yacc": "0.0.5"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.3-dev"
+        }
     },
     "autoload": {
         "psr-4": {
-            "Carbon\\": "src/Carbon/"
+            "PhpParser\\": "lib/PhpParser"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "PhpParser\\": "test/PhpParser/"
         }
     },
-    "config": {
-        "process-timeout": 0,
-        "sort-packages": true
-    },
-    "scripts": {
-        "test": [
-            "@phpunit",
-            "@style-check"
-        ],
-        "style-check": [
-            "@phpcs",
-            "@phpstan",
-            "@phpmd"
-        ],
-        "phpunit": "phpunit --verbose",
-        "phpcs": "php-cs-fixer fix -v --diff --dry-run",
-        "phpstan": "phpstan analyse --configuration phpstan.neon --level 3 src tests",
-        "phpmd": "phpmd src text /phpmd.xml",
-        "phpdoc": "php phpdoc.php"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Carbon\\Laravel\\ServiceProvider"
-            ]
-        }
-    }
+    "bin": [
+        "bin/php-parse"
+    ]
 }
