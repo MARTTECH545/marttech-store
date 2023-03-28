@@ -1,23 +1,18 @@
 {
     "Version": "36",
     "Names": {
-        "arn": "mapudungun",
-        "be": "bjeloruski",
-        "bm": "bamanankan",
-        "bn": "bangla",
-        "gsw": "švajcarski nemački",
-        "ht": "haićanski kreolski",
-        "lo": "laoški",
-        "moh": "mohok",
-        "nqo": "n’ko",
-        "shi": "južni šilha",
-        "si": "sinhalski",
-        "sw_CD": "kisvahili",
-        "tzm": "centralnoatlaski tamašek",
-        "xh": "isikosa",
-        "zgh": "standardni marokanski tamašek",
-        "zh_Hans": "pojednostavljeni kineski",
-        "zh_Hant": "tradicionalni kineski",
-        "zu": "isizulu"
+        "BY": "Bjelorusija",
+        "CG": "Kongo",
+        "CV": "Kabo Verde",
+        "CZ": "Češka Republika",
+        "DE": "Njemačka",
+        "KN": "Sveti Kits i Nevis",
+        "MO": "SAR Makao",
+        "PM": "Sveti Pjer i Mikelon",
+        "RE": "Reunion",
+        "UM": "Manja udaljena ostrva SAD",
+        "VC": "Sveti Vinsent i Grenadini",
+        "VG": "Britanska Djevičanska Ostrva",
+        "VI": "Američka Djevičanska Ostrva"
     }
 }
