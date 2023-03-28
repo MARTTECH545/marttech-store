@@ -1,62 +1,98 @@
 <?php
 
-namespace PayPal\Api;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Mime;
+
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\RFCValidation;
+use Symfony\Component\Mime\Encoder\IdnAddressEncoder;
+use Symfony\Component\Mime\Exception\InvalidArgumentException;
+use Symfony\Component\Mime\Exception\LogicException;
+use Symfony\Component\Mime\Exception\RfcComplianceException;
 
 /**
- * Class Address
+ * @author Fabien Potencier <fabien@symfony.com>
  *
- * Base Address object used as billing address in a payment or extended for Shipping Address.
- *
- * @package PayPal\Api
- *
- * @property string phone
- * @property string type
+ * @experimental in 4.3
  */
-class Address extends BaseAddress
+class Address
 {
-    /**
-     * Phone number in E.123 format. 50 characters max.
-     *
-     * @param string $phone
-     * 
-     * @return $this
-     */
-    public function setPhone($phone)
+    private static $validator;
+    private static $encoder;
+
+    private $address;
+
+    public function __construct(string $address)
     {
-        $this->phone = $phone;
-        return $this;
+        if (!class_exists(EmailValidator::class)) {
+            throw new LogicException(sprintf('The "%s" class cannot be used as it needs "%s"; try running "composer require egulias/email-validator".', __CLASS__, EmailValidator::class));
+        }
+
+        if (null === self::$validator) {
+            self::$validator = new EmailValidator();
+        }
+
+        $this->address = trim($address);
+
+        if (!self::$validator->isValid($this->address, new RFCValidation())) {
+            throw new RfcComplianceException(sprintf('Email "%s" does not comply with addr-spec of RFC 2822.', $address));
+        }
+    }
+
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
+
+    public function getEncodedAddress(): string
+    {
+        if (null === self::$encoder) {
+            self::$encoder = new IdnAddressEncoder();
+        }
+
+        return self::$encoder->encodeString($this->address);
+    }
+
+    public function toString(): string
+    {
+        return $this->getEncodedAddress();
     }
 
     /**
-     * Phone number in E.123 format. 50 characters max.
-     *
-     * @return string
+     * @param Address|string $address
      */
-    public function getPhone()
+    public static function create($address): self
     {
-        return $this->phone;
+        if ($address instanceof self) {
+            return $address;
+        }
+        if (\is_string($address)) {
+            return new self($address);
+        }
+
+        throw new InvalidArgumentException(sprintf('An address can be an instance of Address or a string ("%s") given).', \is_object($address) ? \get_class($address) : \gettype($address)));
     }
 
     /**
-     * Type of address (e.g., HOME_OR_WORK, GIFT etc).
+     * @param (Address|string)[] $addresses
      *
-     * @param string $type
-     *
-     * @return $this
+     * @return Address[]
      */
-    public function setType($type)
+    public static function createArray(array $addresses): array
     {
-        $this->type = $type;
-        return $this;
-    }
+        $addrs = [];
+        foreach ($addresses as $address) {
+            $addrs[] = self::create($address);
+        }
 
-    /**
-     * Type of address (e.g., HOME_OR_WORK, GIFT etc).
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
+        return $addrs;
     }
 }

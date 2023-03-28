@@ -1,42 +1,29 @@
 <?php
 
 /*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
+namespace Symfony\Component\Mime\Encoder;
+
+use Symfony\Component\Mime\CharacterStream;
+
 /**
- * Handles Quoted Printable (QP) Encoding in Swift Mailer.
+ * @author Chris Corbyn
  *
- * Possibly the most accurate RFC 2045 QP implementation found in PHP.
- *
- * @author     Chris Corbyn
+ * @experimental in 4.3
  */
-class Swift_Encoder_QpEncoder implements Swift_Encoder
+class QpEncoder implements EncoderInterface
 {
     /**
-     * The CharacterStream used for reading characters (as opposed to bytes).
-     *
-     * @var Swift_CharacterStream
-     */
-    protected $charStream;
-
-    /**
-     * A filter used if input should be canonicalized.
-     *
-     * @var Swift_StreamFilter
-     */
-    protected $filter;
-
-    /**
      * Pre-computed QP for HUGE optimization.
-     *
-     * @var string[]
      */
-    protected static $qpMap = [
+    private static $qpMap = [
         0 => '=00', 1 => '=01', 2 => '=02', 3 => '=03', 4 => '=04',
         5 => '=05', 6 => '=06', 7 => '=07', 8 => '=08', 9 => '=09',
         10 => '=0A', 11 => '=0B', 12 => '=0C', 13 => '=0D', 14 => '=0E',
@@ -89,77 +76,47 @@ class Swift_Encoder_QpEncoder implements Swift_Encoder
         245 => '=F5', 246 => '=F6', 247 => '=F7', 248 => '=F8', 249 => '=F9',
         250 => '=FA', 251 => '=FB', 252 => '=FC', 253 => '=FD', 254 => '=FE',
         255 => '=FF',
-        ];
+    ];
 
-    protected static $safeMapShare = [];
+    private static $safeMapShare = [];
 
     /**
      * A map of non-encoded ascii characters.
      *
      * @var string[]
+     *
+     * @internal
      */
     protected $safeMap = [];
 
+    public function __construct()
+    {
+        $id = \get_class($this);
+        if (!isset(self::$safeMapShare[$id])) {
+            $this->initSafeMap();
+            self::$safeMapShare[$id] = $this->safeMap;
+        } else {
+            $this->safeMap = self::$safeMapShare[$id];
+        }
+    }
+
+    protected function initSafeMap(): void
+    {
+        foreach (array_merge([0x09, 0x20], range(0x21, 0x3C), range(0x3E, 0x7E)) as $byte) {
+            $this->safeMap[$byte] = \chr($byte);
+        }
+    }
+
     /**
-     * Creates a new QpEncoder for the given CharacterStream.
+     * {@inheritdoc}
      *
-     * @param Swift_CharacterStream $charStream to use for reading characters
-     * @param Swift_StreamFilter    $filter     if input should be canonicalized
-     */
-    public function __construct(Swift_CharacterStream $charStream, Swift_StreamFilter $filter = null)
-    {
-        $this->charStream = $charStream;
-        if (!isset(self::$safeMapShare[$this->getSafeMapShareId()])) {
-            $this->initSafeMap();
-            self::$safeMapShare[$this->getSafeMapShareId()] = $this->safeMap;
-        } else {
-            $this->safeMap = self::$safeMapShare[$this->getSafeMapShareId()];
-        }
-        $this->filter = $filter;
-    }
-
-    public function __sleep()
-    {
-        return ['charStream', 'filter'];
-    }
-
-    public function __wakeup()
-    {
-        if (!isset(self::$safeMapShare[$this->getSafeMapShareId()])) {
-            $this->initSafeMap();
-            self::$safeMapShare[$this->getSafeMapShareId()] = $this->safeMap;
-        } else {
-            $this->safeMap = self::$safeMapShare[$this->getSafeMapShareId()];
-        }
-    }
-
-    protected function getSafeMapShareId()
-    {
-        return get_class($this);
-    }
-
-    protected function initSafeMap()
-    {
-        foreach (array_merge(
-            [0x09, 0x20], range(0x21, 0x3C), range(0x3E, 0x7E)) as $byte) {
-            $this->safeMap[$byte] = chr($byte);
-        }
-    }
-
-    /**
      * Takes an unencoded string and produces a QP encoded string from it.
      *
      * QP encoded strings have a maximum line length of 76 characters.
      * If the first line needs to be shorter, indicate the difference with
      * $firstLineOffset.
-     *
-     * @param string $string          to encode
-     * @param int    $firstLineOffset optional
-     * @param int    $maxLineLength   optional 0 indicates the default of 76 chars
-     *
-     * @return string
      */
-    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
+    public function encodeString(string $string, ?string $charset = 'utf-8', int $firstLineOffset = 0, int $maxLineLength = 0): string
     {
         if ($maxLineLength > 76 || $maxLineLength <= 0) {
             $maxLineLength = 76;
@@ -172,31 +129,12 @@ class Swift_Encoder_QpEncoder implements Swift_Encoder
         $lines[$lNo] = '';
         $currentLine = &$lines[$lNo++];
         $size = $lineLen = 0;
-
-        $this->charStream->flushContents();
-        $this->charStream->importString($string);
+        $charStream = new CharacterStream($string, $charset);
 
         // Fetching more than 4 chars at one is slower, as is fetching fewer bytes
         // Conveniently 4 chars is the UTF-8 safe number since UTF-8 has up to 6
         // bytes per char and (6 * 4 * 3 = 72 chars per line) * =NN is 3 bytes
-        while (false !== $bytes = $this->nextSequence()) {
-            // If we're filtering the input
-            if (isset($this->filter)) {
-                // If we can't filter because we need more bytes
-                while ($this->filter->shouldBuffer($bytes)) {
-                    // Then collect bytes into the buffer
-                    if (false === $moreBytes = $this->nextSequence(1)) {
-                        break;
-                    }
-
-                    foreach ($moreBytes as $b) {
-                        $bytes[] = $b;
-                    }
-                }
-                // And filter them
-                $bytes = $this->filter->filter($bytes);
-            }
-
+        while (null !== $bytes = $charStream->readBytes(4)) {
             $enc = $this->encodeByteSequence($bytes, $size);
 
             $i = strpos($enc, '=0D=0A');
@@ -223,24 +161,9 @@ class Swift_Encoder_QpEncoder implements Swift_Encoder
     }
 
     /**
-     * Updates the charset used.
-     *
-     * @param string $charset
-     */
-    public function charsetChanged($charset)
-    {
-        $this->charStream->setCharacterSet($charset);
-    }
-
-    /**
      * Encode the given byte array into a verbatim QP form.
-     *
-     * @param int[] $bytes
-     * @param int   $size
-     *
-     * @return string
      */
-    protected function encodeByteSequence(array $bytes, &$size)
+    private function encodeByteSequence(array $bytes, int &$size): string
     {
         $ret = '';
         $size = 0;
@@ -258,43 +181,17 @@ class Swift_Encoder_QpEncoder implements Swift_Encoder
     }
 
     /**
-     * Get the next sequence of bytes to read from the char stream.
-     *
-     * @param int $size number of bytes to read
-     *
-     * @return int[]
-     */
-    protected function nextSequence($size = 4)
-    {
-        return $this->charStream->readBytes($size);
-    }
-
-    /**
      * Make sure CRLF is correct and HT/SPACE are in valid places.
-     *
-     * @param string $string
-     *
-     * @return string
      */
-    protected function standardize($string)
+    private function standardize(string $string): string
     {
-        $string = str_replace(["\t=0D=0A", ' =0D=0A', '=0D=0A'],
-            ["=09\r\n", "=20\r\n", "\r\n"], $string
-            );
-        switch ($end = ord(substr($string, -1))) {
+        $string = str_replace(["\t=0D=0A", ' =0D=0A', '=0D=0A'], ["=09\r\n", "=20\r\n", "\r\n"], $string);
+        switch ($end = \ord(substr($string, -1))) {
             case 0x09:
             case 0x20:
                 $string = substr_replace($string, self::$qpMap[$end], -1);
         }
 
         return $string;
-    }
-
-    /**
-     * Make a deep copy of object.
-     */
-    public function __clone()
-    {
-        $this->charStream = clone $this->charStream;
     }
 }

@@ -1,46 +1,29 @@
 <?php
 
 /*
- * This file is part of SwiftMailer.
- * (c) 2004-2009 Chris Corbyn
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
+namespace Symfony\Component\Mime\Encoder;
+
+use Symfony\Component\Mime\CharacterStream;
+
 /**
- * Handles RFC 2231 specified Encoding in Swift Mailer.
- *
  * @author Chris Corbyn
+ *
+ * @experimental in 4.3
  */
-class Swift_Encoder_Rfc2231Encoder implements Swift_Encoder
+final class Rfc2231Encoder implements EncoderInterface
 {
     /**
-     * A character stream to use when reading a string as characters instead of bytes.
-     *
-     * @var Swift_CharacterStream
+     * Takes an unencoded string and produces a string encoded according to RFC 2231 from it.
      */
-    private $charStream;
-
-    /**
-     * Creates a new Rfc2231Encoder using the given character stream instance.
-     */
-    public function __construct(Swift_CharacterStream $charStream)
-    {
-        $this->charStream = $charStream;
-    }
-
-    /**
-     * Takes an unencoded string and produces a string encoded according to
-     * RFC 2231 from it.
-     *
-     * @param string $string
-     * @param int    $firstLineOffset
-     * @param int    $maxLineLength   optional, 0 indicates the default of 75 bytes
-     *
-     * @return string
-     */
-    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
+    public function encodeString(string $string, ?string $charset = 'utf-8', int $firstLineOffset = 0, int $maxLineLength = 0): string
     {
         $lines = [];
         $lineCount = 0;
@@ -51,15 +34,12 @@ class Swift_Encoder_Rfc2231Encoder implements Swift_Encoder
             $maxLineLength = 75;
         }
 
-        $this->charStream->flushContents();
-        $this->charStream->importString($string);
-
+        $charStream = new CharacterStream($string, $charset);
         $thisLineLength = $maxLineLength - $firstLineOffset;
 
-        while (false !== $char = $this->charStream->read(4)) {
+        while (null !== $char = $charStream->read(4)) {
             $encodedChar = rawurlencode($char);
-            if (0 != strlen($currentLine)
-                && strlen($currentLine.$encodedChar) > $thisLineLength) {
+            if (0 !== \strlen($currentLine) && \strlen($currentLine.$encodedChar) > $thisLineLength) {
                 $lines[] = '';
                 $currentLine = &$lines[$lineCount++];
                 $thisLineLength = $maxLineLength;
@@ -68,23 +48,5 @@ class Swift_Encoder_Rfc2231Encoder implements Swift_Encoder
         }
 
         return implode("\r\n", $lines);
-    }
-
-    /**
-     * Updates the charset used.
-     *
-     * @param string $charset
-     */
-    public function charsetChanged($charset)
-    {
-        $this->charStream->setCharacterSet($charset);
-    }
-
-    /**
-     * Make a deep copy of object.
-     */
-    public function __clone()
-    {
-        $this->charStream = clone $this->charStream;
     }
 }

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Console\Exception;
+namespace Symfony\Component\Routing\Exception;
 
 /**
  * ExceptionInterface.
  *
- * @author Jérôme Tamarelle <jerome@tamarelle.net>
+ * @author Alexandre Salomé <alexandre.salome@gmail.com>
  */
 interface ExceptionInterface extends \Throwable
 {
