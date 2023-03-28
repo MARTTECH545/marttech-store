@@ -9,18 +9,26 @@
  * file that was distributed with this source code.
  */
 
-namespace Prophecy\Exception;
+namespace Prophecy\Prophecy;
 
 /**
- * Core Prophecy exception interface.
- * All Prophecy exceptions implement it.
+ * Controllable doubles interface.
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
-interface Exception
+interface ProphecySubjectInterface
 {
     /**
-     * @return string
+     * Sets subject prophecy.
+     *
+     * @param ProphecyInterface $prophecy
      */
-    public function getMessage();
+    public function setProphecy(ProphecyInterface $prophecy);
+
+    /**
+     * Returns subject prophecy.
+     *
+     * @return ProphecyInterface
+     */
+    public function getProphecy();
 }

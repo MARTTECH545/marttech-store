@@ -11,16 +11,6 @@
 
 namespace Prophecy\Exception;
 
-/**
- * Core Prophecy exception interface.
- * All Prophecy exceptions implement it.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-interface Exception
+class InvalidArgumentException extends \InvalidArgumentException implements Exception
 {
-    /**
-     * @return string
-     */
-    public function getMessage();
 }

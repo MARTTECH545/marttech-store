@@ -9,18 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Prophecy\Exception;
+namespace Prophecy\Exception\Prediction;
 
-/**
- * Core Prophecy exception interface.
- * All Prophecy exceptions implement it.
- *
- * @author Konstantin Kudryashov <ever.zet@gmail.com>
- */
-interface Exception
+use Prophecy\Exception\Exception;
+
+interface PredictionException extends Exception
 {
-    /**
-     * @return string
-     */
-    public function getMessage();
 }

@@ -9,18 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Prophecy\Exception;
+namespace Prophecy\Prophecy;
 
 /**
- * Core Prophecy exception interface.
- * All Prophecy exceptions implement it.
+ * Core Prophecy interface.
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
-interface Exception
+interface ProphecyInterface
 {
     /**
-     * @return string
+     * Reveals prophecy object (double) .
+     *
+     * @return object
      */
-    public function getMessage();
+    public function reveal();
 }

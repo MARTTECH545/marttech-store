@@ -9,18 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Prophecy\Exception;
+namespace Prophecy\Exception\Prediction;
+
+use RuntimeException;
 
 /**
- * Core Prophecy exception interface.
- * All Prophecy exceptions implement it.
+ * Basic failed prediction exception.
+ * Use it for custom prediction failures.
  *
  * @author Konstantin Kudryashov <ever.zet@gmail.com>
  */
-interface Exception
+class FailedPredictionException extends RuntimeException implements PredictionException
 {
-    /**
-     * @return string
-     */
-    public function getMessage();
 }
