@@ -1,1037 +1,619 @@
 {
     "Version": "36",
     "Names": {
-        "ADP": [
-            "ADP",
-            "peseta andorska"
-        ],
-        "AED": [
-            "AED",
-            "dirham ZEA"
-        ],
-        "AFA": [
-            "AFA",
-            "afgani (1927–2002)"
-        ],
-        "AFN": [
-            "AFN",
-            "afgani afgańskie"
-        ],
-        "ALL": [
-            "ALL",
-            "lek albański"
-        ],
-        "AMD": [
-            "AMD",
-            "dram armeński"
-        ],
-        "ANG": [
-            "ANG",
-            "gulden antylski"
-        ],
-        "AOA": [
-            "AOA",
-            "kwanza angolska"
-        ],
-        "AOK": [
-            "AOK",
-            "kwanza angolańska (1977–1990)"
-        ],
-        "AON": [
-            "AON",
-            "nowa kwanza angolańska (1990–2000)"
-        ],
-        "AOR": [
-            "AOR",
-            "kwanza angolańska Reajustado (1995–1999)"
-        ],
-        "ARA": [
-            "ARA",
-            "austral argentyński"
-        ],
-        "ARP": [
-            "ARP",
-            "peso argentyńskie (1983–1985)"
-        ],
-        "ARS": [
-            "ARS",
-            "peso argentyńskie"
-        ],
-        "ATS": [
-            "ATS",
-            "szyling austriacki"
-        ],
-        "AUD": [
-            "AUD",
-            "dolar australijski"
-        ],
-        "AWG": [
-            "AWG",
-            "florin arubański"
-        ],
-        "AZM": [
-            "AZM",
-            "manat azerbejdżański"
-        ],
-        "AZN": [
-            "AZN",
-            "manat azerski"
-        ],
-        "BAD": [
-            "BAD",
-            "dinar Bośni i Hercegowiny"
-        ],
-        "BAM": [
-            "BAM",
-            "marka zamienna Bośni i Hercegowiny"
-        ],
-        "BBD": [
-            "BBD",
-            "dolar Barbadosu"
-        ],
-        "BDT": [
-            "BDT",
-            "taka bengalska"
-        ],
-        "BEC": [
-            "BEC",
-            "frank belgijski (zamienny)"
-        ],
-        "BEF": [
-            "BEF",
-            "frank belgijski"
-        ],
-        "BEL": [
-            "BEL",
-            "frank belgijski (finansowy)"
-        ],
-        "BGL": [
-            "BGL",
-            "lew bułgarski wymienny"
-        ],
-        "BGM": [
-            "BGM",
-            "lew bułgarski socjalistyczny"
-        ],
-        "BGN": [
-            "BGN",
-            "lew bułgarski"
-        ],
-        "BGO": [
-            "BGO",
-            "lew bułgarski (1879–1952)"
-        ],
-        "BHD": [
-            "BHD",
-            "dinar bahrański"
-        ],
-        "BIF": [
-            "BIF",
-            "frank burundyjski"
-        ],
-        "BMD": [
-            "BMD",
-            "dolar bermudzki"
-        ],
-        "BND": [
-            "BND",
-            "dolar brunejski"
-        ],
-        "BOB": [
-            "BOB",
-            "boliviano boliwijskie"
-        ],
-        "BOP": [
-            "BOP",
-            "peso boliwijskie"
-        ],
-        "BOV": [
-            "BOV",
-            "mvdol boliwijski"
-        ],
-        "BRB": [
-            "BRB",
-            "cruzeiro novo brazylijskie (1967–1986)"
-        ],
-        "BRC": [
-            "BRC",
-            "cruzado brazylijskie"
-        ],
-        "BRE": [
-            "BRE",
-            "cruzeiro brazylijskie (1990–1993)"
-        ],
-        "BRL": [
-            "R$",
-            "real brazylijski"
-        ],
-        "BRN": [
-            "BRN",
-            "nowe cruzado brazylijskie"
-        ],
-        "BRR": [
-            "BRR",
-            "cruzeiro brazylijskie"
-        ],
-        "BSD": [
-            "BSD",
-            "dolar bahamski"
-        ],
-        "BTN": [
-            "BTN",
-            "ngultrum bhutański"
-        ],
-        "BUK": [
-            "BUK",
-            "kyat birmański"
-        ],
-        "BWP": [
-            "BWP",
-            "pula botswańska"
-        ],
-        "BYB": [
-            "BYB",
-            "rubel białoruski (1994–1999)"
-        ],
-        "BYN": [
-            "BYN",
-            "rubel białoruski"
-        ],
-        "BYR": [
-            "BYR",
-            "rubel białoruski (2000–2016)"
-        ],
-        "BZD": [
-            "BZD",
-            "dolar belizeński"
-        ],
-        "CAD": [
-            "CAD",
-            "dolar kanadyjski"
-        ],
-        "CDF": [
-            "CDF",
-            "frank kongijski"
-        ],
-        "CHF": [
-            "CHF",
-            "frank szwajcarski"
-        ],
-        "CLP": [
-            "CLP",
-            "peso chilijskie"
-        ],
-        "CNH": [
-            "CNH",
-            "juan chiński (rynek zewnętrzny)"
-        ],
-        "CNY": [
-            "CNY",
-            "juan chiński"
-        ],
-        "COP": [
-            "COP",
-            "peso kolumbijskie"
-        ],
-        "CRC": [
-            "CRC",
-            "colon kostarykański"
-        ],
-        "CSD": [
-            "CSD",
-            "stary dinar serbski"
-        ],
-        "CSK": [
-            "CSK",
-            "korona czechosłowacka"
-        ],
-        "CUC": [
-            "CUC",
-            "peso kubańskie wymienialne"
-        ],
-        "CUP": [
-            "CUP",
-            "peso kubańskie"
-        ],
-        "CVE": [
-            "CVE",
-            "escudo zielonoprzylądkowe"
-        ],
-        "CYP": [
-            "CYP",
-            "funt cypryjski"
-        ],
-        "CZK": [
-            "CZK",
-            "korona czeska"
-        ],
-        "DDM": [
-            "DDM",
-            "wschodnia marka wschodnioniemiecka"
-        ],
-        "DEM": [
-            "DEM",
-            "marka niemiecka"
-        ],
-        "DJF": [
-            "DJF",
-            "frank dżibutyjski"
-        ],
-        "DKK": [
-            "DKK",
-            "korona duńska"
-        ],
-        "DOP": [
-            "DOP",
-            "peso dominikańskie"
-        ],
-        "DZD": [
-            "DZD",
-            "dinar algierski"
-        ],
-        "ECS": [
-            "ECS",
-            "sucre ekwadorski"
-        ],
-        "EEK": [
-            "EEK",
-            "korona estońska"
-        ],
-        "EGP": [
-            "EGP",
-            "funt egipski"
-        ],
-        "ERN": [
-            "ERN",
-            "nakfa erytrejska"
-        ],
-        "ESA": [
-            "ESA",
-            "peseta hiszpańska (Konto A)"
-        ],
-        "ESB": [
-            "ESB",
-            "peseta hiszpańska (konto wymienne)"
-        ],
-        "ESP": [
-            "ESP",
-            "peseta hiszpańska"
-        ],
-        "ETB": [
-            "ETB",
-            "birr etiopski"
-        ],
-        "EUR": [
-            "€",
-            "euro"
-        ],
-        "FIM": [
-            "FIM",
-            "marka fińska"
-        ],
-        "FJD": [
-            "FJD",
-            "dolar fidżyjski"
-        ],
-        "FKP": [
-            "FKP",
-            "funt falklandzki"
-        ],
-        "FRF": [
-            "FRF",
-            "frank francuski"
-        ],
-        "GBP": [
-            "GBP",
-            "funt szterling"
-        ],
-        "GEK": [
-            "GEK",
-            "kupon gruziński larit"
-        ],
-        "GEL": [
-            "GEL",
-            "lari gruzińskie"
-        ],
-        "GHC": [
-            "GHC",
-            "cedi ghańskie (1979–2007)"
-        ],
-        "GHS": [
-            "GHS",
-            "cedi ghańskie"
-        ],
-        "GIP": [
-            "GIP",
-            "funt gibraltarski"
-        ],
-        "GMD": [
-            "GMD",
-            "dalasi gambijskie"
-        ],
-        "GNF": [
-            "GNF",
-            "frank gwinejski"
-        ],
-        "GNS": [
-            "GNS",
-            "syli gwinejskie"
-        ],
-        "GQE": [
-            "GQE",
-            "ekwele gwinejskie Gwinei Równikowej"
-        ],
-        "GRD": [
-            "GRD",
-            "drachma grecka"
-        ],
-        "GTQ": [
-            "GTQ",
-            "quetzal gwatemalski"
-        ],
-        "GWE": [
-            "GWE",
-            "escudo Gwinea Portugalska"
-        ],
-        "GWP": [
-            "GWP",
-            "peso Guinea-Bissau"
-        ],
-        "GYD": [
-            "GYD",
-            "dolar gujański"
-        ],
-        "HKD": [
-            "HKD",
-            "dolar hongkoński"
-        ],
-        "HNL": [
-            "HNL",
-            "lempira honduraska"
-        ],
-        "HRD": [
-            "HRD",
-            "dinar chorwacki"
-        ],
-        "HRK": [
-            "HRK",
-            "kuna chorwacka"
-        ],
-        "HTG": [
-            "HTG",
-            "gourde haitański"
-        ],
-        "HUF": [
-            "HUF",
-            "forint węgierski"
-        ],
-        "IDR": [
-            "IDR",
-            "rupia indonezyjska"
-        ],
-        "IEP": [
-            "IEP",
-            "funt irlandzki"
-        ],
-        "ILP": [
-            "ILP",
-            "funt izraelski"
-        ],
-        "ILS": [
-            "ILS",
-            "nowy szekel izraelski"
-        ],
-        "INR": [
-            "INR",
-            "rupia indyjska"
-        ],
-        "IQD": [
-            "IQD",
-            "dinar iracki"
-        ],
-        "IRR": [
-            "IRR",
-            "rial irański"
-        ],
-        "ISK": [
-            "ISK",
-            "korona islandzka"
-        ],
-        "ITL": [
-            "ITL",
-            "lir włoski"
-        ],
-        "JMD": [
-            "JMD",
-            "dolar jamajski"
-        ],
-        "JOD": [
-            "JOD",
-            "dinar jordański"
-        ],
-        "JPY": [
-            "JPY",
-            "jen japoński"
-        ],
-        "KES": [
-            "KES",
-            "szyling kenijski"
-        ],
-        "KGS": [
-            "KGS",
-            "som kirgiski"
-        ],
-        "KHR": [
-            "KHR",
-            "riel kambodżański"
-        ],
-        "KMF": [
-            "KMF",
-            "frank komoryjski"
-        ],
-        "KPW": [
-            "KPW",
-            "won północnokoreański"
-        ],
-        "KRW": [
-            "KRW",
-            "won południowokoreański"
-        ],
-        "KWD": [
-            "KWD",
-            "dinar kuwejcki"
-        ],
-        "KYD": [
-            "KYD",
-            "dolar kajmański"
-        ],
-        "KZT": [
-            "KZT",
-            "tenge kazachskie"
-        ],
-        "LAK": [
-            "LAK",
-            "kip laotański"
-        ],
-        "LBP": [
-            "LBP",
-            "funt libański"
-        ],
-        "LKR": [
-            "LKR",
-            "rupia lankijska"
-        ],
-        "LRD": [
-            "LRD",
-            "dolar liberyjski"
-        ],
-        "LSL": [
-            "LSL",
-            "loti Lesoto"
-        ],
-        "LTL": [
-            "LTL",
-            "lit litewski"
-        ],
-        "LTT": [
-            "LTT",
-            "talon litewski"
-        ],
-        "LUF": [
-            "LUF",
-            "frank luksemburski"
-        ],
-        "LVL": [
-            "LVL",
-            "łat łotewski"
-        ],
-        "LVR": [
-            "LVR",
-            "rubel łotewski"
-        ],
-        "LYD": [
-            "LYD",
-            "dinar libijski"
-        ],
-        "MAD": [
-            "MAD",
-            "dirham marokański"
-        ],
-        "MAF": [
-            "MAF",
-            "frank marokański"
-        ],
-        "MDL": [
-            "MDL",
-            "lej mołdawski"
-        ],
-        "MGA": [
-            "MGA",
-            "ariary malgaski"
-        ],
-        "MGF": [
-            "MGF",
-            "frank malgaski"
-        ],
-        "MKD": [
-            "MKD",
-            "denar macedoński"
-        ],
-        "MLF": [
-            "MLF",
-            "frank malijski"
-        ],
-        "MMK": [
-            "MMK",
-            "kiat birmański"
-        ],
-        "MNT": [
-            "MNT",
-            "tugrik mongolski"
-        ],
-        "MOP": [
-            "MOP",
-            "pataca Makau"
-        ],
-        "MRO": [
-            "MRO",
-            "ouguiya mauretańska (1973–2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "ugija mauretańska"
-        ],
-        "MTL": [
-            "MTL",
-            "lira maltańska"
-        ],
-        "MTP": [
-            "MTP",
-            "funt maltański"
-        ],
-        "MUR": [
-            "MUR",
-            "rupia maurytyjska"
-        ],
-        "MVR": [
-            "MVR",
-            "rupia malediwska"
-        ],
-        "MWK": [
-            "MWK",
-            "kwacha malawijska"
-        ],
-        "MXN": [
-            "MXN",
-            "peso meksykańskie"
-        ],
-        "MXP": [
-            "MXP",
-            "peso srebrne meksykańskie (1861–1992)"
-        ],
-        "MYR": [
-            "MYR",
-            "ringgit malezyjski"
-        ],
-        "MZE": [
-            "MZE",
-            "escudo mozambickie"
-        ],
-        "MZM": [
-            "MZM",
-            "metical Mozambik"
-        ],
-        "MZN": [
-            "MZN",
-            "metical mozambicki"
-        ],
-        "NAD": [
-            "NAD",
-            "dolar namibijski"
-        ],
-        "NGN": [
-            "NGN",
-            "naira nigeryjska"
-        ],
-        "NIC": [
-            "NIC",
-            "cordoba nikaraguańska (1988–1991)"
-        ],
-        "NIO": [
-            "NIO",
-            "cordoba nikaraguańska"
-        ],
-        "NLG": [
-            "NLG",
-            "gulden holenderski"
-        ],
-        "NOK": [
-            "NOK",
-            "korona norweska"
-        ],
-        "NPR": [
-            "NPR",
-            "rupia nepalska"
-        ],
-        "NZD": [
-            "NZD",
-            "dolar nowozelandzki"
-        ],
-        "OMR": [
-            "OMR",
-            "rial omański"
-        ],
-        "PAB": [
-            "PAB",
-            "balboa panamski"
-        ],
-        "PEI": [
-            "PEI",
-            "inti peruwiański"
-        ],
-        "PEN": [
-            "PEN",
-            "sol peruwiański"
-        ],
-        "PES": [
-            "PES",
-            "sol peruwiański (1863–1965)"
-        ],
-        "PGK": [
-            "PGK",
-            "kina papuańska"
-        ],
-        "PHP": [
-            "PHP",
-            "peso filipińskie"
-        ],
-        "PKR": [
-            "PKR",
-            "rupia pakistańska"
-        ],
-        "PLN": [
-            "zł",
-            "złoty polski"
-        ],
-        "PLZ": [
-            "PLZ",
-            "złoty polski (1950–1995)"
-        ],
-        "PTE": [
-            "PTE",
-            "escudo portugalskie"
-        ],
-        "PYG": [
-            "PYG",
-            "guarani paragwajskie"
-        ],
-        "QAR": [
-            "QAR",
-            "rial katarski"
-        ],
-        "RHD": [
-            "RHD",
-            "dolar rodezyjski"
-        ],
-        "ROL": [
-            "ROL",
-            "lej rumuński (1952–2006)"
-        ],
-        "RON": [
-            "RON",
-            "lej rumuński"
-        ],
-        "RSD": [
-            "RSD",
-            "dinar serbski"
-        ],
-        "RUB": [
-            "RUB",
-            "rubel rosyjski"
-        ],
-        "RUR": [
-            "RUR",
-            "rubel rosyjski (1991–1998)"
-        ],
-        "RWF": [
-            "RWF",
-            "frank ruandyjski"
-        ],
-        "SAR": [
-            "SAR",
-            "rial saudyjski"
-        ],
-        "SBD": [
-            "SBD",
-            "dolar Wysp Salomona"
-        ],
-        "SCR": [
-            "SCR",
-            "rupia seszelska"
-        ],
-        "SDD": [
-            "SDD",
-            "dinar sudański"
-        ],
-        "SDG": [
-            "SDG",
-            "funt sudański"
-        ],
-        "SDP": [
-            "SDP",
-            "funt sudański (1957–1998)"
-        ],
-        "SEK": [
-            "SEK",
-            "korona szwedzka"
-        ],
-        "SGD": [
-            "SGD",
-            "dolar singapurski"
-        ],
-        "SHP": [
-            "SHP",
-            "funt Świętej Heleny"
-        ],
-        "SIT": [
-            "SIT",
-            "tolar słoweński"
-        ],
-        "SKK": [
-            "SKK",
-            "korona słowacka"
-        ],
-        "SLL": [
-            "SLL",
-            "leone sierraleoński"
-        ],
-        "SOS": [
-            "SOS",
-            "szyling somalijski"
-        ],
-        "SRD": [
-            "SRD",
-            "dolar surinamski"
-        ],
-        "SRG": [
-            "SRG",
-            "gulden surinamski"
-        ],
-        "SSP": [
-            "SSP",
-            "funt południowosudański"
-        ],
-        "STD": [
-            "STD",
-            "dobra Wysp Świętego Tomasza i Książęcej (1977–2017)"
-        ],
-        "STN": [
-            "STN",
-            "dobra Wysp Świętego Tomasza i Książęcej"
-        ],
-        "SUR": [
-            "SUR",
-            "rubel radziecki"
-        ],
-        "SVC": [
-            "SVC",
-            "colon salwadorski"
-        ],
-        "SYP": [
-            "SYP",
-            "funt syryjski"
-        ],
-        "SZL": [
-            "SZL",
-            "lilangeni Suazi"
-        ],
-        "THB": [
-            "THB",
-            "baht tajski"
-        ],
-        "TJR": [
-            "TJR",
-            "rubel tadżycki"
-        ],
-        "TJS": [
-            "TJS",
-            "somoni tadżyckie"
-        ],
-        "TMM": [
-            "TMM",
-            "manat turkmeński (1993–2009)"
-        ],
-        "TMT": [
-            "TMT",
-            "manat turkmeński"
-        ],
-        "TND": [
-            "TND",
-            "dinar tunezyjski"
-        ],
-        "TOP": [
-            "TOP",
-            "pa’anga tongijska"
-        ],
-        "TPE": [
-            "TPE",
-            "escudo timorskie"
-        ],
-        "TRL": [
-            "TRL",
-            "lira turecka (1922–2005)"
-        ],
-        "TRY": [
-            "TRY",
-            "lira turecka"
-        ],
-        "TTD": [
-            "TTD",
-            "dolar Trynidadu i Tobago"
-        ],
-        "TWD": [
-            "TWD",
-            "nowy dolar tajwański"
-        ],
-        "TZS": [
-            "TZS",
-            "szyling tanzański"
-        ],
-        "UAH": [
-            "UAH",
-            "hrywna ukraińska"
-        ],
-        "UAK": [
-            "UAK",
-            "karbowaniec ukraiński"
-        ],
-        "UGS": [
-            "UGS",
-            "szyling ugandyjski (1966–1987)"
-        ],
-        "UGX": [
-            "UGX",
-            "szyling ugandyjski"
-        ],
-        "USD": [
-            "USD",
-            "dolar amerykański"
-        ],
-        "UYP": [
-            "UYP",
-            "peso urugwajskie (1975–1993)"
-        ],
-        "UYU": [
-            "UYU",
-            "peso urugwajskie"
-        ],
-        "UZS": [
-            "UZS",
-            "som uzbecki"
-        ],
-        "VEB": [
-            "VEB",
-            "boliwar wenezuelski (1871–2008)"
-        ],
-        "VEF": [
-            "VEF",
-            "boliwar wenezuelski (2008–2018)"
-        ],
-        "VES": [
-            "VES",
-            "boliwar wenezuelski"
-        ],
-        "VND": [
-            "VND",
-            "dong wietnamski"
-        ],
-        "VUV": [
-            "VUV",
-            "vatu wanuackie"
-        ],
-        "WST": [
-            "WST",
-            "tala samoańskie"
-        ],
-        "XAF": [
-            "FCFA",
-            "frank CFA BEAC"
-        ],
-        "XCD": [
-            "EC$",
-            "dolar wschodniokaraibski"
-        ],
-        "XEU": [
-            "XEU",
-            "ECU"
-        ],
-        "XFO": [
-            "XFO",
-            "frank złoty francuski"
-        ],
-        "XFU": [
-            "XFU",
-            "UIC-frank francuski"
-        ],
-        "XOF": [
-            "CFA",
-            "frank CFA"
-        ],
-        "XPF": [
-            "CFPF",
-            "frank CFP"
-        ],
-        "YDD": [
-            "YDD",
-            "dinar jemeński"
-        ],
-        "YER": [
-            "YER",
-            "rial jemeński"
-        ],
-        "YUM": [
-            "YUM",
-            "nowy dinar jugosławiański"
-        ],
-        "YUN": [
-            "YUN",
-            "dinar jugosławiański wymienny"
-        ],
-        "ZAL": [
-            "ZAL",
-            "rand południowoafrykański (finansowy)"
-        ],
-        "ZAR": [
-            "ZAR",
-            "rand południowoafrykański"
-        ],
-        "ZMK": [
-            "ZMK",
-            "kwacha zambijska (1968–2012)"
-        ],
-        "ZMW": [
-            "ZMW",
-            "kwacha zambijska"
-        ],
-        "ZRN": [
-            "ZRN",
-            "nowy zair zairski"
-        ],
-        "ZRZ": [
-            "ZRZ",
-            "zair zairski"
-        ],
-        "ZWD": [
-            "ZWD",
-            "dolar Zimbabwe (1980–2008)"
-        ],
-        "ZWL": [
-            "ZWL",
-            "dolar Zimbabwe (2009)"
-        ],
-        "ZWR": [
-            "ZWR",
-            "dolar Zimbabwe (2008)"
-        ]
+        "aa": "afar",
+        "ab": "abchaski",
+        "ace": "aceh",
+        "ach": "aczoli",
+        "ada": "adangme",
+        "ady": "adygejski",
+        "ae": "awestyjski",
+        "aeb": "tunezyjski arabski",
+        "af": "afrikaans",
+        "afh": "afrihili",
+        "agq": "aghem",
+        "ain": "ajnu",
+        "ak": "akan",
+        "akk": "akadyjski",
+        "akz": "alabama",
+        "ale": "aleucki",
+        "aln": "albański gegijski",
+        "alt": "południowoałtajski",
+        "am": "amharski",
+        "an": "aragoński",
+        "ang": "staroangielski",
+        "anp": "angika",
+        "ar": "arabski",
+        "ar_001": "współczesny arabski",
+        "arc": "aramejski",
+        "arn": "mapudungun",
+        "aro": "araona",
+        "arp": "arapaho",
+        "arq": "algierski arabski",
+        "ars": "arabski nadżdyjski",
+        "arw": "arawak",
+        "ary": "marokański arabski",
+        "arz": "egipski arabski",
+        "as": "asamski",
+        "asa": "asu",
+        "ase": "amerykański język migowy",
+        "ast": "asturyjski",
+        "av": "awarski",
+        "avk": "kotava",
+        "awa": "awadhi",
+        "ay": "ajmara",
+        "az": "azerbejdżański",
+        "ba": "baszkirski",
+        "bal": "beludżi",
+        "ban": "balijski",
+        "bar": "bawarski",
+        "bas": "basaa",
+        "bax": "bamum",
+        "bbc": "batak toba",
+        "bbj": "ghomala",
+        "be": "białoruski",
+        "bej": "bedża",
+        "bem": "bemba",
+        "bew": "betawi",
+        "bez": "bena",
+        "bfd": "bafut",
+        "bfq": "badaga",
+        "bg": "bułgarski",
+        "bgn": "beludżi północny",
+        "bho": "bhodżpuri",
+        "bi": "bislama",
+        "bik": "bikol",
+        "bin": "bini",
+        "bjn": "banjar",
+        "bkm": "kom",
+        "bla": "siksika",
+        "bm": "bambara",
+        "bn": "bengalski",
+        "bo": "tybetański",
+        "bpy": "bisznuprija-manipuri",
+        "bqi": "bachtiarski",
+        "br": "bretoński",
+        "bra": "bradź",
+        "brh": "brahui",
+        "brx": "bodo",
+        "bs": "bośniacki",
+        "bss": "akoose",
+        "bua": "buriacki",
+        "bug": "bugijski",
+        "bum": "bulu",
+        "byn": "blin",
+        "byv": "medumba",
+        "ca": "kataloński",
+        "cad": "kaddo",
+        "car": "karaibski",
+        "cay": "kajuga",
+        "cch": "atsam",
+        "ccp": "czakma",
+        "ce": "czeczeński",
+        "ceb": "cebuano",
+        "cgg": "chiga",
+        "ch": "czamorro",
+        "chb": "czibcza",
+        "chg": "czagatajski",
+        "chk": "chuuk",
+        "chm": "maryjski",
+        "chn": "żargon czinucki",
+        "cho": "czoktawski",
+        "chp": "czipewiański",
+        "chr": "czirokeski",
+        "chy": "czejeński",
+        "ckb": "sorani",
+        "co": "korsykański",
+        "cop": "koptyjski",
+        "cps": "capiznon",
+        "cr": "kri",
+        "crh": "krymskotatarski",
+        "crs": "kreolski seszelski",
+        "cs": "czeski",
+        "csb": "kaszubski",
+        "cu": "cerkiewnosłowiański",
+        "cv": "czuwaski",
+        "cy": "walijski",
+        "da": "duński",
+        "dak": "dakota",
+        "dar": "dargwijski",
+        "dav": "taita",
+        "de": "niemiecki",
+        "de_AT": "austriacki niemiecki",
+        "de_CH": "szwajcarski wysokoniemiecki",
+        "del": "delaware",
+        "den": "slave",
+        "dgr": "dogrib",
+        "din": "dinka",
+        "dje": "dżerma",
+        "doi": "dogri",
+        "dsb": "dolnołużycki",
+        "dtp": "dusun centralny",
+        "dua": "duala",
+        "dum": "średniowieczny niderlandzki",
+        "dv": "malediwski",
+        "dyo": "diola",
+        "dyu": "diula",
+        "dz": "dzongkha",
+        "dzg": "dazaga",
+        "ebu": "embu",
+        "ee": "ewe",
+        "efi": "efik",
+        "egl": "emilijski",
+        "egy": "staroegipski",
+        "eka": "ekajuk",
+        "el": "grecki",
+        "elx": "elamicki",
+        "en": "angielski",
+        "en_AU": "australijski angielski",
+        "en_CA": "kanadyjski angielski",
+        "en_GB": "brytyjski angielski",
+        "en_US": "amerykański angielski",
+        "enm": "średnioangielski",
+        "eo": "esperanto",
+        "es": "hiszpański",
+        "es_419": "amerykański hiszpański",
+        "es_ES": "europejski hiszpański",
+        "es_MX": "meksykański hiszpański",
+        "esu": "yupik środkowosyberyjski",
+        "et": "estoński",
+        "eu": "baskijski",
+        "ewo": "ewondo",
+        "ext": "estremadurski",
+        "fa": "perski",
+        "fan": "fang",
+        "fat": "fanti",
+        "ff": "fulani",
+        "fi": "fiński",
+        "fil": "filipino",
+        "fit": "meänkieli",
+        "fj": "fidżijski",
+        "fo": "farerski",
+        "fon": "fon",
+        "fr": "francuski",
+        "fr_CA": "kanadyjski francuski",
+        "fr_CH": "szwajcarski francuski",
+        "frc": "cajuński",
+        "frm": "średniofrancuski",
+        "fro": "starofrancuski",
+        "frp": "franko-prowansalski",
+        "frr": "północnofryzyjski",
+        "frs": "wschodniofryzyjski",
+        "fur": "friulski",
+        "fy": "zachodniofryzyjski",
+        "ga": "irlandzki",
+        "gaa": "ga",
+        "gag": "gagauski",
+        "gan": "gan",
+        "gay": "gayo",
+        "gba": "gbaya",
+        "gbz": "zaratusztriański dari",
+        "gd": "szkocki gaelicki",
+        "gez": "gyyz",
+        "gil": "gilbertański",
+        "gl": "galicyjski",
+        "glk": "giliański",
+        "gmh": "średnio-wysoko-niemiecki",
+        "gn": "guarani",
+        "goh": "staro-wysoko-niemiecki",
+        "gom": "konkani (Goa)",
+        "gon": "gondi",
+        "gor": "gorontalo",
+        "got": "gocki",
+        "grb": "grebo",
+        "grc": "starogrecki",
+        "gsw": "szwajcarski niemiecki",
+        "gu": "gudżarati",
+        "guc": "wayúu",
+        "gur": "frafra",
+        "guz": "gusii",
+        "gv": "manx",
+        "gwi": "gwichʼin",
+        "ha": "hausa",
+        "hai": "haida",
+        "hak": "hakka",
+        "haw": "hawajski",
+        "he": "hebrajski",
+        "hi": "hindi",
+        "hif": "hindi fidżyjskie",
+        "hil": "hiligaynon",
+        "hit": "hetycki",
+        "hmn": "hmong",
+        "ho": "hiri motu",
+        "hr": "chorwacki",
+        "hsb": "górnołużycki",
+        "hsn": "xiang",
+        "ht": "kreolski haitański",
+        "hu": "węgierski",
+        "hup": "hupa",
+        "hy": "ormiański",
+        "hz": "herero",
+        "ia": "interlingua",
+        "iba": "iban",
+        "ibb": "ibibio",
+        "id": "indonezyjski",
+        "ie": "interlingue",
+        "ig": "igbo",
+        "ii": "syczuański",
+        "ik": "inupiak",
+        "ilo": "ilokano",
+        "inh": "inguski",
+        "io": "ido",
+        "is": "islandzki",
+        "it": "włoski",
+        "iu": "inuktitut",
+        "izh": "ingryjski",
+        "ja": "japoński",
+        "jam": "jamajski",
+        "jbo": "lojban",
+        "jgo": "ngombe",
+        "jmc": "machame",
+        "jpr": "judeo-perski",
+        "jrb": "judeoarabski",
+        "jut": "jutlandzki",
+        "jv": "jawajski",
+        "ka": "gruziński",
+        "kaa": "karakałpacki",
+        "kab": "kabylski",
+        "kac": "kaczin",
+        "kaj": "jju",
+        "kam": "kamba",
+        "kaw": "kawi",
+        "kbd": "kabardyjski",
+        "kbl": "kanembu",
+        "kcg": "tyap",
+        "kde": "makonde",
+        "kea": "kreolski Wysp Zielonego Przylądka",
+        "ken": "kenyang",
+        "kfo": "koro",
+        "kg": "kongo",
+        "kgp": "kaingang",
+        "kha": "khasi",
+        "kho": "chotański",
+        "khq": "koyra chiini",
+        "khw": "khowar",
+        "ki": "kikuju",
+        "kiu": "kirmandżki",
+        "kj": "kwanyama",
+        "kk": "kazachski",
+        "kkj": "kako",
+        "kl": "grenlandzki",
+        "kln": "kalenjin",
+        "km": "khmerski",
+        "kmb": "kimbundu",
+        "kn": "kannada",
+        "ko": "koreański",
+        "koi": "komi-permiacki",
+        "kok": "konkani",
+        "kos": "kosrae",
+        "kpe": "kpelle",
+        "kr": "kanuri",
+        "krc": "karaczajsko-bałkarski",
+        "kri": "krio",
+        "krj": "kinaraya",
+        "krl": "karelski",
+        "kru": "kurukh",
+        "ks": "kaszmirski",
+        "ksb": "sambala",
+        "ksf": "bafia",
+        "ksh": "gwara kolońska",
+        "ku": "kurdyjski",
+        "kum": "kumycki",
+        "kut": "kutenai",
+        "kv": "komi",
+        "kw": "kornijski",
+        "ky": "kirgiski",
+        "la": "łaciński",
+        "lad": "ladyński",
+        "lag": "langi",
+        "lah": "lahnda",
+        "lam": "lamba",
+        "lb": "luksemburski",
+        "lez": "lezgijski",
+        "lfn": "Lingua Franca Nova",
+        "lg": "ganda",
+        "li": "limburski",
+        "lij": "liguryjski",
+        "liv": "liwski",
+        "lkt": "lakota",
+        "lmo": "lombardzki",
+        "ln": "lingala",
+        "lo": "laotański",
+        "lol": "mongo",
+        "lou": "kreolski luizjański",
+        "loz": "lozi",
+        "lrc": "luryjski północny",
+        "lt": "litewski",
+        "ltg": "łatgalski",
+        "lu": "luba-katanga",
+        "lua": "luba-lulua",
+        "lui": "luiseno",
+        "lun": "lunda",
+        "luo": "luo",
+        "lus": "mizo",
+        "luy": "luhya",
+        "lv": "łotewski",
+        "lzh": "chiński klasyczny",
+        "lzz": "lazyjski",
+        "mad": "madurski",
+        "maf": "mafa",
+        "mag": "magahi",
+        "mai": "maithili",
+        "mak": "makasar",
+        "man": "mandingo",
+        "mas": "masajski",
+        "mde": "maba",
+        "mdf": "moksza",
+        "mdr": "mandar",
+        "men": "mende",
+        "mer": "meru",
+        "mfe": "kreolski Mauritiusa",
+        "mg": "malgaski",
+        "mga": "średnioirlandzki",
+        "mgh": "makua",
+        "mgo": "meta",
+        "mh": "marszalski",
+        "mi": "maoryjski",
+        "mic": "mikmak",
+        "min": "minangkabu",
+        "mk": "macedoński",
+        "ml": "malajalam",
+        "mn": "mongolski",
+        "mnc": "manchu",
+        "mni": "manipuri",
+        "moh": "mohawk",
+        "mos": "mossi",
+        "mr": "marathi",
+        "mrj": "zachodniomaryjski",
+        "ms": "malajski",
+        "mt": "maltański",
+        "mua": "mundang",
+        "mus": "krik",
+        "mwl": "mirandyjski",
+        "mwr": "marwari",
+        "mwv": "mentawai",
+        "my": "birmański",
+        "mye": "myene",
+        "myv": "erzja",
+        "mzn": "mazanderański",
+        "na": "nauruański",
+        "nan": "minnański",
+        "nap": "neapolitański",
+        "naq": "nama",
+        "nb": "norweski (bokmål)",
+        "nd": "ndebele północny",
+        "nds": "dolnoniemiecki",
+        "nds_NL": "dolnosaksoński",
+        "ne": "nepalski",
+        "new": "newarski",
+        "ng": "ndonga",
+        "nia": "nias",
+        "niu": "niue",
+        "njo": "ao",
+        "nl": "niderlandzki",
+        "nl_BE": "flamandzki",
+        "nmg": "ngumba",
+        "nn": "norweski (nynorsk)",
+        "nnh": "ngiemboon",
+        "no": "norweski",
+        "nog": "nogajski",
+        "non": "staronordyjski",
+        "nov": "novial",
+        "nqo": "n’ko",
+        "nr": "ndebele południowy",
+        "nso": "sotho północny",
+        "nus": "nuer",
+        "nv": "nawaho",
+        "nwc": "newarski klasyczny",
+        "ny": "njandża",
+        "nym": "niamwezi",
+        "nyn": "nyankole",
+        "nyo": "nyoro",
+        "nzi": "nzema",
+        "oc": "oksytański",
+        "oj": "odżibwa",
+        "om": "oromo",
+        "or": "orija",
+        "os": "osetyjski",
+        "osa": "osage",
+        "ota": "osmańsko-turecki",
+        "pa": "pendżabski",
+        "pag": "pangasinan",
+        "pal": "pahlavi",
+        "pam": "pampango",
+        "pap": "papiamento",
+        "pau": "palau",
+        "pcd": "pikardyjski",
+        "pcm": "pidżyn nigeryjski",
+        "pdc": "pensylwański",
+        "pdt": "plautdietsch",
+        "peo": "staroperski",
+        "pfl": "palatynacki",
+        "phn": "fenicki",
+        "pi": "palijski",
+        "pl": "polski",
+        "pms": "piemoncki",
+        "pnt": "pontyjski",
+        "pon": "ponpejski",
+        "prg": "pruski",
+        "pro": "staroprowansalski",
+        "ps": "paszto",
+        "pt": "portugalski",
+        "pt_BR": "brazylijski portugalski",
+        "pt_PT": "europejski portugalski",
+        "qu": "keczua",
+        "quc": "kicze",
+        "qug": "keczua górski (Chimborazo)",
+        "raj": "radźasthani",
+        "rap": "rapanui",
+        "rar": "rarotonga",
+        "rgn": "romagnol",
+        "rif": "tarifit",
+        "rm": "retoromański",
+        "rn": "rundi",
+        "ro": "rumuński",
+        "ro_MD": "mołdawski",
+        "rof": "rombo",
+        "rom": "cygański",
+        "root": "język rdzenny",
+        "rtm": "rotumański",
+        "ru": "rosyjski",
+        "rue": "rusiński",
+        "rug": "roviana",
+        "rup": "arumuński",
+        "rw": "kinya-ruanda",
+        "rwk": "rwa",
+        "sa": "sanskryt",
+        "sad": "sandawe",
+        "sah": "jakucki",
+        "sam": "samarytański aramejski",
+        "saq": "samburu",
+        "sas": "sasak",
+        "sat": "santali",
+        "saz": "saurasztryjski",
+        "sba": "ngambay",
+        "sbp": "sangu",
+        "sc": "sardyński",
+        "scn": "sycylijski",
+        "sco": "scots",
+        "sd": "sindhi",
+        "sdc": "sassarski",
+        "sdh": "południowokurdyjski",
+        "se": "północnolapoński",
+        "see": "seneka",
+        "seh": "sena",
+        "sei": "seri",
+        "sel": "selkupski",
+        "ses": "koyraboro senni",
+        "sg": "sango",
+        "sga": "staroirlandzki",
+        "sgs": "żmudzki",
+        "sh": "serbsko-chorwacki",
+        "shi": "tashelhiyt",
+        "shn": "szan",
+        "shu": "arabski (Czad)",
+        "si": "syngaleski",
+        "sid": "sidamo",
+        "sk": "słowacki",
+        "sl": "słoweński",
+        "sli": "dolnośląski",
+        "sly": "selayar",
+        "sm": "samoański",
+        "sma": "południowolapoński",
+        "smj": "lule",
+        "smn": "inari",
+        "sms": "skolt",
+        "sn": "shona",
+        "snk": "soninke",
+        "so": "somalijski",
+        "sog": "sogdyjski",
+        "sq": "albański",
+        "sr": "serbski",
+        "srn": "sranan tongo",
+        "srr": "serer",
+        "ss": "suazi",
+        "ssy": "saho",
+        "st": "sotho południowy",
+        "stq": "fryzyjski saterlandzki",
+        "su": "sundajski",
+        "suk": "sukuma",
+        "sus": "susu",
+        "sux": "sumeryjski",
+        "sv": "szwedzki",
+        "sw": "suahili",
+        "sw_CD": "kongijski suahili",
+        "swb": "komoryjski",
+        "syc": "syriacki",
+        "syr": "syryjski",
+        "szl": "śląski",
+        "ta": "tamilski",
+        "tcy": "tulu",
+        "te": "telugu",
+        "tem": "temne",
+        "teo": "ateso",
+        "ter": "tereno",
+        "tet": "tetum",
+        "tg": "tadżycki",
+        "th": "tajski",
+        "ti": "tigrinia",
+        "tig": "tigre",
+        "tiv": "tiw",
+        "tk": "turkmeński",
+        "tkl": "tokelau",
+        "tkr": "cachurski",
+        "tl": "tagalski",
+        "tlh": "klingoński",
+        "tli": "tlingit",
+        "tly": "tałyski",
+        "tmh": "tamaszek",
+        "tn": "setswana",
+        "to": "tonga",
+        "tog": "tonga (Niasa)",
+        "tpi": "tok pisin",
+        "tr": "turecki",
+        "tru": "turoyo",
+        "trv": "taroko",
+        "ts": "tsonga",
+        "tsd": "cakoński",
+        "tsi": "tsimshian",
+        "tt": "tatarski",
+        "ttt": "tacki",
+        "tum": "tumbuka",
+        "tvl": "tuvalu",
+        "tw": "twi",
+        "twq": "tasawaq",
+        "ty": "tahitański",
+        "tyv": "tuwiński",
+        "tzm": "tamazight (Atlas Środkowy)",
+        "udm": "udmurcki",
+        "ug": "ujgurski",
+        "uga": "ugarycki",
+        "uk": "ukraiński",
+        "umb": "umbundu",
+        "ur": "urdu",
+        "uz": "uzbecki",
+        "vai": "wai",
+        "ve": "venda",
+        "vec": "wenecki",
+        "vep": "wepski",
+        "vi": "wietnamski",
+        "vls": "zachodnioflamandzki",
+        "vmf": "meński frankoński",
+        "vo": "wolapik",
+        "vot": "wotiacki",
+        "vro": "võro",
+        "vun": "vunjo",
+        "wa": "waloński",
+        "wae": "walser",
+        "wal": "wolayta",
+        "war": "waraj",
+        "was": "washo",
+        "wbp": "warlpiri",
+        "wo": "wolof",
+        "wuu": "wu",
+        "xal": "kałmucki",
+        "xh": "khosa",
+        "xmf": "megrelski",
+        "xog": "soga",
+        "yao": "yao",
+        "yap": "japski",
+        "yav": "yangben",
+        "ybb": "yemba",
+        "yi": "jidysz",
+        "yo": "joruba",
+        "yrl": "nheengatu",
+        "yue": "kantoński",
+        "za": "czuang",
+        "zap": "zapotecki",
+        "zbl": "bliss",
+        "zea": "zelandzki",
+        "zen": "zenaga",
+        "zgh": "standardowy marokański tamazight",
+        "zh": "chiński",
+        "zh_Hans": "chiński uproszczony",
+        "zh_Hant": "chiński tradycyjny",
+        "zu": "zulu",
+        "zun": "zuni",
+        "zza": "zazaki"
     }
 }

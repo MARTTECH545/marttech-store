@@ -1,965 +1,524 @@
 {
     "Version": "36",
     "Names": {
-        "ADP": [
-            "ADP",
-            "pesetă andorrană"
-        ],
-        "AED": [
-            "AED",
-            "dirham din Emiratele Arabe Unite"
-        ],
-        "AFN": [
-            "AFN",
-            "afgani afgan"
-        ],
-        "ALL": [
-            "ALL",
-            "leka albaneză"
-        ],
-        "AMD": [
-            "AMD",
-            "dram armenesc"
-        ],
-        "ANG": [
-            "ANG",
-            "gulden din Antilele Olandeze"
-        ],
-        "AOA": [
-            "AOA",
-            "kwanza angoleză"
-        ],
-        "ARP": [
-            "ARP",
-            "peso argentinian (1983–1985)"
-        ],
-        "ARS": [
-            "ARS",
-            "peso argentinian"
-        ],
-        "ATS": [
-            "ATS",
-            "șiling austriac"
-        ],
-        "AUD": [
-            "AUD",
-            "dolar australian"
-        ],
-        "AWG": [
-            "AWG",
-            "florin aruban"
-        ],
-        "AZM": [
-            "AZM",
-            "manat azer (1993–2006)"
-        ],
-        "AZN": [
-            "AZN",
-            "manat azer"
-        ],
-        "BAD": [
-            "BAD",
-            "dinar Bosnia-Herțegovina (1992–1994)"
-        ],
-        "BAM": [
-            "BAM",
-            "marcă convertibilă din Bosnia și Herțegovina"
-        ],
-        "BBD": [
-            "BBD",
-            "dolar din Barbados"
-        ],
-        "BDT": [
-            "BDT",
-            "taka din Bangladesh"
-        ],
-        "BEC": [
-            "BEC",
-            "franc belgian (convertibil)"
-        ],
-        "BEF": [
-            "BEF",
-            "franc belgian"
-        ],
-        "BEL": [
-            "BEL",
-            "franc belgian (financiar)"
-        ],
-        "BGN": [
-            "BGN",
-            "leva bulgărească"
-        ],
-        "BHD": [
-            "BHD",
-            "dinar din Bahrain"
-        ],
-        "BIF": [
-            "BIF",
-            "franc burundez"
-        ],
-        "BMD": [
-            "BMD",
-            "dolar din Bermuda"
-        ],
-        "BND": [
-            "BND",
-            "dolar din Brunei"
-        ],
-        "BOB": [
-            "BOB",
-            "boliviano bolivian"
-        ],
-        "BOP": [
-            "BOP",
-            "peso bolivian"
-        ],
-        "BOV": [
-            "BOV",
-            "mvdol bolivian"
-        ],
-        "BRE": [
-            "BRE",
-            "cruzeiro brazilian (1990–1993)"
-        ],
-        "BRL": [
-            "BRL",
-            "real brazilian"
-        ],
-        "BRR": [
-            "BRR",
-            "cruzeiro brazilian (1993–1994)"
-        ],
-        "BSD": [
-            "BSD",
-            "dolar din Bahamas"
-        ],
-        "BTN": [
-            "BTN",
-            "ngultrum din Bhutan"
-        ],
-        "BUK": [
-            "BUK",
-            "kyat birman"
-        ],
-        "BWP": [
-            "BWP",
-            "pula Botswana"
-        ],
-        "BYN": [
-            "BYN",
-            "rublă belarusă"
-        ],
-        "BYR": [
-            "BYR",
-            "rublă belarusă (2000–2016)"
-        ],
-        "BZD": [
-            "BZD",
-            "dolar din Belize"
-        ],
-        "CAD": [
-            "CAD",
-            "dolar canadian"
-        ],
-        "CDF": [
-            "CDF",
-            "franc congolez"
-        ],
-        "CHF": [
-            "CHF",
-            "franc elvețian"
-        ],
-        "CLP": [
-            "CLP",
-            "peso chilian"
-        ],
-        "CNH": [
-            "CNH",
-            "yuan chinezesc (offshore)"
-        ],
-        "CNY": [
-            "CNY",
-            "yuan chinezesc"
-        ],
-        "COP": [
-            "COP",
-            "peso columbian"
-        ],
-        "CRC": [
-            "CRC",
-            "colon costarican"
-        ],
-        "CSD": [
-            "CSD",
-            "dinar Serbia și Muntenegru (2002–2006)"
-        ],
-        "CUC": [
-            "CUC",
-            "peso cubanez convertibil"
-        ],
-        "CUP": [
-            "CUP",
-            "peso cubanez"
-        ],
-        "CVE": [
-            "CVE",
-            "escudo din Capul Verde"
-        ],
-        "CYP": [
-            "CYP",
-            "liră cipriotă"
-        ],
-        "CZK": [
-            "CZK",
-            "coroană cehă"
-        ],
-        "DDM": [
-            "DDM",
-            "marcă est-germană"
-        ],
-        "DEM": [
-            "DEM",
-            "marcă germană"
-        ],
-        "DJF": [
-            "DJF",
-            "franc djiboutian"
-        ],
-        "DKK": [
-            "DKK",
-            "coroană daneză"
-        ],
-        "DOP": [
-            "DOP",
-            "peso dominican"
-        ],
-        "DZD": [
-            "DZD",
-            "dinar algerian"
-        ],
-        "ECS": [
-            "ECS",
-            "sucre Ecuador"
-        ],
-        "EEK": [
-            "EEK",
-            "coroană estoniană"
-        ],
-        "EGP": [
-            "EGP",
-            "liră egipteană"
-        ],
-        "ERN": [
-            "ERN",
-            "nakfa eritreeană"
-        ],
-        "ESA": [
-            "ESA",
-            "peseta spaniolă (cont A)"
-        ],
-        "ESB": [
-            "ESB",
-            "peseta spaniolă (cont convertibil)"
-        ],
-        "ESP": [
-            "ESP",
-            "pesetă spaniolă"
-        ],
-        "ETB": [
-            "ETB",
-            "birr etiopian"
-        ],
-        "EUR": [
-            "EUR",
-            "euro"
-        ],
-        "FIM": [
-            "FIM",
-            "marcă finlandeză"
-        ],
-        "FJD": [
-            "FJD",
-            "dolar fijian"
-        ],
-        "FKP": [
-            "FKP",
-            "liră din Insulele Falkland"
-        ],
-        "FRF": [
-            "FRF",
-            "franc francez"
-        ],
-        "GBP": [
-            "GBP",
-            "liră sterlină"
-        ],
-        "GEL": [
-            "GEL",
-            "lari georgian"
-        ],
-        "GHC": [
-            "GHC",
-            "cedi Ghana (1979–2007)"
-        ],
-        "GHS": [
-            "GHS",
-            "cedi ghanez"
-        ],
-        "GIP": [
-            "GIP",
-            "liră din Gibraltar"
-        ],
-        "GMD": [
-            "GMD",
-            "dalasi din Gambia"
-        ],
-        "GNF": [
-            "GNF",
-            "franc guineean"
-        ],
-        "GRD": [
-            "GRD",
-            "drahmă grecească"
-        ],
-        "GTQ": [
-            "GTQ",
-            "quetzal guatemalez"
-        ],
-        "GWP": [
-            "GWP",
-            "peso Guineea-Bissau"
-        ],
-        "GYD": [
-            "GYD",
-            "dolar guyanez"
-        ],
-        "HKD": [
-            "HKD",
-            "dolar din Hong Kong"
-        ],
-        "HNL": [
-            "HNL",
-            "lempira honduriană"
-        ],
-        "HRD": [
-            "HRD",
-            "dinar croat"
-        ],
-        "HRK": [
-            "HRK",
-            "kuna croată"
-        ],
-        "HTG": [
-            "HTG",
-            "gourde din Haiti"
-        ],
-        "HUF": [
-            "HUF",
-            "forint maghiar"
-        ],
-        "IDR": [
-            "IDR",
-            "rupie indoneziană"
-        ],
-        "IEP": [
-            "IEP",
-            "liră irlandeză"
-        ],
-        "ILP": [
-            "ILP",
-            "liră israeliană"
-        ],
-        "ILS": [
-            "ILS",
-            "șechel israelian nou"
-        ],
-        "INR": [
-            "INR",
-            "rupie indiană"
-        ],
-        "IQD": [
-            "IQD",
-            "dinar irakian"
-        ],
-        "IRR": [
-            "IRR",
-            "rial iranian"
-        ],
-        "ISK": [
-            "ISK",
-            "coroană islandeză"
-        ],
-        "ITL": [
-            "ITL",
-            "liră italiană"
-        ],
-        "JMD": [
-            "JMD",
-            "dolar jamaican"
-        ],
-        "JOD": [
-            "JOD",
-            "dinar iordanian"
-        ],
-        "JPY": [
-            "JPY",
-            "yen japonez"
-        ],
-        "KES": [
-            "KES",
-            "șiling kenyan"
-        ],
-        "KGS": [
-            "KGS",
-            "som kârgâz"
-        ],
-        "KHR": [
-            "KHR",
-            "riel cambodgian"
-        ],
-        "KMF": [
-            "KMF",
-            "franc comorian"
-        ],
-        "KPW": [
-            "KPW",
-            "won nord-coreean"
-        ],
-        "KRW": [
-            "KRW",
-            "won sud-coreean"
-        ],
-        "KWD": [
-            "KWD",
-            "dinar kuweitian"
-        ],
-        "KYD": [
-            "KYD",
-            "dolar din Insulele Cayman"
-        ],
-        "KZT": [
-            "KZT",
-            "tenge kazahă"
-        ],
-        "LAK": [
-            "LAK",
-            "kip laoțian"
-        ],
-        "LBP": [
-            "LBP",
-            "liră libaneză"
-        ],
-        "LKR": [
-            "LKR",
-            "rupie srilankeză"
-        ],
-        "LRD": [
-            "LRD",
-            "dolar liberian"
-        ],
-        "LSL": [
-            "LSL",
-            "loti lesothian"
-        ],
-        "LTL": [
-            "LTL",
-            "litu lituanian"
-        ],
-        "LUC": [
-            "LUC",
-            "franc convertibil luxemburghez"
-        ],
-        "LUF": [
-            "LUF",
-            "franc luxemburghez"
-        ],
-        "LUL": [
-            "LUL",
-            "franc financiar luxemburghez"
-        ],
-        "LVL": [
-            "LVL",
-            "lats letonian"
-        ],
-        "LVR": [
-            "LVR",
-            "rublă Letonia"
-        ],
-        "LYD": [
-            "LYD",
-            "dinar libian"
-        ],
-        "MAD": [
-            "MAD",
-            "dirham marocan"
-        ],
-        "MAF": [
-            "MAF",
-            "franc marocan"
-        ],
-        "MDL": [
-            "MDL",
-            "leu moldovenesc"
-        ],
-        "MGA": [
-            "MGA",
-            "ariary malgaș"
-        ],
-        "MGF": [
-            "MGF",
-            "franc Madagascar"
-        ],
-        "MKD": [
-            "MKD",
-            "dinar macedonean"
-        ],
-        "MLF": [
-            "MLF",
-            "franc Mali"
-        ],
-        "MMK": [
-            "MMK",
-            "kyat din Myanmar"
-        ],
-        "MNT": [
-            "MNT",
-            "tugrik mongol"
-        ],
-        "MOP": [
-            "MOP",
-            "pataca din Macao"
-        ],
-        "MRO": [
-            "MRO",
-            "ouguiya mauritană (1973–2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "ouguiya mauritană"
-        ],
-        "MTL": [
-            "MTL",
-            "liră malteză"
-        ],
-        "MUR": [
-            "MUR",
-            "rupie mauritiană"
-        ],
-        "MVR": [
-            "MVR",
-            "rufiyaa maldiviană"
-        ],
-        "MWK": [
-            "MWK",
-            "kwacha malawiană"
-        ],
-        "MXN": [
-            "MXN",
-            "peso mexican"
-        ],
-        "MXP": [
-            "MXP",
-            "peso mexican de argint (1861–1992)"
-        ],
-        "MYR": [
-            "MYR",
-            "ringgit malaiezian"
-        ],
-        "MZE": [
-            "MZE",
-            "escudo Mozambic"
-        ],
-        "MZM": [
-            "MZM",
-            "metical Mozambic vechi"
-        ],
-        "MZN": [
-            "MZN",
-            "metical mozambican"
-        ],
-        "NAD": [
-            "NAD",
-            "dolar namibian"
-        ],
-        "NGN": [
-            "NGN",
-            "naira nigeriană"
-        ],
-        "NIC": [
-            "NIC",
-            "cordoba nicaraguană (1988–1991)"
-        ],
-        "NIO": [
-            "NIO",
-            "cordoba nicaraguană"
-        ],
-        "NLG": [
-            "NLG",
-            "gulden olandez"
-        ],
-        "NOK": [
-            "NOK",
-            "coroană norvegiană"
-        ],
-        "NPR": [
-            "NPR",
-            "rupie nepaleză"
-        ],
-        "NZD": [
-            "NZD",
-            "dolar neozeelandez"
-        ],
-        "OMR": [
-            "OMR",
-            "rial omanez"
-        ],
-        "PAB": [
-            "PAB",
-            "balboa panameză"
-        ],
-        "PEI": [
-            "PEI",
-            "inti peruvian"
-        ],
-        "PEN": [
-            "PEN",
-            "sol peruvian"
-        ],
-        "PES": [
-            "PES",
-            "sol peruvian (1863–1965)"
-        ],
-        "PGK": [
-            "PGK",
-            "kina din Papua-Noua Guinee"
-        ],
-        "PHP": [
-            "PHP",
-            "peso filipinez"
-        ],
-        "PKR": [
-            "PKR",
-            "rupie pakistaneză"
-        ],
-        "PLN": [
-            "PLN",
-            "zlot polonez"
-        ],
-        "PLZ": [
-            "PLZ",
-            "zlot polonez (1950–1995)"
-        ],
-        "PYG": [
-            "PYG",
-            "guarani paraguayan"
-        ],
-        "QAR": [
-            "QAR",
-            "rial qatarian"
-        ],
-        "RHD": [
-            "RHD",
-            "dolar rhodesian"
-        ],
-        "ROL": [
-            "ROL",
-            "leu românesc (1952–2006)"
-        ],
-        "RON": [
-            "RON",
-            "leu românesc"
-        ],
-        "RSD": [
-            "RSD",
-            "dinar sârbesc"
-        ],
-        "RUB": [
-            "RUB",
-            "rublă rusească"
-        ],
-        "RWF": [
-            "RWF",
-            "franc rwandez"
-        ],
-        "SAR": [
-            "SAR",
-            "rial saudit"
-        ],
-        "SBD": [
-            "SBD",
-            "dolar din Insulele Solomon"
-        ],
-        "SCR": [
-            "SCR",
-            "rupie din Seychelles"
-        ],
-        "SDD": [
-            "SDD",
-            "dinar sudanez"
-        ],
-        "SDG": [
-            "SDG",
-            "liră sudaneză"
-        ],
-        "SDP": [
-            "SDP",
-            "liră sudaneză (1957–1998)"
-        ],
-        "SEK": [
-            "SEK",
-            "coroană suedeză"
-        ],
-        "SGD": [
-            "SGD",
-            "dolar singaporez"
-        ],
-        "SHP": [
-            "SHP",
-            "liră Insula Sf. Elena"
-        ],
-        "SIT": [
-            "SIT",
-            "tolar sloven"
-        ],
-        "SKK": [
-            "SKK",
-            "coroană slovacă"
-        ],
-        "SLL": [
-            "SLL",
-            "leone din Sierra Leone"
-        ],
-        "SOS": [
-            "SOS",
-            "șiling somalez"
-        ],
-        "SRD": [
-            "SRD",
-            "dolar surinamez"
-        ],
-        "SRG": [
-            "SRG",
-            "gulden Surinam"
-        ],
-        "SSP": [
-            "SSP",
-            "liră din Sudanul de Sud"
-        ],
-        "STD": [
-            "STD",
-            "dobra Sao Tome și Principe (1977–2017)"
-        ],
-        "STN": [
-            "STN",
-            "dobra Sao Tome și Principe"
-        ],
-        "SUR": [
-            "SUR",
-            "rublă sovietică"
-        ],
-        "SVC": [
-            "SVC",
-            "colon El Salvador"
-        ],
-        "SYP": [
-            "SYP",
-            "liră siriană"
-        ],
-        "SZL": [
-            "SZL",
-            "lilangeni din Swaziland"
-        ],
-        "THB": [
-            "THB",
-            "baht thailandez"
-        ],
-        "TJR": [
-            "TJR",
-            "rublă Tadjikistan"
-        ],
-        "TJS": [
-            "TJS",
-            "somoni tadjic"
-        ],
-        "TMM": [
-            "TMM",
-            "manat turkmen (1993–2009)"
-        ],
-        "TMT": [
-            "TMT",
-            "manat turkmen"
-        ],
-        "TND": [
-            "TND",
-            "dinar tunisian"
-        ],
-        "TOP": [
-            "TOP",
-            "pa’anga tongană"
-        ],
-        "TRL": [
-            "TRL",
-            "liră turcească (1922–2005)"
-        ],
-        "TRY": [
-            "TRY",
-            "liră turcească"
-        ],
-        "TTD": [
-            "TTD",
-            "dolar din Trinidad-Tobago"
-        ],
-        "TWD": [
-            "TWD",
-            "dolar nou din Taiwan"
-        ],
-        "TZS": [
-            "TZS",
-            "șiling tanzanian"
-        ],
-        "UAH": [
-            "UAH",
-            "hryvna ucraineană"
-        ],
-        "UAK": [
-            "UAK",
-            "carboavă ucraineană"
-        ],
-        "UGS": [
-            "UGS",
-            "șiling ugandez (1966–1987)"
-        ],
-        "UGX": [
-            "UGX",
-            "șiling ugandez"
-        ],
-        "USD": [
-            "USD",
-            "dolar american"
-        ],
-        "USN": [
-            "USN",
-            "dolar american (ziua următoare)"
-        ],
-        "USS": [
-            "USS",
-            "dolar american (aceeași zi)"
-        ],
-        "UYP": [
-            "UYP",
-            "peso Uruguay (1975–1993)"
-        ],
-        "UYU": [
-            "UYU",
-            "peso uruguayan"
-        ],
-        "UZS": [
-            "UZS",
-            "sum Uzbekistan"
-        ],
-        "VEB": [
-            "VEB",
-            "bolivar Venezuela (1871–2008)"
-        ],
-        "VEF": [
-            "VEF",
-            "bolivar venezuelean (2008–2018)"
-        ],
-        "VES": [
-            "VES",
-            "bolivar venezuelean"
-        ],
-        "VND": [
-            "VND",
-            "dong vietnamez"
-        ],
-        "VUV": [
-            "VUV",
-            "vatu din Vanuatu"
-        ],
-        "WST": [
-            "WST",
-            "tala samoană"
-        ],
-        "XAF": [
-            "FCFA",
-            "franc CFA BEAC"
-        ],
-        "XCD": [
-            "XCD",
-            "dolar din Caraibele de Est"
-        ],
-        "XEU": [
-            "XEU",
-            "unitate de monedă europeană"
-        ],
-        "XFO": [
-            "XFO",
-            "franc francez de aur"
-        ],
-        "XFU": [
-            "XFU",
-            "franc UIC francez"
-        ],
-        "XOF": [
-            "CFA",
-            "franc CFA BCEAO"
-        ],
-        "XPF": [
-            "CFPF",
-            "franc CFP"
-        ],
-        "YDD": [
-            "YDD",
-            "dinar Yemen"
-        ],
-        "YER": [
-            "YER",
-            "rial yemenit"
-        ],
-        "YUD": [
-            "YUD",
-            "dinar iugoslav greu"
-        ],
-        "YUM": [
-            "YUM",
-            "dinar iugoslav nou"
-        ],
-        "YUN": [
-            "YUN",
-            "dinar iugoslav convertibil"
-        ],
-        "ZAL": [
-            "ZAL",
-            "rand sud-african (financiar)"
-        ],
-        "ZAR": [
-            "ZAR",
-            "rand sud-african"
-        ],
-        "ZMK": [
-            "ZMK",
-            "kwacha zambian (1968–2012)"
-        ],
-        "ZMW": [
-            "ZMW",
-            "kwacha zambian"
-        ],
-        "ZRN": [
-            "ZRN",
-            "zair nou"
-        ],
-        "ZWD": [
-            "ZWD",
-            "dolar Zimbabwe (1980–2008)"
-        ],
-        "ZWL": [
-            "ZWL",
-            "dolar Zimbabwe (2009)"
-        ],
-        "ZWR": [
-            "ZWR",
-            "dolar Zimbabwe (2008)"
-        ]
+        "aa": "afar",
+        "ab": "abhază",
+        "ace": "aceh",
+        "ach": "acoli",
+        "ada": "adangme",
+        "ady": "adyghe",
+        "ae": "avestană",
+        "af": "afrikaans",
+        "afh": "afrihili",
+        "agq": "aghem",
+        "ain": "ainu",
+        "ak": "akan",
+        "akk": "akkadiană",
+        "ale": "aleută",
+        "alt": "altaică meridională",
+        "am": "amharică",
+        "an": "aragoneză",
+        "ang": "engleză veche",
+        "anp": "angika",
+        "ar": "arabă",
+        "ar_001": "arabă standard modernă",
+        "arc": "aramaică",
+        "arn": "mapuche",
+        "arp": "arapaho",
+        "ars": "arabă najdi",
+        "arw": "arawak",
+        "as": "asameză",
+        "asa": "asu",
+        "ast": "asturiană",
+        "av": "avară",
+        "awa": "awadhi",
+        "ay": "aymara",
+        "az": "azeră",
+        "ba": "bașkiră",
+        "bal": "baluchi",
+        "ban": "balineză",
+        "bas": "basaa",
+        "bax": "bamun",
+        "bbj": "ghomala",
+        "be": "belarusă",
+        "bej": "beja",
+        "bem": "bemba",
+        "bez": "bena",
+        "bfd": "bafut",
+        "bg": "bulgară",
+        "bgn": "baluchi occidentală",
+        "bho": "bhojpuri",
+        "bi": "bislama",
+        "bik": "bikol",
+        "bin": "bini",
+        "bkm": "kom",
+        "bla": "siksika",
+        "bm": "bambara",
+        "bn": "bengaleză",
+        "bo": "tibetană",
+        "br": "bretonă",
+        "bra": "braj",
+        "brx": "bodo",
+        "bs": "bosniacă",
+        "bss": "akoose",
+        "bua": "buriat",
+        "bug": "bugineză",
+        "bum": "bulu",
+        "byn": "blin",
+        "byv": "medumba",
+        "ca": "catalană",
+        "cad": "caddo",
+        "car": "carib",
+        "cay": "cayuga",
+        "cch": "atsam",
+        "ccp": "chakma",
+        "ce": "cecenă",
+        "ceb": "cebuană",
+        "cgg": "chiga",
+        "ch": "chamorro",
+        "chb": "chibcha",
+        "chg": "chagatai",
+        "chk": "chuukese",
+        "chm": "mari",
+        "chn": "jargon chinook",
+        "cho": "choctaw",
+        "chp": "chipewyan",
+        "chr": "cherokee",
+        "chy": "cheyenne",
+        "ckb": "kurdă centrală",
+        "co": "corsicană",
+        "cop": "coptă",
+        "cr": "cree",
+        "crh": "turcă crimeeană",
+        "crs": "creolă franceză seselwa",
+        "cs": "cehă",
+        "csb": "cașubiană",
+        "cu": "slavonă",
+        "cv": "ciuvașă",
+        "cy": "galeză",
+        "da": "daneză",
+        "dak": "dakota",
+        "dar": "dargwa",
+        "dav": "taita",
+        "de": "germană",
+        "de_CH": "germană standard (Elveția)",
+        "del": "delaware",
+        "den": "slave",
+        "dgr": "dogrib",
+        "din": "dinka",
+        "dje": "zarma",
+        "doi": "dogri",
+        "dsb": "sorabă de jos",
+        "dua": "duala",
+        "dum": "neerlandeză medie",
+        "dv": "divehi",
+        "dyo": "jola-fonyi",
+        "dyu": "dyula",
+        "dz": "dzongkha",
+        "dzg": "dazaga",
+        "ebu": "embu",
+        "ee": "ewe",
+        "efi": "efik",
+        "egy": "egipteană veche",
+        "eka": "ekajuk",
+        "el": "greacă",
+        "elx": "elamită",
+        "en": "engleză",
+        "enm": "engleză medie",
+        "eo": "esperanto",
+        "es": "spaniolă",
+        "es_ES": "spaniolă (Europa)",
+        "et": "estonă",
+        "eu": "bască",
+        "ewo": "ewondo",
+        "fa": "persană",
+        "fan": "fang",
+        "fat": "fanti",
+        "ff": "fulah",
+        "fi": "finlandeză",
+        "fil": "filipineză",
+        "fj": "fijiană",
+        "fo": "faroeză",
+        "fon": "fon",
+        "fr": "franceză",
+        "frc": "franceză cajun",
+        "frm": "franceză medie",
+        "fro": "franceză veche",
+        "frr": "frizonă nordică",
+        "frs": "frizonă orientală",
+        "fur": "friulană",
+        "fy": "frizonă occidentală",
+        "ga": "irlandeză",
+        "gaa": "ga",
+        "gag": "găgăuză",
+        "gan": "chineză gan",
+        "gay": "gayo",
+        "gba": "gbaya",
+        "gd": "gaelică scoțiană",
+        "gez": "geez",
+        "gil": "gilbertină",
+        "gl": "galiciană",
+        "gmh": "germană înaltă medie",
+        "gn": "guarani",
+        "goh": "germană înaltă veche",
+        "gon": "gondi",
+        "gor": "gorontalo",
+        "got": "gotică",
+        "grb": "grebo",
+        "grc": "greacă veche",
+        "gsw": "germană (Elveția)",
+        "gu": "gujarati",
+        "guz": "gusii",
+        "gv": "manx",
+        "gwi": "gwichʼin",
+        "ha": "hausa",
+        "hai": "haida",
+        "hak": "chineză hakka",
+        "haw": "hawaiiană",
+        "he": "ebraică",
+        "hi": "hindi",
+        "hil": "hiligaynon",
+        "hit": "hitită",
+        "hmn": "hmong",
+        "ho": "hiri motu",
+        "hr": "croată",
+        "hsb": "sorabă de sus",
+        "hsn": "chineză xiang",
+        "ht": "haitiană",
+        "hu": "maghiară",
+        "hup": "hupa",
+        "hy": "armeană",
+        "hz": "herero",
+        "ia": "interlingua",
+        "iba": "iban",
+        "ibb": "ibibio",
+        "id": "indoneziană",
+        "ie": "interlingue",
+        "ig": "igbo",
+        "ii": "yi din Sichuan",
+        "ik": "inupiak",
+        "ilo": "iloko",
+        "inh": "ingușă",
+        "io": "ido",
+        "is": "islandeză",
+        "it": "italiană",
+        "iu": "inuktitut",
+        "ja": "japoneză",
+        "jbo": "lojban",
+        "jgo": "ngomba",
+        "jmc": "machame",
+        "jpr": "iudeo-persană",
+        "jrb": "iudeo-arabă",
+        "jv": "javaneză",
+        "ka": "georgiană",
+        "kaa": "karakalpak",
+        "kab": "kabyle",
+        "kac": "kachin",
+        "kaj": "jju",
+        "kam": "kamba",
+        "kaw": "kawi",
+        "kbd": "kabardian",
+        "kbl": "kanembu",
+        "kcg": "tyap",
+        "kde": "makonde",
+        "kea": "kabuverdianu",
+        "kfo": "koro",
+        "kg": "congoleză",
+        "kha": "khasi",
+        "kho": "khotaneză",
+        "khq": "koyra chiini",
+        "ki": "kikuyu",
+        "kj": "kuanyama",
+        "kk": "kazahă",
+        "kkj": "kako",
+        "kl": "kalaallisut",
+        "kln": "kalenjin",
+        "km": "khmeră",
+        "kmb": "kimbundu",
+        "kn": "kannada",
+        "ko": "coreeană",
+        "koi": "komi-permiak",
+        "kok": "konkani",
+        "kos": "kosrae",
+        "kpe": "kpelle",
+        "kr": "kanuri",
+        "krc": "karaceai-balkar",
+        "krl": "kareliană",
+        "kru": "kurukh",
+        "ks": "cașmiră",
+        "ksb": "shambala",
+        "ksf": "bafia",
+        "ksh": "kölsch",
+        "ku": "kurdă",
+        "kum": "kumyk",
+        "kut": "kutenai",
+        "kv": "komi",
+        "kw": "cornică",
+        "ky": "kârgâză",
+        "la": "latină",
+        "lad": "ladino",
+        "lag": "langi",
+        "lah": "lahnda",
+        "lam": "lamba",
+        "lb": "luxemburgheză",
+        "lez": "lezghian",
+        "lg": "ganda",
+        "li": "limburgheză",
+        "lkt": "lakota",
+        "ln": "lingala",
+        "lo": "laoțiană",
+        "lol": "mongo",
+        "lou": "creolă (Louisiana)",
+        "loz": "lozi",
+        "lrc": "luri de nord",
+        "lt": "lituaniană",
+        "lu": "luba-katanga",
+        "lua": "luba-lulua",
+        "lui": "luiseno",
+        "lun": "lunda",
+        "luo": "luo",
+        "lus": "mizo",
+        "luy": "luyia",
+        "lv": "letonă",
+        "mad": "madureză",
+        "maf": "mafa",
+        "mag": "magahi",
+        "mai": "maithili",
+        "mak": "makasar",
+        "man": "mandingo",
+        "mas": "masai",
+        "mde": "maba",
+        "mdf": "moksha",
+        "mdr": "mandar",
+        "men": "mende",
+        "mer": "meru",
+        "mfe": "morisyen",
+        "mg": "malgașă",
+        "mga": "irlandeză medie",
+        "mgh": "makhuwa-meetto",
+        "mgo": "meta’",
+        "mh": "marshalleză",
+        "mi": "maori",
+        "mic": "micmac",
+        "min": "minangkabau",
+        "mk": "macedoneană",
+        "ml": "malayalam",
+        "mn": "mongolă",
+        "mnc": "manciuriană",
+        "mni": "manipuri",
+        "moh": "mohawk",
+        "mos": "mossi",
+        "mr": "marathi",
+        "ms": "malaeză",
+        "mt": "malteză",
+        "mua": "mundang",
+        "mus": "creek",
+        "mwl": "mirandeză",
+        "mwr": "marwari",
+        "my": "birmană",
+        "mye": "myene",
+        "myv": "erzya",
+        "mzn": "mazanderani",
+        "na": "nauru",
+        "nan": "chineză min nan",
+        "nap": "napolitană",
+        "naq": "nama",
+        "nb": "norvegiană bokmål",
+        "nd": "ndebele de nord",
+        "nds": "germana de jos",
+        "nds_NL": "saxona de jos",
+        "ne": "nepaleză",
+        "new": "newari",
+        "ng": "ndonga",
+        "nia": "nias",
+        "niu": "niueană",
+        "nl": "neerlandeză",
+        "nl_BE": "flamandă",
+        "nmg": "kwasio",
+        "nn": "norvegiană nynorsk",
+        "nnh": "ngiemboon",
+        "no": "norvegiană",
+        "nog": "nogai",
+        "non": "nordică veche",
+        "nqo": "n’ko",
+        "nr": "ndebele de sud",
+        "nso": "sotho de nord",
+        "nus": "nuer",
+        "nv": "navajo",
+        "nwc": "newari clasică",
+        "ny": "nyanja",
+        "nym": "nyamwezi",
+        "nyn": "nyankole",
+        "nyo": "nyoro",
+        "nzi": "nzima",
+        "oc": "occitană",
+        "oj": "ojibwa",
+        "om": "oromo",
+        "or": "odia",
+        "os": "osetă",
+        "osa": "osage",
+        "ota": "turcă otomană",
+        "pa": "punjabi",
+        "pag": "pangasinan",
+        "pal": "pahlavi",
+        "pam": "pampanga",
+        "pap": "papiamento",
+        "pau": "palauană",
+        "pcm": "pidgin nigerian",
+        "peo": "persană veche",
+        "phn": "feniciană",
+        "pi": "pali",
+        "pl": "poloneză",
+        "pon": "pohnpeiană",
+        "prg": "prusacă",
+        "pro": "provensală veche",
+        "ps": "paștună",
+        "pt": "portugheză",
+        "pt_PT": "portugheză (Europa)",
+        "qu": "quechua",
+        "quc": "quiché",
+        "raj": "rajasthani",
+        "rap": "rapanui",
+        "rar": "rarotongan",
+        "rm": "romanșă",
+        "rn": "kirundi",
+        "ro": "română",
+        "rof": "rombo",
+        "rom": "romani",
+        "root": "root",
+        "ru": "rusă",
+        "rup": "aromână",
+        "rw": "kinyarwanda",
+        "rwk": "rwa",
+        "sa": "sanscrită",
+        "sad": "sandawe",
+        "sah": "sakha",
+        "sam": "aramaică samariteană",
+        "saq": "samburu",
+        "sas": "sasak",
+        "sat": "santali",
+        "sba": "ngambay",
+        "sbp": "sangu",
+        "sc": "sardiniană",
+        "scn": "siciliană",
+        "sco": "scots",
+        "sd": "sindhi",
+        "sdh": "kurdă de sud",
+        "se": "sami de nord",
+        "see": "seneca",
+        "seh": "sena",
+        "sel": "selkup",
+        "ses": "koyraboro Senni",
+        "sg": "sango",
+        "sga": "irlandeză veche",
+        "sh": "sârbo-croată",
+        "shi": "tachelhit",
+        "shn": "shan",
+        "shu": "arabă ciadiană",
+        "si": "singhaleză",
+        "sid": "sidamo",
+        "sk": "slovacă",
+        "sl": "slovenă",
+        "sm": "samoană",
+        "sma": "sami de sud",
+        "smj": "sami lule",
+        "smn": "sami inari",
+        "sms": "sami skolt",
+        "sn": "shona",
+        "snk": "soninke",
+        "so": "somaleză",
+        "sog": "sogdien",
+        "sq": "albaneză",
+        "sr": "sârbă",
+        "srn": "sranan tongo",
+        "srr": "serer",
+        "ss": "swati",
+        "ssy": "saho",
+        "st": "sesotho",
+        "su": "sundaneză",
+        "suk": "sukuma",
+        "sus": "susu",
+        "sux": "sumeriană",
+        "sv": "suedeză",
+        "sw": "swahili",
+        "sw_CD": "swahili (R.D. Congo)",
+        "swb": "comoreză",
+        "syc": "siriacă clasică",
+        "syr": "siriacă",
+        "ta": "tamilă",
+        "te": "telugu",
+        "tem": "timne",
+        "teo": "teso",
+        "ter": "tereno",
+        "tet": "tetum",
+        "tg": "tadjică",
+        "th": "thailandeză",
+        "ti": "tigrină",
+        "tig": "tigre",
+        "tiv": "tiv",
+        "tk": "turkmenă",
+        "tkl": "tokelau",
+        "tl": "tagalog",
+        "tlh": "klingoniană",
+        "tli": "tlingit",
+        "tmh": "tamashek",
+        "tn": "setswana",
+        "to": "tongană",
+        "tog": "nyasa tonga",
+        "tpi": "tok pisin",
+        "tr": "turcă",
+        "trv": "taroko",
+        "ts": "tsonga",
+        "tsi": "tsimshian",
+        "tt": "tătară",
+        "tum": "tumbuka",
+        "tvl": "tuvalu",
+        "tw": "twi",
+        "twq": "tasawaq",
+        "ty": "tahitiană",
+        "tyv": "tuvană",
+        "tzm": "tamazight din Altasul Central",
+        "udm": "udmurt",
+        "ug": "uigură",
+        "uga": "ugaritică",
+        "uk": "ucraineană",
+        "umb": "umbundu",
+        "ur": "urdu",
+        "uz": "uzbecă",
+        "vai": "vai",
+        "ve": "venda",
+        "vi": "vietnameză",
+        "vo": "volapuk",
+        "vot": "votică",
+        "vun": "vunjo",
+        "wa": "valonă",
+        "wae": "walser",
+        "wal": "wolaita",
+        "war": "waray",
+        "was": "washo",
+        "wbp": "warlpiri",
+        "wo": "wolof",
+        "wuu": "chineză wu",
+        "xal": "calmucă",
+        "xh": "xhosa",
+        "xog": "soga",
+        "yao": "yao",
+        "yap": "yapeză",
+        "yav": "yangben",
+        "ybb": "yemba",
+        "yi": "idiș",
+        "yo": "yoruba",
+        "yue": "cantoneză",
+        "za": "zhuang",
+        "zap": "zapotecă",
+        "zbl": "simboluri Bilss",
+        "zen": "zenaga",
+        "zgh": "tamazight standard marocană",
+        "zh": "chineză",
+        "zh_Hans": "chineză simplificată",
+        "zh_Hant": "chineză tradițională",
+        "zu": "zulu",
+        "zun": "zuni",
+        "zza": "zaza"
     }
 }

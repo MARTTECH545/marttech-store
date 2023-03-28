@@ -1,13 +1,6 @@
 {
     "Version": "36",
     "Names": {
-        "DKK": [
-            "kr.",
-            "DKK"
-        ],
-        "EUR": [
-            "€",
-            "euro"
-        ]
+        "kl": "kalaallisut"
     }
 }

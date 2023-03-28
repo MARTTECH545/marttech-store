@@ -1,633 +1,228 @@
 {
     "Version": "36",
     "Names": {
-        "AED": [
-            "AED",
-            "Dirham Uni Emirat Arab"
-        ],
-        "AFN": [
-            "AFN",
-            "Afghani Afganistan"
-        ],
-        "ALL": [
-            "ALL",
-            "Lek Albania"
-        ],
-        "AMD": [
-            "AMD",
-            "Dram Armenia"
-        ],
-        "ANG": [
-            "ANG",
-            "Guilder Antilla Walanda"
-        ],
-        "AOA": [
-            "AOA",
-            "Kwanza Angola"
-        ],
-        "ARS": [
-            "ARS",
-            "Peso Argentina"
-        ],
-        "AUD": [
-            "A$",
-            "Dolar Australia"
-        ],
-        "AWG": [
-            "AWG",
-            "Florin Aruban"
-        ],
-        "AZN": [
-            "AZN",
-            "Manat Azerbaijan"
-        ],
-        "BAM": [
-            "BAM",
-            "Mark Konvertibel Bosnia-Herzegovina"
-        ],
-        "BBD": [
-            "BBD",
-            "Dolar Barbadian"
-        ],
-        "BDT": [
-            "BDT",
-            "Taka Bangladesh"
-        ],
-        "BGN": [
-            "BGN",
-            "Lev Bulgaria"
-        ],
-        "BHD": [
-            "BHD",
-            "Bahrain Dinar"
-        ],
-        "BIF": [
-            "BIF",
-            "Franc Burundi"
-        ],
-        "BMD": [
-            "BMD",
-            "Dolar Bermuda"
-        ],
-        "BND": [
-            "BND",
-            "Dolar Brunai"
-        ],
-        "BOB": [
-            "BOB",
-            "Boliviano Bolivia"
-        ],
-        "BRL": [
-            "R$",
-            "Real Brasil"
-        ],
-        "BSD": [
-            "BSD",
-            "Dolar Bahamian"
-        ],
-        "BTN": [
-            "BTN",
-            "Ngultrum Bhutan"
-        ],
-        "BWP": [
-            "BWP",
-            "Pula Botswana"
-        ],
-        "BYN": [
-            "BYN",
-            "Ruble Belarusia"
-        ],
-        "BZD": [
-            "BZD",
-            "Dolar Belise"
-        ],
-        "CAD": [
-            "CA$",
-            "Dolar Kanada"
-        ],
-        "CDF": [
-            "CDF",
-            "Franc Kongo"
-        ],
-        "CHF": [
-            "CHF",
-            "Franc Swiss"
-        ],
-        "CLP": [
-            "CLP",
-            "Peso Chili"
-        ],
-        "CNH": [
-            "CNH",
-            "Yuan Tyongkok (Jaban Rangkah)"
-        ],
-        "CNY": [
-            "CN¥",
-            "Yuan Tyongkok"
-        ],
-        "COP": [
-            "COP",
-            "Peso Kolumbia"
-        ],
-        "CRC": [
-            "CRC",
-            "Colon Kosta Rika"
-        ],
-        "CUC": [
-            "CUC",
-            "Peso Konvertibel Kuba"
-        ],
-        "CUP": [
-            "CUP",
-            "Peso Kuba"
-        ],
-        "CVE": [
-            "CVE",
-            "Escudo Tanjung Verde"
-        ],
-        "CZK": [
-            "CZK",
-            "Koruna Czech"
-        ],
-        "DJF": [
-            "DJF",
-            "Franc Djibouti"
-        ],
-        "DKK": [
-            "DKK",
-            "Krone Denmark"
-        ],
-        "DOP": [
-            "DOP",
-            "Peso Dominika"
-        ],
-        "DZD": [
-            "DZD",
-            "Dinar Algeria"
-        ],
-        "EGP": [
-            "EGP",
-            "Pound Mesir"
-        ],
-        "ERN": [
-            "ERN",
-            "Nakfa Eritrea"
-        ],
-        "ETB": [
-            "ETB",
-            "Birr Ethiopia"
-        ],
-        "EUR": [
-            "€",
-            "Euro"
-        ],
-        "FJD": [
-            "FJD",
-            "Dolar Fiji"
-        ],
-        "FKP": [
-            "FKP",
-            "Pound Kepuloan Falkland"
-        ],
-        "GBP": [
-            "£",
-            "Pound Inggris"
-        ],
-        "GEL": [
-            "GEL",
-            "Lari Georgia"
-        ],
-        "GHS": [
-            "GHS",
-            "Cedi Ghana"
-        ],
-        "GIP": [
-            "GIP",
-            "Pound Gibraltar"
-        ],
-        "GMD": [
-            "GMD",
-            "Dalasi Gambia"
-        ],
-        "GNF": [
-            "GNF",
-            "Franc Guinea"
-        ],
-        "GTQ": [
-            "GTQ",
-            "Quetzal Guatemala"
-        ],
-        "GYD": [
-            "GYD",
-            "Dolar Guyana"
-        ],
-        "HKD": [
-            "HK$",
-            "Dolar Hong Kong"
-        ],
-        "HNL": [
-            "HNL",
-            "Lempira Honduras"
-        ],
-        "HRK": [
-            "HRK",
-            "Kuna Kroasia"
-        ],
-        "HTG": [
-            "HTG",
-            "Gourde Haiti"
-        ],
-        "HUF": [
-            "HUF",
-            "Forint Hungaria"
-        ],
-        "IDR": [
-            "Rp",
-            "Rupiah Indonesia"
-        ],
-        "ILS": [
-            "₪",
-            "Shekel Anyar Israel"
-        ],
-        "INR": [
-            "₹",
-            "Rupee India"
-        ],
-        "IQD": [
-            "IQD",
-            "Dinar Irak"
-        ],
-        "IRR": [
-            "IRR",
-            "Rial Iran"
-        ],
-        "ISK": [
-            "ISK",
-            "Krona Islandia"
-        ],
-        "JMD": [
-            "JMD",
-            "Dolar Jamaika"
-        ],
-        "JOD": [
-            "JOD",
-            "Dinar Yordania"
-        ],
-        "JPY": [
-            "JP¥",
-            "Yen Jepang"
-        ],
-        "KES": [
-            "KES",
-            "Shilling Kenya"
-        ],
-        "KGS": [
-            "KGS",
-            "Som Kirgistan"
-        ],
-        "KHR": [
-            "KHR",
-            "Riel Kamboja"
-        ],
-        "KMF": [
-            "KMF",
-            "Franc Komoro"
-        ],
-        "KPW": [
-            "KPW",
-            "Won Korea Lor"
-        ],
-        "KRW": [
-            "₩",
-            "Won Korea Kidul"
-        ],
-        "KWD": [
-            "KWD",
-            "Dinar Kuwait"
-        ],
-        "KYD": [
-            "KYD",
-            "Dolar Kepuloan Caiman"
-        ],
-        "KZT": [
-            "KZT",
-            "Tenge Kasakhstan"
-        ],
-        "LAK": [
-            "LAK",
-            "Kip Laos"
-        ],
-        "LBP": [
-            "LBP",
-            "Pound Libanon"
-        ],
-        "LKR": [
-            "LKR",
-            "Rupee Sri Lanka"
-        ],
-        "LRD": [
-            "LRD",
-            "Dolar Liberia"
-        ],
-        "LYD": [
-            "LYD",
-            "Dinar Libya"
-        ],
-        "MAD": [
-            "MAD",
-            "Dirham Maroko"
-        ],
-        "MDL": [
-            "MDL",
-            "Leu Moldova"
-        ],
-        "MGA": [
-            "MGA",
-            "Ariary Malagasi"
-        ],
-        "MKD": [
-            "MKD",
-            "Denar Masedonia"
-        ],
-        "MMK": [
-            "MMK",
-            "Kyat Myanmar"
-        ],
-        "MNT": [
-            "MNT",
-            "Tugrik Mongol"
-        ],
-        "MOP": [
-            "MOP",
-            "Pataca Macau"
-        ],
-        "MRO": [
-            "MRO",
-            "Ouguiya Mauritania (1973 - 2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "Ouguiya Mauritania"
-        ],
-        "MUR": [
-            "MUR",
-            "Rupee Mauritius"
-        ],
-        "MVR": [
-            "MVR",
-            "Rufiyaa Maladewa"
-        ],
-        "MWK": [
-            "MWK",
-            "Kwacha Malawi"
-        ],
-        "MXN": [
-            "MX$",
-            "Peso Meksiko"
-        ],
-        "MYR": [
-            "MYR",
-            "Ringgit Malaysia"
-        ],
-        "MZN": [
-            "MZN",
-            "Metical Mosambik"
-        ],
-        "NAD": [
-            "NAD",
-            "Dolar Namibia"
-        ],
-        "NGN": [
-            "NGN",
-            "Naira Nigeria"
-        ],
-        "NIO": [
-            "NIO",
-            "Cordoba Nikaragua"
-        ],
-        "NOK": [
-            "NOK",
-            "Krone Norwegia"
-        ],
-        "NPR": [
-            "NPR",
-            "Rupee Nepal"
-        ],
-        "NZD": [
-            "NZ$",
-            "Dolar Selandia Anyar"
-        ],
-        "OMR": [
-            "OMR",
-            "Rial Oman"
-        ],
-        "PAB": [
-            "PAB",
-            "Balboa Panama"
-        ],
-        "PEN": [
-            "PEN",
-            "Sol Peru"
-        ],
-        "PGK": [
-            "PGK",
-            "Kina Papua Nugini"
-        ],
-        "PHP": [
-            "PHP",
-            "Piso Filipina"
-        ],
-        "PKR": [
-            "PKR",
-            "Rupee Pakistan"
-        ],
-        "PLN": [
-            "PLN",
-            "Zloty Polandia"
-        ],
-        "PYG": [
-            "PYG",
-            "Guarani Paraguay"
-        ],
-        "QAR": [
-            "QAR",
-            "Rial Qatar"
-        ],
-        "RON": [
-            "RON",
-            "Leu Rumania"
-        ],
-        "RSD": [
-            "RSD",
-            "Dinar Serbia"
-        ],
-        "RUB": [
-            "RUB",
-            "Rubel Rusia"
-        ],
-        "RWF": [
-            "RWF",
-            "Franc Rwanda"
-        ],
-        "SAR": [
-            "SAR",
-            "Riyal Saudi"
-        ],
-        "SBD": [
-            "SBD",
-            "Dolar Kepuloan Solomon"
-        ],
-        "SCR": [
-            "SCR",
-            "Rupee Seichelles"
-        ],
-        "SDG": [
-            "SDG",
-            "Pound Sudan"
-        ],
-        "SEK": [
-            "SEK",
-            "Krona Swedia"
-        ],
-        "SGD": [
-            "SGD",
-            "Dolar Singapura"
-        ],
-        "SHP": [
-            "SHP",
-            "Pound Santa Helena"
-        ],
-        "SLL": [
-            "SLL",
-            "Leone Sierra Leone"
-        ],
-        "SOS": [
-            "SOS",
-            "Shilling Somalia"
-        ],
-        "SRD": [
-            "SRD",
-            "Dolar Suriname"
-        ],
-        "SSP": [
-            "SSP",
-            "Pound Sudan Kidul"
-        ],
-        "STN": [
-            "STN",
-            "Dobra Sao Tome lan Principe"
-        ],
-        "SYP": [
-            "SYP",
-            "Pound Siria"
-        ],
-        "SZL": [
-            "SZL",
-            "Lilangeni Swasi"
-        ],
-        "THB": [
-            "THB",
-            "Baht Thai"
-        ],
-        "TJS": [
-            "TJS",
-            "Somoni Tajikistan"
-        ],
-        "TMT": [
-            "TMT",
-            "Manat Turmenistan"
-        ],
-        "TND": [
-            "TND",
-            "Dinar Tunisia"
-        ],
-        "TOP": [
-            "TOP",
-            "Paʻanga Tonga"
-        ],
-        "TRY": [
-            "TRY",
-            "Lira Turki"
-        ],
-        "TTD": [
-            "TTD",
-            "Dolar Trinidad lan Tobago"
-        ],
-        "TWD": [
-            "NT$",
-            "Dolar Anyar Taiwan"
-        ],
-        "TZS": [
-            "TZS",
-            "Shilling Tansania"
-        ],
-        "UAH": [
-            "UAH",
-            "Hryvnia Ukrania"
-        ],
-        "UGX": [
-            "UGX",
-            "Shilling Uganda"
-        ],
-        "USD": [
-            "US$",
-            "Dolar Amerika Serikat"
-        ],
-        "UYU": [
-            "UYU",
-            "Peso Uruguay"
-        ],
-        "UZS": [
-            "UZS",
-            "Som Usbekistan"
-        ],
-        "VEF": [
-            "VEF",
-            "Bolivar Venezuela (2008 - 2018)"
-        ],
-        "VES": [
-            "VES",
-            "Bolivar Venezuela"
-        ],
-        "VND": [
-            "₫",
-            "Dong Vietnam"
-        ],
-        "VUV": [
-            "VUV",
-            "Vatu Vanuatu"
-        ],
-        "WST": [
-            "WST",
-            "Tala Samoa"
-        ],
-        "XAF": [
-            "FCFA",
-            "CFA Franc Afrika Tengah"
-        ],
-        "XCD": [
-            "EC$",
-            "Dolar Karibia Wetan"
-        ],
-        "XOF": [
-            "CFA",
-            "CFA Franc Afrika Kulon"
-        ],
-        "XPF": [
-            "CFPF",
-            "Franc CFP"
-        ],
-        "YER": [
-            "YER",
-            "Rial Yaman"
-        ],
-        "ZAR": [
-            "ZAR",
-            "Rand Afrika Kidul"
-        ],
-        "ZMW": [
-            "ZMW",
-            "Kwacha Sambia"
-        ]
+        "af": "af",
+        "agq": "Aghem",
+        "ak": "Akan",
+        "am": "Amharik",
+        "ar": "Arab",
+        "ar_001": "Arab Standar Anyar",
+        "as": "Assam",
+        "asa": "Asu",
+        "ast": "Asturia",
+        "az": "Azerbaijan",
+        "ban": "ban",
+        "bas": "Basaa",
+        "be": "be",
+        "bem": "Bemba",
+        "bez": "Bena",
+        "bg": "Bulgaria",
+        "bm": "Bambara",
+        "bn": "Bengali",
+        "bo": "Tibet",
+        "br": "Breton",
+        "brx": "Bodo",
+        "bs": "bs",
+        "ca": "Katala",
+        "ccp": "Chakma",
+        "ce": "Chechen",
+        "ceb": "Cebuano",
+        "cgg": "Chiga",
+        "chr": "Cherokee",
+        "ckb": "Kurdi Tengah",
+        "co": "Korsika",
+        "cs": "Ceska",
+        "cu": "Slavia Gerejani",
+        "cy": "Welsh",
+        "da": "Dansk",
+        "dav": "Taita",
+        "de": "Jérman",
+        "dje": "Zarma",
+        "dsb": "Sorbia Non Standar",
+        "dua": "Duala",
+        "dyo": "Jola-Fonyi",
+        "dz": "Dzongkha",
+        "ebu": "Embu",
+        "ee": "Ewe",
+        "el": "Yunani",
+        "en": "Inggris",
+        "eo": "Esperanto",
+        "es": "Spanyol",
+        "es_419": "Spanyol (Amerika Latin)",
+        "es_ES": "Spanyol (Eropah)",
+        "es_MX": "Spanyol (Meksiko)",
+        "et": "Estonia",
+        "eu": "Basque",
+        "ewo": "Ewondo",
+        "fa": "Persia",
+        "ff": "Fulah",
+        "fi": "Suomi",
+        "fil": "Tagalog",
+        "fo": "Faroe",
+        "fr": "Prancis",
+        "fur": "Friulian",
+        "fy": "Frisia Sisih Kulon",
+        "ga": "Irlandia",
+        "gd": "Gaulia",
+        "gl": "Galisia",
+        "gsw": "Jerman Swiss",
+        "gu": "Gujarat",
+        "guz": "Gusii",
+        "gv": "Manx",
+        "ha": "Hausa",
+        "haw": "Hawaii",
+        "he": "Ibrani",
+        "hi": "India",
+        "hmn": "Hmong",
+        "hr": "Kroasia",
+        "hsb": "Sorbia Standar",
+        "ht": "Kreol Haiti",
+        "hu": "Hungaria",
+        "hy": "Armenia",
+        "ia": "Interlingua",
+        "id": "Indonesia",
+        "ig": "Iqbo",
+        "ii": "Sichuan Yi",
+        "is": "Islandia",
+        "it": "Italia",
+        "ja": "Jepang",
+        "jgo": "Ngomba",
+        "jmc": "Machame",
+        "jv": "Jawa",
+        "ka": "Georgia",
+        "kab": "Kabyle",
+        "kam": "Kamba",
+        "kde": "Makonde",
+        "kea": "Kabuverdianu",
+        "khq": "Koyra Chiini",
+        "ki": "Kikuyu",
+        "kk": "Kazakh",
+        "kkj": "Kako",
+        "kl": "Kalaallisut",
+        "kln": "Kalenjin",
+        "km": "Khmer",
+        "kn": "Kannada",
+        "ko": "Korea",
+        "kok": "Konkani",
+        "ks": "Kashmiri",
+        "ksb": "Shambala",
+        "ksf": "Bafia",
+        "ksh": "Colonia",
+        "ku": "Kurdis",
+        "kw": "Kernowek",
+        "ky": "Kirgis",
+        "la": "Latin",
+        "lag": "Langi",
+        "lb": "Luksemburg",
+        "lg": "Ganda",
+        "lkt": "Lakota",
+        "ln": "Lingala",
+        "lo": "Laos",
+        "lrc": "Luri Sisih Lor",
+        "lt": "Lithuania",
+        "lu": "Luba-Katanga",
+        "luo": "Luo",
+        "luy": "Luyia",
+        "lv": "Latvia",
+        "mas": "Masai",
+        "mer": "Meru",
+        "mfe": "Morisyen",
+        "mg": "Malagasi",
+        "mgh": "Makhuwa-Meeto",
+        "mgo": "Meta’",
+        "mi": "Maori",
+        "mk": "Makedonia",
+        "ml": "Malayalam",
+        "mn": "Mongolia",
+        "mr": "Marathi",
+        "ms": "Melayu",
+        "mt": "Malta",
+        "mua": "Mundang",
+        "my": "Myanmar",
+        "mzn": "Mazanderani",
+        "naq": "Nama",
+        "nb": "Bokmål Norwegia",
+        "nd": "Ndebele Lor",
+        "nds": "Jerman Non Standar",
+        "ne": "Nepal",
+        "nl": "Walanda",
+        "nl_BE": "Flemis",
+        "nmg": "Kwasio",
+        "nn": "Nynorsk Norwegia",
+        "nnh": "Ngiemboon",
+        "nus": "Nuer",
+        "ny": "Nyanja",
+        "nyn": "Nyankole",
+        "om": "Oromo",
+        "or": "Odia",
+        "os": "Ossetia",
+        "pa": "Punjab",
+        "pl": "Polandia",
+        "prg": "Prusia",
+        "ps": "Pashto",
+        "pt": "Portugis",
+        "qu": "Quechua",
+        "rm": "Roman",
+        "rn": "Rundi",
+        "ro": "Rumania",
+        "rof": "Rombo",
+        "ru": "Rusia",
+        "rw": "Kinyarwanda",
+        "rwk": "Rwa",
+        "sa": "Sanskerta",
+        "sah": "Sakha",
+        "saq": "Samburu",
+        "sbp": "Sangu",
+        "sd": "Sindhi",
+        "se": "Sami Sisih Lor",
+        "seh": "Sena",
+        "ses": "Koyraboro Senni",
+        "sg": "Sango",
+        "shi": "Tachelhit",
+        "si": "Sinhala",
+        "sk": "Slowakia",
+        "sl": "Slovenia",
+        "sm": "Samoa",
+        "smn": "Inari Sami",
+        "sn": "Shona",
+        "so": "Somalia",
+        "sq": "Albania",
+        "sr": "Serbia",
+        "st": "Sotho Sisih Kidul",
+        "su": "Sunda",
+        "sv": "Swedia",
+        "sw": "Swahili",
+        "ta": "Tamil",
+        "te": "Telugu",
+        "teo": "Teso",
+        "tg": "Tajik",
+        "th": "Thailand",
+        "ti": "Tigrinya",
+        "tk": "Turkmen",
+        "to": "Tonga",
+        "tr": "Turki",
+        "tt": "Tatar",
+        "twq": "Tasawaq",
+        "tzm": "Tamazight Atlas Tengah",
+        "ug": "Uighur",
+        "uk": "Ukraina",
+        "ur": "Urdu",
+        "uz": "Uzbek",
+        "vai": "Vai",
+        "vi": "Vietnam",
+        "vo": "Volapuk",
+        "vun": "Vunjo",
+        "wae": "Walser",
+        "wo": "Wolof",
+        "xh": "Xhosa",
+        "xog": "Soga",
+        "yav": "Yangben",
+        "yi": "Yiddish",
+        "yo": "Yoruba",
+        "yue": "Kanton",
+        "zgh": "Tamazight Moroko Standar",
+        "zh": "Tyonghwa",
+        "zh_Hant": "Tyonghwa (Tradisional)",
+        "zu": "Zulu"
     }
 }

@@ -1,1069 +1,510 @@
 {
     "Version": "36",
     "Names": {
-        "ADP": [
-            "ADP",
-            "andorska peseta"
-        ],
-        "AED": [
-            "AED",
-            "dirham Združenih arabskih emiratov"
-        ],
-        "AFA": [
-            "AFA",
-            "stari afganistanski afgani (1927–2002)"
-        ],
-        "AFN": [
-            "AFN",
-            "afgani"
-        ],
-        "ALL": [
-            "ALL",
-            "albanski lek"
-        ],
-        "AMD": [
-            "AMD",
-            "armenski dram"
-        ],
-        "ANG": [
-            "ANG",
-            "nizozemsko-antilski gulden"
-        ],
-        "AOA": [
-            "AOA",
-            "angolska kvanza"
-        ],
-        "AOK": [
-            "AOK",
-            "stara angolska kvanza (1977–1990)"
-        ],
-        "AON": [
-            "AON",
-            "angolska nova kvanza (1990–2000)"
-        ],
-        "AOR": [
-            "AOR",
-            "konvertibilna angolska kvanza (1995–1999)"
-        ],
-        "ARA": [
-            "ARA",
-            "argentinski avstral"
-        ],
-        "ARP": [
-            "ARP",
-            "argentinski peso (1983–1985)"
-        ],
-        "ARS": [
-            "ARS",
-            "argentinski peso"
-        ],
-        "ATS": [
-            "ATS",
-            "avstrijski šiling"
-        ],
-        "AUD": [
-            "AUD",
-            "avstralski dolar"
-        ],
-        "AWG": [
-            "AWG",
-            "arubski florin"
-        ],
-        "AZM": [
-            "AZM",
-            "stari azerbajdžanski manat (1993–2006)"
-        ],
-        "AZN": [
-            "AZN",
-            "azerbajdžanski manat"
-        ],
-        "BAD": [
-            "BAD",
-            "bosansko-hercegovski dinar"
-        ],
-        "BAM": [
-            "BAM",
-            "bosansko-hercegovska konvertibilna marka"
-        ],
-        "BBD": [
-            "BBD",
-            "barbadoški dolar"
-        ],
-        "BDT": [
-            "BDT",
-            "bangladeška taka"
-        ],
-        "BEC": [
-            "BEC",
-            "belgijski konvertibilni frank"
-        ],
-        "BEF": [
-            "BEF",
-            "belgijski frank"
-        ],
-        "BEL": [
-            "BEL",
-            "belgijski finančni frank"
-        ],
-        "BGL": [
-            "BGL",
-            "stari bolgarski lev"
-        ],
-        "BGN": [
-            "BGN",
-            "bolgarski lev"
-        ],
-        "BHD": [
-            "BHD",
-            "bahranski dinar"
-        ],
-        "BIF": [
-            "BIF",
-            "burundski frank"
-        ],
-        "BMD": [
-            "BMD",
-            "bermudski dolar"
-        ],
-        "BND": [
-            "BND",
-            "brunejski dolar"
-        ],
-        "BOB": [
-            "BOB",
-            "bolivijski boliviano"
-        ],
-        "BOP": [
-            "BOP",
-            "bolivijski peso"
-        ],
-        "BOV": [
-            "BOV",
-            "bolivijski mvdol"
-        ],
-        "BRB": [
-            "BRB",
-            "brazilski novi kruzeiro (1967–1986)"
-        ],
-        "BRC": [
-            "BRC",
-            "brazilski kruzado"
-        ],
-        "BRE": [
-            "BRE",
-            "stari brazilski kruzeiro (1990–1993)"
-        ],
-        "BRL": [
-            "BRL",
-            "brazilski real"
-        ],
-        "BRN": [
-            "BRN",
-            "novi brazilski kruzado"
-        ],
-        "BRR": [
-            "BRR",
-            "brazilski kruzeiro"
-        ],
-        "BSD": [
-            "BSD",
-            "bahamski dolar"
-        ],
-        "BTN": [
-            "BTN",
-            "butanski ngultrum"
-        ],
-        "BUK": [
-            "BUK",
-            "burmanski kjat"
-        ],
-        "BWP": [
-            "BWP",
-            "bocvanska pula"
-        ],
-        "BYB": [
-            "BYB",
-            "beloruski novi rubelj (1994–1999)"
-        ],
-        "BYN": [
-            "BYN",
-            "beloruski rubelj"
-        ],
-        "BYR": [
-            "BYR",
-            "beloruski rubelj (2000–2016)"
-        ],
-        "BZD": [
-            "BZD",
-            "belizejski dolar"
-        ],
-        "CAD": [
-            "CAD",
-            "kanadski dolar"
-        ],
-        "CDF": [
-            "CDF",
-            "kongoški frank"
-        ],
-        "CHE": [
-            "CHE",
-            "evro WIR"
-        ],
-        "CHF": [
-            "CHF",
-            "švicarski frank"
-        ],
-        "CHW": [
-            "CHW",
-            "frank WIR"
-        ],
-        "CLF": [
-            "CLF",
-            "čilski unidades de fomento"
-        ],
-        "CLP": [
-            "CLP",
-            "čilski peso"
-        ],
-        "CNH": [
-            "CNH",
-            "kitajski juan (offshore)"
-        ],
-        "CNY": [
-            "CN¥",
-            "kitajski juan"
-        ],
-        "COP": [
-            "COP",
-            "kolumbijski peso"
-        ],
-        "COU": [
-            "COU",
-            "kolumbijska enota realne vrednosti"
-        ],
-        "CRC": [
-            "CRC",
-            "kostariški kolon"
-        ],
-        "CSD": [
-            "CSD",
-            "stari srbski dinar"
-        ],
-        "CSK": [
-            "CSK",
-            "češkoslovaška krona"
-        ],
-        "CUC": [
-            "CUC",
-            "kubanski konvertibilni peso"
-        ],
-        "CUP": [
-            "CUP",
-            "kubanski peso"
-        ],
-        "CVE": [
-            "CVE",
-            "zelenortski eskudo"
-        ],
-        "CYP": [
-            "CYP",
-            "ciprski funt"
-        ],
-        "CZK": [
-            "CZK",
-            "češka krona"
-        ],
-        "DDM": [
-            "DDM",
-            "vzhodnonemška marka"
-        ],
-        "DEM": [
-            "DEM",
-            "nemška marka"
-        ],
-        "DJF": [
-            "DJF",
-            "džibutski frank"
-        ],
-        "DKK": [
-            "DKK",
-            "danska krona"
-        ],
-        "DOP": [
-            "DOP",
-            "dominikanski peso"
-        ],
-        "DZD": [
-            "DZD",
-            "alžirski dinar"
-        ],
-        "ECS": [
-            "ECS",
-            "ekvadorski sukre"
-        ],
-        "ECV": [
-            "ECV",
-            "ekvadorska enota realne vrednosti (UVC)"
-        ],
-        "EEK": [
-            "EEK",
-            "estonska krona"
-        ],
-        "EGP": [
-            "EGP",
-            "egiptovski funt"
-        ],
-        "ERN": [
-            "ERN",
-            "eritrejska nakfa"
-        ],
-        "ESA": [
-            "ESA",
-            "španska pezeta (račun A)"
-        ],
-        "ESB": [
-            "ESB",
-            "španska pezeta (račun B)"
-        ],
-        "ESP": [
-            "ESP",
-            "španska pezeta"
-        ],
-        "ETB": [
-            "ETB",
-            "etiopski bir"
-        ],
-        "EUR": [
-            "€",
-            "evro"
-        ],
-        "FIM": [
-            "FIM",
-            "finska marka"
-        ],
-        "FJD": [
-            "FJD",
-            "fidžijski dolar"
-        ],
-        "FKP": [
-            "FKP",
-            "falklandski funt"
-        ],
-        "FRF": [
-            "FRF",
-            "francoski frank"
-        ],
-        "GBP": [
-            "GBP",
-            "britanski funt"
-        ],
-        "GEK": [
-            "GEK",
-            "gruzijski bon lari"
-        ],
-        "GEL": [
-            "GEL",
-            "gruzijski lari"
-        ],
-        "GHC": [
-            "GHC",
-            "stari ganski cedi (1979–2007)"
-        ],
-        "GHS": [
-            "GHS",
-            "ganski cedi"
-        ],
-        "GIP": [
-            "GIP",
-            "gibraltarski funt"
-        ],
-        "GMD": [
-            "GMD",
-            "gambijski dalasi"
-        ],
-        "GNF": [
-            "GNF",
-            "gvinejski frank"
-        ],
-        "GNS": [
-            "GNS",
-            "gvinejski sili"
-        ],
-        "GQE": [
-            "GQE",
-            "ekwele Ekvatorialne Gvineje"
-        ],
-        "GRD": [
-            "GRD",
-            "grška drahma"
-        ],
-        "GTQ": [
-            "GTQ",
-            "gvatemalski kecal"
-        ],
-        "GWE": [
-            "GWE",
-            "eskudo Portugalske Gvineje"
-        ],
-        "GWP": [
-            "GWP",
-            "peso Gvineje Bissau"
-        ],
-        "GYD": [
-            "GYD",
-            "gvajanski dolar"
-        ],
-        "HKD": [
-            "HK$",
-            "hongkonški dolar"
-        ],
-        "HNL": [
-            "HNL",
-            "honduraška lempira"
-        ],
-        "HRD": [
-            "HRD",
-            "hrvaški dinar"
-        ],
-        "HRK": [
-            "HRK",
-            "hrvaška kuna"
-        ],
-        "HTG": [
-            "HTG",
-            "haitski gurd"
-        ],
-        "HUF": [
-            "HUF",
-            "madžarski forint"
-        ],
-        "IDR": [
-            "IDR",
-            "indonezijska rupija"
-        ],
-        "IEP": [
-            "IEP",
-            "irski funt"
-        ],
-        "ILP": [
-            "ILP",
-            "izraelski funt"
-        ],
-        "ILS": [
-            "₪",
-            "izraelski šekel"
-        ],
-        "INR": [
-            "₹",
-            "indijska rupija"
-        ],
-        "IQD": [
-            "IQD",
-            "iraški dinar"
-        ],
-        "IRR": [
-            "IRR",
-            "iranski rial"
-        ],
-        "ISK": [
-            "ISK",
-            "islandska krona"
-        ],
-        "ITL": [
-            "ITL",
-            "italijanska lira"
-        ],
-        "JMD": [
-            "JMD",
-            "jamajški dolar"
-        ],
-        "JOD": [
-            "JOD",
-            "jordanski dinar"
-        ],
-        "JPY": [
-            "¥",
-            "japonski jen"
-        ],
-        "KES": [
-            "KES",
-            "kenijski šiling"
-        ],
-        "KGS": [
-            "KGS",
-            "kirgiški som"
-        ],
-        "KHR": [
-            "KHR",
-            "kamboški riel"
-        ],
-        "KMF": [
-            "KMF",
-            "komorski frank"
-        ],
-        "KPW": [
-            "KPW",
-            "severnokorejski von"
-        ],
-        "KRW": [
-            "₩",
-            "južnokorejski von"
-        ],
-        "KWD": [
-            "KWD",
-            "kuvajtski dinar"
-        ],
-        "KYD": [
-            "KYD",
-            "kajmanski dolar"
-        ],
-        "KZT": [
-            "KZT",
-            "kazahstanski tenge"
-        ],
-        "LAK": [
-            "LAK",
-            "laoški kip"
-        ],
-        "LBP": [
-            "LBP",
-            "libanonski funt"
-        ],
-        "LKR": [
-            "LKR",
-            "šrilanška rupija"
-        ],
-        "LRD": [
-            "LRD",
-            "liberijski dolar"
-        ],
-        "LSL": [
-            "LSL",
-            "lesoški loti"
-        ],
-        "LTL": [
-            "LTL",
-            "litovski litas"
-        ],
-        "LTT": [
-            "LTT",
-            "litvanski litas"
-        ],
-        "LUC": [
-            "LUC",
-            "luksemburški konvertibilni frank"
-        ],
-        "LUF": [
-            "LUF",
-            "luksemburški frank"
-        ],
-        "LUL": [
-            "LUL",
-            "luksemburški finančni frank"
-        ],
-        "LVL": [
-            "LVL",
-            "latvijski lats"
-        ],
-        "LVR": [
-            "LVR",
-            "latvijski rubelj"
-        ],
-        "LYD": [
-            "LYD",
-            "libijski dinar"
-        ],
-        "MAD": [
-            "MAD",
-            "maroški dirham"
-        ],
-        "MAF": [
-            "MAF",
-            "maroški frank"
-        ],
-        "MDL": [
-            "MDL",
-            "moldavijski leu"
-        ],
-        "MGA": [
-            "MGA",
-            "malgaški ariarij"
-        ],
-        "MGF": [
-            "MGF",
-            "malgaški frank"
-        ],
-        "MKD": [
-            "MKD",
-            "makedonski denar"
-        ],
-        "MLF": [
-            "MLF",
-            "malijski frank"
-        ],
-        "MMK": [
-            "MMK",
-            "mjanmarski kjat"
-        ],
-        "MNT": [
-            "MNT",
-            "mongolski tugrik"
-        ],
-        "MOP": [
-            "MOP",
-            "makavska pataka"
-        ],
-        "MRO": [
-            "MRO",
-            "mavretanska uguija (1973–2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "mavretanska uguija"
-        ],
-        "MTL": [
-            "MTL",
-            "malteška lira"
-        ],
-        "MTP": [
-            "MTP",
-            "malteški funt"
-        ],
-        "MUR": [
-            "MUR",
-            "mavricijska rupija"
-        ],
-        "MVR": [
-            "MVR",
-            "maldivska rufija"
-        ],
-        "MWK": [
-            "MWK",
-            "malavijska kvača"
-        ],
-        "MXN": [
-            "MXN",
-            "mehiški peso"
-        ],
-        "MXP": [
-            "MXP",
-            "mehiški srebrni peso (1861–1992)"
-        ],
-        "MXV": [
-            "MXV",
-            "mehiška inverzna enota (UDI)"
-        ],
-        "MYR": [
-            "MYR",
-            "malezijski ringit"
-        ],
-        "MZE": [
-            "MZE",
-            "mozambiški eskudo"
-        ],
-        "MZM": [
-            "MZM",
-            "stari mozambiški metikal"
-        ],
-        "MZN": [
-            "MZN",
-            "mozambiški metikal"
-        ],
-        "NAD": [
-            "NAD",
-            "namibijski dolar"
-        ],
-        "NGN": [
-            "NGN",
-            "nigerijska naira"
-        ],
-        "NIC": [
-            "NIC",
-            "nikaraška kordova"
-        ],
-        "NIO": [
-            "NIO",
-            "nikaraška zlata kordova"
-        ],
-        "NLG": [
-            "NLG",
-            "nizozemski gulden"
-        ],
-        "NOK": [
-            "NOK",
-            "norveška krona"
-        ],
-        "NPR": [
-            "NPR",
-            "nepalska rupija"
-        ],
-        "NZD": [
-            "NZD",
-            "novozelandski dolar"
-        ],
-        "OMR": [
-            "OMR",
-            "omanski rial"
-        ],
-        "PAB": [
-            "PAB",
-            "panamska balboa"
-        ],
-        "PEI": [
-            "PEI",
-            "perujski inti"
-        ],
-        "PEN": [
-            "PEN",
-            "perujski sol"
-        ],
-        "PES": [
-            "PES",
-            "perujski sol (1863–1965)"
-        ],
-        "PGK": [
-            "PGK",
-            "kina Papue Nove Gvineje"
-        ],
-        "PHP": [
-            "PHP",
-            "filipinski peso"
-        ],
-        "PKR": [
-            "PKR",
-            "pakistanska rupija"
-        ],
-        "PLN": [
-            "PLN",
-            "poljski novi zlot"
-        ],
-        "PLZ": [
-            "PLZ",
-            "stari poljski zlot (1950–1995)"
-        ],
-        "PTE": [
-            "PTE",
-            "portugalski eskudo"
-        ],
-        "PYG": [
-            "PYG",
-            "paragvajski gvarani"
-        ],
-        "QAR": [
-            "QAR",
-            "katarski rial"
-        ],
-        "RHD": [
-            "RHD",
-            "rodezijski dolar"
-        ],
-        "ROL": [
-            "ROL",
-            "stari romunski leu"
-        ],
-        "RON": [
-            "RON",
-            "romunski leu"
-        ],
-        "RSD": [
-            "RSD",
-            "srbski dinar"
-        ],
-        "RUB": [
-            "RUB",
-            "ruski rubelj"
-        ],
-        "RUR": [
-            "RUR",
-            "ruski rubelj (1991–1998)"
-        ],
-        "RWF": [
-            "RWF",
-            "ruandski frank"
-        ],
-        "SAR": [
-            "SAR",
-            "saudski rial"
-        ],
-        "SBD": [
-            "SBD",
-            "solomonski dolar"
-        ],
-        "SCR": [
-            "SCR",
-            "sejšelska rupija"
-        ],
-        "SDD": [
-            "SDD",
-            "stari sudanski dinar"
-        ],
-        "SDG": [
-            "SDG",
-            "sudanski funt"
-        ],
-        "SDP": [
-            "SDP",
-            "stari sudanski funt"
-        ],
-        "SEK": [
-            "SEK",
-            "švedska krona"
-        ],
-        "SGD": [
-            "SGD",
-            "singapurski dolar"
-        ],
-        "SHP": [
-            "SHP",
-            "funt Sv. Helene"
-        ],
-        "SIT": [
-            "SIT",
-            "slovenski tolar"
-        ],
-        "SKK": [
-            "SKK",
-            "slovaška krona"
-        ],
-        "SLL": [
-            "SLL",
-            "sieraleonski leone"
-        ],
-        "SOS": [
-            "SOS",
-            "somalski šiling"
-        ],
-        "SRD": [
-            "SRD",
-            "surinamski dolar"
-        ],
-        "SRG": [
-            "SRG",
-            "surinamski gulden"
-        ],
-        "SSP": [
-            "SSP",
-            "južnosudanski funt"
-        ],
-        "STD": [
-            "STD",
-            "saotomejska dobra (1977–2017)"
-        ],
-        "STN": [
-            "STN",
-            "saotomejska dobra"
-        ],
-        "SUR": [
-            "SUR",
-            "sovjetski rubelj"
-        ],
-        "SVC": [
-            "SVC",
-            "salvadorski kolon"
-        ],
-        "SYP": [
-            "SYP",
-            "sirijski funt"
-        ],
-        "SZL": [
-            "SZL",
-            "svazijski lilangeni"
-        ],
-        "THB": [
-            "THB",
-            "tajski baht"
-        ],
-        "TJR": [
-            "TJR",
-            "tadžikistanski rubelj"
-        ],
-        "TJS": [
-            "TJS",
-            "tadžikistanski somoni"
-        ],
-        "TMM": [
-            "TMM",
-            "turkmenski manat"
-        ],
-        "TMT": [
-            "TMT",
-            "turkmenistanski novi manat"
-        ],
-        "TND": [
-            "TND",
-            "tunizijski dinar"
-        ],
-        "TOP": [
-            "TOP",
-            "tongovska paanga"
-        ],
-        "TPE": [
-            "TPE",
-            "timorski eskudo"
-        ],
-        "TRL": [
-            "TRL",
-            "stara turška lira"
-        ],
-        "TRY": [
-            "TRY",
-            "nova turška lira"
-        ],
-        "TTD": [
-            "TTD",
-            "dolar Trinidada in Tobaga"
-        ],
-        "TWD": [
-            "TWD",
-            "novi tajvanski dolar"
-        ],
-        "TZS": [
-            "TZS",
-            "tanzanijski šiling"
-        ],
-        "UAH": [
-            "UAH",
-            "ukrajinska grivna"
-        ],
-        "UAK": [
-            "UAK",
-            "ukrajinski karbovanci"
-        ],
-        "UGS": [
-            "UGS",
-            "stari ugandski šiling (1966–1987)"
-        ],
-        "UGX": [
-            "UGX",
-            "ugandski šiling"
-        ],
-        "USD": [
-            "$",
-            "ameriški dolar"
-        ],
-        "USN": [
-            "USN",
-            "ameriški dolar, naslednji dan"
-        ],
-        "USS": [
-            "USS",
-            "ameriški dolar, isti dan"
-        ],
-        "UYP": [
-            "UYP",
-            "stari urugvajski peso (1975–1993)"
-        ],
-        "UYU": [
-            "UYU",
-            "urugvajski peso"
-        ],
-        "UZS": [
-            "UZS",
-            "uzbeški sum"
-        ],
-        "VEB": [
-            "VEB",
-            "venezuelski bolivar (1871–2008)"
-        ],
-        "VEF": [
-            "VEF",
-            "venezuelski bolivar (2008–2018)"
-        ],
-        "VES": [
-            "VES",
-            "venezuelski bolivar"
-        ],
-        "VND": [
-            "₫",
-            "vientnamski dong"
-        ],
-        "VUV": [
-            "VUV",
-            "vanuatujski vatu"
-        ],
-        "WST": [
-            "WST",
-            "samoanska tala"
-        ],
-        "XAF": [
-            "FCFA",
-            "CFA frank BEAC"
-        ],
-        "XCD": [
-            "XCD",
-            "vzhodnokaribski dolar"
-        ],
-        "XEU": [
-            "XEU",
-            "evropska denarna enota"
-        ],
-        "XFO": [
-            "XFO",
-            "zlati frank"
-        ],
-        "XFU": [
-            "XFU",
-            "frank UIC"
-        ],
-        "XOF": [
-            "CFA",
-            "zahodnoafriški frank CFA"
-        ],
-        "XPF": [
-            "CFPF",
-            "CFP frank"
-        ],
-        "YDD": [
-            "YDD",
-            "jemenski dinar"
-        ],
-        "YER": [
-            "YER",
-            "jemenski rial"
-        ],
-        "YUD": [
-            "YUD",
-            "stari jugoslovanski dinar"
-        ],
-        "YUM": [
-            "YUM",
-            "novi jugoslovanski dinar"
-        ],
-        "YUN": [
-            "YUN",
-            "jugoslovanski konvertibilni dinar"
-        ],
-        "ZAL": [
-            "ZAL",
-            "južnoafriški finančni rand"
-        ],
-        "ZAR": [
-            "ZAR",
-            "južnoafriški rand"
-        ],
-        "ZMK": [
-            "ZMK",
-            "zambijska kvača (1968–2012)"
-        ],
-        "ZMW": [
-            "ZMW",
-            "zambijska kvača"
-        ],
-        "ZRN": [
-            "ZRN",
-            "zairski novi zaire"
-        ],
-        "ZRZ": [
-            "ZRZ",
-            "zairski zaire"
-        ],
-        "ZWD": [
-            "ZWD",
-            "zimbabvejski dolar"
-        ],
-        "ZWL": [
-            "ZWL",
-            "zimbabvejski dolar (2009)"
-        ]
+        "aa": "afarščina",
+        "ab": "abhaščina",
+        "ace": "ačejščina",
+        "ach": "ačolijščina",
+        "ada": "adangmejščina",
+        "ady": "adigejščina",
+        "ae": "avestijščina",
+        "af": "afrikanščina",
+        "afh": "afrihili",
+        "agq": "aghemščina",
+        "ain": "ainujščina",
+        "ak": "akanščina",
+        "akk": "akadščina",
+        "ale": "aleutščina",
+        "alt": "južna altajščina",
+        "am": "amharščina",
+        "an": "aragonščina",
+        "ang": "stara angleščina",
+        "anp": "angikaščina",
+        "ar": "arabščina",
+        "ar_001": "sodobna standardna arabščina",
+        "arc": "aramejščina",
+        "arn": "mapudungunščina",
+        "arp": "arapaščina",
+        "arw": "aravaščina",
+        "as": "asamščina",
+        "asa": "asujščina",
+        "ast": "asturijščina",
+        "av": "avarščina",
+        "awa": "avadščina",
+        "ay": "ajmarščina",
+        "az": "azerbajdžanščina",
+        "ba": "baškirščina",
+        "bal": "beludžijščina",
+        "ban": "balijščina",
+        "bas": "basa",
+        "be": "beloruščina",
+        "bej": "bedža",
+        "bem": "bemba",
+        "bez": "benajščina",
+        "bg": "bolgarščina",
+        "bgn": "zahodnobalučijščina",
+        "bho": "bodžpuri",
+        "bi": "bislamščina",
+        "bik": "bikolski jezik",
+        "bin": "edo",
+        "bla": "siksika",
+        "bm": "bambarščina",
+        "bn": "bengalščina",
+        "bo": "tibetanščina",
+        "br": "bretonščina",
+        "bra": "bradžbakanščina",
+        "brx": "bodojščina",
+        "bs": "bosanščina",
+        "bua": "burjatščina",
+        "bug": "buginščina",
+        "byn": "blinščina",
+        "ca": "katalonščina",
+        "cad": "kadoščina",
+        "car": "karibski jezik",
+        "ccp": "chakma",
+        "ce": "čečenščina",
+        "ceb": "sebuanščina",
+        "cgg": "čigajščina",
+        "ch": "čamorščina",
+        "chb": "čibčevščina",
+        "chg": "čagatajščina",
+        "chk": "trukeščina",
+        "chm": "marijščina",
+        "chn": "činuški žargon",
+        "cho": "čoktavščina",
+        "chp": "čipevščina",
+        "chr": "čerokeščina",
+        "chy": "čejenščina",
+        "ckb": "soranska kurdščina",
+        "co": "korziščina",
+        "cop": "koptščina",
+        "cr": "krijščina",
+        "crh": "krimska tatarščina",
+        "crs": "sejšelska francoska kreolščina",
+        "cs": "češčina",
+        "csb": "kašubščina",
+        "cu": "stara cerkvena slovanščina",
+        "cv": "čuvaščina",
+        "cy": "valižanščina",
+        "da": "danščina",
+        "dak": "dakotščina",
+        "dar": "darginščina",
+        "dav": "taitajščina",
+        "de": "nemščina",
+        "de_AT": "avstrijska nemščina",
+        "de_CH": "visoka nemščina (Švica)",
+        "del": "delavarščina",
+        "den": "slavejščina",
+        "dgr": "dogrib",
+        "din": "dinka",
+        "dje": "zarmajščina",
+        "doi": "dogri",
+        "dsb": "dolnja lužiška srbščina",
+        "dua": "duala",
+        "dum": "srednja nizozemščina",
+        "dv": "diveščina",
+        "dyo": "jola-fonjiščina",
+        "dyu": "diula",
+        "dz": "dzonka",
+        "dzg": "dazaga",
+        "ebu": "embujščina",
+        "ee": "evenščina",
+        "efi": "efiščina",
+        "egy": "stara egipčanščina",
+        "eka": "ekajuk",
+        "el": "grščina",
+        "elx": "elamščina",
+        "en": "angleščina",
+        "en_AU": "avstralska angleščina",
+        "en_CA": "kanadska angleščina",
+        "en_GB": "angleščina (VB)",
+        "en_US": "angleščina (ZDA)",
+        "enm": "srednja angleščina",
+        "eo": "esperanto",
+        "es": "španščina",
+        "es_ES": "evropska španščina",
+        "es_MX": "mehiška španščina",
+        "et": "estonščina",
+        "eu": "baskovščina",
+        "ewo": "evondovščina",
+        "fa": "perzijščina",
+        "fan": "fangijščina",
+        "fat": "fantijščina",
+        "ff": "fulščina",
+        "fi": "finščina",
+        "fil": "filipinščina",
+        "fj": "fidžijščina",
+        "fo": "ferščina",
+        "fon": "fonščina",
+        "fr": "francoščina",
+        "fr_CA": "kanadska francoščina",
+        "fr_CH": "švicarska francoščina",
+        "frc": "cajunska francoščina",
+        "frm": "srednja francoščina",
+        "fro": "stara francoščina",
+        "frr": "severna frizijščina",
+        "frs": "vzhodna frizijščina",
+        "fur": "furlanščina",
+        "fy": "zahodna frizijščina",
+        "ga": "irščina",
+        "gaa": "ga",
+        "gag": "gagavščina",
+        "gay": "gajščina",
+        "gba": "gbajščina",
+        "gd": "škotska gelščina",
+        "gez": "etiopščina",
+        "gil": "kiribatščina",
+        "gl": "galicijščina",
+        "gmh": "srednja visoka nemščina",
+        "gn": "gvaranijščina",
+        "goh": "stara visoka nemščina",
+        "gon": "gondi",
+        "gor": "gorontalščina",
+        "got": "gotščina",
+        "grb": "grebščina",
+        "grc": "stara grščina",
+        "gsw": "nemščina (Švica)",
+        "gu": "gudžaratščina",
+        "guz": "gusijščina",
+        "gv": "manščina",
+        "gwi": "gvičin",
+        "ha": "havščina",
+        "hai": "haidščina",
+        "haw": "havajščina",
+        "he": "hebrejščina",
+        "hi": "hindujščina",
+        "hil": "hiligajnonščina",
+        "hit": "hetitščina",
+        "hmn": "hmonščina",
+        "ho": "hiri motu",
+        "hr": "hrvaščina",
+        "hsb": "gornja lužiška srbščina",
+        "ht": "haitijska kreolščina",
+        "hu": "madžarščina",
+        "hup": "hupa",
+        "hy": "armenščina",
+        "hz": "herero",
+        "ia": "interlingva",
+        "iba": "ibanščina",
+        "ibb": "ibibijščina",
+        "id": "indonezijščina",
+        "ie": "interlingve",
+        "ig": "igboščina",
+        "ii": "sečuanska jiščina",
+        "ik": "inupiaščina",
+        "ilo": "ilokanščina",
+        "inh": "inguščina",
+        "io": "ido",
+        "is": "islandščina",
+        "it": "italijanščina",
+        "iu": "inuktitutščina",
+        "ja": "japonščina",
+        "jbo": "lojban",
+        "jgo": "ngomba",
+        "jmc": "mačamejščina",
+        "jpr": "judovska perzijščina",
+        "jrb": "judovska arabščina",
+        "jv": "javanščina",
+        "ka": "gruzijščina",
+        "kaa": "karakalpaščina",
+        "kab": "kabilščina",
+        "kac": "kačinščina",
+        "kaj": "jju",
+        "kam": "kambaščina",
+        "kaw": "kavi",
+        "kbd": "kabardinščina",
+        "kcg": "tjapska nigerijščina",
+        "kde": "makondščina",
+        "kea": "zelenortskootoška kreolščina",
+        "kfo": "koro",
+        "kg": "kongovščina",
+        "kha": "kasi",
+        "kho": "kotanščina",
+        "khq": "koyra chiini",
+        "ki": "kikujščina",
+        "kj": "kvanjama",
+        "kk": "kazaščina",
+        "kkj": "kako",
+        "kl": "grenlandščina",
+        "kln": "kalenjinščina",
+        "km": "kmerščina",
+        "kmb": "kimbundu",
+        "kn": "kanareščina",
+        "ko": "korejščina",
+        "koi": "komi-permjaščina",
+        "kok": "konkanščina",
+        "kos": "kosrajščina",
+        "kpe": "kpelejščina",
+        "kr": "kanurščina",
+        "krc": "karačaj-balkarščina",
+        "krl": "karelščina",
+        "kru": "kuruk",
+        "ks": "kašmirščina",
+        "ksb": "šambala",
+        "ksf": "bafia",
+        "ksh": "kölnsko narečje",
+        "ku": "kurdščina",
+        "kum": "kumiščina",
+        "kut": "kutenajščina",
+        "kv": "komijščina",
+        "kw": "kornijščina",
+        "ky": "kirgiščina",
+        "la": "latinščina",
+        "lad": "ladinščina",
+        "lag": "langijščina",
+        "lah": "landa",
+        "lam": "lamba",
+        "lb": "luksemburščina",
+        "lez": "lezginščina",
+        "lg": "ganda",
+        "li": "limburščina",
+        "lkt": "lakotščina",
+        "ln": "lingala",
+        "lo": "laoščina",
+        "lol": "mongo",
+        "lou": "louisianska kreolščina",
+        "loz": "lozi",
+        "lrc": "severna lurijščina",
+        "lt": "litovščina",
+        "lu": "luba-katanga",
+        "lua": "luba-lulua",
+        "lui": "luisenščina",
+        "lun": "lunda",
+        "luo": "luo",
+        "lus": "mizojščina",
+        "luy": "luhijščina",
+        "lv": "latvijščina",
+        "mad": "madurščina",
+        "mag": "magadščina",
+        "mai": "maitili",
+        "mak": "makasarščina",
+        "man": "mandingo",
+        "mas": "masajščina",
+        "mdf": "mokšavščina",
+        "mdr": "mandarščina",
+        "men": "mende",
+        "mer": "meru",
+        "mfe": "morisjenščina",
+        "mg": "malagaščina",
+        "mga": "srednja irščina",
+        "mgh": "makuva-meto",
+        "mgo": "meta",
+        "mh": "marshallovščina",
+        "mi": "maorščina",
+        "mic": "mikmaščina",
+        "min": "minangkabau",
+        "mk": "makedonščina",
+        "ml": "malajalamščina",
+        "mn": "mongolščina",
+        "mnc": "mandžurščina",
+        "mni": "manipurščina",
+        "moh": "mohoščina",
+        "mos": "mosijščina",
+        "mr": "maratščina",
+        "ms": "malajščina",
+        "mt": "malteščina",
+        "mua": "mundang",
+        "mus": "creekovščina",
+        "mwl": "mirandeščina",
+        "mwr": "marvarščina",
+        "my": "burmanščina",
+        "myv": "erzjanščina",
+        "mzn": "mazanderanščina",
+        "na": "naurujščina",
+        "nan": "min nan kitajščina",
+        "nap": "napolitanščina",
+        "naq": "khoekhoe",
+        "nb": "knjižna norveščina",
+        "nd": "severna ndebelščina",
+        "nds": "nizka nemščina",
+        "nds_NL": "nizka saščina",
+        "ne": "nepalščina",
+        "new": "nevarščina",
+        "ng": "ndonga",
+        "nia": "niaščina",
+        "niu": "niuejščina",
+        "nl": "nizozemščina",
+        "nl_BE": "flamščina",
+        "nmg": "kwasio",
+        "nn": "novonorveščina",
+        "nnh": "ngiemboonščina",
+        "no": "norveščina",
+        "nog": "nogajščina",
+        "non": "stara nordijščina",
+        "nqo": "n’ko",
+        "nr": "južna ndebelščina",
+        "nso": "severna sotščina",
+        "nus": "nuerščina",
+        "nv": "navajščina",
+        "nwc": "klasična nevarščina",
+        "ny": "njanščina",
+        "nym": "njamveščina",
+        "nyn": "njankole",
+        "nyo": "njoro",
+        "nzi": "nzima",
+        "oc": "okcitanščina",
+        "oj": "anašinabščina",
+        "om": "oromo",
+        "or": "odijščina",
+        "os": "osetinščina",
+        "osa": "osage",
+        "ota": "otomanska turščina",
+        "pa": "pandžabščina",
+        "pag": "pangasinanščina",
+        "pam": "pampanščina",
+        "pap": "papiamentu",
+        "pau": "palavanščina",
+        "pcm": "nigerijski pidžin",
+        "peo": "stara perzijščina",
+        "phn": "feničanščina",
+        "pi": "palijščina",
+        "pl": "poljščina",
+        "pon": "ponpejščina",
+        "prg": "stara pruščina",
+        "pro": "stara provansalščina",
+        "ps": "paštunščina",
+        "pt": "portugalščina",
+        "pt_BR": "brazilska portugalščina",
+        "pt_PT": "evropska portugalščina",
+        "qu": "kečuanščina",
+        "quc": "quiche",
+        "raj": "radžastanščina",
+        "rap": "rapanujščina",
+        "rar": "rarotongščina",
+        "rm": "retoromanščina",
+        "rn": "rundščina",
+        "ro": "romunščina",
+        "ro_MD": "moldavščina",
+        "rof": "rombo",
+        "rom": "romščina",
+        "root": "rootščina",
+        "ru": "ruščina",
+        "rup": "aromunščina",
+        "rw": "ruandščina",
+        "rwk": "rwa",
+        "sa": "sanskrt",
+        "sad": "sandavščina",
+        "sah": "jakutščina",
+        "sam": "samaritanska aramejščina",
+        "saq": "samburščina",
+        "sas": "sasaščina",
+        "sat": "santalščina",
+        "sba": "ngambajščina",
+        "sbp": "sangujščina",
+        "sc": "sardinščina",
+        "scn": "sicilijanščina",
+        "sco": "škotščina",
+        "sd": "sindščina",
+        "sdh": "južna kurdščina",
+        "se": "severna samijščina",
+        "seh": "sena",
+        "sel": "selkupščina",
+        "ses": "koyraboro senni",
+        "sg": "sango",
+        "sga": "stara irščina",
+        "sh": "srbohrvaščina",
+        "shi": "tahelitska berberščina",
+        "shn": "šanščina",
+        "si": "sinhalščina",
+        "sid": "sidamščina",
+        "sk": "slovaščina",
+        "sl": "slovenščina",
+        "sm": "samoanščina",
+        "sma": "južna samijščina",
+        "smj": "luleška samijščina",
+        "smn": "inarska samijščina",
+        "sms": "skoltska samijščina",
+        "sn": "šonščina",
+        "snk": "soninke",
+        "so": "somalščina",
+        "sq": "albanščina",
+        "sr": "srbščina",
+        "srn": "surinamska kreolščina",
+        "srr": "sererščina",
+        "ss": "svazijščina",
+        "ssy": "saho",
+        "st": "sesoto",
+        "su": "sundanščina",
+        "suk": "sukuma",
+        "sus": "susujščina",
+        "sux": "sumerščina",
+        "sv": "švedščina",
+        "sw": "svahili",
+        "sw_CD": "kongoški svahili",
+        "swb": "šikomor",
+        "syc": "klasična sirščina",
+        "syr": "sirščina",
+        "ta": "tamilščina",
+        "te": "telugijščina",
+        "tem": "temnejščina",
+        "teo": "teso",
+        "tet": "tetumščina",
+        "tg": "tadžiščina",
+        "th": "tajščina",
+        "ti": "tigrajščina",
+        "tig": "tigrejščina",
+        "tiv": "tivščina",
+        "tk": "turkmenščina",
+        "tkl": "tokelavščina",
+        "tl": "tagalogščina",
+        "tlh": "klingonščina",
+        "tli": "tlingitščina",
+        "tmh": "tamajaščina",
+        "tn": "cvanščina",
+        "to": "tongščina",
+        "tog": "malavijska tongščina",
+        "tpi": "tok pisin",
+        "tr": "turščina",
+        "trv": "taroko",
+        "ts": "congščina",
+        "tsi": "tsimščina",
+        "tt": "tatarščina",
+        "tum": "tumbukščina",
+        "tvl": "tuvalujščina",
+        "tw": "tvi",
+        "twq": "tasawaq",
+        "ty": "tahitščina",
+        "tyv": "tuvinščina",
+        "tzm": "tamašek (Srednji Atlas)",
+        "udm": "udmurtščina",
+        "ug": "ujgurščina",
+        "uga": "ugaritski jezik",
+        "uk": "ukrajinščina",
+        "umb": "umbundščina",
+        "ur": "urdujščina",
+        "uz": "uzbeščina",
+        "vai": "vajščina",
+        "ve": "venda",
+        "vi": "vietnamščina",
+        "vo": "volapuk",
+        "vot": "votjaščina",
+        "vun": "vunjo",
+        "wa": "valonščina",
+        "wae": "walser",
+        "wal": "valamščina",
+        "war": "varajščina",
+        "was": "vašajščina",
+        "wbp": "varlpirščina",
+        "wo": "volofščina",
+        "xal": "kalmiščina",
+        "xh": "koščina",
+        "xog": "sogščina",
+        "yao": "jaojščina",
+        "yap": "japščina",
+        "yav": "jangben",
+        "ybb": "jembajščina",
+        "yi": "jidiš",
+        "yo": "jorubščina",
+        "yue": "kantonščina",
+        "zap": "zapoteščina",
+        "zbl": "znakovni jezik Bliss",
+        "zen": "zenaščina",
+        "zgh": "standardni maroški tamazig",
+        "zh": "kitajščina",
+        "zh_Hans": "poenostavljena kitajščina",
+        "zh_Hant": "tradicionalna kitajščina",
+        "zu": "zulujščina",
+        "zun": "zunijščina",
+        "zza": "zazajščina"
     }
 }

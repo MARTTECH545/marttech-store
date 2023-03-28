@@ -1,797 +1,519 @@
 {
     "Version": "36",
     "Names": {
-        "AED": [
-            "AED",
-            "Apvienoto Arābu Emirātu dirhēms"
-        ],
-        "AFN": [
-            "AFN",
-            "Afganistānas afgāns"
-        ],
-        "ALL": [
-            "ALL",
-            "Albānijas leks"
-        ],
-        "AMD": [
-            "AMD",
-            "Armēnijas drams"
-        ],
-        "ANG": [
-            "ANG",
-            "Nīderlandes Antiļu guldenis"
-        ],
-        "AOA": [
-            "AOA",
-            "Angolas kvanza"
-        ],
-        "ARS": [
-            "ARS",
-            "Argentīnas peso"
-        ],
-        "ATS": [
-            "ATS",
-            "Austrijas šiliņš"
-        ],
-        "AUD": [
-            "AU$",
-            "Austrālijas dolārs"
-        ],
-        "AWG": [
-            "AWG",
-            "Arubas guldenis"
-        ],
-        "AZM": [
-            "AZM",
-            "Azerbaidžānas manats (1993–2006)"
-        ],
-        "AZN": [
-            "AZN",
-            "Azerbaidžānas manats"
-        ],
-        "BAM": [
-            "BAM",
-            "Bosnijas un Hercogovinas konvertējamā marka"
-        ],
-        "BBD": [
-            "BBD",
-            "Barbadosas dolārs"
-        ],
-        "BDT": [
-            "BDT",
-            "Bangladešas taka"
-        ],
-        "BEF": [
-            "BEF",
-            "Beļģijas franks"
-        ],
-        "BGN": [
-            "BGN",
-            "Bulgārijas leva"
-        ],
-        "BHD": [
-            "BHD",
-            "Bahreinas dinārs"
-        ],
-        "BIF": [
-            "BIF",
-            "Burundi franks"
-        ],
-        "BMD": [
-            "BMD",
-            "Bermudu dolārs"
-        ],
-        "BND": [
-            "BND",
-            "Brunejas dolārs"
-        ],
-        "BOB": [
-            "BOB",
-            "Bolīvijas boliviano"
-        ],
-        "BRL": [
-            "R$",
-            "Brazīlijas reāls"
-        ],
-        "BSD": [
-            "BSD",
-            "Bahamu dolārs"
-        ],
-        "BTN": [
-            "BTN",
-            "Butānas ngultrums"
-        ],
-        "BWP": [
-            "BWP",
-            "Botsvanas pula"
-        ],
-        "BYN": [
-            "BYN",
-            "Baltkrievijas rubelis"
-        ],
-        "BYR": [
-            "BYR",
-            "Baltkrievijas rubelis (2000–2016)"
-        ],
-        "BZD": [
-            "BZD",
-            "Belizas dolārs"
-        ],
-        "CAD": [
-            "CA$",
-            "Kanādas dolārs"
-        ],
-        "CDF": [
-            "CDF",
-            "KDR franks"
-        ],
-        "CHF": [
-            "CHF",
-            "Šveices franks"
-        ],
-        "CLP": [
-            "CLP",
-            "Čīles peso"
-        ],
-        "CNH": [
-            "CNH",
-            "Ķīnas juaņa (ofšors)"
-        ],
-        "CNY": [
-            "CN¥",
-            "Ķīnas juaņs"
-        ],
-        "COP": [
-            "COP",
-            "Kolumbijas peso"
-        ],
-        "COU": [
-            "COU",
-            "Kolumbijas reāls"
-        ],
-        "CRC": [
-            "CRC",
-            "Kostarikas kolons"
-        ],
-        "CUC": [
-            "CUC",
-            "Kubas konvertējamais peso"
-        ],
-        "CUP": [
-            "CUP",
-            "Kubas peso"
-        ],
-        "CVE": [
-            "CVE",
-            "Kaboverdes eskudo"
-        ],
-        "CYP": [
-            "CYP",
-            "Kipras mārciņa"
-        ],
-        "CZK": [
-            "CZK",
-            "Čehijas krona"
-        ],
-        "DEM": [
-            "DEM",
-            "Vācijas marka"
-        ],
-        "DJF": [
-            "DJF",
-            "Džibutijas franks"
-        ],
-        "DKK": [
-            "DKK",
-            "Dānijas krona"
-        ],
-        "DOP": [
-            "DOP",
-            "Dominikānas peso"
-        ],
-        "DZD": [
-            "DZD",
-            "Alžīrijas dinārs"
-        ],
-        "EEK": [
-            "EEK",
-            "Igaunijas krona"
-        ],
-        "EGP": [
-            "EGP",
-            "Ēģiptes mārciņa"
-        ],
-        "ERN": [
-            "ERN",
-            "Eritrejas nakfa"
-        ],
-        "ESP": [
-            "ESP",
-            "Spānijas peseta"
-        ],
-        "ETB": [
-            "ETB",
-            "Etiopijas birs"
-        ],
-        "EUR": [
-            "€",
-            "eiro"
-        ],
-        "FIM": [
-            "FIM",
-            "Somijas marka"
-        ],
-        "FJD": [
-            "FJD",
-            "Fidži dolārs"
-        ],
-        "FKP": [
-            "FKP",
-            "Folklenda Salu mārciņa"
-        ],
-        "FRF": [
-            "FRF",
-            "Francijas franks"
-        ],
-        "GBP": [
-            "£",
-            "Lielbritānijas mārciņa"
-        ],
-        "GEL": [
-            "GEL",
-            "Gruzijas lari"
-        ],
-        "GHS": [
-            "GHS",
-            "Ganas sedi"
-        ],
-        "GIP": [
-            "GIP",
-            "Gibraltāra mārciņa"
-        ],
-        "GMD": [
-            "GMD",
-            "Gambijas dalasi"
-        ],
-        "GNF": [
-            "GNF",
-            "Gvinejas franks"
-        ],
-        "GRD": [
-            "GRD",
-            "Grieķijas drahma"
-        ],
-        "GTQ": [
-            "GTQ",
-            "Gvatemalas ketsals"
-        ],
-        "GYD": [
-            "GYD",
-            "Gajānas dolārs"
-        ],
-        "HKD": [
-            "HK$",
-            "Honkongas dolārs"
-        ],
-        "HNL": [
-            "HNL",
-            "Hondurasas lempīra"
-        ],
-        "HRK": [
-            "HRK",
-            "Horvātijas kuna"
-        ],
-        "HTG": [
-            "HTG",
-            "Haiti gurds"
-        ],
-        "HUF": [
-            "HUF",
-            "Ungārijas forints"
-        ],
-        "IDR": [
-            "IDR",
-            "Indonēzijas rūpija"
-        ],
-        "IEP": [
-            "IEP",
-            "Īrijas mārciņa"
-        ],
-        "ILS": [
-            "₪",
-            "Izraēlas šekelis"
-        ],
-        "INR": [
-            "₹",
-            "Indijas rūpija"
-        ],
-        "IQD": [
-            "IQD",
-            "Irākas dinārs"
-        ],
-        "IRR": [
-            "IRR",
-            "Irānas riāls"
-        ],
-        "ISK": [
-            "ISK",
-            "Islandes krona"
-        ],
-        "ITL": [
-            "ITL",
-            "Itālijas lira"
-        ],
-        "JMD": [
-            "JMD",
-            "Jamaikas dolārs"
-        ],
-        "JOD": [
-            "JOD",
-            "Jordānas dinārs"
-        ],
-        "JPY": [
-            "¥",
-            "Japānas jena"
-        ],
-        "KES": [
-            "KES",
-            "Kenijas šiliņš"
-        ],
-        "KGS": [
-            "KGS",
-            "Kirgizstānas soms"
-        ],
-        "KHR": [
-            "KHR",
-            "Kambodžas riels"
-        ],
-        "KMF": [
-            "KMF",
-            "Komoru franks"
-        ],
-        "KPW": [
-            "KPW",
-            "Ziemeļkorejas vona"
-        ],
-        "KRW": [
-            "₩",
-            "Dienvidkorejas vona"
-        ],
-        "KWD": [
-            "KWD",
-            "Kuveitas dinārs"
-        ],
-        "KYD": [
-            "KYD",
-            "Kaimanu salu dolārs"
-        ],
-        "KZT": [
-            "KZT",
-            "Kazahstānas tenge"
-        ],
-        "LAK": [
-            "LAK",
-            "Laosas kips"
-        ],
-        "LBP": [
-            "LBP",
-            "Libānas mārciņa"
-        ],
-        "LKR": [
-            "LKR",
-            "Šrilankas rūpija"
-        ],
-        "LRD": [
-            "LRD",
-            "Libērijas dolārs"
-        ],
-        "LSL": [
-            "LSL",
-            "Lesoto loti"
-        ],
-        "LTL": [
-            "LTL",
-            "Lietuvas lits"
-        ],
-        "LUF": [
-            "LUF",
-            "Luksemburgas franks"
-        ],
-        "LVL": [
-            "Ls",
-            "Latvijas lats"
-        ],
-        "LVR": [
-            "LVR",
-            "Latvijas rublis"
-        ],
-        "LYD": [
-            "LYD",
-            "Lībijas dinārs"
-        ],
-        "MAD": [
-            "MAD",
-            "Marokas dirhēms"
-        ],
-        "MDL": [
-            "MDL",
-            "Moldovas leja"
-        ],
-        "MGA": [
-            "MGA",
-            "Madagaskaras ariari"
-        ],
-        "MKD": [
-            "MKD",
-            "Maķedonijas denārs"
-        ],
-        "MLF": [
-            "MLF",
-            "CFA (Āfrikas) franks"
-        ],
-        "MMK": [
-            "MMK",
-            "Mjanmas kjats"
-        ],
-        "MNT": [
-            "MNT",
-            "Mongolijas tugriks"
-        ],
-        "MOP": [
-            "MOP",
-            "Makao pataka"
-        ],
-        "MRO": [
-            "MRO",
-            "Mauritānijas ugija (1973–2017)"
-        ],
-        "MRU": [
-            "MRU",
-            "Mauritānijas ugija"
-        ],
-        "MTL": [
-            "MTL",
-            "Maltas lira"
-        ],
-        "MTP": [
-            "MTP",
-            "Maltas mārciņa"
-        ],
-        "MUR": [
-            "MUR",
-            "Maurīcijas rūpija"
-        ],
-        "MVR": [
-            "MVR",
-            "Maldīvijas rūfija"
-        ],
-        "MWK": [
-            "MWK",
-            "Malāvijas kvača"
-        ],
-        "MXN": [
-            "MX$",
-            "Meksikas peso"
-        ],
-        "MYR": [
-            "MYR",
-            "Malaizijas ringits"
-        ],
-        "MZE": [
-            "MZE",
-            "Mozambikas eskudo"
-        ],
-        "MZM": [
-            "MZM",
-            "Mozambikas vecais metikals"
-        ],
-        "MZN": [
-            "MZN",
-            "Mozambikas metikals"
-        ],
-        "NAD": [
-            "NAD",
-            "Namībijas dolārs"
-        ],
-        "NGN": [
-            "NGN",
-            "Nigērijas naira"
-        ],
-        "NIO": [
-            "NIO",
-            "Nikaragvas kordoba"
-        ],
-        "NLG": [
-            "NLG",
-            "Nīderlandes guldenis"
-        ],
-        "NOK": [
-            "NOK",
-            "Norvēģijas krona"
-        ],
-        "NPR": [
-            "NPR",
-            "Nepālas rūpija"
-        ],
-        "NZD": [
-            "NZ$",
-            "Jaunzēlandes dolārs"
-        ],
-        "OMR": [
-            "OMR",
-            "Omānas riāls"
-        ],
-        "PAB": [
-            "PAB",
-            "Panamas balboa"
-        ],
-        "PEN": [
-            "PEN",
-            "Peru sols"
-        ],
-        "PGK": [
-            "PGK",
-            "Papua-Jaungvinejas kina"
-        ],
-        "PHP": [
-            "PHP",
-            "Filipīnu peso"
-        ],
-        "PKR": [
-            "PKR",
-            "Pakistānas rūpija"
-        ],
-        "PLN": [
-            "PLN",
-            "Polijas zlots"
-        ],
-        "PTE": [
-            "PTE",
-            "Portugāles eskudo"
-        ],
-        "PYG": [
-            "PYG",
-            "Paragvajas guarani"
-        ],
-        "QAR": [
-            "QAR",
-            "Kataras riāls"
-        ],
-        "ROL": [
-            "ROL",
-            "Rumānijas vecā leja"
-        ],
-        "RON": [
-            "RON",
-            "Rumānijas leja"
-        ],
-        "RSD": [
-            "RSD",
-            "Serbijas dinārs"
-        ],
-        "RUB": [
-            "RUB",
-            "Krievijas rublis"
-        ],
-        "RWF": [
-            "RWF",
-            "Ruandas franks"
-        ],
-        "SAR": [
-            "SAR",
-            "Saūda Arābijas riāls"
-        ],
-        "SBD": [
-            "SBD",
-            "Zālamana Salu dolārs"
-        ],
-        "SCR": [
-            "SCR",
-            "Seišelu salu rūpija"
-        ],
-        "SDG": [
-            "SDG",
-            "Sudānas mārciņa"
-        ],
-        "SEK": [
-            "SEK",
-            "Zviedrijas krona"
-        ],
-        "SGD": [
-            "SGD",
-            "Singapūras dolārs"
-        ],
-        "SHP": [
-            "SHP",
-            "Sv.Helēnas salas mārciņa"
-        ],
-        "SIT": [
-            "SIT",
-            "Slovēnijas tolars"
-        ],
-        "SKK": [
-            "SKK",
-            "Slovakijas krona"
-        ],
-        "SLL": [
-            "SLL",
-            "Sjerraleones leone"
-        ],
-        "SOS": [
-            "SOS",
-            "Somālijas šiliņš"
-        ],
-        "SRD": [
-            "SRD",
-            "Surinamas dolārs"
-        ],
-        "SRG": [
-            "SRG",
-            "Surinamas guldenis"
-        ],
-        "SSP": [
-            "SSP",
-            "Dienvidsudānas mārciņa"
-        ],
-        "STD": [
-            "STD",
-            "Santome un Prinsipi dobra (1977–2017)"
-        ],
-        "STN": [
-            "STN",
-            "Santome un Prinsipi dobra"
-        ],
-        "SVC": [
-            "SVC",
-            "Salvadoras kolons"
-        ],
-        "SYP": [
-            "SYP",
-            "Sīrijas mārciņa"
-        ],
-        "SZL": [
-            "SZL",
-            "Svazilendas lilangeni"
-        ],
-        "THB": [
-            "฿",
-            "Taizemes bāts"
-        ],
-        "TJS": [
-            "TJS",
-            "Tadžikistānas somons"
-        ],
-        "TMM": [
-            "TMM",
-            "Turkmenistānas manats (1993–2009)"
-        ],
-        "TMT": [
-            "TMT",
-            "Turkmenistānas manats"
-        ],
-        "TND": [
-            "TND",
-            "Tunisijas dinārs"
-        ],
-        "TOP": [
-            "TOP",
-            "Tongas paanga"
-        ],
-        "TRL": [
-            "TRL",
-            "Turcijas lira (1922–2005)"
-        ],
-        "TRY": [
-            "TRY",
-            "Turcijas lira"
-        ],
-        "TTD": [
-            "TTD",
-            "Trinidādas un Tobāgo dolārs"
-        ],
-        "TWD": [
-            "NT$",
-            "Taivānas jaunais dolārs"
-        ],
-        "TZS": [
-            "TZS",
-            "Tanzānijas šiliņš"
-        ],
-        "UAH": [
-            "UAH",
-            "Ukrainas grivna"
-        ],
-        "UGX": [
-            "UGX",
-            "Ugandas šiliņš"
-        ],
-        "USD": [
-            "$",
-            "ASV dolārs"
-        ],
-        "UYU": [
-            "UYU",
-            "Urugvajas peso"
-        ],
-        "UZS": [
-            "UZS",
-            "Uzbekistānas sums"
-        ],
-        "VEB": [
-            "VEB",
-            "Venecuēlas bolivārs (1871–2008)"
-        ],
-        "VEF": [
-            "VEF",
-            "Venecuēlas bolivārs (2008–2018)"
-        ],
-        "VES": [
-            "VES",
-            "Venecuēlas bolivārs"
-        ],
-        "VND": [
-            "₫",
-            "Vjetnamas dongi"
-        ],
-        "VUV": [
-            "VUV",
-            "Vanuatu vatu"
-        ],
-        "WST": [
-            "WST",
-            "Samoa tala"
-        ],
-        "XAF": [
-            "FCFA",
-            "Centrālāfrikas CFA franks"
-        ],
-        "XCD": [
-            "EC$",
-            "Austrumkarību dolārs"
-        ],
-        "XEU": [
-            "XEU",
-            "Eiropas norēķinu vienība"
-        ],
-        "XFO": [
-            "XFO",
-            "Francijas zelta franks"
-        ],
-        "XFU": [
-            "XFU",
-            "Francijas UIC franks"
-        ],
-        "XOF": [
-            "CFA",
-            "Rietumāfrikas CFA franks"
-        ],
-        "XPF": [
-            "CFPF",
-            "CFP franks"
-        ],
-        "YER": [
-            "YER",
-            "Jemenas riāls"
-        ],
-        "ZAR": [
-            "ZAR",
-            "Dienvidāfrikas rends"
-        ],
-        "ZMK": [
-            "ZMK",
-            "Zambijas kvača (1968–2012)"
-        ],
-        "ZMW": [
-            "ZMW",
-            "Zambijas kvača"
-        ],
-        "ZWD": [
-            "ZWD",
-            "Zimbabves dolārs"
-        ],
-        "ZWL": [
-            "ZWL",
-            "Zimbabves dolārs (2009)"
-        ]
+        "aa": "afāru",
+        "ab": "abhāzu",
+        "ace": "ačinu",
+        "ach": "ačolu",
+        "ada": "adangmu",
+        "ady": "adigu",
+        "ae": "avesta",
+        "af": "afrikandu",
+        "afh": "afrihili",
+        "agq": "aghemu",
+        "ain": "ainu",
+        "ak": "akanu",
+        "akk": "akadiešu",
+        "ale": "aleutu",
+        "alt": "dienvidaltajiešu",
+        "am": "amharu",
+        "an": "aragoniešu",
+        "ang": "senangļu",
+        "anp": "angika",
+        "ar": "arābu",
+        "ar_001": "mūsdienu standarta arābu",
+        "arc": "aramiešu",
+        "arn": "araukāņu",
+        "arp": "arapahu",
+        "arw": "aravaku",
+        "as": "asamiešu",
+        "asa": "asu",
+        "ast": "astūriešu",
+        "av": "avāru",
+        "awa": "avadhu",
+        "ay": "aimaru",
+        "az": "azerbaidžāņu",
+        "az_Arab": "dienvidazerbaidžāņu",
+        "ba": "baškīru",
+        "bal": "beludžu",
+        "ban": "baliešu",
+        "bas": "basu",
+        "bax": "bamumu",
+        "bbj": "gomalu",
+        "be": "baltkrievu",
+        "bej": "bedžu",
+        "bem": "bembu",
+        "bez": "bena",
+        "bfd": "bafutu",
+        "bg": "bulgāru",
+        "bgn": "rietumbeludžu",
+        "bho": "bhodžpūru",
+        "bi": "bišlamā",
+        "bik": "bikolu",
+        "bin": "binu",
+        "bkm": "komu",
+        "bla": "siksiku",
+        "bm": "bambaru",
+        "bn": "bengāļu",
+        "bo": "tibetiešu",
+        "br": "bretoņu",
+        "bra": "bradžiešu",
+        "brx": "bodo",
+        "bs": "bosniešu",
+        "bss": "nkosi",
+        "bua": "burjatu",
+        "bug": "bugu",
+        "bum": "bulu",
+        "byn": "bilinu",
+        "byv": "medumbu",
+        "ca": "katalāņu",
+        "cad": "kadu",
+        "car": "karību",
+        "cay": "kajuga",
+        "cch": "atsamu",
+        "ccp": "čakmu",
+        "ce": "čečenu",
+        "ceb": "sebuāņu",
+        "cgg": "kiga",
+        "ch": "čamorru",
+        "chb": "čibču",
+        "chg": "džagatajs",
+        "chk": "čūku",
+        "chm": "mariešu",
+        "chn": "činuku žargons",
+        "cho": "čoktavu",
+        "chp": "čipevaianu",
+        "chr": "čiroku",
+        "chy": "šejenu",
+        "ckb": "centrālkurdu",
+        "co": "korsikāņu",
+        "cop": "koptu",
+        "cr": "krī",
+        "crh": "Krimas tatāru",
+        "crs": "franciskā kreoliskā valoda (Seišelu salas)",
+        "cs": "čehu",
+        "csb": "kašubu",
+        "cu": "baznīcslāvu",
+        "cv": "čuvašu",
+        "cy": "velsiešu",
+        "da": "dāņu",
+        "dak": "dakotu",
+        "dar": "dargu",
+        "dav": "taitu",
+        "de": "vācu",
+        "de_CH": "augšvācu (Šveice)",
+        "del": "delavēru",
+        "den": "sleivu",
+        "dgr": "dogribu",
+        "din": "dinku",
+        "dje": "zarmu",
+        "doi": "dogru",
+        "dsb": "lejassorbu",
+        "dua": "dualu",
+        "dum": "vidusholandiešu",
+        "dv": "maldīviešu",
+        "dyo": "diola-fonjī",
+        "dyu": "diūlu",
+        "dz": "dzongke",
+        "dzg": "dazu",
+        "ebu": "kjembu",
+        "ee": "evu",
+        "efi": "efiku",
+        "egy": "ēģiptiešu",
+        "eka": "ekadžuku",
+        "el": "grieķu",
+        "elx": "elamiešu",
+        "en": "angļu",
+        "en_GB": "angļu (Lielbritānija)",
+        "enm": "vidusangļu",
+        "eo": "esperanto",
+        "es": "spāņu",
+        "et": "igauņu",
+        "eu": "basku",
+        "ewo": "evondu",
+        "fa": "persiešu",
+        "fan": "fangu",
+        "fat": "fantu",
+        "ff": "fulu",
+        "fi": "somu",
+        "fil": "filipīniešu",
+        "fj": "fidžiešu",
+        "fo": "fēru",
+        "fon": "fonu",
+        "fr": "franču",
+        "frc": "kadžūnu franču",
+        "frm": "vidusfranču",
+        "fro": "senfranču",
+        "frr": "ziemeļfrīzu",
+        "frs": "austrumfrīzu",
+        "fur": "friūlu",
+        "fy": "rietumfrīzu",
+        "ga": "īru",
+        "gaa": "ga",
+        "gag": "gagauzu",
+        "gay": "gajo",
+        "gba": "gbaju",
+        "gd": "skotu gēlu",
+        "gez": "gēzu",
+        "gil": "kiribatiešu",
+        "gl": "galisiešu",
+        "gmh": "vidusaugšvācu",
+        "gn": "gvaranu",
+        "goh": "senaugšvācu",
+        "gon": "gondu valodas",
+        "gor": "gorontalu",
+        "got": "gotu",
+        "grb": "grebo",
+        "grc": "sengrieķu",
+        "gsw": "Šveices vācu",
+        "gu": "gudžaratu",
+        "guz": "gusii",
+        "gv": "meniešu",
+        "gwi": "kučinu",
+        "ha": "hausu",
+        "hai": "haidu",
+        "haw": "havajiešu",
+        "he": "ivrits",
+        "hi": "hindi",
+        "hil": "hiligainonu",
+        "hit": "hetu",
+        "hmn": "hmongu",
+        "ho": "hirimotu",
+        "hr": "horvātu",
+        "hsb": "augšsorbu",
+        "ht": "haitiešu",
+        "hu": "ungāru",
+        "hup": "hupu",
+        "hy": "armēņu",
+        "hz": "hereru",
+        "ia": "interlingva",
+        "iba": "ibanu",
+        "ibb": "ibibio",
+        "id": "indonēziešu",
+        "ie": "interlingve",
+        "ig": "igbo",
+        "ii": "Sičuaņas ji",
+        "ik": "inupiaku",
+        "ilo": "iloku",
+        "inh": "ingušu",
+        "io": "ido",
+        "is": "islandiešu",
+        "it": "itāļu",
+        "iu": "inuītu",
+        "ja": "japāņu",
+        "jbo": "ložbans",
+        "jgo": "jgo",
+        "jmc": "mačamu",
+        "jpr": "jūdpersiešu",
+        "jrb": "jūdarābu",
+        "jv": "javiešu",
+        "ka": "gruzīnu",
+        "kaa": "karakalpaku",
+        "kab": "kabilu",
+        "kac": "kačinu",
+        "kaj": "kadži",
+        "kam": "kambu",
+        "kaw": "kāvi",
+        "kbd": "kabardiešu",
+        "kbl": "kaņembu",
+        "kcg": "katabu",
+        "kde": "makonde",
+        "kea": "kaboverdiešu",
+        "kfo": "koru",
+        "kg": "kongu",
+        "kha": "khasu",
+        "kho": "hotaniešu",
+        "khq": "koiračiinī",
+        "ki": "kikuju",
+        "kj": "kvaņamu",
+        "kk": "kazahu",
+        "kkj": "kako",
+        "kl": "grenlandiešu",
+        "kln": "kalendžīnu",
+        "km": "khmeru",
+        "kmb": "kimbundu",
+        "kn": "kannadu",
+        "ko": "korejiešu",
+        "koi": "komiešu-permiešu",
+        "kok": "konkanu",
+        "kos": "kosrājiešu",
+        "kpe": "kpellu",
+        "kr": "kanuru",
+        "krc": "karačaju un balkāru",
+        "krl": "karēļu",
+        "kru": "kuruhu",
+        "ks": "kašmiriešu",
+        "ksb": "šambalu",
+        "ksf": "bafiju",
+        "ksh": "Ķelnes vācu",
+        "ku": "kurdu",
+        "kum": "kumiku",
+        "kut": "kutenaju",
+        "kv": "komiešu",
+        "kw": "korniešu",
+        "ky": "kirgīzu",
+        "la": "latīņu",
+        "lad": "ladino",
+        "lag": "langi",
+        "lah": "landu",
+        "lam": "lambu",
+        "lb": "luksemburgiešu",
+        "lez": "lezgīnu",
+        "lg": "gandu",
+        "li": "limburgiešu",
+        "lkt": "lakotu",
+        "ln": "lingala",
+        "lo": "laosiešu",
+        "lol": "mongu",
+        "lou": "Luiziānas kreolu",
+        "loz": "lozu",
+        "lrc": "ziemeļluru",
+        "lt": "lietuviešu",
+        "lu": "lubakatanga",
+        "lua": "lubalulva",
+        "lui": "luisenu",
+        "lun": "lundu",
+        "luo": "luo",
+        "lus": "lušeju",
+        "luy": "luhju",
+        "lv": "latviešu",
+        "mad": "maduriešu",
+        "maf": "mafu",
+        "mag": "magahiešu",
+        "mai": "maithili",
+        "mak": "makasaru",
+        "man": "mandingu",
+        "mas": "masaju",
+        "mde": "mabu",
+        "mdf": "mokšu",
+        "mdr": "mandaru",
+        "men": "mendu",
+        "mer": "meru",
+        "mfe": "Maurīcijas kreolu",
+        "mg": "malagasu",
+        "mga": "vidusīru",
+        "mgh": "makua",
+        "mgo": "metu",
+        "mh": "māršaliešu",
+        "mi": "maoru",
+        "mic": "mikmaku",
+        "min": "minangkabavu",
+        "mk": "maķedoniešu",
+        "ml": "malajalu",
+        "mn": "mongoļu",
+        "mnc": "mandžūru",
+        "mni": "manipūru",
+        "moh": "mohauku",
+        "mos": "mosu",
+        "mr": "marathu",
+        "ms": "malajiešu",
+        "mt": "maltiešu",
+        "mua": "mundangu",
+        "mus": "krīku",
+        "mwl": "mirandiešu",
+        "mwr": "marvaru",
+        "my": "birmiešu",
+        "mye": "mjenu",
+        "myv": "erzju",
+        "mzn": "mazanderāņu",
+        "na": "nauruiešu",
+        "nap": "neapoliešu",
+        "naq": "nama",
+        "nb": "norvēģu bukmols",
+        "nd": "ziemeļndebelu",
+        "nds": "lejasvācu",
+        "nds_NL": "lejassakšu",
+        "ne": "nepāliešu",
+        "new": "nevaru",
+        "ng": "ndongu",
+        "nia": "njasu",
+        "niu": "niuāņu",
+        "nl": "holandiešu",
+        "nl_BE": "flāmu",
+        "nmg": "kvasio",
+        "nn": "jaunnorvēģu",
+        "nnh": "ngjembūnu",
+        "no": "norvēģu",
+        "nog": "nogaju",
+        "non": "sennorvēģu",
+        "nqo": "nko",
+        "nr": "dienvidndebelu",
+        "nso": "ziemeļsotu",
+        "nus": "nueru",
+        "nv": "navahu",
+        "nwc": "klasiskā nevaru",
+        "ny": "čičeva",
+        "nym": "ņamvezu",
+        "nyn": "ņankolu",
+        "nyo": "ņoru",
+        "nzi": "nzemu",
+        "oc": "oksitāņu",
+        "oj": "odžibvu",
+        "om": "oromu",
+        "or": "oriju",
+        "os": "osetīnu",
+        "osa": "važāžu",
+        "ota": "turku osmaņu",
+        "pa": "pandžabu",
+        "pag": "pangasinanu",
+        "pal": "pehlevi",
+        "pam": "pampanganu",
+        "pap": "papjamento",
+        "pau": "palaviešu",
+        "pcm": "Nigērijas pidžinvaloda",
+        "peo": "senpersu",
+        "phn": "feniķiešu",
+        "pi": "pāli",
+        "pl": "poļu",
+        "pon": "ponapiešu",
+        "prg": "prūšu",
+        "pro": "senprovansiešu",
+        "ps": "puštu",
+        "pt": "portugāļu",
+        "qu": "kečvu",
+        "quc": "kiče",
+        "raj": "radžastāņu",
+        "rap": "rapanuju",
+        "rar": "rarotongiešu",
+        "rm": "retoromāņu",
+        "rn": "rundu",
+        "ro": "rumāņu",
+        "ro_MD": "moldāvu",
+        "rof": "rombo",
+        "rom": "čigānu",
+        "root": "sakne",
+        "ru": "krievu",
+        "rup": "aromūnu",
+        "rw": "kiņaruanda",
+        "rwk": "ruanda",
+        "sa": "sanskrits",
+        "sad": "sandavu",
+        "sah": "jakutu",
+        "sam": "Samārijas aramiešu",
+        "saq": "samburu",
+        "sas": "sasaku",
+        "sat": "santalu",
+        "sba": "ngambeju",
+        "sbp": "sangu",
+        "sc": "sardīniešu",
+        "scn": "sicīliešu",
+        "sco": "skotu",
+        "sd": "sindhu",
+        "sdh": "dienvidkurdu",
+        "se": "ziemeļsāmu",
+        "see": "seneku",
+        "seh": "senu",
+        "sel": "selkupu",
+        "ses": "koiraboro senni",
+        "sg": "sango",
+        "sga": "senīru",
+        "sh": "serbu–horvātu",
+        "shi": "šilhu",
+        "shn": "šanu",
+        "shu": "Čadas arābu",
+        "si": "singāļu",
+        "sid": "sidamu",
+        "sk": "slovāku",
+        "sl": "slovēņu",
+        "sm": "samoāņu",
+        "sma": "dienvidsāmu",
+        "smj": "Luleo sāmu",
+        "smn": "Inari sāmu",
+        "sms": "skoltsāmu",
+        "sn": "šonu",
+        "snk": "soninku",
+        "so": "somāļu",
+        "sog": "sogdiešu",
+        "sq": "albāņu",
+        "sr": "serbu",
+        "srn": "sranantogo",
+        "srr": "serēru",
+        "ss": "svatu",
+        "ssy": "saho",
+        "st": "dienvidsotu",
+        "su": "zundu",
+        "suk": "sukumu",
+        "sus": "susu",
+        "sux": "šumeru",
+        "sv": "zviedru",
+        "sw": "svahili",
+        "sw_CD": "svahili (Kongo)",
+        "swb": "komoru",
+        "syc": "klasiskā sīriešu",
+        "syr": "sīriešu",
+        "ta": "tamilu",
+        "te": "telugu",
+        "tem": "temnu",
+        "teo": "teso",
+        "ter": "tereno",
+        "tet": "tetumu",
+        "tg": "tadžiku",
+        "th": "taju",
+        "ti": "tigrinja",
+        "tig": "tigru",
+        "tiv": "tivu",
+        "tk": "turkmēņu",
+        "tkl": "tokelaviešu",
+        "tl": "tagalu",
+        "tlh": "klingoņu",
+        "tli": "tlinkitu",
+        "tmh": "tuaregu",
+        "tn": "cvanu",
+        "to": "tongiešu",
+        "tog": "Njasas tongu",
+        "tpi": "tokpisins",
+        "tr": "turku",
+        "trv": "taroko",
+        "ts": "congu",
+        "tsi": "cimšiāņu",
+        "tt": "tatāru",
+        "tum": "tumbuku",
+        "tvl": "tuvaliešu",
+        "tw": "tvī",
+        "twq": "tasavaku",
+        "ty": "taitiešu",
+        "tyv": "tuviešu",
+        "tzm": "Centrālmarokas tamazīts",
+        "udm": "udmurtu",
+        "ug": "uiguru",
+        "uga": "ugaritiešu",
+        "uk": "ukraiņu",
+        "umb": "umbundu",
+        "ur": "urdu",
+        "uz": "uzbeku",
+        "vai": "vaju",
+        "ve": "vendu",
+        "vi": "vjetnamiešu",
+        "vo": "volapiks",
+        "vot": "votu",
+        "vun": "vundžo",
+        "wa": "valoņu",
+        "wae": "Vallisas vācu",
+        "wal": "valamu",
+        "war": "varaju",
+        "was": "vašo",
+        "wbp": "varlpirī",
+        "wo": "volofu",
+        "xal": "kalmiku",
+        "xh": "khosu",
+        "xog": "sogu",
+        "yao": "jao",
+        "yap": "japiešu",
+        "yav": "janbaņu",
+        "ybb": "jembu",
+        "yi": "jidišs",
+        "yo": "jorubu",
+        "yue": "kantoniešu",
+        "za": "džuanu",
+        "zap": "sapoteku",
+        "zbl": "blissimbolika",
+        "zen": "zenagu",
+        "zgh": "standarta tamazigtu (Maroka)",
+        "zh": "ķīniešu",
+        "zh_Hans": "ķīniešu vienkāršotā",
+        "zh_Hant": "ķīniešu tradicionālā",
+        "zu": "zulu",
+        "zun": "zunju",
+        "zza": "zazaki"
     }
 }
