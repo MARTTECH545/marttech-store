@@ -7,11 +7,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\MockObject;
+namespace PHPUnit\Framework\Constraint;
 
-/**
- * Interface for exceptions used by PHPUnit_MockObject.
- */
-interface Exception extends \Throwable
+class SameSize extends Count
 {
+    public function __construct(iterable $expected)
+    {
+        parent::__construct($this->getCountOf($expected));
+    }
 }
