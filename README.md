@@ -1,32 +1,69 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-cashier.svg"></p>
+## Illuminate Database
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/cashier"><img src="https://travis-ci.org/laravel/cashier.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/cashier"><img src="https://poser.pugx.org/laravel/cashier/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/cashier"><img src="https://poser.pugx.org/laravel/cashier/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/cashier"><img src="https://poser.pugx.org/laravel/cashier/license.svg" alt="License"></a>
-</p>
+The Illuminate Database component is a full database toolkit for PHP, providing an expressive query builder, ActiveRecord style ORM, and schema builder. It currently supports MySQL, Postgres, SQL Server, and SQLite. It also serves as the database layer of the Laravel PHP framework.
 
-## Introduction
+### Usage Instructions
 
-Laravel Cashier provides an expressive, fluent interface to [Stripe's](https://stripe.com) subscription billing services. It handles almost all of the boilerplate subscription billing code you are dreading writing. In addition to basic subscription management, Cashier can handle coupons, swapping subscription, subscription "quantities", cancellation grace periods, and even generate invoice PDFs.
+First, create a new "Capsule" manager instance. Capsule aims to make configuring the library for usage outside of the Laravel framework as easy as possible.
 
-## Official Documentation
+```PHP
+use Illuminate\Database\Capsule\Manager as Capsule;
 
-Documentation for Cashier can be found on the [Laravel website](https://laravel.com/docs/billing).
+$capsule = new Capsule;
 
-## Contributing
+$capsule->addConnection([
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'database'  => 'database',
+    'username'  => 'root',
+    'password'  => 'password',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+]);
 
-Thank you for considering contributing to Cashier! You can read the contribution guide [here](.github/CONTRIBUTING.md).
+// Set the event dispatcher used by Eloquent models... (optional)
+use Illuminate\Events\Dispatcher;
+use Illuminate\Container\Container;
+$capsule->setEventDispatcher(new Dispatcher(new Container));
 
-## Code of Conduct
+// Make this Capsule instance available globally via static methods... (optional)
+$capsule->setAsGlobal();
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
+$capsule->bootEloquent();
+```
 
-## Security Vulnerabilities
+> `composer require "illuminate/events"` required when you need to use observers with Eloquent.
 
-Please review [our security policy](https://github.com/laravel/cashier/security/policy) on how to report security vulnerabilities.
+Once the Capsule instance has been registered. You may use it like so:
 
-## License
+**Using The Query Builder**
 
-Laravel Cashier is open-sourced software licensed under the [MIT license](LICENSE.md).
+```PHP
+$users = Capsule::table('users')->where('votes', '>', 100)->get();
+```
+Other core methods may be accessed directly from the Capsule in the same manner as from the DB facade:
+```PHP
+$results = Capsule::select('select * from users where id = ?', [1]);
+```
+
+**Using The Schema Builder**
+
+```PHP
+Capsule::schema()->create('users', function ($table) {
+    $table->increments('id');
+    $table->string('email')->unique();
+    $table->timestamps();
+});
+```
+
+**Using The Eloquent ORM**
+
+```PHP
+class User extends Illuminate\Database\Eloquent\Model {}
+
+$users = User::where('votes', '>', 1)->get();
+```
+
+For further documentation on using the various database facilities this library provides, consult the [Laravel framework documentation](https://laravel.com/docs).
