@@ -1,166 +1,97 @@
 <?php
 
-namespace PayPal\Api;
-
-use PayPal\Common\PayPalResourceModel;
-use PayPal\Rest\ApiContext;
-use PayPal\Transport\PayPalRestCall;
-use PayPal\Validation\ArgumentValidator;
+namespace Stripe;
 
 /**
  * Class Payout
  *
- * This object represents a set of payouts that includes status data for the payouts. This object enables you to create a payout using a POST request.
+ * @property string $id
+ * @property string $object
+ * @property int $amount
+ * @property int $arrival_date
+ * @property bool $automatic
+ * @property string|null $balance_transaction
+ * @property int $created
+ * @property string $currency
+ * @property string|null $description
+ * @property string|null $destination
+ * @property string|null $failure_balance_transaction
+ * @property string|null $failure_code
+ * @property string|null $failure_message
+ * @property bool $livemode
+ * @property \Stripe\StripeObject $metadata
+ * @property string $method
+ * @property string $source_type
+ * @property string|null $statement_descriptor
+ * @property string $status
+ * @property string $type
  *
- * @package PayPal\Api
- *
- * @property \PayPal\Api\PayoutSenderBatchHeader sender_batch_header
- * @property \PayPal\Api\PayoutItem[] items
- * @property \PayPal\Api\Links[] links
+ * @package Stripe
  */
-class Payout extends PayPalResourceModel
+class Payout extends ApiResource
 {
+    const OBJECT_NAME = 'payout';
+
+    use ApiOperations\All;
+    use ApiOperations\Create;
+    use ApiOperations\Retrieve;
+    use ApiOperations\Update;
+
     /**
-     * The original batch header as provided by the payment sender.
-     *
-     * @param \PayPal\Api\PayoutSenderBatchHeader $sender_batch_header
-     *
-     * @return $this
+     * Types of payout failure codes.
+     * @link https://stripe.com/docs/api#payout_failures
      */
-    public function setSenderBatchHeader($sender_batch_header)
+    const FAILURE_ACCOUNT_CLOSED                = 'account_closed';
+    const FAILURE_ACCOUNT_FROZEN                = 'account_frozen';
+    const FAILURE_BANK_ACCOUNT_RESTRICTED       = 'bank_account_restricted';
+    const FAILURE_BANK_OWNERSHIP_CHANGED        = 'bank_ownership_changed';
+    const FAILURE_COULD_NOT_PROCESS             = 'could_not_process';
+    const FAILURE_DEBIT_NOT_AUTHORIZED          = 'debit_not_authorized';
+    const FAILURE_DECLINED                      = 'declined';
+    const FAILURE_INCORRECT_ACCOUNT_HOLDER_NAME = 'incorrect_account_holder_name';
+    const FAILURE_INSUFFICIENT_FUNDS            = 'insufficient_funds';
+    const FAILURE_INVALID_ACCOUNT_NUMBER        = 'invalid_account_number';
+    const FAILURE_INVALID_CURRENCY              = 'invalid_currency';
+    const FAILURE_NO_ACCOUNT                    = 'no_account';
+    const FAILURE_UNSUPPORTED_CARD              = 'unsupported_card';
+
+    /**
+     * Possible string representations of the payout methods.
+     * @link https://stripe.com/docs/api/payouts/object#payout_object-method
+     */
+    const METHOD_STANDARD = 'standard';
+    const METHOD_INSTANT  = 'instant';
+
+    /**
+     * Possible string representations of the status of the payout.
+     * @link https://stripe.com/docs/api/payouts/object#payout_object-status
+     */
+    const STATUS_CANCELED   = 'canceled';
+    const STATUS_IN_TRANSIT = 'in_transit';
+    const STATUS_FAILED     = 'failed';
+    const STATUS_PAID       = 'paid';
+    const STATUS_PENDING    = 'pending';
+
+    /**
+     * Possible string representations of the type of payout.
+     * @link https://stripe.com/docs/api/payouts/object#payout_object-type
+     */
+    const TYPE_BANK_ACCOUNT = 'bank_account';
+    const TYPE_CARD         = 'card';
+
+    /**
+     * @param array|null $params
+     * @param array|string|null $opts
+     *
+     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     *
+     * @return Payout The canceled payout.
+     */
+    public function cancel($params = null, $opts = null)
     {
-        $this->sender_batch_header = $sender_batch_header;
+        $url = $this->instanceUrl() . '/cancel';
+        list($response, $opts) = $this->_request('post', $url, $params, $opts);
+        $this->refreshFrom($response, $opts);
         return $this;
     }
-
-    /**
-     * The original batch header as provided by the payment sender.
-     *
-     * @return \PayPal\Api\PayoutSenderBatchHeader
-     */
-    public function getSenderBatchHeader()
-    {
-        return $this->sender_batch_header;
-    }
-
-    /**
-     * An array of payout items (that is, a set of individual payouts).
-     *
-     * @param \PayPal\Api\PayoutItem[] $items
-     *
-     * @return $this
-     */
-    public function setItems($items)
-    {
-        $this->items = $items;
-        return $this;
-    }
-
-    /**
-     * An array of payout items (that is, a set of individual payouts).
-     *
-     * @return \PayPal\Api\PayoutItem[]
-     */
-    public function getItems()
-    {
-        return $this->items;
-    }
-
-    /**
-     * Append Items to the list.
-     *
-     * @param \PayPal\Api\PayoutItem $payoutItem
-     * @return $this
-     */
-    public function addItem($payoutItem)
-    {
-        if (!$this->getItems()) {
-            return $this->setItems(array($payoutItem));
-        } else {
-            return $this->setItems(
-                array_merge($this->getItems(), array($payoutItem))
-            );
-        }
-    }
-
-    /**
-     * Remove Items from the list.
-     *
-     * @param \PayPal\Api\PayoutItem $payoutItem
-     * @return $this
-     */
-    public function removeItem($payoutItem)
-    {
-        return $this->setItems(
-            array_diff($this->getItems(), array($payoutItem))
-        );
-    }
-
-    /**
-     * Create a payout batch resource by passing a sender_batch_header and an items array to the request URI. The sender_batch_header contains payout parameters that describe the handling of a batch resource while the items array conatins payout items.
-     *
-     * @param array $params
-     * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
-     * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
-     * @return PayoutBatch
-     */
-    public function create($params = array(), $apiContext = null, $restCall = null)
-    {
-        $params = $params ? $params : array();
-        ArgumentValidator::validate($params, 'params');
-        $payLoad = $this->toJSON();
-        $allowedParams = array(
-            'sync_mode' => 1,
-        );
-        $json = self::executeCall(
-            "/v1/payments/payouts" . "?" . http_build_query(array_intersect_key($params, $allowedParams)),
-            "POST",
-            $payLoad,
-            null,
-            $apiContext,
-            $restCall
-        );
-        $ret = new PayoutBatch();
-        $ret->fromJson($json);
-        return $ret;
-    }
-
-    /**
-     * You can submit a payout with a synchronous API call, which immediately returns the results of a PayPal payment.
-     *
-     * @param ApiContext $apiContext
-     * @param PayPalRestCall $restCall
-     * @return PayoutBatch
-     */
-    public function createSynchronous($apiContext = null, $restCall = null)
-    {
-        $params = array('sync_mode' => 'true');
-        return $this->create($params, $apiContext, $restCall);
-    }
-
-    /**
-     * Obtain the status of a specific batch resource by passing the payout batch ID to the request URI. You can issue this call multiple times to get the current status.
-     *
-     * @param string $payoutBatchId
-     * @param ApiContext $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
-     * @param PayPalRestCall $restCall is the Rest Call Service that is used to make rest calls
-     * @return PayoutBatch
-     */
-    public static function get($payoutBatchId, $apiContext = null, $restCall = null)
-    {
-        ArgumentValidator::validate($payoutBatchId, 'payoutBatchId');
-        $payLoad = "";
-        $json = self::executeCall(
-            "/v1/payments/payouts/$payoutBatchId",
-            "GET",
-            $payLoad,
-            null,
-            $apiContext,
-            $restCall
-        );
-        $ret = new PayoutBatch();
-        $ret->fromJson($json);
-        return $ret;
-    }
-
 }

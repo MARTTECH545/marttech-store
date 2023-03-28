@@ -1,71 +1,63 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace Stripe;
 
-use Exception;
-use Stripe\PaymentMethod as StripePaymentMethod;
-
-class PaymentMethod
+/**
+ * Class PaymentMethod
+ *
+ * @property string $id
+ * @property string $object
+ * @property mixed $billing_details
+ * @property mixed $card
+ * @property mixed $card_present
+ * @property int $created
+ * @property string|null $customer
+ * @property mixed|null $ideal
+ * @property bool $livemode
+ * @property \Stripe\StripeObject $metadata
+ * @property mixed|null $sepa_debit
+ * @property string $type
+ *
+ * @package Stripe
+ */
+class PaymentMethod extends ApiResource
 {
-    /**
-     * The Stripe model instance.
-     *
-     * @var \Illuminate\Database\Eloquent\Model
-     */
-    protected $owner;
+    const OBJECT_NAME = 'payment_method';
+
+    use ApiOperations\All;
+    use ApiOperations\Create;
+    use ApiOperations\Retrieve;
+    use ApiOperations\Update;
 
     /**
-     * The Stripe PaymentMethod instance.
+     * @param array|null $params
+     * @param array|string|null $opts
      *
-     * @var \Stripe\PaymentMethod
-     */
-    protected $paymentMethod;
-
-    /**
-     * Create a new PaymentMethod instance.
+     * @throws \Stripe\Exception\ApiErrorException if the request fails
      *
-     * @param  \Illuminate\Database\Eloquent\Model  $owner
-     * @param  \Stripe\PaymentMethod  $paymentMethod
-     * @return void
+     * @return PaymentMethod The attached payment method.
      */
-    public function __construct($owner, StripePaymentMethod $paymentMethod)
+    public function attach($params = null, $opts = null)
     {
-        if ($owner->stripe_id !== $paymentMethod->customer) {
-            throw new Exception("The invoice `{$paymentMethod->id}` does not belong to this customer `$owner->stripe_id`.");
-        }
-
-        $this->owner = $owner;
-        $this->paymentMethod = $paymentMethod;
+        $url = $this->instanceUrl() . '/attach';
+        list($response, $opts) = $this->_request('post', $url, $params, $opts);
+        $this->refreshFrom($response, $opts);
+        return $this;
     }
 
     /**
-     * Delete the payment method.
+     * @param array|null $params
+     * @param array|string|null $opts
      *
-     * @return \Stripe\PaymentMethod
-     */
-    public function delete()
-    {
-        return $this->owner->removePaymentMethod($this->paymentMethod);
-    }
-
-    /**
-     * Get the Stripe PaymentMethod instance.
+     * @throws \Stripe\Exception\ApiErrorException if the request fails
      *
-     * @return \Stripe\PaymentMethod
+     * @return PaymentMethod The detached payment method.
      */
-    public function asStripePaymentMethod()
+    public function detach($params = null, $opts = null)
     {
-        return $this->paymentMethod;
-    }
-
-    /**
-     * Dynamically get values from the Stripe PaymentMethod.
-     *
-     * @param  string  $key
-     * @return mixed
-     */
-    public function __get($key)
-    {
-        return $this->paymentMethod->{$key};
+        $url = $this->instanceUrl() . '/detach';
+        list($response, $opts) = $this->_request('post', $url, $params, $opts);
+        $this->refreshFrom($response, $opts);
+        return $this;
     }
 }

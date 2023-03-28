@@ -1,582 +1,249 @@
 <?php
 
-namespace Illuminate\Database\Eloquent;
+namespace Stripe;
 
-use LogicException;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Queue\QueueableEntity;
-use Illuminate\Contracts\Queue\QueueableCollection;
-use Illuminate\Support\Collection as BaseCollection;
-
-class Collection extends BaseCollection implements QueueableCollection
+/**
+ * Class Collection
+ *
+ * @property string $object
+ * @property string $url
+ * @property bool $has_more
+ * @property mixed $data
+ *
+ * @package Stripe
+ */
+class Collection extends StripeObject implements \IteratorAggregate
 {
+    const OBJECT_NAME = 'list';
+
+    use ApiOperations\Request;
+
+    /** @var array */
+    protected $filters = [];
+
     /**
-     * Find a model in the collection by key.
-     *
-     * @param  mixed  $key
-     * @param  mixed  $default
-     * @return \Illuminate\Database\Eloquent\Model|static|null
+     * @return string The base URL for the given class.
      */
-    public function find($key, $default = null)
+    public static function baseUrl()
     {
-        if ($key instanceof Model) {
-            $key = $key->getKey();
-        }
-
-        if ($key instanceof Arrayable) {
-            $key = $key->toArray();
-        }
-
-        if (is_array($key)) {
-            if ($this->isEmpty()) {
-                return new static;
-            }
-
-            return $this->whereIn($this->first()->getKeyName(), $key);
-        }
-
-        return Arr::first($this->items, function ($model) use ($key) {
-            return $model->getKey() == $key;
-        }, $default);
+        return Stripe::$apiBase;
     }
 
     /**
-     * Load a set of relationships onto the collection.
+     * Returns the filters.
      *
-     * @param  array|string  $relations
-     * @return $this
+     * @return array The filters.
      */
-    public function load($relations)
+    public function getFilters()
     {
-        if ($this->isNotEmpty()) {
-            if (is_string($relations)) {
-                $relations = func_get_args();
-            }
-
-            $query = $this->first()->newQueryWithoutRelationships()->with($relations);
-
-            $this->items = $query->eagerLoadRelations($this->items);
-        }
-
-        return $this;
+        return $this->filters;
     }
 
     /**
-     * Load a set of relationship counts onto the collection.
+     * Sets the filters, removing paging options.
      *
-     * @param  array|string  $relations
-     * @return $this
+     * @param array $filters The filters.
      */
-    public function loadCount($relations)
+    public function setFilters($filters)
     {
-        if ($this->isEmpty()) {
-            return $this;
+        $this->filters = $filters;
+    }
+
+    public function offsetGet($k)
+    {
+        if (is_string($k)) {
+            return parent::offsetGet($k);
+        } else {
+            $msg = "You tried to access the {$k} index, but Collection " .
+                   "types only support string keys. (HINT: List calls " .
+                   "return an object with a `data` (which is the data " .
+                   "array). You likely want to call ->data[{$k}])";
+            throw new Exception\InvalidArgumentException($msg);
+        }
+    }
+
+    public function all($params = null, $opts = null)
+    {
+        self::_validateParams($params);
+        list($url, $params) = $this->extractPathAndUpdateParams($params);
+
+        list($response, $opts) = $this->_request('get', $url, $params, $opts);
+        $obj = Util\Util::convertToStripeObject($response, $opts);
+        if (!($obj instanceof \Stripe\Collection)) {
+            throw new \Stripe\Exception\UnexpectedValueException(
+                'Expected type ' . \Stripe\Collection::class . ', got "' . get_class($obj) . '" instead.'
+            );
+        }
+        $obj->setFilters($params);
+        return $obj;
+    }
+
+    public function create($params = null, $opts = null)
+    {
+        self::_validateParams($params);
+        list($url, $params) = $this->extractPathAndUpdateParams($params);
+
+        list($response, $opts) = $this->_request('post', $url, $params, $opts);
+        return Util\Util::convertToStripeObject($response, $opts);
+    }
+
+    public function retrieve($id, $params = null, $opts = null)
+    {
+        self::_validateParams($params);
+        list($url, $params) = $this->extractPathAndUpdateParams($params);
+
+        $id = Util\Util::utf8($id);
+        $extn = urlencode($id);
+        list($response, $opts) = $this->_request(
+            'get',
+            "$url/$extn",
+            $params,
+            $opts
+        );
+        return Util\Util::convertToStripeObject($response, $opts);
+    }
+
+    /**
+     * @return \ArrayIterator An iterator that can be used to iterate
+     *    across objects in the current page.
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->data);
+    }
+
+    /**
+     * @return \ArrayIterator An iterator that can be used to iterate
+     *    backwards across objects in the current page.
+     */
+    public function getReverseIterator()
+    {
+        return new \ArrayIterator(array_reverse($this->data));
+    }
+
+    /**
+     * @return \Generator|StripeObject[] A generator that can be used to
+     *    iterate across all objects across all pages. As page boundaries are
+     *    encountered, the next page will be fetched automatically for
+     *    continued iteration.
+     */
+    public function autoPagingIterator()
+    {
+        $page = $this;
+
+        while (true) {
+            $filters = $this->filters ?: [];
+            if (array_key_exists('ending_before', $filters) &&
+                !array_key_exists('starting_after', $filters)) {
+                foreach ($page->getReverseIterator() as $item) {
+                    yield $item;
+                }
+                $page = $page->previousPage();
+            } else {
+                foreach ($page as $item) {
+                    yield $item;
+                }
+                $page = $page->nextPage();
+            }
+
+            if ($page->isEmpty()) {
+                break;
+            }
+        }
+    }
+
+    /**
+     * Returns an empty collection. This is returned from {@see nextPage()}
+     * when we know that there isn't a next page in order to replicate the
+     * behavior of the API when it attempts to return a page beyond the last.
+     *
+     * @param array|string|null $opts
+     * @return Collection
+     */
+    public static function emptyCollection($opts = null)
+    {
+        return Collection::constructFrom(['data' => []], $opts);
+    }
+
+    /**
+     * Returns true if the page object contains no element.
+     *
+     * @return boolean
+     */
+    public function isEmpty()
+    {
+        return empty($this->data);
+    }
+
+    /**
+     * Fetches the next page in the resource list (if there is one).
+     *
+     * This method will try to respect the limit of the current page. If none
+     * was given, the default limit will be fetched again.
+     *
+     * @param array|null $params
+     * @param array|string|null $opts
+     * @return Collection
+     */
+    public function nextPage($params = null, $opts = null)
+    {
+        if (!$this->has_more) {
+            return static::emptyCollection($opts);
         }
 
-        $models = $this->first()->newModelQuery()
-            ->whereKey($this->modelKeys())
-            ->select($this->first()->getKeyName())
-            ->withCount(...func_get_args())
-            ->get();
+        $lastId = end($this->data)->id;
 
-        $attributes = Arr::except(
-            array_keys($models->first()->getAttributes()),
-            $models->first()->getKeyName()
+        $params = array_merge(
+            $this->filters ?: [],
+            ['starting_after' => $lastId],
+            $params ?: []
         );
 
-        $models->each(function ($model) use ($attributes) {
-            $this->find($model->getKey())->forceFill(
-                Arr::only($model->getAttributes(), $attributes)
-            )->syncOriginalAttributes($attributes);
-        });
-
-        return $this;
+        return $this->all($params, $opts);
     }
 
     /**
-     * Load a set of relationships onto the collection if they are not already eager loaded.
+     * Fetches the previous page in the resource list (if there is one).
      *
-     * @param  array|string  $relations
-     * @return $this
+     * This method will try to respect the limit of the current page. If none
+     * was given, the default limit will be fetched again.
+     *
+     * @param array|null $params
+     * @param array|string|null $opts
+     * @return Collection
      */
-    public function loadMissing($relations)
+    public function previousPage($params = null, $opts = null)
     {
-        if (is_string($relations)) {
-            $relations = func_get_args();
+        if (!$this->has_more) {
+            return static::emptyCollection($opts);
         }
 
-        foreach ($relations as $key => $value) {
-            if (is_numeric($key)) {
-                $key = $value;
-            }
+        $firstId = $this->data[0]->id;
 
-            $segments = explode('.', explode(':', $key)[0]);
+        $params = array_merge(
+            $this->filters ?: [],
+            ['ending_before' => $firstId],
+            $params ?: []
+        );
 
-            if (Str::contains($key, ':')) {
-                $segments[count($segments) - 1] .= ':'.explode(':', $key)[1];
-            }
+        return $this->all($params, $opts);
+    }
 
-            $path = [];
-
-            foreach ($segments as $segment) {
-                $path[] = [$segment => $segment];
-            }
-
-            if (is_callable($value)) {
-                $path[count($segments) - 1][end($segments)] = $value;
-            }
-
-            $this->loadMissingRelation($this, $path);
+    private function extractPathAndUpdateParams($params)
+    {
+        $url = parse_url($this->url);
+        if (!isset($url['path'])) {
+            throw new Exception\UnexpectedValueException("Could not parse list url into parts: $url");
         }
 
-        return $this;
-    }
-
-    /**
-     * Load a relationship path if it is not already eager loaded.
-     *
-     * @param  \Illuminate\Database\Eloquent\Collection  $models
-     * @param  array  $path
-     * @return void
-     */
-    protected function loadMissingRelation(self $models, array $path)
-    {
-        $relation = array_shift($path);
-
-        $name = explode(':', key($relation))[0];
-
-        if (is_string(reset($relation))) {
-            $relation = reset($relation);
+        if (isset($url['query'])) {
+            // If the URL contains a query param, parse it out into $params so they
+            // don't interact weirdly with each other.
+            $query = [];
+            parse_str($url['query'], $query);
+            $params = array_merge($params ?: [], $query);
         }
 
-        $models->filter(function ($model) use ($name) {
-            return ! is_null($model) && ! $model->relationLoaded($name);
-        })->load($relation);
-
-        if (empty($path)) {
-            return;
-        }
-
-        $models = $models->pluck($name);
-
-        if ($models->first() instanceof BaseCollection) {
-            $models = $models->collapse();
-        }
-
-        $this->loadMissingRelation(new static($models), $path);
-    }
-
-    /**
-     * Load a set of relationships onto the mixed relationship collection.
-     *
-     * @param  string  $relation
-     * @param  array  $relations
-     * @return $this
-     */
-    public function loadMorph($relation, $relations)
-    {
-        $this->pluck($relation)
-            ->filter()
-            ->groupBy(function ($model) {
-                return get_class($model);
-            })
-            ->each(function ($models, $className) use ($relations) {
-                static::make($models)->load($relations[$className] ?? []);
-            });
-
-        return $this;
-    }
-
-    /**
-     * Determine if a key exists in the collection.
-     *
-     * @param  mixed  $key
-     * @param  mixed  $operator
-     * @param  mixed  $value
-     * @return bool
-     */
-    public function contains($key, $operator = null, $value = null)
-    {
-        if (func_num_args() > 1 || $this->useAsCallable($key)) {
-            return parent::contains(...func_get_args());
-        }
-
-        if ($key instanceof Model) {
-            return parent::contains(function ($model) use ($key) {
-                return $model->is($key);
-            });
-        }
-
-        return parent::contains(function ($model) use ($key) {
-            return $model->getKey() == $key;
-        });
-    }
-
-    /**
-     * Get the array of primary keys.
-     *
-     * @return array
-     */
-    public function modelKeys()
-    {
-        return array_map(function ($model) {
-            return $model->getKey();
-        }, $this->items);
-    }
-
-    /**
-     * Merge the collection with the given items.
-     *
-     * @param  \ArrayAccess|array  $items
-     * @return static
-     */
-    public function merge($items)
-    {
-        $dictionary = $this->getDictionary();
-
-        foreach ($items as $item) {
-            $dictionary[$item->getKey()] = $item;
-        }
-
-        return new static(array_values($dictionary));
-    }
-
-    /**
-     * Run a map over each of the items.
-     *
-     * @param  callable  $callback
-     * @return \Illuminate\Support\Collection|static
-     */
-    public function map(callable $callback)
-    {
-        $result = parent::map($callback);
-
-        return $result->contains(function ($item) {
-            return ! $item instanceof Model;
-        }) ? $result->toBase() : $result;
-    }
-
-    /**
-     * Reload a fresh model instance from the database for all the entities.
-     *
-     * @param  array|string  $with
-     * @return static
-     */
-    public function fresh($with = [])
-    {
-        if ($this->isEmpty()) {
-            return new static;
-        }
-
-        $model = $this->first();
-
-        $freshModels = $model->newQueryWithoutScopes()
-            ->with(is_string($with) ? func_get_args() : $with)
-            ->whereIn($model->getKeyName(), $this->modelKeys())
-            ->get()
-            ->getDictionary();
-
-        return $this->map(function ($model) use ($freshModels) {
-            return $model->exists && isset($freshModels[$model->getKey()])
-                    ? $freshModels[$model->getKey()] : null;
-        });
-    }
-
-    /**
-     * Diff the collection with the given items.
-     *
-     * @param  \ArrayAccess|array  $items
-     * @return static
-     */
-    public function diff($items)
-    {
-        $diff = new static;
-
-        $dictionary = $this->getDictionary($items);
-
-        foreach ($this->items as $item) {
-            if (! isset($dictionary[$item->getKey()])) {
-                $diff->add($item);
-            }
-        }
-
-        return $diff;
-    }
-
-    /**
-     * Intersect the collection with the given items.
-     *
-     * @param  \ArrayAccess|array  $items
-     * @return static
-     */
-    public function intersect($items)
-    {
-        $intersect = new static;
-
-        $dictionary = $this->getDictionary($items);
-
-        foreach ($this->items as $item) {
-            if (isset($dictionary[$item->getKey()])) {
-                $intersect->add($item);
-            }
-        }
-
-        return $intersect;
-    }
-
-    /**
-     * Return only unique items from the collection.
-     *
-     * @param  string|callable|null  $key
-     * @param  bool  $strict
-     * @return static|\Illuminate\Support\Collection
-     */
-    public function unique($key = null, $strict = false)
-    {
-        if (! is_null($key)) {
-            return parent::unique($key, $strict);
-        }
-
-        return new static(array_values($this->getDictionary()));
-    }
-
-    /**
-     * Returns only the models from the collection with the specified keys.
-     *
-     * @param  mixed  $keys
-     * @return static
-     */
-    public function only($keys)
-    {
-        if (is_null($keys)) {
-            return new static($this->items);
-        }
-
-        $dictionary = Arr::only($this->getDictionary(), $keys);
-
-        return new static(array_values($dictionary));
-    }
-
-    /**
-     * Returns all models in the collection except the models with specified keys.
-     *
-     * @param  mixed  $keys
-     * @return static
-     */
-    public function except($keys)
-    {
-        $dictionary = Arr::except($this->getDictionary(), $keys);
-
-        return new static(array_values($dictionary));
-    }
-
-    /**
-     * Make the given, typically visible, attributes hidden across the entire collection.
-     *
-     * @param  array|string  $attributes
-     * @return $this
-     */
-    public function makeHidden($attributes)
-    {
-        return $this->each->addHidden($attributes);
-    }
-
-    /**
-     * Make the given, typically hidden, attributes visible across the entire collection.
-     *
-     * @param  array|string  $attributes
-     * @return $this
-     */
-    public function makeVisible($attributes)
-    {
-        return $this->each->makeVisible($attributes);
-    }
-
-    /**
-     * Get a dictionary keyed by primary keys.
-     *
-     * @param  \ArrayAccess|array|null  $items
-     * @return array
-     */
-    public function getDictionary($items = null)
-    {
-        $items = is_null($items) ? $this->items : $items;
-
-        $dictionary = [];
-
-        foreach ($items as $value) {
-            $dictionary[$value->getKey()] = $value;
-        }
-
-        return $dictionary;
-    }
-
-    /**
-     * The following methods are intercepted to always return base collections.
-     */
-
-    /**
-     * Get an array with the values of a given key.
-     *
-     * @param  string  $value
-     * @param  string|null  $key
-     * @return \Illuminate\Support\Collection
-     */
-    public function pluck($value, $key = null)
-    {
-        return $this->toBase()->pluck($value, $key);
-    }
-
-    /**
-     * Get the keys of the collection items.
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    public function keys()
-    {
-        return $this->toBase()->keys();
-    }
-
-    /**
-     * Zip the collection together with one or more arrays.
-     *
-     * @param  mixed ...$items
-     * @return \Illuminate\Support\Collection
-     */
-    public function zip($items)
-    {
-        return call_user_func_array([$this->toBase(), 'zip'], func_get_args());
-    }
-
-    /**
-     * Collapse the collection of items into a single array.
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    public function collapse()
-    {
-        return $this->toBase()->collapse();
-    }
-
-    /**
-     * Get a flattened array of the items in the collection.
-     *
-     * @param  int  $depth
-     * @return \Illuminate\Support\Collection
-     */
-    public function flatten($depth = INF)
-    {
-        return $this->toBase()->flatten($depth);
-    }
-
-    /**
-     * Flip the items in the collection.
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    public function flip()
-    {
-        return $this->toBase()->flip();
-    }
-
-    /**
-     * Pad collection to the specified length with a value.
-     *
-     * @param  int  $size
-     * @param  mixed $value
-     * @return \Illuminate\Support\Collection
-     */
-    public function pad($size, $value)
-    {
-        return $this->toBase()->pad($size, $value);
-    }
-
-    /**
-     * Get the comparison function to detect duplicates.
-     *
-     * @param  bool  $strict
-     * @return \Closure
-     */
-    protected function duplicateComparator($strict)
-    {
-        return function ($a, $b) {
-            return $a->is($b);
-        };
-    }
-
-    /**
-     * Get the type of the entities being queued.
-     *
-     * @return string|null
-     *
-     * @throws \LogicException
-     */
-    public function getQueueableClass()
-    {
-        if ($this->isEmpty()) {
-            return;
-        }
-
-        $class = get_class($this->first());
-
-        $this->each(function ($model) use ($class) {
-            if (get_class($model) !== $class) {
-                throw new LogicException('Queueing collections with multiple model types is not supported.');
-            }
-        });
-
-        return $class;
-    }
-
-    /**
-     * Get the identifiers for all of the entities.
-     *
-     * @return array
-     */
-    public function getQueueableIds()
-    {
-        if ($this->isEmpty()) {
-            return [];
-        }
-
-        return $this->first() instanceof QueueableEntity
-                    ? $this->map->getQueueableId()->all()
-                    : $this->modelKeys();
-    }
-
-    /**
-     * Get the relationships of the entities being queued.
-     *
-     * @return array
-     */
-    public function getQueueableRelations()
-    {
-        return $this->isNotEmpty() ? $this->first()->getQueueableRelations() : [];
-    }
-
-    /**
-     * Get the connection of the entities being queued.
-     *
-     * @return string|null
-     *
-     * @throws \LogicException
-     */
-    public function getQueueableConnection()
-    {
-        if ($this->isEmpty()) {
-            return;
-        }
-
-        $connection = $this->first()->getConnectionName();
-
-        $this->each(function ($model) use ($connection) {
-            if ($model->getConnectionName() !== $connection) {
-                throw new LogicException('Queueing collections with multiple model connections is not supported.');
-            }
-        });
-
-        return $connection;
+        return [$url['path'], $params];
     }
 }
