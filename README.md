@@ -1,60 +1,30 @@
-# REST API SDK for PHP
+# Manifest
 
-![Home Image](https://raw.githubusercontent.com/wiki/paypal/PayPal-PHP-SDK/images/homepage.jpg)
+Component for reading [phar.io](https://phar.io/) manifest information from a [PHP Archive (PHAR)](http://php.net/phar).
 
-[![Build Status](https://travis-ci.org/paypal/PayPal-PHP-SDK.svg?branch=master)](https://travis-ci.org/paypal/PayPal-PHP-SDK)
-[![Coverage Status](https://coveralls.io/repos/paypal/PayPal-PHP-SDK/badge.svg?branch=master)](https://coveralls.io/r/paypal/PayPal-PHP-SDK?branch=master)
+[![Build Status](https://travis-ci.org/phar-io/manifest.svg?branch=master)](https://travis-ci.org/phar-io/manifest)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phar-io/manifest/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phar-io/manifest/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/d8cc6035-69ad-477d-bd1a-ccc605480fd7/mini.png)](https://insight.sensiolabs.com/projects/d8cc6035-69ad-477d-bd1a-ccc605480fd7)
 
-__Welcome to PayPal PHP SDK__. This repository contains PayPal's PHP SDK and samples for REST API.
+## Installation
 
-## Direct Credit Card Support
-> **Important: The PayPal REST API no longer supports new direct credit card integrations.**  Please instead consider [Braintree Direct](https://www.braintreepayments.com/products/braintree-direct); which is, PayPal's preferred integration solution for accepting direct credit card payments in your mobile app or website. Braintree, a PayPal service, is the easiest way to accept credit cards, PayPal, and many other payment methods.
+You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
 
-## Please Note
+    composer require phar-io/manifest
 
-> **The Payment Card Industry (PCI) Council has [mandated](https://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls) that early versions of TLS be retired from service.  All organizations that handle credit card information are required to comply with this standard. As part of this obligation, PayPal is updating its services to require TLS 1.2 for all HTTPS connections. At this time, PayPal will also require HTTP/1.1 for all connections. [Click here](https://github.com/paypal/tls-update) for more information**
+If you only need this library during development, for instance to run your project's test suite, then you should add it as a development-time dependency:
 
-> **Connections to the sandbox environment use only TLS 1.2.**
+    composer require --dev phar-io/manifest
 
-## SDK Documentation
+## Usage
 
-[Our PayPal-PHP-SDK Page](http://paypal.github.io/PayPal-PHP-SDK/) includes all the documentation related to PHP SDK. Everything from SDK Wiki, to Sample Codes, to Releases. Here are few quick links to get you there faster.
+```php
+use PharIo\Manifest\ManifestLoader;
+use PharIo\Manifest\ManifestSerializer;
 
-* [PayPal-PHP-SDK Home Page](https://paypal.github.io/PayPal-PHP-SDK/)
-* [Wiki](https://github.com/paypal/PayPal-PHP-SDK/wiki)
-* [Samples](https://paypal.github.io/PayPal-PHP-SDK/sample/)
-* [Installation](https://github.com/paypal/PayPal-PHP-SDK/wiki/Installation)
-* [Make your First SDK Call](https://github.com/paypal/PayPal-PHP-SDK/wiki/Making-First-Call)
-* [PayPal Developer Docs](https://developer.paypal.com/docs/)
+$manifest = ManifestLoader::fromFile('manifest.xml');
 
-## Latest Updates
+var_dump($manifest);
 
-- SDK now allows injecting your logger implementation. Please read [documentation](https://github.com/paypal/PayPal-PHP-SDK/wiki/Custom-Logger) for more details.
-- If you are running into SSL Connect Error talking to sandbox or live, please update your SDK to latest version or, follow instructions as shown [here](https://github.com/paypal/PayPal-PHP-SDK/issues/474)
-- Checkout the latest 1.0.0 release. Here are all the [breaking Changes in v1.0.0](https://github.com/paypal/PayPal-PHP-SDK/wiki/Breaking-Changes---1.0.0) if you are migrating from older versions.
-- Now we have a [Github Page](https://paypal.github.io/PayPal-PHP-SDK/), that helps you find all helpful resources building applications using PayPal-PHP-SDK.
-
-## 2.0 Release Candidate!
-We're releasing a [brand new version of our SDK!](https://github.com/paypal/PayPal-php-SDK/tree/2.0-beta) 2.0 is currently at release candidate status, and represents a full refactor, with the goal of making all of our APIs extremely easy to use. 2.0 includes all of the existing APIs (except payouts), and includes the new Orders API (Disputes and Marketplace coming soon). Check out the [FAQ and migration guide](https://github.com/paypal/PayPal-php-SDK/tree/2.0-beta/docs), and let us know if you have any suggestions or issues!
-
-## Prerequisites
-
-   - PHP 5.3 or above
-   - [curl](https://secure.php.net/manual/en/book.curl.php), [json](https://secure.php.net/manual/en/book.json.php) & [openssl](https://secure.php.net/manual/en/book.openssl.php) extensions must be enabled
-
-
-## License
-
-Read [License](LICENSE) for more licensing information.
-
-## Contributing
-
-Read [here](CONTRIBUTING.md) for more information.
-
-## More help
-   * [Going Live](https://github.com/paypal/PayPal-PHP-SDK/wiki/Going-Live)
-   * [PayPal-PHP-SDK Home Page](http://paypal.github.io/PayPal-PHP-SDK/)
-   * [SDK Documentation](https://github.com/paypal/PayPal-PHP-SDK/wiki)
-   * [Sample Source Code](http://paypal.github.io/PayPal-PHP-SDK/sample/)
-   * [API Reference](https://developer.paypal.com/docs/api/)
-   * [Reporting Issues / Feature Requests](https://github.com/paypal/PayPal-PHP-SDK/issues)
+echo (new ManifestSerializer)->serializeToString($manifest);
+```
